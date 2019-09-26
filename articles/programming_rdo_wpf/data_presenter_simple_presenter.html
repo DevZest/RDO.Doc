@@ -1,0 +1,283 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>DataPresenter/SimplePresenter </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="DataPresenter/SimplePresenter ">
+    <meta name="generator" content="docfx 2.43.2.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="datapresentersimplepresenter">DataPresenter/SimplePresenter</h1>
+
+<p>Data presenter is your class derived from <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter-1.html">DataPresenter&lt;T&gt;</a>, which contains your presentation logic. Your data presenter class should:</p>
+<ul>
+<li>Add scalar data if necessary.</li>
+<li>Implement the abstract <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter-1.BuildTemplate.html">BuildTemplate</a> method, which takes a <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.TemplateBuilder.html">DataPresenter.TemplateBuilder</a> parameter.</li>
+<li>Optionally implement service required by the view.</li>
+<li>Call <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter-1.Show.html">Show</a> method of your presenter class to show data to the view.</li>
+</ul>
+<p>You can access all data and view states via your data presenter after data shown.</p>
+<p>You can also derive your presenter class from <a class="xref" href="../../api/DevZest.Data.Presenters.SimplePresenter.html">SimplePresenter</a>, which is a simplified <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter-1.html">DataPresenter&lt;T&gt;</a>, contains no underlying DataSet but scalar data. <a class="xref" href="../../api/DevZest.Data.Presenters.SimplePresenter.html">SimplePresenter</a> is shown against <a class="xref" href="../../api/DevZest.Data.Views.SimpleView.html">SimpleView</a> instead of <a class="xref" href="../../api/DevZest.Data.Views.DataView.html">DataView</a>.</p>
+<h2 id="scalar-data">Scalar Data</h2>
+<p>A <a class="xref" href="../../api/DevZest.Data.Presenters.Scalar-1.html">Scalar&lt;T&gt;</a> object contains a single value via its <a class="xref" href="../../api/DevZest.Data.Presenters.Scalar-1.Value.html#DevZest_Data_Presenters_Scalar_1_Value">Value</a> property, and can be used as binding source of a binding factory extension method like a column object, which returns <a class="xref" href="../../api/DevZest.Data.Presenters.ScalarBinding-1.html">ScalarBinding&lt;T&gt;</a> instead of <a class="xref" href="../../api/DevZest.Data.Presenters.RowBinding-1.html">RowBinding&lt;T&gt;</a>.</p>
+<p>You can create <a class="xref" href="../../api/DevZest.Data.Presenters.Scalar-1.html">Scalar&lt;T&gt;</a> object in your presenter class, by calling <a class="xref" href="../../api/DevZest.Data.Presenters.BasePresenter.NewScalar.html">NewScalar</a>. You can also create linked <a class="xref" href="../../api/DevZest.Data.Presenters.Scalar-1.html">Scalar&lt;T&gt;</a> object from existing property/field, by calling <a class="xref" href="../../api/DevZest.Data.Presenters.BasePresenter.NewLinkedScalar.html">NewLinkedScalar</a>, with name of the property/field, or getter and setter of the property/field.</p>
+<p>You can add validator(s) for <a class="xref" href="../../api/DevZest.Data.Presenters.Scalar-1.html">Scalar&lt;T&gt;</a> object via <a class="xref" href="../../api/DevZest.Data.Presenters.Scalar-1.AddValidator.html">AddValidator</a> API.</p>
+<p>The following is an example in <code>ValidationUI</code> sample (_LoginPresenter.cs):</p>
+<pre><code class="lang-csharp" name="_LoginPresenter">using DevZest.Data.Presenters;
+
+namespace ValidationUI
+{
+    internal abstract class _LoginPresenter : SimplePresenter
+    {
+        protected Scalar&lt;string&gt; _emailAddress { get; private set; }
+        protected Scalar&lt;string&gt; _password { get; private set; }
+
+        protected _LoginPresenter()
+        {
+            _emailAddress = NewScalar(string.Empty).AddValidator(ValidateEmailAddress).AddValidator(ValidateEmailAddressMaxLength);
+            _password = NewScalar(string.Empty).AddValidator(ValidatePasswordLength);
+        }
+
+        private static string ValidateEmailAddress(string value)
+        {
+            return !value.IsValidEmailAddress() ? &quot;Field 'Email Address' is not a valid email address.&quot; : null;
+        }
+
+        private static string ValidateEmailAddressMaxLength(string value)
+        {
+            return value != null &amp;&amp; value.Length &gt; 20 ? &quot;Field 'Email Address' must be a string with maximumn length of 20.&quot; : null;
+        }
+
+        private static string ValidatePasswordLength(string value)
+        {
+            return value != null &amp;&amp; (value.Length &lt; 6 || value.Length &gt; 20) ? &quot;Field 'Password' must be a string with minimum length of 6 and maximumn length of 20.&quot; : null;
+        }
+    }
+}
+</code></pre><h2 id="template-builder">Template Builder</h2>
+<p>In your <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter-1.BuildTemplate.html">BuildTemplate</a> override method, use provided <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.TemplateBuilder.html">DataPresenter.TemplateBuilder</a> parameter as <a href="https://en.wikipedia.org/wiki/Fluent_interface">fluent interface</a> to configure your data presenter.</p>
+<p>You can add <a class="xref" href="data_binding.html">Data Binding</a> objects into the template:</p>
+<ul>
+<li><a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.TemplateBuilder.Layout.html">Layout</a>: Defines how the layout expands with row collection. By default without calling this method, the form is columnar for current row; You can call this method to define the layout which expands vertically or horizontally, contained by <a class="xref" href="../../api/DevZest.Data.Views.RowView.html">RowView</a>. Additionally you can specify <code>flowRepeatCount</code> parameter to define layout that rows will flow in <a class="xref" href="../../api/DevZest.Data.Views.BlockView.html">BlockView</a> first, then expand afterwards.</li>
+<li><a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.TemplateBuilder.GridColumns.html">GridColumns</a>/<a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.TemplateBuilder.GridRows.html">GridRows</a>: Defines a flexible grid area consisting of columns and rows. Data binding objects will later be added to the template for specified grid cell or range.</li>
+<li><a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.TemplateBuilder.AddBinding.html">AddBinding</a>: Adds a <a class="xref" href="data_binding.html">Data Binding</a> object into the template, by specifying grid cell or range. Data binding object is returned by calling binding factory extension method, you can further customize the target UI element by calling <a class="xref" href="../../api/DevZest.Data.Presenters.BindingManager.WithStyle.html">WithStyle</a> or <a class="xref" href="../../api/DevZest.Data.Presenters.RowBinding-1.ApplySetup.html">ApplySetup</a>/<a class="xref" href="../../api/DevZest.Data.Presenters.RowBinding-1.ApplyRefresh.html">ApplyRefresh</a>/<a class="xref" href="../../api/DevZest.Data.Presenters.RowBinding-1.ApplyCleanup.html">ApplyCleanup</a> methods.</li>
+<li><a class="xref" href="../../api/DevZest.Data.Presenters.TemplateBuilder-1.WithInitialFocus.html">WithInitialFocus</a>: Defines the UI element that will receive the initial keyboard focus after data shown.</li>
+</ul>
+<p>You can define frozen columns/rows from scrolling using <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.TemplateBuilder.WithFrozenLeft.html">WithFrozenLeft</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.TemplateBuilder.WithFrozenTop.html">WithFrozenTop</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.TemplateBuilder.WithFrozenRight.html">WithFrozenRight</a> and <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.TemplateBuilder.WithFrozenBottom.html">WithFrozenBottom</a>. You can also define number of grid rows/columns adheres to the bottom/right most of the view if rows cannot fill the full size of the view.</p>
+<p>You can draw grid lines using <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.TemplateBuilder.GridLineX.html">GridLineX</a> and <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.TemplateBuilder.GridLineY.html">GridLineY</a>.</p>
+<p>You can also define row level configurations:</p>
+<ul>
+<li><a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.TemplateBuilder.MakeRecursive.html">MakeRecursive</a>: Defines row collection as self recursive to show tree view like UI. This will automatically populate <a class="xref" href="../../api/DevZest.Data.Presenters.RowPresenter.Children.html#DevZest_Data_Presenters_RowPresenter_Children">Children</a> property of <a class="xref" href="../../api/DevZest.Data.Presenters.RowPresenter.html">RowPresenter</a> object. You can then expand/collapse <a class="xref" href="../../api/DevZest.Data.Presenters.RowPresenter.html">RowPresenter</a> via <a class="xref" href="../../api/DevZest.Data.Presenters.RowPresenter.ToggleExpandState.html">ToggleExpandState</a> API.</li>
+<li><a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.TemplateBuilder.RowRange.html">RowRange</a>: Defines grid range for <a class="xref" href="../../api/DevZest.Data.Views.RowView.html">RowView</a>. By default without calling this method, the range will be calculated automatically based on added row bindings.</li>
+<li><a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.TemplateBuilder.WithVirtualRowPlacement.html">WithVirtualRowPlacement</a>: Defines the virtual row (empty row for adding) placement.</li>
+<li><a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.TemplateBuilder.WithSelectionMode.html">WithSelectionMode</a>: Defines the row selection mode.</li>
+<li><a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.TemplateBuilder.BlockView.html">BlockView</a>/<a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.TemplateBuilder.RowView.html">RowView</a>: Customizes <a class="xref" href="../../api/DevZest.Data.Views.BlockView.html">BlockView</a>/<a class="xref" href="../../api/DevZest.Data.Views.RowView.html">RowView</a> to apply a style (see <a class="xref" href="view_styles.html">View Styles</a>).</li>
+<li><a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.TemplateBuilder.AddBehavior.html">AddBehavior</a>: Adds a behavior to <a class="xref" href="../../api/DevZest.Data.Views.BlockView.html">BlockView</a>/<a class="xref" href="../../api/DevZest.Data.Views.RowView.html">RowView</a>. A behavior is a <a class="xref" href="../../api/DevZest.Data.Presenters.BlockViewBehavior.html">BlockViewBehavior</a>/<a class="xref" href="../../api/DevZest.Data.Presenters.RowViewBehavior.html">RowViewBehavior</a> object which can dynamically affect the look-and-feel of <a class="xref" href="../../api/DevZest.Data.Views.BlockView.html">BlockView</a>/<a class="xref" href="../../api/DevZest.Data.Views.RowView.html">RowView</a>, for example, <a class="xref" href="../../api/DevZest.Data.Presenters.RowViewAlternation.html">RowViewAlternation</a> can set different background colors for odd and even rows.</li>
+</ul>
+<p>Other validation related APIs will be discussed in <a class="xref" href="validation.html">Validation</a> topic.</p>
+<p>To see examples of how these APIs are used, in the source code repo, open <code>RDO.WPF.sln</code> in Visual Studio, find the source code of the API, then press <code>CTRL-R,K</code> to find references of the API.</p>
+<h2 id="service-implementation">Service Implementation</h2>
+<p>Some view components have customizable presentation logic. Since presentation logic should be implemented in data presenter, it is represented as <a class="xref" href="../../api/DevZest.Data.Presenters.IService.html">IService</a> derived interface, and your data presenter can implement this interface to replace the default implementation. Taking <a class="xref" href="../../api/DevZest.Data.Views.ColumnHeader.html">ColumnHeader</a> as an example, it defines an <code>ColumnHeader.ISortService</code> interface to sort the data:</p>
+<pre><code class="lang-csharp">public class ColumnHeader : ...
+{
+    public interface ISortService : IService
+    {
+        IReadOnlyList&lt;IColumnComparer&gt; OrderBy { get; set; }
+    }
+    ...
+}
+</code></pre>
+<p>The default implementation sorts the local <a class="xref" href="../../api/DevZest.Data.Presenters.RowPresenter.html">RowPresenter</a> objects. Your data presenter can implement this interface to reload sorted data from the server, as shown in <code>AdventureWorksLT.WpfApp</code> sample (MainWindow.Presenter.cs/MainWindow.Presenter.vb):</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-csharp">partial class MainWindow
+{
+    ...
+    private class Presenter : DataPresenter&lt;SalesOrderHeader&gt;, ColumnHeader.ISortService
+    {
+        ...
+        private IReadOnlyList&lt;IColumnComparer&gt; _orderBy = new IColumnComparer[] { };
+        IReadOnlyList&lt;IColumnComparer&gt; ColumnHeader.ISortService.OrderBy
+        {
+            get { return _orderBy; }
+            set
+            {
+                _orderBy = value;
+                RefreshAsync();
+            }
+        }
+
+        private Task&lt;DataSet&lt;SalesOrderHeader&gt;&gt; LoadDataAsync(CancellationToken ct)
+        {
+            return App.ExecuteAsync(db =&gt; db.GetSalesOrderHeadersAsync(SearchText, _orderBy, ct));
+        }
+
+        public Task RefreshAsync()
+        {
+            return RefreshAsync(LoadDataAsync);
+        }
+        ...
+    }
+}
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-vb">Partial Class MainWindow
+    ...
+    Private Class Presenter
+        Inherits DataPresenter(Of SalesOrderHeader)
+        Implements ColumnHeader.ISortService
+
+        ...
+        Private _orderBy As IReadOnlyList(Of IColumnComparer) = New IColumnComparer() {}
+        Overloads Property OrderBy() As IReadOnlyList(Of IColumnComparer) Implements ColumnHeader.ISortService.OrderBy
+            Get
+                Return _orderBy
+            End Get
+            Set
+                _orderBy = Value
+                RefreshAsync()
+            End Set
+        End Property
+
+        Private Function LoadDataAsync(ct As CancellationToken) As Task(Of DataSet(Of SalesOrderHeader))
+            Return App.ExecuteAsync(Function(db) db.GetSalesOrderHeadersAsync(SearchText, _orderBy, ct))
+        End Function
+
+        Public Overloads Function RefreshAsync() As Task
+            Return RefreshAsync(AddressOf LoadDataAsync)
+        End Function
+        ...
+    End Class
+End Class
+</code></pre>
+</section>
+</div>
+<h2 id="consume-datapresenter">Consume DataPresenter</h2>
+<p><a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter-1.html">DataPresenter&lt;T&gt;</a> class contains rich set of properties, methods and events which you can consume after shown in DataView. Keep in mind you should NEVER manipulate your view - your data presenter object is the answer to all:</p>
+<ul>
+<li>Show/refresh data: <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter-1.Show.html">Show</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter-1.ShowAsync.html">ShowAsync</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter-1.Refresh.html">Refresh</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter-1.RefreshAsync.html">RefreshAsync</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter-1.ShowOrRefresh.html">ShowOrRefresh</a> and <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter-1.ShowOrRefreshAsync.html">ShowOrRefreshAsync</a>.</li>
+<li>Model: <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter-1._.html#DevZest_Data_Presenters_DataPresenter_1__">_</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter-1.Entity.html#DevZest_Data_Presenters_DataPresenter_1_Entity">Entity</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter-1.DataSet.html#DevZest_Data_Presenters_DataPresenter_1_DataSet">DataSet</a> and <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.GetSerializer.html">GetSerializer</a></li>
+<li>Template: <a class="xref" href="../../api/DevZest.Data.Presenters.BasePresenter.Template.html#DevZest_Data_Presenters_BasePresenter_Template">Template</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.LayoutOrientation.html#DevZest_Data_Presenters_DataPresenter_LayoutOrientation">LayoutOrientation</a> and <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.FlowRepeatCount.html#DevZest_Data_Presenters_DataPresenter_FlowRepeatCount">FlowRepeatCount</a>.</li>
+<li>View: <a class="xref" href="../../api/DevZest.Data.Presenters.BasePresenter.IsMounted.html#DevZest_Data_Presenters_BasePresenter_IsMounted">IsMounted</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.BasePresenter.OnMounted.html">OnMounted</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.BasePresenter.Mounted.html">Mounted</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.View.html#DevZest_Data_Presenters_DataPresenter_View">View</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.CurrentContainerView.html#DevZest_Data_Presenters_DataPresenter_CurrentContainerView">CurrentContainerView</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.BasePresenter.OnViewChanged.html">OnViewChanged</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.BasePresenter.OnViewInvalidating.html">OnViewInvalidating</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.BasePresenter.OnViewInvalidated.html">OnViewInvalidated</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.BasePresenter.OnViewRefreshing.html">OnViewRefreshing</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.BasePresenter.InvalidateMeasure.html">InvalidateMeasure</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.BasePresenter.InvalidateView.html">InvalidateView</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.BasePresenter.SuspendInvalidateView.html">SuspendInvalidateView</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.BasePresenter.ResumeInvalidateView.html">ResumeInvalidateView</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.BasePresenter.OnViewChanged.html">OnViewChanged</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.BasePresenter.OnViewInvalidating.html">OnViewInvalidating</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.BasePresenter.OnViewInvalidated.html">OnViewInvalidated</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.BasePresenter.OnViewRefreshing.html">OnViewRefreshing</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.BasePresenter.OnViewRefreshed.html#DevZest_Data_Presenters_BasePresenter_OnViewRefreshed">OnViewRefreshed()</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.BasePresenter.ViewChanged.html">ViewChanged</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.BasePresenter.ViewInvalidating.html">ViewInvalidating</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.BasePresenter.ViewInvalidated.html">ViewInvalidated</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.BasePresenter.ViewRefreshing.html">ViewRefreshing</a> and <a class="xref" href="../../api/DevZest.Data.Presenters.BasePresenter.ViewRefreshed.html">ViewRefreshed</a>.</li>
+<li>View scrolling management via <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.Scrollable.html#DevZest_Data_Presenters_DataPresenter_Scrollable">Scrollable</a>.</li>
+<li>Scalar data: <a class="xref" href="../../api/DevZest.Data.Presenters.BasePresenter.NewScalar.html">NewScalar</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.BasePresenter.NewLinkedScalar.html">NewLinkedScalar</a> and <a class="xref" href="../../api/DevZest.Data.Presenters.BasePresenter.OnValueChanged.html">OnValueChanged</a>.</li>
+<li>Rows: <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.Rows.html#DevZest_Data_Presenters_DataPresenter_Rows">Rows</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.Item.html">Item</a>,  <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.IsRecursive.html#DevZest_Data_Presenters_DataPresenter_IsRecursive">IsRecursive</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.ToggleExpandState.html">ToggleExpandState</a> and <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.HasChildren.html">HasChildren</a>.</li>
+<li>Current row: <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.CurrentRow.html#DevZest_Data_Presenters_DataPresenter_CurrentRow">CurrentRow</a> and <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.OnCurrentRowChanged.html">OnCurrentRowChanged</a>.</li>
+<li>Row selection: <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.PredictSelectionMode.html">PredictSelectionMode</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.Select.html">Select</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.SelectedRows.html#DevZest_Data_Presenters_DataPresenter_SelectedRows">SelectedRows</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.SelectedDataRows.html#DevZest_Data_Presenters_DataPresenter_SelectedDataRows">SelectedDataRows</a> and <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.OnIsSelectedChanged.html">OnIsSelectedChanged</a>.</li>
+<li>Find row by key: <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.CanMatchRow.html#DevZest_Data_Presenters_DataPresenter_CanMatchRow">CanMatchRow</a> and <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.Match.html">Match</a>.</li>
+<li>Sort/filter: <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.Where.html#DevZest_Data_Presenters_DataPresenter_Where">Where</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.OrderBy.html#DevZest_Data_Presenters_DataPresenter_OrderBy">OrderBy</a> and <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.Apply.html">Apply</a>.</li>
+<li>Scalar editing via <a class="xref" href="../../api/DevZest.Data.Presenters.BasePresenter.ScalarContainer.html#DevZest_Data_Presenters_BasePresenter_ScalarContainer">ScalarContainer</a>: <a class="xref" href="../../api/DevZest.Data.Presenters.ScalarContainer.BeginEdit.html">BeginEdit</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.ScalarContainer.CancelEdit.html">CancelEdit</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.ScalarContainer.EndEdit.html">EndEdit</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.ScalarContainer.SuspendValueChangedNotification.html">SuspendValueChangedNotification</a> and <a class="xref" href="../../api/DevZest.Data.Presenters.ScalarContainer.ResumeValueChangedNotification.html">ResumeValueChangedNotification</a>.</li>
+<li>Row editing: <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.VirtualRow.html#DevZest_Data_Presenters_DataPresenter_VirtualRow">VirtualRow</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.EditingRow.html#DevZest_Data_Presenters_DataPresenter_EditingRow">EditingRow</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.InsertingRow.html#DevZest_Data_Presenters_DataPresenter_InsertingRow">InsertingRow</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.IsEditing.html">IsEditing</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.IsInserting.html">IsInserting</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.BeginInsertBefore.html">BeginInsertBefore</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.BeginInsertAfter.html">BeginInsertAfter</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.QueryCancelEdit.html">QueryCancelEdit</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.QueryEndEdit.html">QueryEndEdit</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.ConfirmEndEdit.html">ConfirmEndEdit</a>, <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.OnEdit.html">OnEdit</a> and <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.ConfirmDelete.html">ConfirmDelete</a>.</li>
+<li><a class="xref" href="validation.html">Validation</a>.</li>
+<li>Service: <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.ExistsService.html">ExistsService</a> and <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter.GetService.html">GetService</a>.</li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Docs/articles/programming_rdo_wpf/data_presenter_simple_presenter.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © Weifen Luo | DevZest</span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

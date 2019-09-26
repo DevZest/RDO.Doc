@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>DataSet Tag Helpers </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="DataSet Tag Helpers ">
+    <meta name="generator" content="docfx 2.43.2.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="dataset-tag-helpers">DataSet Tag Helpers</h1>
+
+<p>RDO.AspNetCore provides tag helpers to support DataSet with following tag helper attributes:</p>
+<ul>
+<li><code>dataset-for</code>: Specifies the DataSet.</li>
+<li><code>dataset-validaiton-for</code>: Specifies the DataSet for validation message.</li>
+<li><code>dataset-column</code>: Specifies the column of the DataSet.</li>
+<li><code>dataset-row</code>: Specifies the data row of the DataSet. If omitted, default to the first row of the DataSet.</li>
+<li><code>dataset-items</code>: Specifies the option elements for Select Tag.</li>
+</ul>
+<p><code>dataset-for</code> is used together with <code>dataset-column</code> and <code>dataset-row</code> as the replacement of <code>asp-for</code> attribute, to identify the model expression. Similarly, <code>dataset-validation-for</code> is used together with <code>dataset-column</code> and <code>dataset-row</code> as the replacement of <code>asp-validation-for</code> attribute.</p>
+<p><code>dataset-items</code> is the RDO.AspNetCore counterpart of <code>asp-items</code>.</p>
+<p>The following are tag helpers provided by RDO.AspNetCore:</p>
+<table>
+<thead>
+<tr>
+<th>Tag Helper</th>
+<th>Attributes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data.AspNetCore.TagHelpers.InputTagHelper.html">InputTagHelper</a></td>
+<td><code>dataset-for</code>, <code>dataset-column</code> and/or <code>dataset-row</code>.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data.AspNetCore.TagHelpers.LabelTagHelper.html">LabelTagHelper</a></td>
+<td><code>dataset-for</code>, <code>dataset-column</code> and/or <code>dataset-row</code>.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data.AspNetCore.TagHelpers.SelectTagHelper.html">SelectTagHelper</a></td>
+<td><code>dataset-for</code>, <code>dataset-column</code> and/or <code>dataset-row</code>, plus <code>dataset-items</code>.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data.AspNetCore.TagHelpers.TextAreaTagHelper.html">TextAreaTagHelper</a></td>
+<td><code>dataset-for</code>, <code>dataset-column</code> and/or <code>dataset-row</code>.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data.AspNetCore.TagHelpers.ValidationMessageTagHelper.html">ValidationMessageTagHelper</a></td>
+<td><code>dataset-validation-for</code>, <code>dataset-column</code> and/or <code>dataset-row</code>.</td>
+</tr>
+</tbody>
+</table>
+<p>To use these tag helpers, add them in your view (.cshtml) file:</p>
+<pre><code class="lang-cshtml">@addTagHelper *, DevZest.Data.AspNetCore
+</code></pre>
+<p>Then in your view (.cshtml) file:</p>
+<pre><code class="lang-html">...
+&lt;div class=&quot;form-group&quot;&gt;
+    &lt;label dataset-for=&quot;Movie&quot; dataset-column=&quot;@_.Title&quot; class=&quot;control-label&quot;&gt;&lt;/label&gt;
+    &lt;input dataset-for=&quot;Movie&quot; dataset-column=&quot;@_.Title&quot; class=&quot;form-control&quot; /&gt;
+    &lt;span dataset-validation-for=&quot;Movie&quot; dataset-column=&quot;@_.Title&quot; class=&quot;text-danger&quot;&gt;&lt;/span&gt;
+&lt;/div&gt;
+...
+</code></pre>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Docs/articles/programming_rdo_asp_net_core/dataset_tag_helpers.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © Weifen Luo | DevZest</span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

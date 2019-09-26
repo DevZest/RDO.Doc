@@ -1,0 +1,249 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>View Styles </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="View Styles ">
+    <meta name="generator" content="docfx 2.43.2.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="view_styles">
+<h1 id="view-styles">View Styles</h1>
+
+<p>WPF introduces styling, which is to XAML what CSS is to HTML. RDO.WPF provides <a class="xref" href="../../api/DevZest.Data.Presenters.StyleId.html">StyleId</a> class to consume style XAML conveniently by your presenter (C#/VB.Net code).</p>
+<p>Taking <code>AdventureWorksLT.WpfApp</code> sample:</p>
+<p>Step 1. Define static <a class="xref" href="../../api/DevZest.Data.Presenters.StyleId.html">StyleId</a> objects so that it can be used by your C#/VB.Net code later (MainWindow.Presenter.cs/MainWindow.Presenter.vb):</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-csharp">partial class MainWindow
+{
+    public static class Styles
+    {
+        public static readonly StyleId CheckBox = new StyleId(typeof(MainWindow));
+        public static readonly StyleId LeftAlignedTextBlock = new StyleId(typeof(MainWindow));
+        public static readonly StyleId RightAlignedTextBlock = new StyleId(typeof(MainWindow));
+        public static readonly StyleId Label = new StyleId(typeof(MainWindow));
+    }
+    ...
+}
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-vb">Partial Class MainWindow
+
+    Public NotInheritable Class Styles
+        Public Shared ReadOnly CheckBox As New StyleId(GetType(MainWindow))
+        Public Shared ReadOnly LeftAlignedTextBlock As New StyleId(GetType(MainWindow))
+        Public Shared ReadOnly RightAlignedTextBlock As New StyleId(GetType(MainWindow))
+        Public Shared ReadOnly Label As New StyleId(GetType(MainWindow))
+    End Class
+    ...
+End Class
+</code></pre>
+</section>
+</div>
+
+<p>Step 2. Define styles as XAML resource dictionary, name as the class passed to <a class="xref" href="../../api/DevZest.Data.Presenters.StyleId.html">StyleId</a> constructor plus <code>.Styles.xaml</code> (MainWindow.Styles.xaml):</p>
+<pre><code class="lang-xaml" name="MainWindowStyles">&lt;ResourceDictionary xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+                    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+                    xmlns:local=&quot;clr-namespace:DevZest.Samples.AdventureWorksLT&quot;&gt;
+    &lt;Style x:Key=&quot;DefaultTextBlock&quot; TargetType=&quot;TextBlock&quot;&gt;
+        &lt;Setter Property=&quot;Padding&quot; Value=&quot;2&quot; /&gt;
+        &lt;Setter Property=&quot;VerticalAlignment&quot; Value=&quot;Center&quot; /&gt;
+    &lt;/Style&gt;
+    &lt;Style x:Key=&quot;{x:Static local:MainWindow+Styles.CheckBox}&quot; TargetType=&quot;CheckBox&quot;&gt;
+        &lt;Setter Property=&quot;HorizontalAlignment&quot; Value=&quot;Center&quot; /&gt;
+        &lt;Setter Property=&quot;VerticalAlignment&quot; Value=&quot;Center&quot; /&gt;
+        &lt;Setter Property=&quot;Focusable&quot; Value=&quot;False&quot; /&gt;
+    &lt;/Style&gt;
+    &lt;Style x:Key=&quot;{x:Static local:MainWindow+Styles.LeftAlignedTextBlock}&quot; TargetType=&quot;TextBlock&quot; BasedOn=&quot;{StaticResource DefaultTextBlock}&quot;&gt;
+        &lt;Setter Property=&quot;TextAlignment&quot; Value=&quot;Left&quot; /&gt;
+    &lt;/Style&gt;
+    &lt;Style x:Key=&quot;{x:Static local:MainWindow+Styles.RightAlignedTextBlock}&quot; TargetType=&quot;TextBlock&quot; BasedOn=&quot;{StaticResource DefaultTextBlock}&quot;&gt;
+        &lt;Setter Property=&quot;TextAlignment&quot; Value=&quot;Right&quot; /&gt;
+    &lt;/Style&gt;
+    &lt;Style x:Key=&quot;{x:Static local:MainWindow+Styles.Label}&quot; TargetType=&quot;Label&quot;&gt;
+        &lt;Setter Property=&quot;FontWeight&quot; Value=&quot;Bold&quot; /&gt;
+        &lt;Setter Property=&quot;HorizontalContentAlignment&quot; Value=&quot;Right&quot; /&gt;
+        &lt;Setter Property=&quot;VerticalAlignment&quot; Value=&quot;Center&quot; /&gt;
+    &lt;/Style&gt;
+&lt;/ResourceDictionary&gt;
+</code></pre>
+<p>Step 3. To resolve the styles resource correctly, define any class under the root namespace with <a class="xref" href="../../api/DevZest.Data.Presenters.ResourceIdRelativeToAttribute.html">ResourceIdRelativeToAttribute</a> (AssemblyInfo.cs/AssemblyInfo.vb):</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-1_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-1_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-1_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-csharp">[assembly: ResourceIdRelativeTo(typeof(App))]
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q-1_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-vb">&lt;Assembly: ResourceIdRelativeTo(GetType(App))&gt;
+</code></pre>
+</section>
+</div>
+
+<p>Finally, the styles can be consumed by your presenter code (MainWindow.Presenter.cs/MainWindow.Presenter.vb):</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-2_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-2_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-2_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-2_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-2_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-csharp">partial class MainWindow
+{
+    ...
+    private class Presenter : DataPresenter&lt;SalesOrderHeader&gt;, ColumnHeader.ISortService
+    {
+        ...
+        protected override void BuildTemplate(TemplateBuilder builder)
+        {
+            builder...
+            ...
+            .AddBinding(0, 0, this.BindToCheckBox().WithStyle(Styles.CheckBox))
+            ...
+        }
+        ...
+    }
+}
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q-2_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-vb">Partial Class MainWindow
+    ...
+    Private Class Presenter
+        ...
+        Protected Overrides Sub BuildTemplate(builder As TemplateBuilder)
+            builder...
+                ...
+                .AddBinding(0, 0, Me.BindToCheckBox().WithStyle(Styles.CheckBox)) _
+                ...
+        End Sub
+        ...
+    End Class
+End Class
+</code></pre>
+</section>
+</div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Docs/articles/programming_rdo_wpf/view_styles.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © Weifen Luo | DevZest</span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

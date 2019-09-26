@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>ValidationPlaceholder </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="ValidationPlaceholder ">
+    <meta name="generator" content="docfx 2.43.2.0">
+    
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="ValidationPlaceholder">
+<h1 id="validationplaceholder">ValidationPlaceholder</h1>
+
+<p><a class="xref" href="../../../api/DevZest.Data.Views.ValidationPlaceholder.html">ValidationPlaceholder</a> represents a control to display validation error from specified sources, as demonstrated in <code>ValidationUI</code> sample:</p>
+<p><img src="/images/ValidationPlaceholder.jpg" alt="image"></p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Displays the validation error from specified sources.</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<p>Add <a class="xref" href="../../../api/DevZest.Data.Views.ValidationPlaceholder.html">ValidationPlaceholder</a> as scalar binding or row binding via <a class="xref" href="../../../api/DevZest.Data.Presenters.BindingFactory.BindToValidationPlaceholder.html">BindToValidationPlaceholder</a>, as demonstrated in <code>ValidationUI</code> sample:</p>
+<pre><code class="lang-csharp">protected override void BuildTemplate(TemplateBuilder builder)
+{
+    var interests1 = _.Interests.BindToCheckBox(Interests.Books);
+    var interests2 = _.Interests.BindToCheckBox(Interests.Comics);
+    var interests3 = _.Interests.BindToCheckBox(Interests.Hunting);
+    var interests4 = _.Interests.BindToCheckBox(Interests.Movies);
+    var interests5 = _.Interests.BindToCheckBox(Interests.Music);
+    var interests6 = _.Interests.BindToCheckBox(Interests.Physics);
+    var interests7 = _.Interests.BindToCheckBox(Interests.Shopping);
+    var interests8 = _.Interests.BindToCheckBox(Interests.Sports);
+    var interestsValidation = new RowBinding[] { interests1, interests2, interests3, interests4, interests5, interests6, interests7, interests8 }.BindToValidationPlaceholder();
+    builder
+        ...
+        .AddBinding(1, 4, interests1)
+        .AddBinding(2, 4, interests2)
+        .AddBinding(1, 5, interests3)
+        .AddBinding(2, 5, interests4)
+        .AddBinding(1, 6, interests5)
+        .AddBinding(2, 6, interests6)
+        .AddBinding(1, 7, interests7)
+        .AddBinding(2, 7, interests8)
+        .AddBinding(0, 8, 2, 8, _.BindToValidationErrorsControl()
+        ...
+}
+</code></pre>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Docs/articles/programming_rdo_wpf/view_components/ValidationPlaceholder.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © Weifen Luo | DevZest</span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

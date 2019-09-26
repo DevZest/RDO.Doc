@@ -1,0 +1,287 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>ForeignKeyBox </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="ForeignKeyBox ">
+    <meta name="generator" content="docfx 2.43.2.0">
+    
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="foreignkeybox">ForeignKeyBox</h1>
+
+<p><a class="xref" href="../../../api/DevZest.Data.Views.ForeignKeyBox.html">ForeignKeyBox</a> represents a clickable box to display and edit foreign key data, as shown in <code>AdventureWorksLT.WpfApp</code> sample:</p>
+<p><img src="/images/ForeignKeyBox.jpg" alt="image"></p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Data binding to display foreign key as lookup data. For example, instead of displaying the <code>AddressID</code> foreign key column, the lookup data of <code>AddressLine1</code>, <code>AddressLine2</code>, <code>City</code>, <code>StateProvince</code>, <code>CountryRegion</code> and <code>PostalCode</code> are displayed.</li>
+<li>Provides an clickable icon to clear underlying foreign key data.</li>
+<li>Clicking the <a class="xref" href="../../../api/DevZest.Data.Views.ForeignKeyBox.html">ForeignKeyBox</a> will launch a new view of lookup data, typically a drop-down list as popup window, or a model dialog window, as shown in preceding example.</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<p>First, add <a class="xref" href="../../../api/DevZest.Data.Views.ForeignKeyBox.html">ForeignKeyBox</a> as row binding via <a class="xref" href="../../../api/DevZest.Data.Presenters.BindingFactory.BindToForeignKeyBox.html">BindToForeignKeyBox</a>, as demonstrated in <code>AdventureWorksLT.WpfApp</code> sample:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-csharp">public static RowCompositeBinding&lt;SalesOrderHeaderBox&gt; BindToSalesOrderHeaderBox(this SalesOrderInfo _, bool isNew,
+    out RowBinding&lt;ForeignKeyBox&gt; shipToAddressBinding, out RowBinding&lt;ForeignKeyBox&gt; billToAddressBinding)
+{
+    var result = new RowCompositeBinding&lt;SalesOrderHeaderBox&gt;()
+        .AddChild(_.FK_Customer.BindToForeignKeyBox(_.Customer, CustomerBox.RefreshAction), v =&gt; v._customer)
+        .AddChild(shipToAddressBinding = _.FK_ShipToAddress.BindToForeignKeyBox(_.ShipToAddress, AddressBox.RefreshAction), v =&gt; v._shipTo)
+        .AddChild(billToAddressBinding = _.FK_BillToAddress.BindToForeignKeyBox(_.BillToAddress, AddressBox.RefreshAction), v =&gt; v._billTo)
+    ...
+}
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-vb">Public Function BindToSalesOrderHeaderBox(e As SalesOrderInfo, isNew As Boolean, ByRef shipToAddressBinding As RowBinding(Of ForeignKeyBox),
+                                            ByRef billToAddressBinding As RowBinding(Of ForeignKeyBox)) As RowCompositeBinding(Of SalesOrderHeaderBox)
+    shipToAddressBinding = e.FK_ShipToAddress.BindToForeignKeyBox(e.ShipToAddress, AddressBox.RefreshAction)
+    billToAddressBinding = e.FK_BillToAddress.BindToForeignKeyBox(e.BillToAddress, AddressBox.RefreshAction)
+    Dim result = New RowCompositeBinding(Of SalesOrderHeaderBox)() _
+        .AddChild(e.FK_Customer.BindToForeignKeyBox(e.Customer, CustomerBox.RefreshAction), Function(v) v._customer) _
+        .AddChild(shipToAddressBinding, Function(v) v._shipTo) _
+        .AddChild(billToAddressBinding, Function(v) v._billTo) _
+        ...
+    Return result
+End Function
+</code></pre>
+</section>
+</div>
+
+<p>Second, implement <a class="xref" href="../../../api/DevZest.Data.Views.ForeignKeyBox.ILookupService.html">ForeignKeyBox.ILookupService</a> to provide lookup data for foreign key, as demonstrated in <code>AdventureWorksLT.WpfApp</code> sample:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-1_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-1_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-1_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-csharp">private class Presenter : DataPresenter&lt;SalesOrderInfo&gt;, ForeignKeyBox.ILookupService
+{
+    ...
+    bool ForeignKeyBox.ILookupService.CanLookup(CandidateKey foreignKey)
+    {
+        if (foreignKey == _.FK_Customer)
+            return true;
+        else if (foreignKey == _.FK_BillToAddress)
+            return true;
+        else if (foreignKey == _.FK_ShipToAddress)
+            return true;
+        else
+            return false;
+    }
+
+    void ForeignKeyBox.ILookupService.BeginLookup(ForeignKeyBox foreignKeyBox)
+    {
+        if (foreignKeyBox.ForeignKey == _.FK_Customer)
+        {
+            var dialogWindow = new CustomerLookupWindow();
+            dialogWindow.Show(_ownerWindow, foreignKeyBox, CurrentRow.GetValue(_.CustomerID), _shipToAddressBinding[CurrentRow], _billToAddressBinding[CurrentRow]);
+        }
+        else if (foreignKeyBox.ForeignKey == _.FK_ShipToAddress || foreignKeyBox.ForeignKey == _.FK_BillToAddress)
+            BeginLookupAddress(foreignKeyBox);
+        else
+            throw new NotSupportedException();
+    }
+
+    private void BeginLookupAddress(ForeignKeyBox foreignKeyBox)
+    {
+        var foreignKey = (Address.PK)foreignKeyBox.ForeignKey;
+        if (_addressLookupPopup.FK == foreignKey)
+            _addressLookupPopup.IsOpen = false;
+        else
+        {
+            var customerID = CurrentRow.GetValue(_.CustomerID);
+            if (customerID.HasValue)
+            {
+                var addressID = foreignKeyBox.ForeignKey == _.FK_ShipToAddress ? _.ShipToAddressID : _.BillToAddressID;
+                _addressLookupPopup.Show(foreignKeyBox, CurrentRow.GetValue(addressID), customerID.Value);
+            }
+        }
+    }
+}
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q-1_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-vb">Private Class Presenter
+    Inherits DataPresenter(Of SalesOrderInfo)
+    Implements ForeignKeyBox.ILookupService
+    ...
+    Function CanLookup(foreignKey As CandidateKey) As Boolean Implements ForeignKeyBox.ILookupService.CanLookup
+        If foreignKey Is Entity.FK_Customer Then
+            Return True
+        ElseIf foreignKey Is Entity.FK_BillToAddress Then
+            Return True
+        ElseIf foreignKey Is Entity.FK_ShipToAddress Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+
+    Sub BeginLookup(foreignKeyBox As ForeignKeyBox) Implements ForeignKeyBox.ILookupService.BeginLookup
+        If foreignKeyBox.ForeignKey Is Entity.FK_Customer Then
+            Dim dialogWindow As New CustomerLookupWindow()
+            dialogWindow.Show(_ownerWindow, foreignKeyBox, CurrentRow.GetValue(Entity.CustomerID), _shipToAddressBinding(CurrentRow), _billToAddressBinding(CurrentRow))
+        ElseIf foreignKeyBox.ForeignKey Is Entity.FK_ShipToAddress OrElse foreignKeyBox.ForeignKey Is Entity.FK_BillToAddress Then
+            BeginLookupAddress(foreignKeyBox)
+        Else
+            Throw New NotSupportedException()
+        End If
+    End Sub
+
+    Private Sub BeginLookupAddress(foreignKeyBox As ForeignKeyBox)
+        Dim foreignKey As Address.PK = CType(foreignKeyBox.ForeignKey, Address.PK)
+        If _addressLookupPopup.FK Is foreignKey Then
+            _addressLookupPopup.IsOpen = False
+        Else
+            Dim customerID = CurrentRow.GetValue(Entity.CustomerID)
+            If customerID.HasValue Then
+                Dim addressID = If(foreignKeyBox.ForeignKey Is Entity.FK_ShipToAddress, Entity.ShipToAddressID, Entity.BillToAddressID)
+                _addressLookupPopup.Show(foreignKeyBox, CurrentRow.GetValue(addressID), customerID.Value)
+            End If
+        End If
+    End Sub
+    ...
+End Class
+</code></pre>
+</section>
+</div>
+<h2 id="implemented-commands">Implemented Commands</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Instance</th>
+<th>Input</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="../../../api/DevZest.Data.Views.ForeignKeyBox.Commands.ClearValue.html">ClearValue</a></td>
+<td><a class="xref" href="../../../api/DevZest.Data.Views.ForeignKeyBox.html">ForeignKeyBox</a></td>
+<td>Control template.</td>
+<td>Clears underlying foreign key data.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="customizable-services">Customizable Services</h2>
+<ul>
+<li><a class="xref" href="../../../api/DevZest.Data.Views.ForeignKeyBox.ICommandService.html">ForeignKeyBox.ICommandService</a>: Your data presenter can implement this service to change the commands implementation of this class.</li>
+<li><a class="xref" href="../../../api/DevZest.Data.Views.ForeignKeyBox.ILookupService.html">ForeignKeyBox.ILookupService</a>: There is no default implementation. Your data presenter must implement this interface to lookup data from another view, as shown in preceding example.</li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Docs/articles/programming_rdo_wpf/view_components/ForeignKeyBox.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © Weifen Luo | DevZest</span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

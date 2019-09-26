@@ -1,0 +1,361 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Database Initialization </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Database Initialization ">
+    <meta name="generator" content="docfx 2.43.2.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="database-initialization">Database Initialization</h1>
+
+<p>In RDO.Data, database creation and initialization are extensively supported. You can:</p>
+<ul>
+<li>Generate database with all tables, or subset of tables, to any specified destination, with or without initial or testing data;</li>
+<li>Generate DataSet (C# or VB code) from existing database so that you can use existing external database editing tool such as SQL Server Management Studio to edit initial or testing data, then save these data into DataSet source code.</li>
+</ul>
+<p>You application should have a separate console application project to handle database creation and initialization. This project:</p>
+<ul>
+<li>By convention is named with a <code>.DbInit</code> suffix;</li>
+<li>References <a href="https://www.nuget.org/packages/DevZest.Data.DbInit/">DevZest.Data.DbInit</a> nuget package;</li>
+<li>Call <a class="xref" href="../../api/DevZest.Data.DbInit.DbInitExtensions.RunDbInit.html">RunDbInit</a> at entry point;</li>
+<li>Defines classes derived from <a class="xref" href="../../api/DevZest.Data.DbInit.DbSessionProvider-1.html">DbSessionProvider&lt;T&gt;</a>, <a class="xref" href="../../api/DevZest.Data.DbGenerator-1.html">DbGenerator&lt;T&gt;</a> or <a class="xref" href="../../api/DevZest.Data.DbMock-1.html">DbMock&lt;T&gt;</a>.</li>
+</ul>
+<p>RDO.Tools runs this console application project from Visual Studio, just like unit test runner runs your unit test project. For detailed information, please refer to <code>Tutorial</code> and <code>AdventureWorksLT</code> samples.</p>
+<h2 id="database-session-provider">Database Session Provider</h2>
+<p>Database session provider is your class derived from <a class="xref" href="../../api/DevZest.Data.DbInit.DbSessionProvider-1.html">DbSessionProvider&lt;T&gt;</a>. It creates your <code>Db</code> object as the destination to create and initialize your database. The following is an example of database session provider:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-cs">[EmptyDb]
+public sealed class _DevDb : DbSessionProvider&lt;Db&gt;
+{
+    public override Db Create(string projectPath)
+    {
+        var dbFolder = Path.Combine(projectPath, @&quot;LocalDb&quot;);
+        string attachDbFilename = Path.Combine(dbFolder, &quot;AdventureWorksLT.Design.mdf&quot;);
+        File.Copy(Path.Combine(dbFolder, &quot;EmptyDb.mdf&quot;), attachDbFilename, true);
+        File.Copy(Path.Combine(dbFolder, &quot;EmptyDb_log.ldf&quot;), Path.Combine(dbFolder, &quot;AdventureWorksLT.Design_log.ldf&quot;), true);
+        var connectionString = string.Format(@&quot;Data Source=(localdb)\MSSQLLocalDB;AttachDbFilename=&quot;&quot;{0}&quot;&quot;;Integrated Security=True&quot;, attachDbFilename);
+        return new Db(connectionString);
+    }
+}
+
+public sealed class DevDb : DbSessionProvider&lt;Db&gt;
+{
+    public override Db Create(string projectPath)
+    {
+        var dbFolder = Path.Combine(projectPath, @&quot;LocalDb&quot;);
+        string attachDbFilename = Path.Combine(dbFolder, &quot;AdventureWorksLT.Design.mdf&quot;);
+        var connectionString = string.Format(@&quot;Data Source=(localdb)\MSSQLLocalDB;AttachDbFilename=&quot;&quot;{0}&quot;&quot;;Integrated Security=True&quot;, attachDbFilename);
+        return new Db(connectionString);
+    }
+}
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-vb">&lt;EmptyDb&gt;
+Public Class _DevDb
+    Inherits DbSessionProvider(Of Db)
+
+    Public Overrides Function Create(projectPath As String) As Db
+        Dim dbFolder = Path.Combine(projectPath, &quot;LocalDb&quot;)
+        Dim attachDbFilename = Path.Combine(dbFolder, &quot;AdventureWorksLT.DbInit.mdf&quot;)
+        File.Copy(Path.Combine(dbFolder, &quot;EmptyDb.mdf&quot;), attachDbFilename, True)
+        File.Copy(Path.Combine(dbFolder, &quot;EmptyDb_log.ldf&quot;), Path.Combine(dbFolder, &quot;AdventureWorksLT.DbInit_log.ldf&quot;), True)
+        Dim connectionString = String.Format(&quot;Data Source=(localdb)\MSSQLLocalDB;AttachDbFilename=&quot;&quot;{0}&quot;&quot;;Integrated Security=True&quot;, attachDbFilename)
+        Return New Db(connectionString)
+    End Function
+End Class
+
+Public Class DevDb
+    Inherits DbSessionProvider(Of Db)
+
+    Public Overrides Function Create(projectPath As String) As Db
+        Dim dbFolder = Path.Combine(projectPath, &quot;LocalDb&quot;)
+        Dim attachDbFilename = Path.Combine(dbFolder, &quot;AdventureWorksLT.DbInit.mdf&quot;)
+        Dim connectionString = String.Format(&quot;Data Source=(localdb)\MSSQLLocalDB;AttachDbFilename=&quot;&quot;{0}&quot;&quot;;Integrated Security=True&quot;, attachDbFilename)
+        Return New Db(connectionString)
+    End Function
+End Class
+</code></pre>
+</section>
+</div>
+
+<p>The above example code declares two destinations: <code>_DevDb</code> and <code>DevDb</code>. They both point to <code>LocalDb/AdventureWorksLT.DbInit.mdf</code> database, relative to current project folder. However, <code>_DevDb</code> is decorated with <a class="xref" href="../../api/DevZest.Data.DbInit.EmptyDbAttribute.html">EmptyDbAttribute</a> indicating it's an empty database, whereas <code>DevDb</code> is a existing database with tables created/initialized. The later one is used to generate DataSet from database.</p>
+<p>You can also define database session provider for production environment:</p>
+<pre><code class="lang-cs">[EmptyDb]
+public class _PrdDb : DbSessionProvider&lt;Db&gt;
+{
+    public override Db Create(string projectPath)
+    {
+        var connectionString = string.Format($&quot;Server=127.0.0.1,4000;Database=AdventureWorksLT;User Id=sa;Password={Password};&quot;);
+        return new Db(connectionString);
+    }
+
+    [Input(IsPassword = true)]
+    public string Password { get; set; }
+}
+</code></pre>
+<p>Your source code should not contain any sensitive data such as database connection password. You can use <a class="xref" href="../../api/DevZest.Data.DbInit.InputAttribute.html">InputAttribute</a> to decorate a public settable string property so that the runner can prompt the user to enter the value, or read value from environment variable, when executed.</p>
+<p>You can generate database from database session provider, with all tables and without initial data. In Visual Studio, right click your database session provider class source code which decorated with <code>EmptyDb</code> attribute (as <code>_DevDb</code> in previous example), to show the context menu:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-1_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-1_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-1_cs" role="tabpanel" data-tab="cs">
+
+<p><img src="/images/dbinit_generate_db_from_dbsessionprovider_cs.jpg" alt="image"></p>
+</section>
+<section id="tabpanel_CeZOj-G++Q-1_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<p><img src="/images/dbinit_generate_db_from_dbsessionprovider_vb.jpg" alt="image"></p>
+</section>
+</div>
+
+<p>Click <code>Generate Db...</code> from context menu, the following dialog will be displayed:</p>
+<p><img src="/images/dbinit_generate_db_from_dbsessionprovider_dialog.jpg" alt="image"></p>
+<p>Click <code>OK</code> button, the database will be created:</p>
+<p><img src="/images/dbinit_generate_db_result.jpg" alt="image"></p>
+<h2 id="database-initializer">Database Initializer</h2>
+<p>A database initializer is a class that takes care of database creation and initialization. You can initialize your database with all tables via deriving your database initializer class from <a class="xref" href="../../api/DevZest.Data.DbGenerator-1.html">DbGenerator&lt;T&gt;</a> class, or you can mock your database with subset of tables via deriving your database initializer class from <a class="xref" href="../../api/DevZest.Data.DbMock-1.html">DbMock&lt;T&gt;</a> class:</p>
+<ul>
+<li><a class="xref" href="../../api/DevZest.Data.DbGenerator-1.html">DbGenerator&lt;T&gt;</a> is concrete class, can be used directly with database session providers. The preceding database generation example is using this class implicitly. You can optionally call <a class="xref" href="../../api/DevZest.Data.DbGenerator-1.SetData.html">SetData</a> in <a class="xref" href="../../api/DevZest.Data.DbGenerator-1.InitializeData.html">InitializeData</a> override.</li>
+<li><a class="xref" href="../../api/DevZest.Data.DbMock-1.html">DbMock&lt;T&gt;</a> is abstract class, must be derived to override <a class="xref" href="../../api/DevZest.Data.Primitives.DbInitializer.Initialize.html">Initialize</a> to call <a class="xref" href="../../api/DevZest.Data.DbMock-1.Mock.html">Mock</a> to specify table(s) and/or data explicitly.</li>
+</ul>
+<p>You can generate the database from your database initializer class by right clicking the source code in Visual Studio, as described in previous example.</p>
+<p>Both <a class="xref" href="../../api/DevZest.Data.DbGenerator-1.SetData.html">SetData</a> and <a class="xref" href="../../api/DevZest.Data.DbMock-1.Mock.html">Mock</a> methods accept a delegate to provide initial/testing data. This delegate must be a static method which returns a DataSet:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-2_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-2_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-2_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-2_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-2_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-cs">public sealed class MockSalesOrder : DbMock&lt;Db&gt;
+{
+    private static DataSet&lt;SalesOrderHeader&gt; Headers()
+    {
+        ...
+    }
+
+    private static DataSet&lt;SalesOrderDetail&gt; Details()
+    {
+        ...
+    }
+
+    protected override void Initialize()
+    {
+        // The order of mocking table does not matter, the dependencies will be sorted out automatically.
+        Mock(Db.SalesOrderDetail, Details);
+        Mock(Db.SalesOrderHeader, Headers);
+    }
+}
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q-2_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-vb">Public Class MockSalesOrder
+    Inherits DbMock(Of Db)
+
+    Private Shared Function Headers() As DataSet(Of SalesOrderHeader)
+        ...
+    End Function
+
+    Private Shared Function Details() As DataSet(Of SalesOrderDetail)
+        ...
+    End Function
+
+    Protected Overrides Sub Initialize()
+        Mock(Db.SalesOrderHeader, AddressOf Headers)
+        Mock(Db.SalesOrderDetail, AddressOf Details)
+    End Sub
+End Class
+</code></pre>
+</section>
+</div>
+
+<p>If your database initializer class contains any static method returns DataSet, right clicking the source code in Visual Studio will display <code>Generate DataSet(s)...</code> context menu:</p>
+<p><img src="/images/dbinit_generate_dataset.jpg" alt="image"></p>
+<p>Click <code>Generate DataSet(s)...</code> context menu item, the following dialog will be displayed:</p>
+<p><img src="/images/dbinit_generate_dataset_dialog.jpg" alt="image"></p>
+<p>You can use existing external database editing tool such as SQL Server Management Studio to edit initial or testing data, then select the existing database from <code>DbSessionProvider</code>, after clicking button <code>OK</code>, the static methods will automatically populated with code to initialize the DataSet:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-3">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-3_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-3_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-3_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-3_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-3_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-cs">private static DataSet&lt;SalesOrderHeader&gt; Headers()
+{
+    DataSet&lt;SalesOrderHeader&gt; result = DataSet&lt;SalesOrderHeader&gt;.Create().AddRows(4);
+    SalesOrderHeader _ = result._;
+    _.SuspendIdentity();
+    _.SalesOrderID[0] = 1;
+    _.SalesOrderID[1] = 2;
+    ...
+    _.ResumeIdentity();
+    return result;
+}
+
+private static DataSet&lt;SalesOrderDetail&gt; Details()
+{
+    DataSet&lt;SalesOrderDetail&gt; result = DataSet&lt;SalesOrderDetail&gt;.Create().AddRows(32);
+    SalesOrderDetail _ = result._;
+    _.SuspendIdentity();
+    _.SalesOrderID[0] = 1;
+    _.SalesOrderID[1] = 1;
+    ...
+    _.ResumeIdentity();
+    return result;
+}
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q-3_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-vb">Private Shared Function Headers() As DataSet(Of SalesOrderHeader)
+    Dim result As DataSet(Of SalesOrderHeader) = DataSet(Of SalesOrderHeader).Create().AddRows(4)
+    Dim x As SalesOrderHeader = result.Entity
+    x.SuspendIdentity()
+    x.SalesOrderID(0) = 1
+    x.SalesOrderID(1) = 2
+    ...
+    x.ResumeIdentity()
+    Return result
+End Function
+
+Private Shared Function Details() As DataSet(Of SalesOrderDetail)
+    Dim result As DataSet(Of SalesOrderDetail) = DataSet(Of SalesOrderDetail).Create().AddRows(32)
+    Dim x As SalesOrderDetail = result.Entity
+    x.SuspendIdentity()
+    x.SalesOrderID(0) = 1
+    x.SalesOrderID(1) = 1
+    ...
+    x.ResumeIdentity()
+    Return result
+End Function
+</code></pre>
+</section>
+</div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Docs/articles/programming_rdo_data/database_initialization.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © Weifen Luo | DevZest</span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

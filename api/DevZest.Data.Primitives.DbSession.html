@@ -1,0 +1,410 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class DbSession
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class DbSession
+   ">
+    <meta name="generator" content="docfx 2.43.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="DevZest.Data.Primitives.DbSession">
+  
+  
+  <h1 id="DevZest_Data_Primitives_DbSession" data-uid="DevZest.Data.Primitives.DbSession" class="text-break">Class DbSession
+  </h1>
+  <div class="markdown level0 summary"><p>Represents database session.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="DevZest.Data.Primitives.AddonBag.html">AddonBag</a></div>
+    <div class="level2"><span class="xref">DbSession</span></div>
+      <div class="level3"><a class="xref" href="DevZest.Data.Primitives.DbSession-3.html">DbSession&lt;TConnection, TCommand, TReader&gt;</a></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.IDisposable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="DevZest.Data.Primitives.html">DevZest.Data.Primitives</a></h6>
+  <h6><strong>Assembly</strong>: DevZest.Data.dll</h6>
+  <h5 id="DevZest_Data_Primitives_DbSession_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class DbSession : AddonBag, IDisposable</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="DevZest_Data_Primitives_DbSession_Connection" data-uid="DevZest.Data.Primitives.DbSession.Connection">
+          <a class="xref" href="DevZest.Data.Primitives.DbSession.Connection.html#DevZest_Data_Primitives_DbSession_Connection">Connection</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the ADO.Net database connection.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="DevZest_Data_Primitives_DbSession_AssignTempTableName_DevZest_Data_Model_" data-uid="DevZest.Data.Primitives.DbSession.AssignTempTableName(DevZest.Data.Model)">
+          <a class="xref" href="DevZest.Data.Primitives.DbSession.AssignTempTableName.html#DevZest_Data_Primitives_DbSession_AssignTempTableName_DevZest_Data_Model_">AssignTempTableName(Model)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Assigns name to temporary table.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Primitives_DbSession_CloseConnection" data-uid="DevZest.Data.Primitives.DbSession.CloseConnection">
+          <a class="xref" href="DevZest.Data.Primitives.DbSession.CloseConnection.html#DevZest_Data_Primitives_DbSession_CloseConnection">CloseConnection()</a>
+        </td>
+        <td class="markdown level1 summary"><p>Closes the connection.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Primitives_DbSession_CreateAggregateQuery__1___0_System_Action___0__System_Action_DevZest_Data_DbAggregateQueryBuilder___0__" data-uid="DevZest.Data.Primitives.DbSession.CreateAggregateQuery``1(``0,System.Action{``0},System.Action{DevZest.Data.DbAggregateQueryBuilder,``0})">
+          <a class="xref" href="DevZest.Data.Primitives.DbSession.CreateAggregateQuery.html#DevZest_Data_Primitives_DbSession_CreateAggregateQuery__1___0_System_Action___0__System_Action_DevZest_Data_DbAggregateQueryBuilder___0__">CreateAggregateQuery&lt;T&gt;(T, Action&lt;T&gt;, Action&lt;DbAggregateQueryBuilder, T&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates aggregate database query for specified entity.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Primitives_DbSession_CreateAggregateQuery__1___0_System_Action_DevZest_Data_DbAggregateQueryBuilder___0__" data-uid="DevZest.Data.Primitives.DbSession.CreateAggregateQuery``1(``0,System.Action{DevZest.Data.DbAggregateQueryBuilder,``0})">
+          <a class="xref" href="DevZest.Data.Primitives.DbSession.CreateAggregateQuery.html#DevZest_Data_Primitives_DbSession_CreateAggregateQuery__1___0_System_Action_DevZest_Data_DbAggregateQueryBuilder___0__">CreateAggregateQuery&lt;T&gt;(T, Action&lt;DbAggregateQueryBuilder, T&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates aggregate database query for specified entity.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Primitives_DbSession_CreateAggregateQuery__1_System_Action___0__System_Action_DevZest_Data_DbAggregateQueryBuilder___0__" data-uid="DevZest.Data.Primitives.DbSession.CreateAggregateQuery``1(System.Action{``0},System.Action{DevZest.Data.DbAggregateQueryBuilder,``0})">
+          <a class="xref" href="DevZest.Data.Primitives.DbSession.CreateAggregateQuery.html#DevZest_Data_Primitives_DbSession_CreateAggregateQuery__1_System_Action___0__System_Action_DevZest_Data_DbAggregateQueryBuilder___0__">CreateAggregateQuery&lt;T&gt;(Action&lt;T&gt;, Action&lt;DbAggregateQueryBuilder, T&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates aggregate database query.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Primitives_DbSession_CreateAggregateQuery__1_System_Action_DevZest_Data_DbAggregateQueryBuilder___0__" data-uid="DevZest.Data.Primitives.DbSession.CreateAggregateQuery``1(System.Action{DevZest.Data.DbAggregateQueryBuilder,``0})">
+          <a class="xref" href="DevZest.Data.Primitives.DbSession.CreateAggregateQuery.html#DevZest_Data_Primitives_DbSession_CreateAggregateQuery__1_System_Action_DevZest_Data_DbAggregateQueryBuilder___0__">CreateAggregateQuery&lt;T&gt;(Action&lt;DbAggregateQueryBuilder, T&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates aggregate database query.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Primitives_DbSession_CreateMockDbAsync_System_Threading_CancellationToken_" data-uid="DevZest.Data.Primitives.DbSession.CreateMockDbAsync(System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.Primitives.DbSession.CreateMockDbAsync.html#DevZest_Data_Primitives_DbSession_CreateMockDbAsync_System_Threading_CancellationToken_">CreateMockDbAsync(CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates mock database.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Primitives_DbSession_CreateQuery__1___0_System_Action___0__System_Action_DevZest_Data_DbQueryBuilder___0__" data-uid="DevZest.Data.Primitives.DbSession.CreateQuery``1(``0,System.Action{``0},System.Action{DevZest.Data.DbQueryBuilder,``0})">
+          <a class="xref" href="DevZest.Data.Primitives.DbSession.CreateQuery.html#DevZest_Data_Primitives_DbSession_CreateQuery__1___0_System_Action___0__System_Action_DevZest_Data_DbQueryBuilder___0__">CreateQuery&lt;T&gt;(T, Action&lt;T&gt;, Action&lt;DbQueryBuilder, T&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates database query for specified entity.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Primitives_DbSession_CreateQuery__1___0_System_Action_DevZest_Data_DbQueryBuilder___0__" data-uid="DevZest.Data.Primitives.DbSession.CreateQuery``1(``0,System.Action{DevZest.Data.DbQueryBuilder,``0})">
+          <a class="xref" href="DevZest.Data.Primitives.DbSession.CreateQuery.html#DevZest_Data_Primitives_DbSession_CreateQuery__1___0_System_Action_DevZest_Data_DbQueryBuilder___0__">CreateQuery&lt;T&gt;(T, Action&lt;DbQueryBuilder, T&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates database query for specified entity.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Primitives_DbSession_CreateQuery__1_System_Action___0__System_Action_DevZest_Data_DbQueryBuilder___0__" data-uid="DevZest.Data.Primitives.DbSession.CreateQuery``1(System.Action{``0},System.Action{DevZest.Data.DbQueryBuilder,``0})">
+          <a class="xref" href="DevZest.Data.Primitives.DbSession.CreateQuery.html#DevZest_Data_Primitives_DbSession_CreateQuery__1_System_Action___0__System_Action_DevZest_Data_DbQueryBuilder___0__">CreateQuery&lt;T&gt;(Action&lt;T&gt;, Action&lt;DbQueryBuilder, T&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates database query.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Primitives_DbSession_CreateQuery__1_System_Action_DevZest_Data_DbQueryBuilder___0__" data-uid="DevZest.Data.Primitives.DbSession.CreateQuery``1(System.Action{DevZest.Data.DbQueryBuilder,``0})">
+          <a class="xref" href="DevZest.Data.Primitives.DbSession.CreateQuery.html#DevZest_Data_Primitives_DbSession_CreateQuery__1_System_Action_DevZest_Data_DbQueryBuilder___0__">CreateQuery&lt;T&gt;(Action&lt;DbQueryBuilder, T&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates database query.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Primitives_DbSession_CreateTempTableAsync__1___0_System_Action___0__System_Threading_CancellationToken_" data-uid="DevZest.Data.Primitives.DbSession.CreateTempTableAsync``1(``0,System.Action{``0},System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.Primitives.DbSession.CreateTempTableAsync.html#DevZest_Data_Primitives_DbSession_CreateTempTableAsync__1___0_System_Action___0__System_Threading_CancellationToken_">CreateTempTableAsync&lt;T&gt;(T, Action&lt;T&gt;, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Create temporary database table for specified entity.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Primitives_DbSession_CreateTempTableAsync__1___0_System_Threading_CancellationToken_" data-uid="DevZest.Data.Primitives.DbSession.CreateTempTableAsync``1(``0,System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.Primitives.DbSession.CreateTempTableAsync.html#DevZest_Data_Primitives_DbSession_CreateTempTableAsync__1___0_System_Threading_CancellationToken_">CreateTempTableAsync&lt;T&gt;(T, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Create temporary database table for specified entity.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Primitives_DbSession_CreateTempTableAsync__1_System_Action___0__System_Threading_CancellationToken_" data-uid="DevZest.Data.Primitives.DbSession.CreateTempTableAsync``1(System.Action{``0},System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.Primitives.DbSession.CreateTempTableAsync.html#DevZest_Data_Primitives_DbSession_CreateTempTableAsync__1_System_Action___0__System_Threading_CancellationToken_">CreateTempTableAsync&lt;T&gt;(Action&lt;T&gt;, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates temporary database table.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Primitives_DbSession_CreateTempTableAsync__1_System_Threading_CancellationToken_" data-uid="DevZest.Data.Primitives.DbSession.CreateTempTableAsync``1(System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.Primitives.DbSession.CreateTempTableAsync.html#DevZest_Data_Primitives_DbSession_CreateTempTableAsync__1_System_Threading_CancellationToken_">CreateTempTableAsync&lt;T&gt;(CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates temporary database table.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Primitives_DbSession_DeleteAsync__2_DevZest_Data_DataSet___0__DevZest_Data_DbTable___1__DevZest_Data_CandidateKey_System_Threading_CancellationToken_" data-uid="DevZest.Data.Primitives.DbSession.DeleteAsync``2(DevZest.Data.DataSet{``0},DevZest.Data.DbTable{``1},DevZest.Data.CandidateKey,System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.Primitives.DbSession.DeleteAsync.html#DevZest_Data_Primitives_DbSession_DeleteAsync__2_DevZest_Data_DataSet___0__DevZest_Data_DbTable___1__DevZest_Data_CandidateKey_System_Threading_CancellationToken_">DeleteAsync&lt;TSource, TTarget&gt;(DataSet&lt;TSource&gt;, DbTable&lt;TTarget&gt;, CandidateKey, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Executes query to delete database table data from DataSet.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Primitives_DbSession_Dispose" data-uid="DevZest.Data.Primitives.DbSession.Dispose">
+          <a class="xref" href="DevZest.Data.Primitives.DbSession.Dispose.html#DevZest_Data_Primitives_DbSession_Dispose">Dispose()</a>
+        </td>
+        <td class="markdown level1 summary"><p>Releases the resources owned by this database session.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Primitives_DbSession_Dispose_System_Boolean_" data-uid="DevZest.Data.Primitives.DbSession.Dispose(System.Boolean)">
+          <a class="xref" href="DevZest.Data.Primitives.DbSession.Dispose.html#DevZest_Data_Primitives_DbSession_Dispose_System_Boolean_">Dispose(Boolean)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Releases the resources owned by this database session.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Primitives_DbSession_Finalize" data-uid="DevZest.Data.Primitives.DbSession.Finalize">
+          <a class="xref" href="DevZest.Data.Primitives.DbSession.Finalize.html#DevZest_Data_Primitives_DbSession_Finalize">Finalize()</a>
+        </td>
+        <td class="markdown level1 summary"><p>Finalizer of this class.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Primitives_DbSession_GetMockTableName_System_String_System_Object_" data-uid="DevZest.Data.Primitives.DbSession.GetMockTableName(System.String,System.Object)">
+          <a class="xref" href="DevZest.Data.Primitives.DbSession.GetMockTableName.html#DevZest_Data_Primitives_DbSession_GetMockTableName_System_String_System_Object_">GetMockTableName(String, Object)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the name of mock table.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Primitives_DbSession_GetSqlString_DevZest_Data_Primitives_DbQueryStatement_" data-uid="DevZest.Data.Primitives.DbSession.GetSqlString(DevZest.Data.Primitives.DbQueryStatement)">
+          <a class="xref" href="DevZest.Data.Primitives.DbSession.GetSqlString.html#DevZest_Data_Primitives_DbSession_GetSqlString_DevZest_Data_Primitives_DbQueryStatement_">GetSqlString(DbQueryStatement)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the native SQL string for query statement.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Primitives_DbSession_GetTable__1_DevZest_Data_DbTable___0___System_String_" data-uid="DevZest.Data.Primitives.DbSession.GetTable``1(DevZest.Data.DbTable{``0}@,System.String)">
+          <a class="xref" href="DevZest.Data.Primitives.DbSession.GetTable.html#DevZest_Data_Primitives_DbSession_GetTable__1_DevZest_Data_DbTable___0___System_String_">GetTable&lt;T&gt;(ref DbTable&lt;T&gt;, String)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the DbTable object.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Primitives_DbSession_InsertAsync__2_DevZest_Data_DataSet___0__DevZest_Data_DbTable___1__System_Action_DevZest_Data_ColumnMapper___0___1__System_Boolean_System_Threading_CancellationToken_" data-uid="DevZest.Data.Primitives.DbSession.InsertAsync``2(DevZest.Data.DataSet{``0},DevZest.Data.DbTable{``1},System.Action{DevZest.Data.ColumnMapper,``0,``1},System.Boolean,System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.Primitives.DbSession.InsertAsync.html#DevZest_Data_Primitives_DbSession_InsertAsync__2_DevZest_Data_DataSet___0__DevZest_Data_DbTable___1__System_Action_DevZest_Data_ColumnMapper___0___1__System_Boolean_System_Threading_CancellationToken_">InsertAsync&lt;TSource, TTarget&gt;(DataSet&lt;TSource&gt;, DbTable&lt;TTarget&gt;, Action&lt;ColumnMapper, TSource, TTarget&gt;, Boolean, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Executes query to insert DataSet data into table.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Primitives_DbSession_InsertScalarAsync_DevZest_Data_Primitives_DbSelectStatement_System_Boolean_System_Threading_CancellationToken_" data-uid="DevZest.Data.Primitives.DbSession.InsertScalarAsync(DevZest.Data.Primitives.DbSelectStatement,System.Boolean,System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.Primitives.DbSession.InsertScalarAsync.html#DevZest_Data_Primitives_DbSession_InsertScalarAsync_DevZest_Data_Primitives_DbSelectStatement_System_Boolean_System_Threading_CancellationToken_">InsertScalarAsync(DbSelectStatement, Boolean, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Executes query to insert scalar values into table.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Primitives_DbSession_OpenConnectionAsync_System_Threading_CancellationToken_" data-uid="DevZest.Data.Primitives.DbSession.OpenConnectionAsync(System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.Primitives.DbSession.OpenConnectionAsync.html#DevZest_Data_Primitives_DbSession_OpenConnectionAsync_System_Threading_CancellationToken_">OpenConnectionAsync(CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Opens the database connection.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Primitives_DbSession_SetLogger_System_Action_System_String__" data-uid="DevZest.Data.Primitives.DbSession.SetLogger(System.Action{System.String})">
+          <a class="xref" href="DevZest.Data.Primitives.DbSession.SetLogger.html#DevZest_Data_Primitives_DbSession_SetLogger_System_Action_System_String__">SetLogger(Action&lt;String&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Sets the logger.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Primitives_DbSession_SetLogger_System_Action_System_String__DevZest_Data_LogCategory_" data-uid="DevZest.Data.Primitives.DbSession.SetLogger(System.Action{System.String},DevZest.Data.LogCategory)">
+          <a class="xref" href="DevZest.Data.Primitives.DbSession.SetLogger.html#DevZest_Data_Primitives_DbSession_SetLogger_System_Action_System_String__DevZest_Data_LogCategory_">SetLogger(Action&lt;String&gt;, LogCategory)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Sets the logger.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Primitives_DbSession_UpdateAsync__2_DevZest_Data_DataSet___0__DevZest_Data_DbTable___1__System_Action_DevZest_Data_ColumnMapper___0___1__DevZest_Data_CandidateKey_System_Threading_CancellationToken_" data-uid="DevZest.Data.Primitives.DbSession.UpdateAsync``2(DevZest.Data.DataSet{``0},DevZest.Data.DbTable{``1},System.Action{DevZest.Data.ColumnMapper,``0,``1},DevZest.Data.CandidateKey,System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.Primitives.DbSession.UpdateAsync.html#DevZest_Data_Primitives_DbSession_UpdateAsync__2_DevZest_Data_DataSet___0__DevZest_Data_DbTable___1__System_Action_DevZest_Data_ColumnMapper___0___1__DevZest_Data_CandidateKey_System_Threading_CancellationToken_">UpdateAsync&lt;TSource, TTarget&gt;(DataSet&lt;TSource&gt;, DbTable&lt;TTarget&gt;, Action&lt;ColumnMapper, TSource, TTarget&gt;, CandidateKey, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Executes query to update database table from DataSet.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="DevZest.Data.Addons.AddonBagExtensions.GetAddons.html#DevZest_Data_Addons_AddonBagExtensions_GetAddons__1_DevZest_Data_Primitives_AddonBag_">AddonBagExtensions.GetAddons&lt;T&gt;(AddonBag)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Addons.AddonBagExtensions.GetAddon.html#DevZest_Data_Addons_AddonBagExtensions_GetAddon__1_DevZest_Data_Primitives_AddonBag_">AddonBagExtensions.GetAddon&lt;T&gt;(AddonBag)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Addons.AddonBagExtensions.GetAddon.html#DevZest_Data_Addons_AddonBagExtensions_GetAddon_DevZest_Data_Primitives_AddonBag_System_Object_">AddonBagExtensions.GetAddon(AddonBag, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Addons.AddonBagExtensions.Add.html#DevZest_Data_Addons_AddonBagExtensions_Add_DevZest_Data_Primitives_AddonBag_DevZest_Data_Addons_IAddon_">AddonBagExtensions.Add(AddonBag, IAddon)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Addons.AddonBagExtensions.AddOrUpdate.html#DevZest_Data_Addons_AddonBagExtensions_AddOrUpdate_DevZest_Data_Primitives_AddonBag_DevZest_Data_Addons_IAddon_">AddonBagExtensions.AddOrUpdate(AddonBag, IAddon)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Addons.AddonBagExtensions.ContainsAddon.html#DevZest_Data_Addons_AddonBagExtensions_ContainsAddon_DevZest_Data_Primitives_AddonBag_System_Object_">AddonBagExtensions.ContainsAddon(AddonBag, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Addons.AddonBagExtensions.RemoveAddon.html#DevZest_Data_Addons_AddonBagExtensions_RemoveAddon_DevZest_Data_Primitives_AddonBag_System_Object_">AddonBagExtensions.RemoveAddon(AddonBag, Object)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/new/master/apiSpec/new?filename=DevZest_Data_Primitives_DbSession.md&amp;value=---%0Auid%3A%20DevZest.Data.Primitives.DbSession%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Data/Primitives/DbSession.cs/#L14" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © Weifen Luo | DevZest</span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,376 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Hierarchical Data </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Hierarchical Data ">
+    <meta name="generator" content="docfx 2.43.2.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="hierarchical-data">Hierarchical Data</h1>
+
+<p>Hierarchical data is supported extensively in RDO.Data. You can define child model and RDO.Data will enforce parent-child relationship for <a class="xref" href="../../api/DevZest.Data.DataSet-1.html">DataSet&lt;T&gt;</a>, <a class="xref" href="../../api/DevZest.Data.DbQuery-1.html">DbQuery&lt;T&gt;</a> and temporary <a class="xref" href="../../api/DevZest.Data.DbTable-1.html">DbTable&lt;T&gt;</a>.</p>
+<h2 id="child-model">Child Model</h2>
+<p>You can define child model for your model as readonly property as described in <a class="xref" href="model_and_members.html">Model and Members</a>:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-cs">public abstract class SalesOrderBase&lt;T&gt; : ...
+{
+    static SalesOrderBase()
+    {
+        ...
+        RegisterChildModel((SalesOrderBase&lt;T&gt; _) =&gt; _.SalesOrderDetails, (T _) =&gt; _.FK_SalesOrderHeader);
+    }
+
+    ...
+    public T SalesOrderDetails { get; private set; }
+}
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-vb">Public MustInherit Class SalesOrderBase(Of T As {SalesOrderDetail, New})
+    ...
+    Shared Sub New()
+        ...
+        RegisterChildModel(Function(x As SalesOrderBase(Of T)) x.SalesOrderDetails, Function(x As T) x.FK_SalesOrderHeader)
+    End Sub
+
+    ...
+    Private m_SalesOrderDetails As T
+    Public Property SalesOrderDetails As T
+        Get
+            Return m_SalesOrderDetails
+        End Get
+        Private Set
+            m_SalesOrderDetails = Value
+        End Set
+    End Property
+End Class
+</code></pre>
+</section>
+</div>
+
+<p>You can use Model Visualizer tool window to add child model and corresponding registration conveniently, similar as model column. The foreign key relationship defined in your child model will be picked up automatically.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>For simplicity, generic type child model, as shown in preceding example, has no code-fix registration supported. You can workaround this limitation by temporarily change the child model property type to concrete type.</p>
+</div>
+<h2 id="child-dataset">Child DataSet</h2>
+<p>If a model contains a child model, the corresponding DataSet will contain a child DataSet. Each <a class="xref" href="../../api/DevZest.Data.DataRow.html">DataRow</a> of child DataSet is belonging to two DataSets: the base DataSet identified by its <a class="xref" href="../../api/DevZest.Data.DataRow.BaseDataSet.html#DevZest_Data_DataRow_BaseDataSet">BaseDataSet</a> and <a class="xref" href="../../api/DevZest.Data.DataRow.Ordinal.html#DevZest_Data_DataRow_Ordinal">Ordinal</a> property, and child DataSet identified by its <a class="xref" href="../../api/DevZest.Data.DataRow.DataSet.html#DevZest_Data_DataRow_DataSet">DataSet</a> and <a class="xref" href="../../api/DevZest.Data.DataRow.Index.html#DevZest_Data_DataRow_Index">Index</a> property.</p>
+<p>Child Model/DataSet is governed by its parent Model/DataSet:</p>
+<ul>
+<li>The column of the child model participated in the parent-child relationship is readonly. The data values of this column are inherited from the value of its parent DataRow.</li>
+<li>Deleting the parent DataRow will delete the child DataSet contained by this row automatically.</li>
+</ul>
+<p>The following table shows APIs related to child DataSet:</p>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data.DataSet-1.GetChild.html">DataSet&lt;T&gt;.GetChild</a></td>
+<td>Get child DataSet from parent DataSet.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data.DataSet-1.GetChild.html">DataSet&lt;T&gt;.FillChildAsync</a></td>
+<td>Fill data values into child DataSet.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data.Extensions.GetChildDataSet.html">GetChildDataSet</a> extension method</td>
+<td>Get Child DataSet from child model object.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="child-querytemp-table">Child Query/Temp Table</h2>
+<p>You can call <a class="xref" href="../../api/DevZest.Data.DbQuery-1.CreateChildAsync.html">DbQuery&lt;T&gt;.CreateChildAsync</a> to create child query:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-1_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-1_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-1_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-cs">public async Task&lt;DataSet&lt;SalesOrderInfo&gt;&gt; GetSalesOrderInfoAsync(_Int32 salesOrderID, CancellationToken ct = default(CancellationToken))
+{
+    var result = CreateQuery((DbQueryBuilder builder, SalesOrderInfo _) =&gt;
+    {
+        builder.From(SalesOrderHeader, out var o)
+            .LeftJoin(Customer, o.FK_Customer, out var c)
+            .LeftJoin(Address, o.FK_ShipToAddress, out var shipTo)
+            .LeftJoin(Address, o.FK_BillToAddress, out var billTo)
+            .AutoSelect()
+            .AutoSelect(c, _.Customer)
+            .AutoSelect(shipTo, _.ShipToAddress)
+            .AutoSelect(billTo, _.BillToAddress)
+            .Where(o.SalesOrderID == salesOrderID);
+    });
+
+    await result.CreateChildAsync(_ =&gt; _.SalesOrderDetails, (DbQueryBuilder builder, SalesOrderInfoDetail _) =&gt;
+    {
+        builder.From(SalesOrderDetail, out var d)
+            .LeftJoin(Product, d.FK_Product, out var p)
+            .AutoSelect()
+            .AutoSelect(p, _.Product)
+            .OrderBy(d.SalesOrderDetailID);
+    }, ct);
+
+    return await result.ToDataSetAsync(ct);
+}
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q-1_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-vb">Public Async Function GetSalesOrderInfoAsync(salesOrderID As _Int32, Optional ct As CancellationToken = Nothing) As Task(Of DataSet(Of SalesOrderInfo))
+    Dim result = CreateQuery(
+        Sub(builder As DbQueryBuilder, x As SalesOrderInfo)
+            Dim o As SalesOrderHeader = Nothing, c As Customer = Nothing, shipTo As Address = Nothing, billTo As Address = Nothing
+            builder.From(SalesOrderHeader, o).
+                LeftJoin(Customer, o.FK_Customer, c).
+                LeftJoin(Address, o.FK_ShipToAddress, shipTo).
+                LeftJoin(Address, o.FK_BillToAddress, billTo).
+                AutoSelect().
+                AutoSelect(c, x.Customer).
+                AutoSelect(shipTo, x.ShipToAddress).
+                AutoSelect(billTo, x.BillToAddress).
+                Where(o.SalesOrderID = salesOrderID)
+        End Sub)
+    Await result.CreateChildAsync(Function(x) x.SalesOrderDetails,
+        Sub(builder As DbQueryBuilder, x As SalesOrderInfoDetail)
+            Dim d As SalesOrderDetail = Nothing, p As Product = Nothing
+            builder.From(SalesOrderDetail, d).LeftJoin(Product, d.FK_Product, p).AutoSelect().AutoSelect(p, x.Product)
+        End Sub, ct)
+    Return Await result.ToDataSetAsync(ct)
+End Function
+</code></pre>
+</section>
+</div>
+
+<p>RDO.Data will automatically create a temp table which contains the primary key of the parent query, and join this temp table automatically with child query. The above query will be translated to the following SQL in SQL Server:</p>
+<pre><code class="lang-sql">CREATE TABLE [#sys_sequential_SalesOrderInfo] (
+    [SalesOrderID] INT NOT NULL,
+    [sys_row_id] INT NOT NULL IDENTITY(1, 1)
+
+    PRIMARY KEY NONCLUSTERED ([SalesOrderID]),
+    UNIQUE CLUSTERED ([sys_row_id] ASC)
+);
+
+INSERT INTO [#sys_sequential_SalesOrderInfo]
+([SalesOrderID])
+SELECT [SalesOrderHeader].[SalesOrderID] AS [SalesOrderID]
+FROM
+    ((([SalesLT].[SalesOrderHeader] [SalesOrderHeader]
+    LEFT JOIN
+    [SalesLT].[Customer] [Customer]
+    ON [SalesOrderHeader].[CustomerID] = [Customer].[CustomerID])
+    LEFT JOIN
+    [SalesLT].[Address] [Address]
+    ON [SalesOrderHeader].[ShipToAddressID] = [Address].[AddressID])
+    LEFT JOIN
+    [SalesLT].[Address] [Address1]
+    ON [SalesOrderHeader].[BillToAddressID] = [Address1].[AddressID])
+WHERE ([SalesOrderHeader].[SalesOrderID] = @p1);
+-- @p1: '71774' (Type = Int32)
+
+SELECT
+    [SalesOrderHeader].[SalesOrderID] AS [SalesOrderID],
+    [SalesOrderHeader].[RevisionNumber] AS [RevisionNumber],
+    [SalesOrderHeader].[OrderDate] AS [OrderDate],
+    [SalesOrderHeader].[DueDate] AS [DueDate],
+    [SalesOrderHeader].[ShipDate] AS [ShipDate],
+    [SalesOrderHeader].[Status] AS [Status],
+    [SalesOrderHeader].[OnlineOrderFlag] AS [OnlineOrderFlag],
+    [SalesOrderHeader].[SalesOrderNumber] AS [SalesOrderNumber],
+    [SalesOrderHeader].[PurchaseOrderNumber] AS [PurchaseOrderNumber],
+    [SalesOrderHeader].[AccountNumber] AS [AccountNumber],
+    [SalesOrderHeader].[CustomerID] AS [CustomerID],
+    [SalesOrderHeader].[ShipToAddressID] AS [ShipToAddressID],
+    [SalesOrderHeader].[BillToAddressID] AS [BillToAddressID],
+    [SalesOrderHeader].[ShipMethod] AS [ShipMethod],
+    [SalesOrderHeader].[CreditCardApprovalCode] AS [CreditCardApprovalCode],
+    [SalesOrderHeader].[SubTotal] AS [SubTotal],
+    [SalesOrderHeader].[TaxAmt] AS [TaxAmt],
+    [SalesOrderHeader].[Freight] AS [Freight],
+    [SalesOrderHeader].[TotalDue] AS [TotalDue],
+    [SalesOrderHeader].[Comment] AS [Comment],
+    [SalesOrderHeader].[RowGuid] AS [RowGuid],
+    [SalesOrderHeader].[ModifiedDate] AS [ModifiedDate],
+    NULL AS [LineCount],
+    [Customer].[Title] AS [Customer.Title],
+    [Customer].[FirstName] AS [Customer.FirstName],
+    [Customer].[MiddleName] AS [Customer.MiddleName],
+    [Customer].[LastName] AS [Customer.LastName],
+    [Customer].[CompanyName] AS [Customer.CompanyName],
+    [Customer].[EmailAddress] AS [Customer.EmailAddress],
+    [Customer].[Phone] AS [Customer.Phone],
+    [Address].[AddressLine1] AS [ShipToAddress.AddressLine1],
+    [Address].[AddressLine2] AS [ShipToAddress.AddressLine2],
+    [Address].[City] AS [ShipToAddress.City],
+    [Address].[StateProvince] AS [ShipToAddress.StateProvince],
+    [Address].[CountryRegion] AS [ShipToAddress.CountryRegion],
+    [Address].[PostalCode] AS [ShipToAddress.PostalCode],
+    [Address1].[AddressLine1] AS [BillToAddress.AddressLine1],
+    [Address1].[AddressLine2] AS [BillToAddress.AddressLine2],
+    [Address1].[City] AS [BillToAddress.City],
+    [Address1].[StateProvince] AS [BillToAddress.StateProvince],
+    [Address1].[CountryRegion] AS [BillToAddress.CountryRegion],
+    [Address1].[PostalCode] AS [BillToAddress.PostalCode],
+    [#sys_sequential_SalesOrderInfo].[sys_row_id] AS [sys_row_id]
+FROM
+    (((([SalesLT].[SalesOrderHeader] [SalesOrderHeader]
+    LEFT JOIN
+    [SalesLT].[Customer] [Customer]
+    ON [SalesOrderHeader].[CustomerID] = [Customer].[CustomerID])
+    LEFT JOIN
+    [SalesLT].[Address] [Address]
+    ON [SalesOrderHeader].[ShipToAddressID] = [Address].[AddressID])
+    LEFT JOIN
+    [SalesLT].[Address] [Address1]
+    ON [SalesOrderHeader].[BillToAddressID] = [Address1].[AddressID])
+    INNER JOIN
+    [#sys_sequential_SalesOrderInfo]
+    ON [SalesOrderHeader].[SalesOrderID] = [#sys_sequential_SalesOrderInfo].[SalesOrderID])
+WHERE ([SalesOrderHeader].[SalesOrderID] = @p1)
+ORDER BY [#sys_sequential_SalesOrderInfo].[sys_row_id] ASC;
+-- @p1: '71774' (Type = Int32)
+
+SELECT
+    [SalesOrderDetail].[SalesOrderID] AS [SalesOrderID],
+    [SalesOrderDetail].[SalesOrderDetailID] AS [SalesOrderDetailID],
+    [SalesOrderDetail].[OrderQty] AS [OrderQty],
+    [SalesOrderDetail].[ProductID] AS [ProductID],
+    [SalesOrderDetail].[UnitPrice] AS [UnitPrice],
+    [SalesOrderDetail].[UnitPriceDiscount] AS [UnitPriceDiscount],
+    [SalesOrderDetail].[LineTotal] AS [LineTotal],
+    [SalesOrderDetail].[RowGuid] AS [RowGuid],
+    [SalesOrderDetail].[ModifiedDate] AS [ModifiedDate],
+    [Product].[Name] AS [Product.Name],
+    [Product].[ProductNumber] AS [Product.ProductNumber],
+    [#sys_sequential_SalesOrderInfo].[sys_row_id] AS [sys_parent_row_id]
+FROM
+    (([SalesLT].[SalesOrderDetail] [SalesOrderDetail]
+    LEFT JOIN
+    [SalesLT].[Product] [Product]
+    ON [SalesOrderDetail].[ProductID] = [Product].[ProductID])
+    INNER JOIN
+    [#sys_sequential_SalesOrderInfo]
+    ON [SalesOrderDetail].[SalesOrderID] = [#sys_sequential_SalesOrderInfo].[SalesOrderID])
+ORDER BY [#sys_sequential_SalesOrderInfo].[sys_row_id] ASC, [SalesOrderDetail].[SalesOrderDetailID];
+</code></pre>
+<p>You can also call <a class="xref" href="../../api/DevZest.Data.DbTable-1.CreateChildAsync.html">DbTable&lt;T&gt;.CreateChildAsync</a> to create child temporary table, similar with child query.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Docs/articles/programming_rdo_data/hierarchical_data.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © Weifen Luo | DevZest</span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

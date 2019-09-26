@@ -1,0 +1,474 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Movies.DbInit Project </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Movies.DbInit Project ">
+    <meta name="generator" content="docfx 2.43.2.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="tutorial_movies_dbinit">
+<h1 id="moviesdbinit-project">Movies.DbInit Project</h1>
+
+<p>In this section, we will work on <em>Movies.DbInit</em> project to create and initialize database.</p>
+<h2 id="project-setup">Project Setup</h2>
+<p>Make the following changes to <em>Movies.DbInit</em> project:</p>
+<p><em>Step 1</em>. Add project reference <em>Movies</em> to this project.</p>
+<p><em>Step 2</em>. Add NuGet Package <a href="https://www.nuget.org/packages/DevZest.Data.DbInit/">DevZest.Data.DbInit</a> to this project.</p>
+<p><em>Step 3</em>. Change default namespace (root namespace in Visual Basic) from <code>Movies.DbInit</code> to <code>Movies</code>, by right clicking the project <em>Movies.DbInit</em> in <em>Solution Explorer</em> tool window, then click <em>Properties</em> in context menu:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q_cs" role="tabpanel" data-tab="cs">
+
+<p><img src="/images/tutorial_movies_dbinit_default_namespace.jpg" alt="image"></p>
+</section>
+<section id="tabpanel_CeZOj-G++Q_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<p><img src="/images/tutorial_movies_dbinit_root_namespace.jpg" alt="image"></p>
+</section>
+</div>
+<hr>
+<p><em>Step 4</em>. Change <em>Program.cs</em> (<em>Program.vb</em> in Visual Basic) to following:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-1_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-1_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-1_cs" role="tabpanel" data-tab="cs">
+<pre><code class="lang-csharp" name="Program">using DevZest.Data.DbInit;
+
+namespace Movies
+{
+    class Program
+    {
+        static int Main(string[] args)
+        {
+            return args.RunDbInit();
+        }
+    }
+}
+</code></pre></section>
+<section id="tabpanel_CeZOj-G++Q-1_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-vb" name="Program">Imports DevZest.Data.DbInit
+
+Module Program
+    Function Main(args As String()) As Integer
+        Return args.RunDbInit()
+    End Function
+End Module
+</code></pre></section>
+</div>
+<h2 id="create-localdb">Create LocalDB</h2>
+<p><em>Step 1</em>. Create a <em>LocalDb</em> subfolder by right clicking <em>Movies.DbInit</em> project in <em>Solution Explorer</em> tool window, then click &quot;<em>Add</em>&quot; -&gt; &quot;<em>New Folder</em>&quot; in the context menu.</p>
+<p><em>Step 2</em>. Open <em>SQL Server Management Studio</em>, use Server name <em>(localdb)\MSSQLLocalDB</em>, and select <em>Windows Authentication</em>:</p>
+<p><img src="/images/ssms_login.jpg" alt="image"></p>
+<p><em>Step 3</em>. Create a new query in <em>SQL Server Management Studio</em> by pressing CTRL-N, then execute the following query:</p>
+<pre><code class="lang-SQL">CREATE DATABASE EmptyDb ON (
+  NAME='EmptyDb', 
+  FILENAME='%path_to_your_solution%\Movies.DbInit\LocalDb\EmptyDb.mdf')
+</code></pre>
+<p>You should have 2 files <em>EmptyDb.mdf</em> and <em>EmptyDb_log.ldf</em> created under the folder created in <em>Step 1</em>.</p>
+<p><em>Step 4</em>. Add class <em>_DevDb</em> to project <em>Movies.DbInit</em>:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-2_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-2_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-2_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-2_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-2_cs" role="tabpanel" data-tab="cs">
+<pre><code class="lang-csharp" name="_DevDb">using DevZest.Data.DbInit;
+using System.IO;
+
+namespace Movies
+{
+    [EmptyDb]
+    public sealed class _DevDb : DbSessionProvider&lt;Db&gt;
+    {
+        public override Db Create(string projectPath)
+        {
+            var dbFolder = Path.Combine(projectPath, @&quot;LocalDb&quot;);
+            string attachDbFilename = Path.Combine(dbFolder, &quot;Movies.mdf&quot;);
+            File.Copy(Path.Combine(dbFolder, &quot;EmptyDb.mdf&quot;), attachDbFilename, true);
+            File.Copy(Path.Combine(dbFolder, &quot;EmptyDb_log.ldf&quot;), Path.Combine(dbFolder, &quot;Movies_log.ldf&quot;), true);
+            var connectionString = string.Format(@&quot;Data Source=(localdb)\MSSQLLocalDB;AttachDbFilename=&quot;&quot;{0}&quot;&quot;;Integrated Security=True&quot;, attachDbFilename);
+            return new Db(connectionString);
+        }
+    }
+}
+</code></pre></section>
+<section id="tabpanel_CeZOj-G++Q-2_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-vb" name="_DevDb">Imports System.IO
+Imports DevZest.Data.DbInit
+
+&lt;EmptyDb&gt;
+Public Class _DevDb
+    Inherits DbSessionProvider(Of Db)
+
+    Public Overrides Function Create(projectPath As String) As Db
+        Dim dbFolder = Path.Combine(projectPath, &quot;LocalDb&quot;)
+        Dim attachDbFilename = Path.Combine(dbFolder, &quot;Movies.mdf&quot;)
+        File.Copy(Path.Combine(dbFolder, &quot;EmptyDb.mdf&quot;), attachDbFilename, True)
+        File.Copy(Path.Combine(dbFolder, &quot;EmptyDb_log.ldf&quot;), Path.Combine(dbFolder, &quot;Movies_log.ldf&quot;), True)
+        Dim connectionString = String.Format(&quot;Data Source=(localdb)\MSSQLLocalDB;AttachDbFilename=&quot;&quot;{0}&quot;&quot;;Integrated Security=True&quot;, attachDbFilename)
+        Return New Db(connectionString)
+    End Function
+End Class
+</code></pre></section>
+</div>
+<hr>
+<p><em>Step 5</em>. Right click in code editor of class <em>_DevDb</em>, click &quot;<em>Generate Db...</em>&quot; context menu item:</p>
+<p><img src="/images/RdoToolsGenerateDb.jpg" alt="image"></p>
+<p>Click button <em>OK</em>, a database named <em>Movies</em> containing a table <em>Movie</em> will be generated. You can verify it under folder created in <em>Step1</em> and <em>SQL Server Management Studio</em>.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Database files <em>Movie.mdf</em> and <em>Movie_log.ldf</em> should be ignored from source control.</p>
+</div>
+<h2 id="add-testing-data">Add Testing Data</h2>
+<p><em>Step 1</em>. In <em>SQL Server Management Studio</em>, right click table <em>dbo.Movie</em> of the database <em>Movies</em> created previously, then click <em>Edit Top 200 Rows</em> context menu item to add following testing data:</p>
+<p><img src="/images/tutorial_movies_testing_data.jpg" alt="image"></p>
+<p><em>Step 2</em>. Add class <em>DevDb</em> (without leading underscore) to project <em>Movies.DbInit</em>:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-3">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-3_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-3_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-3_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-3_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-3_cs" role="tabpanel" data-tab="cs">
+<pre><code class="lang-csharp" name="DevDb">using DevZest.Data.DbInit;
+using System.IO;
+
+namespace Movies
+{
+    public sealed class DevDb : DbSessionProvider&lt;Db&gt;
+    {
+        public override Db Create(string projectPath)
+        {
+            var dbFolder = Path.Combine(projectPath, @&quot;LocalDb&quot;);
+            string attachDbFilename = Path.Combine(dbFolder, &quot;Movies.mdf&quot;);
+            var connectionString = string.Format(@&quot;Data Source=(localdb)\MSSQLLocalDB;AttachDbFilename=&quot;&quot;{0}&quot;&quot;;Integrated Security=True&quot;, attachDbFilename);
+            return new Db(connectionString);
+        }
+    }
+}
+</code></pre></section>
+<section id="tabpanel_CeZOj-G++Q-3_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-vb" name="DevDb">Imports System.IO
+Imports DevZest.Data.DbInit
+
+Public Class DevDb
+    Inherits DbSessionProvider(Of Db)
+
+    Public Overrides Function Create(projectPath As String) As Db
+        Dim dbFolder = Path.Combine(projectPath, &quot;LocalDb&quot;)
+        Dim attachDbFilename = Path.Combine(dbFolder, &quot;Movies.mdf&quot;)
+        Dim connectionString = String.Format(&quot;Data Source=(localdb)\MSSQLLocalDB;AttachDbFilename=&quot;&quot;{0}&quot;&quot;;Integrated Security=True&quot;, attachDbFilename)
+        Return New Db(connectionString)
+    End Function
+End Class
+</code></pre></section>
+</div>
+<hr>
+<p><em>Step 3</em>. Add class <em>MockMovie</em> to project <em>Movies.DbInit</em>:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-4">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-4_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-4_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-4_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-4_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-4_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-csharp">using DevZest.Data;
+
+namespace Movies
+{
+    public sealed class MockMovie : DbMock&lt;Db&gt;
+    {
+        private static DataSet&lt;Movie&gt; GetMovies()
+        {
+            return DataSet&lt;Movie&gt;.Create();
+        }
+
+        protected override void Initialize()
+        {
+            Mock(Db.Movie, GetMovies);
+        }
+    }
+}
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q-4_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-vb">Imports DevZest.Data
+
+Public Class MockMovie
+    Inherits DbMock(Of Db)
+
+    Private Shared Function GetMovies() As DataSet(Of Movie)
+        Throw New System.NotImplementedException()
+    End Function
+
+    Protected Overrides Sub Initialize()
+        Mock(Db.Movie, AddressOf GetMovies)
+    End Sub
+End Class
+</code></pre>
+</section>
+</div>
+
+<p>There is a compile-time warning: <em>DbMock implementation should expose a static factory method to wrap a call to DbMock<t>.MockAsync method</t></em>. Fix this warning by moving the caret to the class name <em>MockMovie</em>, then pressing <em>CTRL-.</em> in Visual Studio. Select context menu item <em>Add factory method</em>, the following code will be inserted automatically:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-5">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-5_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-5_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-5_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-5_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-5_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-csharp">public static Task&lt;Db&gt; CreateAsync(Db db, IProgress&lt;DbInitProgress&gt; progress = null, CancellationToken ct = default(CancellationToken))
+{
+    return new MockMovie().MockAsync(db, progress, ct);
+}
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q-5_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-vb">Public Shared Function CreateAsync(db As Db, Optional progress As IProgress(Of DbInitProgress) = Nothing, Optional ct As CancellationToken = Nothing) As Task(Of Db)
+    Return New MockMovie().MockAsync(db, progress, ct)
+End Function
+</code></pre>
+</section>
+</div>
+<hr>
+<p><em>Step 4</em>. Right click in code editor of class <em>MockMovie</em>, click &quot;<em>Generate DataSet(s)...</em>&quot; context menu item:</p>
+<p><img src="/images/tutorial_movies_generate_dataset.jpg" alt="image"></p>
+<p>Click button <em>OK</em>, the code for data set will be generated automatically:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-6">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-6_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-6_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-6_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-6_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-6_cs" role="tabpanel" data-tab="cs">
+<pre><code class="lang-csharp" name="MockMovie">using DevZest.Data;
+using DevZest.Data.DbInit;
+using DevZest.Data.Primitives;
+using System;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace Movies
+{
+    public sealed class MockMovie : DbMock&lt;Db&gt;
+    {
+        public static Task&lt;Db&gt; CreateAsync(Db db, IProgress&lt;DbInitProgress&gt; progress = null, CancellationToken ct = default(CancellationToken))
+        {
+            return new MockMovie().MockAsync(db, progress, ct);
+        }
+
+        private static DataSet&lt;Movie&gt; GetMovies()
+        {
+            DataSet&lt;Movie&gt; result = DataSet&lt;Movie&gt;.Create().AddRows(4);
+            Movie _ = result._;
+            _.SuspendIdentity();
+            _.ID[0] = 1;
+            _.ID[1] = 2;
+            _.ID[2] = 3;
+            _.ID[3] = 4;
+            _.Title[0] = &quot;When Harry Met Sally&quot;;
+            _.Title[1] = &quot;Ghostbusters&quot;;
+            _.Title[2] = &quot;Ghostbusters 2&quot;;
+            _.Title[3] = &quot;Rio Bravo&quot;;
+            _.ReleaseDate[0] = Convert.ToDateTime(&quot;1989-02-12T00:00:00&quot;);
+            _.ReleaseDate[1] = Convert.ToDateTime(&quot;1984-03-13T00:00:00&quot;);
+            _.ReleaseDate[2] = Convert.ToDateTime(&quot;1986-02-23T00:00:00&quot;);
+            _.ReleaseDate[3] = Convert.ToDateTime(&quot;1959-04-15T00:00:00&quot;);
+            _.Genre[0] = &quot;Romantic Comedy&quot;;
+            _.Genre[1] = &quot;Comedy&quot;;
+            _.Genre[2] = &quot;Comedy&quot;;
+            _.Genre[3] = &quot;Western&quot;;
+            _.Price[0] = 7.9900M;
+            _.Price[1] = 8.9900M;
+            _.Price[2] = 9.9900M;
+            _.Price[3] = 3.9900M;
+            _.ResumeIdentity();
+            return result;
+        }
+
+        protected override void Initialize()
+        {
+            Mock(Db.Movie, GetMovies);
+        }
+    }
+}
+</code></pre></section>
+<section id="tabpanel_CeZOj-G++Q-6_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-vb" name="MockMovie">Imports DevZest.Data
+Imports DevZest.Data.DbInit
+Imports DevZest.Data.Primitives
+Imports System.Threading
+
+Public Class MockMovie
+    Inherits DbMock(Of Db)
+
+    Public Shared Function CreateAsync(db As Db, Optional progress As IProgress(Of DbInitProgress) = Nothing, Optional ct As CancellationToken = Nothing) As Task(Of Db)
+        Return New MockMovie().MockAsync(db, progress, ct)
+    End Function
+
+    Private Shared Function GetMovies() As DataSet(Of Movie)
+        Dim result As DataSet(Of Movie) = DataSet(Of Movie).Create().AddRows(4)
+        Dim x As Movie = result.Entity
+        x.SuspendIdentity()
+        x.ID(0) = 1
+        x.ID(1) = 2
+        x.ID(2) = 3
+        x.ID(3) = 4
+        x.Title(0) = &quot;When Harry Met Sally&quot;
+        x.Title(1) = &quot;Ghostbusters&quot;
+        x.Title(2) = &quot;Ghostbusters 2&quot;
+        x.Title(3) = &quot;Rio Bravo&quot;
+        x.ReleaseDate(0) = Convert.ToDateTime(&quot;1989-02-12T00:00:00&quot;)
+        x.ReleaseDate(1) = Convert.ToDateTime(&quot;1984-03-13T00:00:00&quot;)
+        x.ReleaseDate(2) = Convert.ToDateTime(&quot;1986-02-23T00:00:00&quot;)
+        x.ReleaseDate(3) = Convert.ToDateTime(&quot;1959-04-15T00:00:00&quot;)
+        x.Genre(0) = &quot;Romantic Comedy&quot;
+        x.Genre(1) = &quot;Comedy&quot;
+        x.Genre(2) = &quot;Comedy&quot;
+        x.Genre(3) = &quot;Western&quot;
+        x.Price(0) = 7.99D
+        x.Price(1) = 8.99D
+        x.Price(2) = 9.99D
+        x.Price(3) = 3.99D
+        x.ResumeIdentity()
+        Return result
+    End Function
+
+    Protected Overrides Sub Initialize()
+        Mock(Db.Movie, AddressOf GetMovies)
+    End Sub
+End Class
+</code></pre></section>
+</div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Docs/articles/tutorial/movies_dbinit.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © Weifen Luo | DevZest</span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

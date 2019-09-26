@@ -1,0 +1,302 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Database CUD operations </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Database CUD operations ">
+    <meta name="generator" content="docfx 2.43.2.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="database-cud-operations">Database CUD operations</h1>
+
+<p>In RDO.Data, you can create, update and delete data in <a class="xref" href="../../api/DevZest.Data.DbTable-1.html">DbTable&lt;T&gt;</a>:</p>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data.DbTable-1.InsertAsync.html">InsertAsync</a></td>
+<td>Insert from scalar data, DataSet or DbSet.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data.DbTable-1.UpdateAsync.html">UpdateAsync</a></td>
+<td>Update from scalar data, DataSet or DbSet.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data.DbTable-1.DeleteAsync.html">DeleteAsync</a></td>
+<td>Delete by condition, or match with DataSet or DbSet.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="inserting-data">Inserting Data</h2>
+<p>You can insert into <a class="xref" href="../../api/DevZest.Data.DbTable-1.html">DbTable&lt;T&gt;</a> via <a class="xref" href="../../api/DevZest.Data.DbTable-1.InsertAsync.html">InsertAsync</a> API, from various of data sources:</p>
+<ul>
+<li>Scalar data: Scalar data is represented by <a class="xref" href="expression_column.html">Expression Column</a>. You can use <a class="xref" href="../../api/DevZest.Data.ColumnMapper.html">ColumnMapper</a> class to map between scalar data column and target DbTable column. If all columns of target DbTable has default values, you can insert a row without any data specified. Optionally you can provide a <code>&lt;Action int?&gt;</code> delegate to receive newly generated identity column value for current insert.</li>
+<li>DataSet: A <a class="xref" href="../../api/DevZest.Data.DataSet-1.html">DataSet&lt;T&gt;</a> object can be used as source data for inserting. The generated native SQL for inserting from DataSet is database specific. For SQL Server and MySQL, multiple row DataSet will be serialized into JSON and passed to database server as single param for inserting, all done in one server round trip for best performance. To support this feature, SQL Server requires version 2016 (13) or later, MySQL requires version 8.0.4 or later. For newly generated identity column values, you can specify a optional boolean value parameter to indicate whether these values should be updated back to the source DataSet. This feature is especially useful if you're inserting parent-child hierarchical DataSet.</li>
+<li>DbSet: A <a class="xref" href="../../api/DevZest.Data.DbTable-1.html">DbTable&lt;T&gt;</a> or <a class="xref" href="../../api/DevZest.Data.DbQuery-1.html">DbQuery&lt;T&gt;</a> can be used as source data for inserting. Note <a class="xref" href="../../api/DevZest.Data.DbTable-1.html">DbTable&lt;T&gt;</a> object can be temporary table.</li>
+</ul>
+<p>A sample code of inserting data:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-cs">partial class Db
+{
+    ...
+    public async Task&lt;int?&gt; CreateSalesOrderAsync(DataSet&lt;SalesOrderInfo&gt; salesOrders, CancellationToken ct)
+    {
+        await EnsureConnectionOpenAsync(ct);
+        using (var transaction = BeginTransaction())
+        {
+            ...
+            await SalesOrderHeader.InsertAsync(salesOrders, true, ct);
+            var salesOrderDetails = salesOrders.GetChild(_ =&gt; _.SalesOrderDetails);
+            ...
+            await SalesOrderDetail.InsertAsync(salesOrderDetails, ct);
+
+            await transaction.CommitAsync(ct);
+            return salesOrders.Count &gt; 0 ? salesOrders._.SalesOrderID[0] : null;
+        }
+    }
+    ...
+}
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-vb">Partial Class Db
+    ...
+    Public Async Function CreateSalesOrderAsync(salesOrders As DataSet(Of SalesOrderInfo), ct As CancellationToken) As Task(Of Integer?)
+        Await EnsureConnectionOpenAsync(ct)
+        Using transaction = BeginTransaction()
+            ...
+            Await SalesOrderHeader.InsertAsync(salesOrders, True, ct)
+            Dim salesOrderDetails = salesOrders.GetChild(Function(x) x.SalesOrderDetails)
+            ...
+            Await SalesOrderDetail.InsertAsync(salesOrderDetails, ct)
+            Await transaction.CommitAsync(ct)
+            If salesOrders.Count &gt; 0 Then
+                Return salesOrders.Entity.SalesOrderID(0)
+            Else
+                Return Nothing
+            End If
+        End Using
+    End Function
+    ...
+End Class
+</code></pre>
+</section>
+</div>
+<h2 id="updating-data">Updating Data</h2>
+<p>You can update <a class="xref" href="../../api/DevZest.Data.DbTable-1.html">DbTable&lt;T&gt;</a> via <a class="xref" href="../../api/DevZest.Data.DbTable-1.UpdateAsync.html">UpdateAsync</a> API, from various of data sources:</p>
+<ul>
+<li>Scalar data: Scalar data is represented by <a class="xref" href="expression_column.html">Expression Column</a>. You can use <a class="xref" href="../../api/DevZest.Data.ColumnMapper.html">ColumnMapper</a> class to map between scalar data column and target DbTable column. A condition can be provided to filter rows should be updated in the table. If no condition specified, all rows in the table will be updated with the same scalar value.</li>
+<li>DataSet: A <a class="xref" href="../../api/DevZest.Data.DataSet-1.html">DataSet&lt;T&gt;</a> object can be used as source data for updating. The source DataSet and target table must all have primary key, and if there are different you must provide a <a class="xref" href="../../api/DevZest.Data.KeyMapping.html">KeyMapping</a> between them. The generated native SQL for updating from DataSet is database specific. For SQL Server and MySQL, multiple row DataSet will be serialized into JSON and passed to database server as single param for updating, all done in one server round trip for best performance. To support this feature, SQL Server requires version 2016 (13) or later, MySQL requires version 8.0.4 or later.</li>
+<li>DbSet: A <a class="xref" href="../../api/DevZest.Data.DbTable-1.html">DbTable&lt;T&gt;</a> or <a class="xref" href="../../api/DevZest.Data.DbQuery-1.html">DbQuery&lt;T&gt;</a> can be used as source data for inserting. Note <a class="xref" href="../../api/DevZest.Data.DbTable-1.html">DbTable&lt;T&gt;</a> object can be temporary table. The source DbSet and target table must all have primary key, and if there are different you must provide a <a class="xref" href="../../api/DevZest.Data.KeyMapping.html">KeyMapping</a> between them.</li>
+</ul>
+<p>A sample code of updating data:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-1_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-1_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-1_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-cs">partial class Db
+{
+    ...
+    public async Task UpdateSalesOrderAsync(DataSet&lt;SalesOrderInfo&gt; salesOrders, CancellationToken ct)
+    {
+        await EnsureConnectionOpenAsync(ct);
+        using (var transaction = BeginTransaction())
+        {
+            await SalesOrderHeader.UpdateAsync(salesOrders, ct);
+            await SalesOrderDetail.DeleteAsync(salesOrders, (s, _) =&gt; s.Match(_.FK_SalesOrderHeader), ct);
+            var salesOrderDetails = salesOrders.GetChild(_ =&gt; _.SalesOrderDetails);
+            await SalesOrderDetail.InsertAsync(salesOrderDetails, ct);
+
+            await transaction.CommitAsync(ct);
+        }
+    }
+    ...
+}
+
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q-1_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-vb">Partial Class Db
+    ...
+    Public Async Function UpdateSalesOrderAsync(salesOrders As DataSet(Of SalesOrderInfo), ct As CancellationToken) As Task
+        Await EnsureConnectionOpenAsync(ct)
+        Using transaction = BeginTransaction()
+            ...
+            Await SalesOrderHeader.UpdateAsync(salesOrders, ct)
+            Await SalesOrderDetail.DeleteAsync(salesOrders, Function(s, x) s.Match(x.FK_SalesOrderHeader), ct)
+            Dim salesOrderDetails = salesOrders.GetChild(Function(x) x.SalesOrderDetails)
+            ...
+            Await SalesOrderDetail.InsertAsync(salesOrderDetails, ct)
+            Await transaction.CommitAsync(ct)
+        End Using
+    End Function
+    ...
+End Class
+</code></pre>
+</section>
+</div>
+<h2 id="deleting-data">Deleting Data</h2>
+<p>You can delete data in <a class="xref" href="../../api/DevZest.Data.DbTable-1.html">DbTable&lt;T&gt;</a> via <a class="xref" href="../../api/DevZest.Data.DbTable-1.DeleteAsync.html">DeleteAsync</a> API:</p>
+<ul>
+<li>By condition: A condition can be provided to filter rows should be deleted in the table. If no condition specified, all rows in the table will be deleted.</li>
+<li>DataSet: A <a class="xref" href="../../api/DevZest.Data.DataSet-1.html">DataSet&lt;T&gt;</a> object can be used as source data for deleting. The source DataSet and target table must all have primary key, and if there are different you must provide a <a class="xref" href="../../api/DevZest.Data.KeyMapping.html">KeyMapping</a> between them. The generated native SQL for deleting from DataSet is database specific. For SQL Server and MySQL, multiple row DataSet will be serialized into JSON and passed to database server as single param for deleting, all done in one server round trip for best performance. To support this feature, SQL Server requires version 2016 (13) or later, MySQL requires version 8.0.4 or later.</li>
+<li>DbSet: A <a class="xref" href="../../api/DevZest.Data.DbTable-1.html">DbTable&lt;T&gt;</a> or <a class="xref" href="../../api/DevZest.Data.DbQuery-1.html">DbQuery&lt;T&gt;</a> can be used as source data for inserting. Note <a class="xref" href="../../api/DevZest.Data.DbTable-1.html">DbTable&lt;T&gt;</a> object can be temporary table. The source DbSet and target table must all have primary key, and if there are different you must provide a <a class="xref" href="../../api/DevZest.Data.KeyMapping.html">KeyMapping</a> between them.</li>
+</ul>
+<p>A sample code of deleting data:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-2_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-2_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-2_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-2_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-2_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-cs">partial class Db
+{
+    ...
+    public Task&lt;int&gt; DeleteSalesOrderAsync(DataSet&lt;SalesOrderHeader.Key&gt; dataSet, CancellationToken ct)
+    {
+        return SalesOrderHeader.DeleteAsync(dataSet, (s, _) =&gt; s.Match(_), ct);
+    }
+    ...
+}
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q-2_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-vb">Partial Class Db
+    ...
+    Public Function DeleteSalesOrderAsync(dataSet As DataSet(Of SalesOrderHeader.Key), ct As CancellationToken) As Task(Of Integer)
+        Return SalesOrderHeader.DeleteAsync(dataSet, Function(s, x) s.Match(x), ct)
+    End Function
+    ...
+End Class
+</code></pre>
+</section>
+</div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Docs/articles/programming_rdo_data/database_cud_operations.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © Weifen Luo | DevZest</span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

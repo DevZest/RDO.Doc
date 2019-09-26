@@ -1,0 +1,1353 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Introduction to RDO.Net </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Introduction to RDO.Net ">
+    <meta name="generator" content="docfx 2.43.2.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="about_rdo_net">
+<h1 id="introduction-to-rdonet">Introduction to RDO.Net</h1>
+
+<p>RDO.Net (Relational Data Objects for .Net) is a revolutionary framework to develop enterprise applications in .Net platform, consists of the following libraries and tools:</p>
+<p><img src="/images/RdoNetOverview.jpg" alt="image"></p>
+<h2 id="license">License</h2>
+<p>RDO.Net is licensed separately for its runtime (blue) and design-time tools (purple):</p>
+<ul>
+<li><a class="xref" href="../getting_started/rdo_net_runtime_license.html">RDO.Net Runtime License</a></li>
+<li><a class="xref" href="../getting_started/rdo_tools_license.html">RDO.Tools License</a>/<a href="https://my.devzest.com/Pricing">Pricing</a></li>
+</ul>
+<div class="NOTE">
+<h5>Note</h5>
+<p>Q: Is RDO.Net Runtime <a href="https://en.wikipedia.org/wiki/The_Open_Source_Definition">Open Source Software (OSS)</a>?</p>
+<p>A: Almost but not exactly. RDO.Net Runtime License has an extra defensive term to protect the interest of our design-time tools, for the best of this framework. Most users should not be affected by this term.</p>
+</div>
+<h2 id="why-choose-rdonet">Why choose RDO.Net</h2>
+<p>Enterprise application, typically backed by a relational database, has decades of history. Today's enterprise applications are unnecessarily complex and heavyweight, due to the following technical constraints:</p>
+<ul>
+<li><a href="https://en.wikipedia.org/wiki/Object-relational_mapping">Object-Relational Mapping (ORM, O/RM, and O/R mapping tool)</a>, as the core of enterprise applications, is still <a href="http://blogs.tedneward.com/post/the-vietnam-of-computer-science/">The Vietnam of Computer Science</a>. Particularly, these difficulties are referred to as the <a href="https://en.wikipedia.org/wiki/Object-relational_impedance_mismatch">object-relational impedance mismatch</a>.</li>
+<li>Database testing, still stays on principles and guidelines. No widely practical use yet. Refactoring an enterprise
+application is time consuming and error prone.</li>
+<li>Separation of the graphical user interface from the business logic or back-end logic (the data model), is still a challenge task. Frameworks such as <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel">MVVM</a> exists, but it's far from ideal: it will hit the wall when dealing with complex layout or complex interactivity; refactoring UI logic is still error prone, etc.</li>
+</ul>
+<p>The above challenges impose great burdens for developing and further changing an enterprise application. Many frameworks are trying to solve these problems however they are all far from ideal. RDO.Net is the only solution to these problems in an integral, not an after-thought way (strongly recommended reading through):</p>
+<ul>
+<li><a class="xref" href="enterprise_application_the_right_way.html">Enterprise Application, the Right Way</a></li>
+<li><a class="xref" href="orm_data_access_the_right_way.html">ORM/Data Access, the Right Way</a></li>
+<li><a class="xref" href="data_presentation_the_right_way.html">Data Presentation, the Right Way</a></li>
+</ul>
+<p>In the end, your application follows your business in a no-more-no-less basis - it adapts to your business, not vice versa:</p>
+<ul>
+<li>Your application is 100% strongly typed from database to GUI, with extremely clean code in C#/VB.Net. No fancy HQL, XAML or any other DSL - traditional problems are solved in a traditional way.</li>
+<li>Your data access is unbeatable for both performance and maintainability because you're writing native SQL using C#/VB.Net.</li>
+<li>A revolutionary one-for-all, fully customizable data presenter is provided to handle view states including layout, data binding and data validation, all in clean C#/VB.Net code. Most complex controls such as ListBox, TreeView, DataGrid are eliminated. You have the greatest control over your UI because you're dealing with basic control such as label and text box directly.</li>
+<li>JSON serialization/deserialization is a first class citizen - unbeatable performance because no reflection required.</li>
+<li>Database testing and deployment is a first class citizen. You can easily mock part of database with testing data, generate database from clean C#/VB.Net code, or generate C#/VB.Net code from table data in database, right in Visual Studio.</li>
+<li>And much more with a extremely lightweight runtime - you only need to add several dlls into your application, only hundreds or even tens of KBs in size!</li>
+</ul>
+<h2 id="a-taste-of-rdonet">A Taste of RDO.Net</h2>
+<h3 id="the-model">The Model</h3>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q_cs" role="tabpanel" data-tab="cs">
+<pre><code class="lang-csharp" name="SalesOrderDetail">using DevZest.Data;
+using DevZest.Data.Annotations;
+using DevZest.Data.SqlServer;
+
+namespace DevZest.Samples.AdventureWorksLT
+{
+    [Computation(nameof(ComputeLineTotal))]
+    [CheckConstraint(nameof(CK_SalesOrderDetail_OrderQty), typeof(UserMessages), nameof(UserMessages.CK_SalesOrderDetail_OrderQty), Description = &quot;Check constraint [OrderQty] &gt; (0)&quot;)]
+    [CheckConstraint(nameof(CK_SalesOrderDetail_UnitPrice), typeof(UserMessages), nameof(UserMessages.CK_SalesOrderDetail_UnitPrice), Description = &quot;Check constraint [UnitPrice] &gt;= (0.00)&quot;)]
+    [CheckConstraint(nameof(CK_SalesOrderDetail_UnitPriceDiscount), typeof(UserMessages), nameof(UserMessages.CK_SalesOrderDetail_UnitPriceDiscount), Description = &quot;Check constraint [UnitPriceDiscount] &gt;= (0.00)&quot;)]
+    [DbIndex(nameof(IX_SalesOrderDetail_ProductID), Description = &quot;Nonclustered index.&quot;)]
+    public class SalesOrderDetail : BaseModel&lt;SalesOrderDetail.PK&gt;
+    {
+        [DbPrimaryKey(&quot;PK_SalesOrderDetail_SalesOrderID_SalesOrderDetailID&quot;, Description = &quot;Clustered index created by a primary key constraint.&quot;)]
+        public sealed class PK : CandidateKey
+        {
+            public PK(_Int32 salesOrderID, _Int32 salesOrderDetailID)
+                : base(salesOrderID, salesOrderDetailID)
+            {
+            }
+        }
+
+        public class Key : Key&lt;PK&gt;
+        {
+            static Key()
+            {
+                Register((Key _) =&gt; _.SalesOrderID, _SalesOrderID);
+                Register((Key _) =&gt; _.SalesOrderDetailID, _SalesOrderDetailID);
+            }
+
+            protected override PK CreatePrimaryKey()
+            {
+                return new PK(SalesOrderID, SalesOrderDetailID);
+            }
+
+            public _Int32 SalesOrderID { get; private set; }
+
+            public _Int32 SalesOrderDetailID { get; private set; }
+        }
+
+        public static readonly Mounter&lt;_Int32&gt; _SalesOrderID = RegisterColumn((SalesOrderDetail _) =&gt; _.SalesOrderID);
+        public static readonly Mounter&lt;_Int32&gt; _SalesOrderDetailID = RegisterColumn((SalesOrderDetail _) =&gt; _.SalesOrderDetailID);
+        public static readonly Mounter&lt;_Int16&gt; _OrderQty = RegisterColumn((SalesOrderDetail _) =&gt; _.OrderQty);
+        public static readonly Mounter&lt;_Int32&gt; _ProductID = RegisterColumn((SalesOrderDetail _) =&gt; _.ProductID);
+        public static readonly Mounter&lt;_Decimal&gt; _UnitPrice = RegisterColumn((SalesOrderDetail _) =&gt; _.UnitPrice);
+        public static readonly Mounter&lt;_Decimal&gt; _UnitPriceDiscount = RegisterColumn((SalesOrderDetail _) =&gt; _.UnitPriceDiscount);
+        public static readonly Mounter&lt;_Decimal&gt; _LineTotal = RegisterColumn((SalesOrderDetail _) =&gt; _.LineTotal);
+
+        public SalesOrderDetail()
+        {
+        }
+
+        protected sealed override PK CreatePrimaryKey()
+        {
+            return new PK(SalesOrderID, SalesOrderDetailID);
+        }
+
+        private SalesOrderHeader.PK _fk_salesOrderHeader;
+        public SalesOrderHeader.PK FK_SalesOrderHeader
+        {
+            get { return _fk_salesOrderHeader ?? (_fk_salesOrderHeader = new SalesOrderHeader.PK(SalesOrderID)); }
+        }
+
+        private Product.PK _fk_product;
+        public Product.PK FK_Product
+        {
+            get { return _fk_product ?? (_fk_product = new Product.PK(ProductID)); }
+        }
+
+        [DbColumn(Description = &quot;Primary key. Foreign key to SalesOrderHeader.SalesOrderID.&quot;)]
+        public _Int32 SalesOrderID { get; private set; }
+
+        [Identity]
+        [DbColumn(Description = &quot;Primary key. One incremental unique number per product sold.&quot;)]
+        public _Int32 SalesOrderDetailID { get; private set; }
+
+        [Required]
+        [DbColumn(Description = &quot;Quantity ordered per product.&quot;)]
+        public _Int16 OrderQty { get; private set; }
+
+        [Required]
+        [DbColumn(Description = &quot;Product sold to customer. Foreign key to Product.ProductID.&quot;)]
+        public _Int32 ProductID { get; private set; }
+
+        [Required]
+        [SqlMoney]
+        [DbColumn(Description = &quot;Selling price of a single product.&quot;)]
+        public _Decimal UnitPrice { get; private set; }
+
+        [Required]
+        [SqlMoney]
+        [DefaultValue(typeof(decimal), &quot;0&quot;, Name = &quot;DF_SalesOrderDetail_UnitPriceDiscount&quot;)]
+        [DbColumn(Description = &quot;Discount amount.&quot;)]
+        public _Decimal UnitPriceDiscount { get; private set; }
+
+        [Required]
+        [SqlMoney]
+        [DbColumn(Description = &quot;Per product subtotal. Computed as UnitPrice * (1 - UnitPriceDiscount) * OrderQty.&quot;)]
+        public _Decimal LineTotal { get; private set; }
+
+        [_Computation]
+        private void ComputeLineTotal()
+        {
+            LineTotal.ComputedAs((UnitPrice * (_Decimal.Const(1) - UnitPriceDiscount) * OrderQty).IfNull(_Decimal.Const(0)));
+        }
+
+        [_CheckConstraint]
+        private _Boolean CK_SalesOrderDetail_OrderQty
+        {
+            get { return OrderQty &gt; _Decimal.Const(0); }
+        }
+
+        [_CheckConstraint]
+        private _Boolean CK_SalesOrderDetail_UnitPrice
+        {
+            get { return UnitPrice &gt;= _Decimal.Const(0); }
+        }
+
+        [_CheckConstraint]
+        private _Boolean CK_SalesOrderDetail_UnitPriceDiscount
+        {
+            get { return UnitPriceDiscount &gt;= _Decimal.Const(0); }
+        }
+
+        [_DbIndex]
+        private ColumnSort[] IX_SalesOrderDetail_ProductID =&gt; new ColumnSort[] { ProductID };
+    }
+}
+</code></pre></section>
+<section id="tabpanel_CeZOj-G++Q_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-vb" name="SalesOrderDetail">&lt;Computation(&quot;ComputeLineTotal&quot;)&gt;
+&lt;CheckConstraint(&quot;CK_SalesOrderDetail_OrderQty&quot;, GetType(My.UserMessages), NameOf(My.UserMessages.CK_SalesOrderDetail_OrderQty), Description:=&quot;Check constraint [OrderQty] &gt; (0)&quot;)&gt;
+&lt;CheckConstraint(&quot;CK_SalesOrderDetail_UnitPrice&quot;, GetType(My.UserMessages), NameOf(My.UserMessages.CK_SalesOrderDetail_UnitPrice), Description:=&quot;heck constraint [UnitPrice] &gt;= (0.00)&quot;)&gt;
+&lt;CheckConstraint(&quot;CK_SalesOrderDetail_UnitPriceDiscount&quot;, GetType(My.UserMessages), NameOf(My.UserMessages.CK_SalesOrderDetail_UnitPriceDiscount), Description:=&quot;Check constraint [UnitPriceDiscount] &gt;= (0.00)&quot;)&gt;
+&lt;DbIndex(&quot;IX_SalesOrderDetail_ProductID&quot;, Description:=&quot;Nonclustered index.&quot;)&gt;
+Public Class SalesOrderDetail
+    Inherits BaseModel(Of PK)
+
+    &lt;DbPrimaryKey(&quot;PK_SalesOrderDetail_SalesOrderID_SalesOrderDetailID&quot;, Description:=&quot;Clustered index created by a primary key constraint.&quot;)&gt;
+    Public NotInheritable Class PK
+        Inherits CandidateKey
+
+        Public Sub New(salesOrderID As _Int32, salesOrderDetailID As _Int32)
+            MyBase.New(salesOrderID, salesOrderDetailID)
+        End Sub
+    End Class
+
+    Public Class Key
+        Inherits Key(Of PK)
+
+        Shared Sub New()
+            Register(Function(x As Key) x.SalesOrderID, _SalesOrderID)
+            Register(Function(x As Key) x.SalesOrderDetailID, _SalesOrderDetailID)
+        End Sub
+
+        Protected Overrides Function CreatePrimaryKey() As PK
+            Return New PK(SalesOrderID, SalesOrderDetailID)
+        End Function
+
+        Private m_SalesOrderID As _Int32
+        Public Property SalesOrderID As _Int32
+            Get
+                Return m_SalesOrderID
+            End Get
+            Private Set
+                m_SalesOrderID = Value
+            End Set
+        End Property
+
+        Private m_SalesOrderDetailID As _Int32
+        Public Property SalesOrderDetailID As _Int32
+            Get
+                Return m_SalesOrderDetailID
+            End Get
+            Private Set
+                m_SalesOrderDetailID = Value
+            End Set
+        End Property
+    End Class
+
+    Public Shared ReadOnly _SalesOrderID As Mounter(Of _Int32) = RegisterColumn(Function(x As SalesOrderDetail) x.SalesOrderID)
+    Public Shared ReadOnly _SalesOrderDetailID As Mounter(Of _Int32) = RegisterColumn(Function(x As SalesOrderDetail) x.SalesOrderDetailID)
+    Public Shared ReadOnly _OrderQty As Mounter(Of _Int16) = RegisterColumn(Function(x As SalesOrderDetail) x.OrderQty)
+    Public Shared ReadOnly _ProductID As Mounter(Of _Int32) = RegisterColumn(Function(x As SalesOrderDetail) x.ProductID)
+    Public Shared ReadOnly _UnitPrice As Mounter(Of _Decimal) = RegisterColumn(Function(x As SalesOrderDetail) x.UnitPrice)
+    Public Shared ReadOnly _UnitPriceDiscount As Mounter(Of _Decimal) = RegisterColumn(Function(x As SalesOrderDetail) x.UnitPriceDiscount)
+    Public Shared ReadOnly _LineTotal As Mounter(Of _Decimal) = RegisterColumn(Function(x As SalesOrderDetail) x.LineTotal)
+
+    Protected NotOverridable Overrides Function CreatePrimaryKey() As PK
+        Return New PK(SalesOrderID, SalesOrderDetailID)
+    End Function
+
+    Private m_FK_SalesOrderHeader As SalesOrderHeader.PK
+    Public ReadOnly Property FK_SalesOrderHeader As SalesOrderHeader.PK
+        Get
+            If m_FK_SalesOrderHeader Is Nothing Then
+                m_FK_SalesOrderHeader = New SalesOrderHeader.PK(SalesOrderID)
+            End If
+            Return m_FK_SalesOrderHeader
+        End Get
+    End Property
+
+    Private m_FK_Product As Product.PK
+    Public ReadOnly Property FK_Product As Product.PK
+        Get
+            If m_FK_Product Is Nothing Then
+                m_FK_Product = New Product.PK(ProductID)
+            End If
+            Return m_FK_Product
+        End Get
+    End Property
+
+    Private m_SalesOrderID As _Int32
+    &lt;DbColumn(Description:=&quot;Primary key. Foreign key to SalesOrderHeader.SalesOrderID.&quot;)&gt;
+    Public Property SalesOrderID As _Int32
+        Get
+            Return m_SalesOrderID
+        End Get
+        Private Set
+            m_SalesOrderID = Value
+        End Set
+    End Property
+
+    Private m_SalesOrderDetailID As _Int32
+    &lt;Identity&gt;
+    &lt;DbColumn(Description:=&quot;Primary key. One incremental unique number per product sold.&quot;)&gt;
+    Public Property SalesOrderDetailID As _Int32
+        Get
+            Return m_SalesOrderDetailID
+        End Get
+        Private Set
+            m_SalesOrderDetailID = Value
+        End Set
+    End Property
+
+    Private m_OrderQty As _Int16
+    &lt;Required&gt;
+    &lt;DbColumn(Description:=&quot;Quantity ordered per product.&quot;)&gt;
+    Public Property OrderQty As _Int16
+        Get
+            Return m_OrderQty
+        End Get
+        Private Set
+            m_OrderQty = Value
+        End Set
+    End Property
+
+    Private m_ProductID As _Int32
+    &lt;Required&gt;
+    &lt;DbColumn(Description:=&quot;Product sold to customer. Foreign key to Product.ProductID.&quot;)&gt;
+    Public Property ProductID As _Int32
+        Get
+            Return m_ProductID
+        End Get
+        Private Set
+            m_ProductID = Value
+        End Set
+    End Property
+
+    Private m_UnitPrice As _Decimal
+    &lt;Required&gt;
+    &lt;SqlMoney&gt;
+    &lt;DbColumn(Description:=&quot;Selling price of a single product.&quot;)&gt;
+    Public Property UnitPrice As _Decimal
+        Get
+            Return m_UnitPrice
+        End Get
+        Private Set
+            m_UnitPrice = Value
+        End Set
+    End Property
+
+    Private m_UnitPriceDiscount As _Decimal
+    &lt;Required&gt;
+    &lt;SqlMoney&gt;
+    &lt;DefaultValue(GetType(Decimal), &quot;0&quot;, Name:=&quot;DF_SalesOrderDetail_UnitPriceDiscount&quot;)&gt;
+    &lt;DbColumn(Description:=&quot;Discount amount.&quot;)&gt;
+    Public Property UnitPriceDiscount As _Decimal
+        Get
+            Return m_UnitPriceDiscount
+        End Get
+        Private Set
+            m_UnitPriceDiscount = Value
+        End Set
+    End Property
+
+    Private m_LineTotal As _Decimal
+    &lt;Required&gt;
+    &lt;SqlMoney&gt;
+    &lt;DbColumn(Description:=&quot;Per product subtotal. Computed as UnitPrice * (1 - UnitPriceDiscount) * OrderQty.&quot;)&gt;
+    Public Property LineTotal As _Decimal
+        Get
+            Return m_LineTotal
+        End Get
+        Private Set
+            m_LineTotal = Value
+        End Set
+    End Property
+
+    &lt;_Computation&gt;
+    Private Sub ComputeLineTotal()
+        LineTotal.ComputedAs((UnitPrice * (_Decimal.[Const](1) - UnitPriceDiscount) * OrderQty).IfNull(_Decimal.[Const](0)))
+    End Sub
+
+    &lt;_CheckConstraint&gt;
+    Private ReadOnly Property CK_SalesOrderDetail_OrderQty As _Boolean
+        Get
+            Return OrderQty &gt; _Decimal.Const(0)
+        End Get
+    End Property
+
+    &lt;_CheckConstraint&gt;
+    Private ReadOnly Property CK_SalesOrderDetail_UnitPrice As _Boolean
+        Get
+            Return UnitPrice &gt;= _Decimal.Const(0)
+        End Get
+    End Property
+
+    &lt;_CheckConstraint&gt;
+    Private ReadOnly Property CK_SalesOrderDetail_UnitPriceDiscount As _Boolean
+        Get
+            Return UnitPriceDiscount &gt;= _Decimal.Const(0)
+        End Get
+    End Property
+
+    &lt;_DbIndex&gt;
+    Private ReadOnly Property IX_SalesOrderDetail_ProductID As ColumnSort()
+        Get
+            Return New ColumnSort() {ProductID}
+        End Get
+    End Property
+End Class
+</code></pre></section>
+</div>
+
+<p>The code of model can be manipulated in Model Visualizer tool window in Visual Studio:</p>
+<p><img src="/images/SalesOrderDetailModelVisualizer.jpg" alt="image"></p>
+<h3 id="the-database">The Database</h3>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-1_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-1_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-1_cs" role="tabpanel" data-tab="cs">
+<pre><code class="lang-csharp" name="Db">using DevZest.Data;
+using DevZest.Data.Annotations;
+using DevZest.Data.SqlServer;
+using System;
+using System.Data.SqlClient;
+
+namespace DevZest.Samples.AdventureWorksLT
+{
+    public partial class Db : SqlSession
+    {
+        public Db(string connectionString, Action&lt;Db&gt; initializer = null)
+            : base(CreateSqlConnection(connectionString))
+        {
+            initializer?.Invoke(this);
+        }
+
+        private static SqlConnection CreateSqlConnection(string connectionString)
+        {
+            if (string.IsNullOrEmpty(connectionString))
+                throw new ArgumentNullException(nameof(connectionString));
+            return new SqlConnection(connectionString);
+        }
+#if !DEPLOY
+        // For unit tests
+        public Db(SqlVersion sqlVersion)
+            : base(new SqlConnection())
+        {
+            SqlVersion = sqlVersion;
+        }
+#endif
+
+        public Db(SqlConnection sqlConnection)
+            : base(sqlConnection)
+        {
+        }
+
+        private DbTable&lt;Address&gt; _address;
+        [DbTable(&quot;[SalesLT].[Address]&quot;, Description = &quot;Street address information for customers.&quot;)]
+        public DbTable&lt;Address&gt; Address
+        {
+            get { return GetTable(ref _address); }
+        }
+
+        private DbTable&lt;Customer&gt; _customer;
+        [DbTable(&quot;[SalesLT].[Customer]&quot;, Description = &quot;Customer information.&quot;)]
+        public DbTable&lt;Customer&gt; Customer
+        {
+            get { return GetTable(ref _customer); }
+        }
+
+        private DbTable&lt;CustomerAddress&gt; _customerAddress;
+        [DbTable(&quot;[SalesLT].[CustomerAddress]&quot;, Description = &quot;Cross-reference table mapping customers to their address(es).&quot;)]
+        [Relationship(nameof(FK_CustomerAddress_Customer_CustomerID), Description = &quot;Foreign key constraint referencing Customer.CustomerID.&quot;)]
+        [Relationship(nameof(FK_CustomerAddress_Address_AddressID), Description = &quot;Foreign key constraint referencing Address.AddressID.&quot;)]
+        public DbTable&lt;CustomerAddress&gt; CustomerAddress
+        {
+            get { return GetTable(ref _customerAddress); }
+        }
+
+        [_Relationship]
+        private KeyMapping FK_CustomerAddress_Customer_CustomerID(CustomerAddress _)
+        {
+            return _.FK_Customer.Join(Customer._);
+        }
+
+        [_Relationship]
+        private KeyMapping FK_CustomerAddress_Address_AddressID(CustomerAddress _)
+        {
+            return _.FK_Address.Join(Address._);
+        }
+
+        private DbTable&lt;ProductCategory&gt; _productCategory;
+        [DbTable(&quot;[SalesLT].[ProductCategory]&quot;, Description = &quot;High-level product categorization.&quot;)]
+        [Relationship(nameof(FK_ProductCategory_ProductCategory_ParentProductCategoryID_ProductCategoryID), Description = &quot;Foreign key constraint referencing ProductCategory.ProductCategoryID.&quot;)]
+        public DbTable&lt;ProductCategory&gt; ProductCategory
+        {
+            get { return GetTable(ref _productCategory); }
+        }
+
+        [_Relationship]
+        private KeyMapping FK_ProductCategory_ProductCategory_ParentProductCategoryID_ProductCategoryID(ProductCategory _)
+        {
+            return _.FK_ParentProductCategory.Join(_);
+        }
+
+        private DbTable&lt;ProductModel&gt; _productModel;
+        [DbTable(&quot;[SalesLT].[ProductModel]&quot;)]
+        public DbTable&lt;ProductModel&gt; ProductModel
+        {
+            get { return GetTable(ref _productModel); }
+        }
+
+        private DbTable&lt;ProductDescription&gt; _productDescription;
+        [DbTable(&quot;[SalesLT].[ProductDescription]&quot;, Description = &quot;Product descriptions in several languages.&quot;)]
+        public DbTable&lt;ProductDescription&gt; ProductDescription
+        {
+            get { return GetTable(ref _productDescription); }
+        }
+
+        private DbTable&lt;ProductModelProductDescription&gt; _productModelProductDescription;
+        [DbTable(&quot;[SalesLT].[ProductModelProductDescription]&quot;, Description = &quot;Cross-reference table mapping product descriptions and the language the description is written in.&quot;)]
+        [Relationship(nameof(FK_ProductModelProductDescription_ProductModel_ProductModelID), Description = &quot;Foreign key constraint referencing ProductModel.ProductModelID.&quot;)]
+        [Relationship(nameof(FK_ProductModelProductDescription_ProductDescription_ProductDescriptionID), Description = &quot;Foreign key constraint referencing ProductDescription.ProductDescriptionID.&quot;)]
+        public DbTable&lt;ProductModelProductDescription&gt; ProductModelProductDescription
+        {
+            get { return GetTable(ref _productModelProductDescription); }
+        }
+
+        [_Relationship]
+        private KeyMapping FK_ProductModelProductDescription_ProductModel_ProductModelID(ProductModelProductDescription _)
+        {
+            return _.FK_ProductModel.Join(ProductModel._);
+        }
+
+        [_Relationship]
+        private KeyMapping FK_ProductModelProductDescription_ProductDescription_ProductDescriptionID(ProductModelProductDescription _)
+        {
+            return _.FK_ProductDescription.Join(ProductDescription._);
+        }
+
+        private DbTable&lt;Product&gt; _product;
+        [DbTable(&quot;[SalesLT].[Product]&quot;, Description = &quot;Products sold or used in the manfacturing of sold products.&quot;)]
+        [Relationship(nameof(FK_Product_ProductModel_ProductModelID))]
+        [Relationship(nameof(FK_Product_ProductCategory_ProductCategoryID))]
+        public DbTable&lt;Product&gt; Product
+        {
+            get { return GetTable(ref _product); }
+        }
+
+        [_Relationship]
+        private KeyMapping FK_Product_ProductModel_ProductModelID(Product _)
+        {
+            return _.FK_ProductModel.Join(ProductModel._);
+        }
+
+        [_Relationship]
+        private KeyMapping FK_Product_ProductCategory_ProductCategoryID(Product _)
+        {
+            return _.FK_ProductCategory.Join(ProductCategory._);
+        }
+
+        private DbTable&lt;SalesOrderHeader&gt; _salesOrderHeader;
+        [DbTable(&quot;[SalesLT].[SalesOrderHeader]&quot;, Description = &quot;General sales order information.&quot;)]
+        [Relationship(nameof(FK_SalesOrderHeader_Customer_CustomerID))]
+        [Relationship(nameof(FK_SalesOrderHeader_Address_BillTo_AddressID))]
+        [Relationship(nameof(FK_SalesOrderHeader_Address_ShipTo_AddressID))]
+        public DbTable&lt;SalesOrderHeader&gt; SalesOrderHeader
+        {
+            get { return GetTable(ref _salesOrderHeader); }
+        }
+
+        [_Relationship]
+        private KeyMapping FK_SalesOrderHeader_Customer_CustomerID(SalesOrderHeader _)
+        {
+            return _.FK_Customer.Join(Customer._);
+        }
+
+        [_Relationship]
+        private KeyMapping FK_SalesOrderHeader_Address_BillTo_AddressID(SalesOrderHeader _)
+        {
+            return _.FK_BillToCustomerAddress.Join(CustomerAddress._);
+        }
+
+        [_Relationship]
+        private KeyMapping FK_SalesOrderHeader_Address_ShipTo_AddressID(SalesOrderHeader _)
+        {
+            return _.FK_ShipToCustomerAddress.Join(CustomerAddress._);
+        }
+
+        private DbTable&lt;SalesOrderDetail&gt; _salesOrderDetail;
+        [DbTable(&quot;[SalesLT].[SalesOrderDetail]&quot;, Description = &quot;Individual products associated with a specific sales order. See SalesOrderHeader.&quot;)]
+        [Relationship(nameof(FK_SalesOrderDetail_SalesOrderHeader))]
+        [Relationship(nameof(FK_SalesOrderDetail_Product))]
+        public DbTable&lt;SalesOrderDetail&gt; SalesOrderDetail
+        {
+            get { return GetTable(ref _salesOrderDetail); }
+        }
+
+        [_Relationship]
+        private KeyMapping FK_SalesOrderDetail_SalesOrderHeader(SalesOrderDetail _)
+        {
+            return _.FK_SalesOrderHeader.Join(SalesOrderHeader._);
+        }
+
+        [_Relationship]
+        private KeyMapping FK_SalesOrderDetail_Product(SalesOrderDetail _)
+        {
+            return _.FK_Product.Join(Product._);
+        }
+    }
+}
+</code></pre></section>
+<section id="tabpanel_CeZOj-G++Q-1_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-vb" name="Db">Imports System.Data.SqlClient
+
+Partial Public Class Db
+    Inherits SqlSession
+
+    Public Sub New(connectionString As String, Optional initializer As Action(Of Db) = Nothing)
+        MyBase.New(CreateSqlConnection(connectionString))
+        If initializer IsNot Nothing Then initializer(Me)
+    End Sub
+
+    Private Shared Function CreateSqlConnection(connectionString As String) As SqlConnection
+        If String.IsNullOrEmpty(connectionString) Then Throw New ArgumentNullException(NameOf(connectionString))
+        Return New SqlConnection(connectionString)
+    End Function
+
+    Public Sub New(ByVal sqlVersion As SqlVersion)
+        MyBase.New(New SqlConnection())
+        sqlVersion = sqlVersion
+    End Sub
+
+    Public Sub New(ByVal sqlConnection As SqlConnection)
+        MyBase.New(sqlConnection)
+    End Sub
+
+    Private m_Address As DbTable(Of Address)
+    &lt;DbTable(&quot;[SalesLT].[Address]&quot;, Description:=&quot;Street address information for customers.&quot;)&gt;
+    Public ReadOnly Property Address As DbTable(Of Address)
+        Get
+            Return GetTable(m_Address)
+        End Get
+    End Property
+
+    Private m_Customer As DbTable(Of Customer)
+    &lt;DbTable(&quot;[SalesLT].[Customer]&quot;, Description:=&quot;Customer information.&quot;)&gt;
+    Public ReadOnly Property Customer As DbTable(Of Customer)
+        Get
+            Return GetTable(m_Customer)
+        End Get
+    End Property
+
+    Private m_CustomerAddress As DbTable(Of CustomerAddress)
+    &lt;DbTable(&quot;[SalesLT].[CustomerAddress]&quot;, Description:=&quot;Cross-reference table mapping customers to their address(es).&quot;)&gt;
+    &lt;Relationship(NameOf(FK_CustomerAddress_Customer_CustomerID), Description:=&quot;Foreign key constraint referencing Customer.CustomerID.&quot;)&gt;
+    &lt;Relationship(NameOf(FK_CustomerAddress_Address_AddressID), Description:=&quot;Foreign key constraint referencing Address.AddressID.&quot;)&gt;
+    Public ReadOnly Property CustomerAddress As DbTable(Of CustomerAddress)
+        Get
+            Return GetTable(m_CustomerAddress)
+        End Get
+    End Property
+
+    &lt;_Relationship&gt;
+    Private Function FK_CustomerAddress_Customer_CustomerID(x As CustomerAddress) As KeyMapping
+        Return x.FK_Customer.Join(Customer.Entity)
+    End Function
+
+    &lt;_Relationship&gt;
+    Private Function FK_CustomerAddress_Address_AddressID(x As CustomerAddress) As KeyMapping
+        Return x.FK_Address.Join(Address.Entity)
+    End Function
+
+    Private m_ProductCategory As DbTable(Of ProductCategory)
+    &lt;DbTable(&quot;[SalesLT].[ProductCategory]&quot;, Description:=&quot;High-level product categorization.&quot;)&gt;
+    &lt;Relationship(NameOf(FK_ProductCategory_ProductCategory_ParentProductCategoryID_ProductCategoryID), Description:=&quot;Foreign key constraint referencing ProductCategory.ProductCategoryID.&quot;)&gt;
+    Public ReadOnly Property ProductCategory As DbTable(Of ProductCategory)
+        Get
+            Return GetTable(m_ProductCategory)
+        End Get
+    End Property
+
+    &lt;_Relationship&gt;
+    Private Function FK_ProductCategory_ProductCategory_ParentProductCategoryID_ProductCategoryID(x As ProductCategory) As KeyMapping
+        Return x.FK_ParentProductCategory.Join(x)
+    End Function
+
+    Private m_ProductModel As DbTable(Of ProductModel)
+    &lt;DbTable(&quot;[SalesLT].[ProductModel]&quot;)&gt;
+    Public ReadOnly Property ProductModel As DbTable(Of ProductModel)
+        Get
+            Return GetTable(m_ProductModel)
+        End Get
+    End Property
+
+    Private m_ProductDescription As DbTable(Of ProductDescription)
+    &lt;DbTable(&quot;[SalesLT].[ProductDescription]&quot;, Description:=&quot;Product descriptions in several languages.&quot;)&gt;
+    Public ReadOnly Property ProductDescription As DbTable(Of ProductDescription)
+        Get
+            Return GetTable(m_ProductDescription)
+        End Get
+    End Property
+
+    Private m_ProductModelProductDescription As DbTable(Of ProductModelProductDescription)
+    &lt;DbTable(&quot;[SalesLT].[ProductModelProductDescription]&quot;, Description:=&quot;Cross-reference table mapping product descriptions and the language the description is written in.&quot;)&gt;
+    &lt;Relationship(NameOf(FK_ProductModelProductDescription_ProductModel_ProductModelID), Description:=&quot;Foreign key constraint referencing ProductModel.ProductModelID.&quot;)&gt;
+    &lt;Relationship(NameOf(FK_ProductModelProductDescription_ProductDescription_ProductDescriptionID), Description:=&quot;Foreign key constraint referencing ProductDescription.ProductDescriptionID.&quot;)&gt;
+    Public ReadOnly Property ProductModelProductDescription As DbTable(Of ProductModelProductDescription)
+        Get
+            Return GetTable(m_ProductModelProductDescription)
+        End Get
+    End Property
+
+    &lt;_Relationship&gt;
+    Private Function FK_ProductModelProductDescription_ProductModel_ProductModelID(x As ProductModelProductDescription) As KeyMapping
+        Return x.FK_ProductModel.Join(ProductModel.Entity)
+    End Function
+
+    &lt;_Relationship&gt;
+    Private Function FK_ProductModelProductDescription_ProductDescription_ProductDescriptionID(x As ProductModelProductDescription) As KeyMapping
+        Return x.FK_ProductDescription.Join(ProductDescription.Entity)
+    End Function
+
+    Private m_Product As DbTable(Of Product)
+    &lt;DbTable(&quot;[SalesLT].[Product]&quot;, Description:=&quot;Products sold or used in the manfacturing of sold products.&quot;)&gt;
+    &lt;Relationship(NameOf(FK_Product_ProductModel_ProductModelID))&gt;
+    &lt;Relationship(NameOf(FK_Product_ProductCategory_ProductCategoryID))&gt;
+    Public ReadOnly Property Product As DbTable(Of Product)
+        Get
+            Return GetTable(m_Product)
+        End Get
+    End Property
+
+    &lt;_Relationship&gt;
+    Private Function FK_Product_ProductModel_ProductModelID(x As Product) As KeyMapping
+        Return x.FK_ProductModel.Join(ProductModel.Entity)
+    End Function
+
+    &lt;_Relationship&gt;
+    Private Function FK_Product_ProductCategory_ProductCategoryID(x As Product) As KeyMapping
+        Return x.FK_ProductCategory.Join(ProductCategory.Entity)
+    End Function
+
+    Private m_SalesOrderHeader As DbTable(Of SalesOrderHeader)
+    &lt;DbTable(&quot;[SalesLT].[SalesOrderHeader]&quot;, Description:=&quot;General sales order information.&quot;)&gt;
+    &lt;Relationship(NameOf(FK_SalesOrderHeader_Customer_CustomerID))&gt;
+    &lt;Relationship(NameOf(FK_SalesOrderHeader_Address_BillTo_AddressID))&gt;
+    &lt;Relationship(NameOf(FK_SalesOrderHeader_Address_ShipTo_AddressID))&gt;
+    Public ReadOnly Property SalesOrderHeader As DbTable(Of SalesOrderHeader)
+        Get
+            Return GetTable(m_SalesOrderHeader)
+        End Get
+    End Property
+
+    &lt;_Relationship&gt;
+    Private Function FK_SalesOrderHeader_Customer_CustomerID(x As SalesOrderHeader) As KeyMapping
+        Return x.FK_Customer.Join(Customer.Entity)
+    End Function
+
+    &lt;_Relationship&gt;
+    Private Function FK_SalesOrderHeader_Address_BillTo_AddressID(x As SalesOrderHeader) As KeyMapping
+        Return x.FK_BillToCustomerAddress.Join(CustomerAddress.Entity)
+    End Function
+
+    &lt;_Relationship&gt;
+    Private Function FK_SalesOrderHeader_Address_ShipTo_AddressID(x As SalesOrderHeader) As KeyMapping
+        Return x.FK_ShipToCustomerAddress.Join(CustomerAddress.Entity)
+    End Function
+
+    Private m_SalesOrderDetail As DbTable(Of SalesOrderDetail)
+    &lt;DbTable(&quot;[SalesLT].[SalesOrderDetail]&quot;, Description:=&quot;Individual products associated with a specific sales order. See SalesOrderHeader.&quot;)&gt;
+    &lt;Relationship(NameOf(FK_SalesOrderDetail_SalesOrderHeader))&gt;
+    &lt;Relationship(NameOf(FK_SalesOrderDetail_Product))&gt;
+    Public ReadOnly Property SalesOrderDetail As DbTable(Of SalesOrderDetail)
+        Get
+            Return GetTable(m_SalesOrderDetail)
+        End Get
+    End Property
+
+    &lt;_Relationship&gt;
+    Private Function FK_SalesOrderDetail_SalesOrderHeader(x As SalesOrderDetail) As KeyMapping
+        Return x.FK_SalesOrderHeader.Join(SalesOrderHeader.Entity)
+    End Function
+
+    &lt;_Relationship&gt;
+    Private Function FK_SalesOrderDetail_Product(x As SalesOrderDetail) As KeyMapping
+        Return x.FK_Product.Join(Product.Entity)
+    End Function
+End Class
+</code></pre></section>
+</div>
+
+<p>The code of database can be manipulated via Db Visualizer tool window in Visual Studio:</p>
+<p><img src="/images/AdventureWorksLTDbVisualizer.jpg" alt="image"></p>
+<h3 id="data-access-crud">Data Access (CRUD)</h3>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-2_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-2_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-2_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-2_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-2_cs" role="tabpanel" data-tab="cs">
+<pre><code class="lang-csharp" name="DbApi">
+private async Task EnsureConnectionOpenAsync(CancellationToken ct)
+{
+    if (Connection.State != ConnectionState.Open)
+        await OpenConnectionAsync(ct);
+}
+
+public async Task&lt;DataSet&lt;SalesOrderInfo&gt;&gt; GetSalesOrderInfoAsync(_Int32 salesOrderID, CancellationToken ct = default(CancellationToken))
+{
+    var result = CreateQuery((DbQueryBuilder builder, SalesOrderInfo _) =&gt;
+    {
+        builder.From(SalesOrderHeader, out var o)
+            .LeftJoin(Customer, o.FK_Customer, out var c)
+            .LeftJoin(Address, o.FK_ShipToAddress, out var shipTo)
+            .LeftJoin(Address, o.FK_BillToAddress, out var billTo)
+            .AutoSelect()
+            .AutoSelect(c, _.Customer)
+            .AutoSelect(shipTo, _.ShipToAddress)
+            .AutoSelect(billTo, _.BillToAddress)
+            .Where(o.SalesOrderID == salesOrderID);
+    });
+
+    await result.CreateChildAsync(_ =&gt; _.SalesOrderDetails, (DbQueryBuilder builder, SalesOrderInfoDetail _) =&gt;
+    {
+        builder.From(SalesOrderDetail, out var d)
+            .LeftJoin(Product, d.FK_Product, out var p)
+            .AutoSelect()
+            .AutoSelect(p, _.Product)
+            .OrderBy(d.SalesOrderDetailID);
+    }, ct);
+
+    return await result.ToDataSetAsync(ct);
+}
+
+public async Task&lt;int?&gt; CreateSalesOrderAsync(DataSet&lt;SalesOrderInfo&gt; salesOrders, CancellationToken ct)
+{
+    await EnsureConnectionOpenAsync(ct);
+    using (var transaction = BeginTransaction())
+    {
+        salesOrders._.ResetRowIdentifiers();
+        await SalesOrderHeader.InsertAsync(salesOrders, true, ct);
+        var salesOrderDetails = salesOrders.GetChild(_ =&gt; _.SalesOrderDetails);
+        salesOrderDetails._.ResetRowIdentifiers();
+        await SalesOrderDetail.InsertAsync(salesOrderDetails, ct);
+
+        await transaction.CommitAsync(ct);
+        return salesOrders.Count &gt; 0 ? salesOrders._.SalesOrderID[0] : null;
+    }
+}
+
+public async Task UpdateSalesOrderAsync(DataSet&lt;SalesOrderInfo&gt; salesOrders, CancellationToken ct)
+{
+    await EnsureConnectionOpenAsync(ct);
+    using (var transaction = BeginTransaction())
+    {
+        salesOrders._.ResetRowIdentifiers();
+        await SalesOrderHeader.UpdateAsync(salesOrders, ct);
+        await SalesOrderDetail.DeleteAsync(salesOrders, (s, _) =&gt; s.Match(_.FK_SalesOrderHeader), ct);
+        var salesOrderDetails = salesOrders.GetChild(_ =&gt; _.SalesOrderDetails);
+        salesOrderDetails._.ResetRowIdentifiers();
+        await SalesOrderDetail.InsertAsync(salesOrderDetails, ct);
+
+        await transaction.CommitAsync(ct);
+    }
+}
+
+public Task&lt;int&gt; DeleteSalesOrderAsync(DataSet&lt;SalesOrderHeader.Key&gt; dataSet, CancellationToken ct)
+{
+    return SalesOrderHeader.DeleteAsync(dataSet, (s, _) =&gt; s.Match(_), ct);
+}
+
+</code></pre></section>
+<section id="tabpanel_CeZOj-G++Q-2_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-vb" name="DbApi">Imports System.Data
+Imports System.Threading
+
+Partial Class Db
+    Private Async Function EnsureConnectionOpenAsync(ct As CancellationToken) As Task
+        If Connection.State &lt;&gt; ConnectionState.Open Then
+            Await OpenConnectionAsync(ct)
+        End If
+    End Function
+
+    Public Async Function GetSalesOrderInfoAsync(salesOrderID As _Int32, Optional ct As CancellationToken = Nothing) As Task(Of DataSet(Of SalesOrderInfo))
+        Dim result = CreateQuery(
+            Sub(builder As DbQueryBuilder, x As SalesOrderInfo)
+                Dim o As SalesOrderHeader = Nothing, c As Customer = Nothing, shipTo As Address = Nothing, billTo As Address = Nothing
+                builder.From(SalesOrderHeader, o).
+                    LeftJoin(Customer, o.FK_Customer, c).
+                    LeftJoin(Address, o.FK_ShipToAddress, shipTo).
+                    LeftJoin(Address, o.FK_BillToAddress, billTo).
+                    AutoSelect().
+                    AutoSelect(c, x.Customer).
+                    AutoSelect(shipTo, x.ShipToAddress).
+                    AutoSelect(billTo, x.BillToAddress).
+                    Where(o.SalesOrderID = salesOrderID)
+            End Sub)
+        Await result.CreateChildAsync(Function(x) x.SalesOrderDetails,
+            Sub(builder As DbQueryBuilder, x As SalesOrderInfoDetail)
+                Dim d As SalesOrderDetail = Nothing, p As Product = Nothing
+                builder.From(SalesOrderDetail, d).LeftJoin(Product, d.FK_Product, p).AutoSelect().AutoSelect(p, x.Product)
+            End Sub, ct)
+        Return Await result.ToDataSetAsync(ct)
+    End Function
+
+    Public Function DeleteSalesOrderAsync(dataSet As DataSet(Of SalesOrderHeader.Key), ct As CancellationToken) As Task(Of Integer)
+        Return SalesOrderHeader.DeleteAsync(dataSet, Function(s, x) s.Match(x), ct)
+    End Function
+
+    Public Async Function UpdateSalesOrderAsync(salesOrders As DataSet(Of SalesOrderInfo), ct As CancellationToken) As Task
+        Await EnsureConnectionOpenAsync(ct)
+        Using transaction = BeginTransaction()
+            salesOrders.Entity.ResetRowIdentifiers()
+            Await SalesOrderHeader.UpdateAsync(salesOrders, ct)
+            Await SalesOrderDetail.DeleteAsync(salesOrders, Function(s, x) s.Match(x.FK_SalesOrderHeader), ct)
+            Dim salesOrderDetails = salesOrders.GetChild(Function(x) x.SalesOrderDetails)
+            salesOrderDetails.Entity.ResetRowIdentifiers()
+            Await SalesOrderDetail.InsertAsync(salesOrderDetails, ct)
+            Await transaction.CommitAsync(ct)
+        End Using
+    End Function
+
+    Public Async Function CreateSalesOrderAsync(salesOrders As DataSet(Of SalesOrderInfo), ct As CancellationToken) As Task(Of Integer?)
+        Await EnsureConnectionOpenAsync(ct)
+        Using transaction = BeginTransaction()
+
+            salesOrders.Entity.ResetRowIdentifiers()
+            Await SalesOrderHeader.InsertAsync(salesOrders, True, ct)
+            Dim salesOrderDetails = salesOrders.GetChild(Function(x) x.SalesOrderDetails)
+            salesOrderDetails.Entity.ResetRowIdentifiers()
+            Await SalesOrderDetail.InsertAsync(salesOrderDetails, ct)
+            Await transaction.CommitAsync(ct)
+            If salesOrders.Count &gt; 0 Then
+                Return salesOrders.Entity.SalesOrderID(0)
+            Else
+                Return Nothing
+            End If
+        End Using
+    End Function
+End Class
+</code></pre></section>
+</div>
+<h3 id="data-presentation">Data Presentation</h3>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-3">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-3_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-3_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-3_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-3_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-3_cs" role="tabpanel" data-tab="cs">
+<pre><code class="lang-csharp" name="DetailPresenter">using DevZest.Data.Presenters;
+using DevZest.Data.Views;
+using DevZest.Data;
+using System.Windows;
+using System;
+using System.Windows.Controls;
+using System.Collections.Generic;
+using System.Diagnostics;
+
+namespace DevZest.Samples.AdventureWorksLT
+{
+    partial class SalesOrderWindow
+    {
+        private class DetailPresenter : DataPresenter&lt;SalesOrderInfoDetail&gt;, ForeignKeyBox.ILookupService, DataView.IPasteAppendService
+        {
+            public DetailPresenter(Window ownerWindow)
+            {
+                _ownerWindow = ownerWindow;
+            }
+
+            private readonly Window _ownerWindow;
+
+            protected override void BuildTemplate(TemplateBuilder builder)
+            {
+                var product = _.Product;
+                builder.GridRows(&quot;Auto&quot;, &quot;20&quot;)
+                    .GridColumns(&quot;20&quot;, &quot;*&quot;, &quot;*&quot;, &quot;Auto&quot;, &quot;Auto&quot;, &quot;Auto&quot;, &quot;Auto&quot;)
+                    .WithFrozenTop(1)
+                    .GridLineX(new GridPoint(0, 2), 7)
+                    .GridLineY(new GridPoint(2, 1), 1).GridLineY(new GridPoint(3, 1), 1).GridLineY(new GridPoint(4, 1), 1)
+                    .GridLineY(new GridPoint(5, 1), 1).GridLineY(new GridPoint(6, 1), 1).GridLineY(new GridPoint(7, 1), 1)
+                    .Layout(Orientation.Vertical)
+                    .WithVirtualRowPlacement(VirtualRowPlacement.Tail)
+                    .AllowDelete()
+                    .AddBinding(0, 0, this.BindToGridHeader())
+                    .AddBinding(1, 0, product.ProductNumber.BindToColumnHeader(&quot;Product No.&quot;))
+                    .AddBinding(2, 0, product.Name.BindToColumnHeader(&quot;Product&quot;))
+                    .AddBinding(3, 0, _.UnitPrice.BindToColumnHeader(&quot;Unit Price&quot;))
+                    .AddBinding(4, 0, _.UnitPriceDiscount.BindToColumnHeader(&quot;Discount&quot;))
+                    .AddBinding(5, 0, _.OrderQty.BindToColumnHeader(&quot;Qty&quot;))
+                    .AddBinding(6, 0, _.LineTotal.BindToColumnHeader(&quot;Total&quot;))
+                    .AddBinding(0, 1, _.BindTo&lt;RowHeader&gt;())
+                    .AddBinding(1, 1, _.FK_Product.BindToForeignKeyBox(product, GetProductNumber).MergeIntoGridCell(product.ProductNumber.BindToTextBlock()).WithSerializableColumns(_.ProductID, product.ProductNumber))
+                    .AddBinding(2, 1, product.Name.BindToTextBlock().AddToGridCell().WithSerializableColumns(product.Name))
+                    .AddBinding(3, 1, _.UnitPrice.BindToTextBox().MergeIntoGridCell())
+                    .AddBinding(4, 1, _.UnitPriceDiscount.BindToTextBox(new PercentageConverter()).MergeIntoGridCell(_.UnitPriceDiscount.BindToTextBlock(&quot;{0:P}&quot;)))
+                    .AddBinding(5, 1, _.OrderQty.BindToTextBox().MergeIntoGridCell())
+                    .AddBinding(6, 1, _.LineTotal.BindToTextBlock(&quot;{0:C}&quot;).AddToGridCell().WithSerializableColumns(_.LineTotal));
+            }
+
+            private static string GetProductNumber(ColumnValueBag valueBag, Product.PK productKey, Product.Lookup productLookup)
+            {
+                return valueBag.GetValue(productLookup.ProductNumber);
+            }
+
+            bool ForeignKeyBox.ILookupService.CanLookup(CandidateKey foreignKey)
+            {
+                if (foreignKey == _.FK_Product)
+                    return true;
+                else
+                    return false;
+            }
+
+            void ForeignKeyBox.ILookupService.BeginLookup(ForeignKeyBox foreignKeyBox)
+            {
+                if (foreignKeyBox.ForeignKey == _.FK_Product)
+                {
+                    var dialogWindow = new ProductLookupWindow();
+                    dialogWindow.Show(_ownerWindow, foreignKeyBox, CurrentRow.GetValue(_.ProductID));
+                }
+                else
+                    throw new NotSupportedException();
+            }
+
+            protected override bool ConfirmDelete()
+            {
+                return MessageBox.Show(string.Format(&quot;Are you sure you want to delete selected {0} rows?&quot;, SelectedRows.Count), &quot;Delete&quot;, MessageBoxButton.YesNo) == MessageBoxResult.Yes;
+            }
+
+            bool DataView.IPasteAppendService.Verify(IReadOnlyList&lt;ColumnValueBag&gt; data)
+            {
+                var foreignKeys = DataSet&lt;Product.Ref&gt;.Create();
+                for (int i = 0; i &lt; data.Count; i++)
+                {
+                    var valueBag = data[i];
+                    var productId = valueBag.ContainsKey(_.ProductID) ? valueBag[_.ProductID] : null;
+                    foreignKeys.AddRow((_, dataRow) =&gt;
+                    {
+                        _.ProductID.SetValue(dataRow, productId);
+                    });
+                }
+
+                if (!App.Execute((db, ct) =&gt; db.LookupAsync(foreignKeys, ct), Window.GetWindow(View), out var lookup))
+                    return false;
+
+                Debug.Assert(lookup.Count == data.Count);
+                var product = _.Product;
+                for (int i = 0; i &lt; lookup.Count; i++)
+                {
+                    data[i].SetValue(product.Name, lookup._.Name[i]);
+                    data[i].SetValue(product.ProductNumber, lookup._.ProductNumber[i]);
+                }
+                return true;
+            }
+        }
+    }
+}
+</code></pre></section>
+<section id="tabpanel_CeZOj-G++Q-3_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-vb" name="DetailPresenter">Imports DevZest.Data
+Imports DevZest.Data.Presenters
+Imports DevZest.Data.Views
+
+Partial Class SalesOrderWindow
+    Private Class DetailPresenter
+        Inherits DataPresenter(Of SalesOrderInfoDetail)
+        Implements ForeignKeyBox.ILookupService
+        Implements DataView.IPasteAppendService
+        Public Sub New(ownerWindow As Window)
+            _ownerWindow = ownerWindow
+        End Sub
+
+        Private ReadOnly _ownerWindow As Window
+
+        Protected Overrides Sub BuildTemplate(builder As TemplateBuilder)
+            Dim e = Entity
+            Dim product = e.Product
+            builder.GridRows(&quot;Auto&quot;, &quot;20&quot;) _
+                .GridColumns(&quot;20&quot;, &quot;*&quot;, &quot;*&quot;, &quot;Auto&quot;, &quot;Auto&quot;, &quot;Auto&quot;, &quot;Auto&quot;) _
+                .WithFrozenTop(1) _
+                .GridLineX(New GridPoint(0, 2), 7) _
+                .GridLineY(New GridPoint(2, 1), 1) _
+                .GridLineY(New GridPoint(3, 1), 1) _
+                .GridLineY(New GridPoint(4, 1), 1) _
+                .GridLineY(New GridPoint(5, 1), 1) _
+                .GridLineY(New GridPoint(6, 1), 1) _
+                .GridLineY(New GridPoint(7, 1), 1) _
+                .Layout(Orientation.Vertical) _
+                .WithVirtualRowPlacement(VirtualRowPlacement.Tail) _
+                .AllowDelete() _
+                .AddBinding(0, 0, Me.BindToGridHeader()) _
+                .AddBinding(1, 0, product.ProductNumber.BindToColumnHeader(&quot;Product No.&quot;)) _
+                .AddBinding(2, 0, product.Name.BindToColumnHeader(&quot;Product&quot;)) _
+                .AddBinding(3, 0, e.UnitPrice.BindToColumnHeader(&quot;Unit Price&quot;)) _
+                .AddBinding(4, 0, e.UnitPriceDiscount.BindToColumnHeader(&quot;Discount&quot;)) _
+                .AddBinding(5, 0, e.OrderQty.BindToColumnHeader(&quot;Qty&quot;)) _
+                .AddBinding(6, 0, e.LineTotal.BindToColumnHeader(&quot;Total&quot;)) _
+                .AddBinding(0, 1, e.BindTo(Of RowHeader)()) _
+                .AddBinding(1, 1, e.FK_Product.BindToForeignKeyBox(product, AddressOf GetProductNumber).MergeIntoGridCell(product.ProductNumber.BindToTextBlock()).WithSerializableColumns(e.ProductID, product.ProductNumber)) _
+                .AddBinding(2, 1, product.Name.BindToTextBlock().AddToGridCell().WithSerializableColumns(product.Name)) _
+                .AddBinding(3, 1, e.UnitPrice.BindToTextBox().MergeIntoGridCell()) _
+                .AddBinding(4, 1, e.UnitPriceDiscount.BindToTextBox(New PercentageConverter()).MergeIntoGridCell(e.UnitPriceDiscount.BindToTextBlock(&quot;{0:P}&quot;))) _
+                .AddBinding(5, 1, e.OrderQty.BindToTextBox().MergeIntoGridCell()) _
+                .AddBinding(6, 1, e.LineTotal.BindToTextBlock(&quot;{0:C}&quot;).AddToGridCell().WithSerializableColumns(e.LineTotal))
+        End Sub
+
+        Private Shared Function GetProductNumber(valueBag As ColumnValueBag, productKey As Product.PK, productLookup As Product.Lookup) As String
+            Return valueBag.GetValue(productLookup.ProductNumber)
+        End Function
+
+        Private Function CanLookup(foreignKey As CandidateKey) As Boolean Implements ForeignKeyBox.ILookupService.CanLookup
+            If foreignKey Is Entity.FK_Product Then
+                Return True
+            Else
+                Return False
+            End If
+        End Function
+
+        Private Sub BeginLookup(foreignKeyBox As ForeignKeyBox) Implements ForeignKeyBox.ILookupService.BeginLookup
+            If foreignKeyBox.ForeignKey Is Entity.FK_Product Then
+                Dim dialogWindow = New ProductLookupWindow()
+                dialogWindow.Show(_ownerWindow, foreignKeyBox, CurrentRow.GetValue(Entity.ProductID))
+            Else
+                Throw New NotSupportedException()
+            End If
+        End Sub
+
+        Protected Overrides Function ConfirmDelete() As Boolean
+            Return MessageBox.Show(String.Format(&quot;Are you sure you want to delete selected {0} rows?&quot;, SelectedRows.Count), &quot;Delete&quot;, MessageBoxButton.YesNo) = MessageBoxResult.Yes
+        End Function
+
+        Private Function Verify(data As IReadOnlyList(Of ColumnValueBag)) As Boolean Implements DataView.IPasteAppendService.Verify
+            Dim foreignKeys = DevZest.Data.DataSet(Of Product.Ref).Create()
+            For i = 0 To data.Count
+                Dim valueBag = data(i)
+                Dim productId = If(valueBag.ContainsKey(Entity.ProductID), valueBag(Entity.ProductID), Nothing)
+                foreignKeys.AddRow(Sub(e, dataRow) e.ProductID.SetValue(dataRow, productId))
+            Next
+
+            Dim lookup As DataSet(Of Product.Lookup) = Nothing
+            If Not App.Execute(Function(db, ct) db.LookupAsync(foreignKeys, ct), Window.GetWindow(View), lookup) Then
+                Return False
+            End If
+
+            Debug.Assert(lookup.Count = data.Count)
+            Dim product = Entity.Product
+            For i = 0 To lookup.Count
+                data(i).SetValue(product.Name, lookup.Entity.Name(i))
+                data(i).SetValue(product.ProductNumber, lookup.Entity.ProductNumber(i))
+            Next
+            Return True
+        End Function
+    End Class
+End Class
+</code></pre></section>
+</div>
+
+<p>This will produce the following data grid UI, with foreign key lookup and paste append from clipboard:</p>
+<p><img src="/images/SalesOrderDetailUI.jpg" alt="image"></p>
+<h3 id="mock-database-for-testing">Mock Database for Testing</h3>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-4">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-4_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-4_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-4_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-4_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-4_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-csharp">public sealed class MockSalesOrder : DbMock&lt;Db&gt;
+{
+    public static Task&lt;Db&gt; CreateAsync(Db db, IProgress&lt;DbInitProgress&gt; progress = null, CancellationToken ct = default(CancellationToken))
+    {
+        return new MockSalesOrder().MockAsync(db, progress, ct);
+    }
+
+    // This method is generated by a tool
+    private static DataSet&lt;SalesOrderHeader&gt; Headers()
+    {
+        DataSet&lt;SalesOrderHeader&gt; result = DataSet&lt;SalesOrderHeader&gt;.Create().AddRows(4);
+        SalesOrderHeader _ = result._;
+        _.SuspendIdentity();
+        _.SalesOrderID[0] = 1;
+        _.SalesOrderID[1] = 2;
+        ...
+        _.ResumeIdentity();
+        return result;
+    }
+
+    // This method is generated by a tool
+    private static DataSet&lt;SalesOrderDetail&gt; Details()
+    {
+        DataSet&lt;SalesOrderDetail&gt; result = DataSet&lt;SalesOrderDetail&gt;.Create().AddRows(32);
+        SalesOrderDetail _ = result._;
+        _.SuspendIdentity();
+        ...
+        _.SalesOrderDetailID[0] = 1;
+        _.SalesOrderDetailID[1] = 2;
+        ...
+        _.ResumeIdentity();
+        return result;
+    }
+
+    protected override void Initialize()
+    {
+        // The order of mocking table does not matter, the dependencies will be sorted out automatically.
+        Mock(Db.SalesOrderDetail, Details);
+        Mock(Db.SalesOrderHeader, Headers);
+    }
+}
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q-4_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-vb">Public Class MockSalesOrder
+    Inherits DbMock(Of Db)
+
+    Public Shared Function CreateAsync(db As Db, Optional progress As IProgress(Of DbInitProgress) = Nothing, Optional ct As CancellationToken = Nothing) As Task(Of Db)
+        Return New MockSalesOrder().MockAsync(db, progress, ct)
+    End Function
+
+    ' This method is generated by a tool
+    Private Shared Function Headers() As DataSet(Of SalesOrderHeader)
+        Dim result As DataSet(Of SalesOrderHeader) = DataSet(Of SalesOrderHeader).Create().AddRows(4)
+        Dim x As SalesOrderHeader = result.Entity
+        x.SuspendIdentity()
+        x.SalesOrderID(0) = 1
+        x.SalesOrderID(1) = 2
+        ...
+        x.ResumeIdentity()
+        Return result
+    End Function
+
+    ' This method is generated by a tool
+    Private Shared Function Details() As DataSet(Of SalesOrderDetail)
+        Dim result As DataSet(Of SalesOrderDetail) = DataSet(Of SalesOrderDetail).Create().AddRows(32)
+        Dim x As SalesOrderDetail = result.Entity
+        x.SuspendIdentity()
+        ...
+        x.SalesOrderDetailID(0) = 1
+        x.SalesOrderDetailID(1) = 2
+        x.ResumeIdentity()
+        ...
+        Return result
+    End Function
+
+    Protected Overrides Sub Initialize()
+        Mock(Db.SalesOrderHeader, Function() Headers())
+        Mock(Db.SalesOrderDetail, Function() Details())
+    End Sub
+End Class
+</code></pre>
+</section>
+</div>
+
+<p>The code for testing data is generated from database:</p>
+<p><img src="/images/SalesOrderDetailMockDb.jpg" alt="image"></p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Docs/articles/overview/about_rdo_net.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © Weifen Luo | DevZest</span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

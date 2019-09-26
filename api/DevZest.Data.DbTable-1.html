@@ -1,0 +1,581 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class DbTable&lt;T&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class DbTable&lt;T&gt;
+   ">
+    <meta name="generator" content="docfx 2.43.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="DevZest.Data.DbTable`1">
+  
+  
+  <h1 id="DevZest_Data_DbTable_1" data-uid="DevZest.Data.DbTable`1" class="text-break">Class DbTable&lt;T&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Represents a database table.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="DevZest.Data.DataSource.html">DataSource</a></div>
+    <div class="level2"><a class="xref" href="DevZest.Data.DbSet-1.html">DbSet</a>&lt;T&gt;</div>
+    <div class="level3"><span class="xref">DbTable&lt;T&gt;</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="DevZest.Data.IDbTable.html">IDbTable</a></div>
+    <div><a class="xref" href="DevZest.Data.IDbSet.html">IDbSet</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="DevZest.Data.DbSet-1.DbSession.html#DevZest_Data_DbSet_1_DbSession">DbSet&lt;T&gt;.DbSession</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DbSet-1._.html#DevZest_Data_DbSet_1__">DbSet&lt;T&gt;._</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DbSet-1.Model.html#DevZest_Data_DbSet_1_Model">DbSet&lt;T&gt;.Model</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DbSet-1.DevZest-Data-IDbSet-QueryStatement.html#DevZest_Data_DbSet_1_DevZest_Data_IDbSet_QueryStatement">DbSet&lt;T&gt;.IDbSet.QueryStatement</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DbSet-1.DevZest-Data-IDbSet-FromClause.html#DevZest_Data_DbSet_1_DevZest_Data_IDbSet_FromClause">DbSet&lt;T&gt;.IDbSet.FromClause</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DbSet-1.DevZest-Data-IDbSet-SequentialQueryStatement.html#DevZest_Data_DbSet_1_DevZest_Data_IDbSet_SequentialQueryStatement">DbSet&lt;T&gt;.IDbSet.SequentialQueryStatement</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DbSet-1.Where.html#DevZest_Data_DbSet_1_Where_System_Func__0_DevZest_Data__Boolean__">DbSet&lt;T&gt;.Where(Func&lt;T, _Boolean&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DbSet-1.OrderBy.html#DevZest_Data_DbSet_1_OrderBy_System_Func__0_DevZest_Data_ColumnSort____">DbSet&lt;T&gt;.OrderBy(Func&lt;T, ColumnSort&gt;[])</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DbSet-1.OrderBy.html#DevZest_Data_DbSet_1_OrderBy_System_Int32_System_Int32_System_Func__0_DevZest_Data_ColumnSort____">DbSet&lt;T&gt;.OrderBy(Int32, Int32, Func&lt;T, ColumnSort&gt;[])</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DbSet-1.OrderBy.html#DevZest_Data_DbSet_1_OrderBy_System_Func__0_DevZest_Data_ColumnSort____">DbSet&lt;T&gt;.OrderBy(Func&lt;T, ColumnSort[]&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DbSet-1.OrderBy.html#DevZest_Data_DbSet_1_OrderBy_System_Int32_System_Int32_System_Func__0_DevZest_Data_ColumnSort____">DbSet&lt;T&gt;.OrderBy(Int32, Int32, Func&lt;T, ColumnSort[]&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DbSet-1.ToDataSetAsync.html#DevZest_Data_DbSet_1_ToDataSetAsync_System_Threading_CancellationToken_">DbSet&lt;T&gt;.ToDataSetAsync(CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DbSet-1.ToDataSetAsync.html#DevZest_Data_DbSet_1_ToDataSetAsync_System_Action__0__System_Threading_CancellationToken_">DbSet&lt;T&gt;.ToDataSetAsync(Action&lt;T&gt;, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DbSet-1.ToJsonStringAsync.html#DevZest_Data_DbSet_1_ToJsonStringAsync_System_Boolean_System_Threading_CancellationToken_">DbSet&lt;T&gt;.ToJsonStringAsync(Boolean, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DbSet-1.Union.html#DevZest_Data_DbSet_1_Union_DevZest_Data_DbSet__0__">DbSet&lt;T&gt;.Union(DbSet&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DbSet-1.UnionAll.html#DevZest_Data_DbSet_1_UnionAll_DevZest_Data_DbSet__0__">DbSet&lt;T&gt;.UnionAll(DbSet&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DbSet-1.CountAsync.html#DevZest_Data_DbSet_1_CountAsync">DbSet&lt;T&gt;.CountAsync()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DbSet-1.CountAsync.html#DevZest_Data_DbSet_1_CountAsync_System_Threading_CancellationToken_">DbSet&lt;T&gt;.CountAsync(CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DbSet-1.ToDbQuery.html#DevZest_Data_DbSet_1_ToDbQuery__1">DbSet&lt;T&gt;.ToDbQuery&lt;TDerived&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DbSet-1.DevZest-Data-IDbSet-ToDataSetAsync.html#DevZest_Data_DbSet_1_DevZest_Data_IDbSet_ToDataSetAsync_System_Threading_CancellationToken_">DbSet&lt;T&gt;.IDbSet.ToDataSetAsync(CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DbSet-1.ExecuteDbReaderAsync.html#DevZest_Data_DbSet_1_ExecuteDbReaderAsync_System_Threading_CancellationToken_">DbSet&lt;T&gt;.ExecuteDbReaderAsync(CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DbSet-1.Entity.html#DevZest_Data_DbSet_1_Entity">DbSet&lt;T&gt;.Entity</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="DevZest.Data.html">DevZest.Data</a></h6>
+  <h6><strong>Assembly</strong>: DevZest.Data.dll</h6>
+  <h5 id="DevZest_Data_DbTable_1_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class DbTable&lt;T&gt; : DbSet&lt;T&gt;, IDbTable, IDbSet where T : class, IEntity, new()</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>Entity type of database table.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_Description" data-uid="DevZest.Data.DbTable`1.Description">
+          <a class="xref" href="DevZest.Data.DbTable-1.Description.html#DevZest_Data_DbTable_1_Description">Description</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the description of this table.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_DesignMode" data-uid="DevZest.Data.DbTable`1.DesignMode">
+          <a class="xref" href="DevZest.Data.DbTable-1.DesignMode.html#DevZest_Data_DbTable_1_DesignMode">DesignMode</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets a value indicating whether this DbTable object is in design mode.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_Identifier" data-uid="DevZest.Data.DbTable`1.Identifier">
+          <a class="xref" href="DevZest.Data.DbTable-1.Identifier.html#DevZest_Data_DbTable_1_Identifier">Identifier</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the identifier of this table.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_Kind" data-uid="DevZest.Data.DbTable`1.Kind">
+          <a class="xref" href="DevZest.Data.DbTable-1.Kind.html#DevZest_Data_DbTable_1_Kind">Kind</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_Name" data-uid="DevZest.Data.DbTable`1.Name">
+          <a class="xref" href="DevZest.Data.DbTable-1.Name.html#DevZest_Data_DbTable_1_Name">Name</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the name of this table.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_CreateChildAsync__1_System_Action___0__System_Func__0___0__" data-uid="DevZest.Data.DbTable`1.CreateChildAsync``1(System.Action{``0},System.Func{`0,``0})">
+          <a class="xref" href="DevZest.Data.DbTable-1.CreateChildAsync.html#DevZest_Data_DbTable_1_CreateChildAsync__1_System_Action___0__System_Func__0___0__">CreateChildAsync&lt;TChild&gt;(Action&lt;TChild&gt;, Func&lt;T, TChild&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates child tempoary table.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_CreateChildAsync__1_System_Action___0__System_Func__0___0__System_Threading_CancellationToken_" data-uid="DevZest.Data.DbTable`1.CreateChildAsync``1(System.Action{``0},System.Func{`0,``0},System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.DbTable-1.CreateChildAsync.html#DevZest_Data_DbTable_1_CreateChildAsync__1_System_Action___0__System_Func__0___0__System_Threading_CancellationToken_">CreateChildAsync&lt;TChild&gt;(Action&lt;TChild&gt;, Func&lt;T, TChild&gt;, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates child tempoary table.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_CreateChildAsync__1_System_Func__0___0__" data-uid="DevZest.Data.DbTable`1.CreateChildAsync``1(System.Func{`0,``0})">
+          <a class="xref" href="DevZest.Data.DbTable-1.CreateChildAsync.html#DevZest_Data_DbTable_1_CreateChildAsync__1_System_Func__0___0__">CreateChildAsync&lt;TChild&gt;(Func&lt;T, TChild&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates child tempoary table.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_DeleteAsync_System_Func__0_DevZest_Data__Boolean__System_Threading_CancellationToken_" data-uid="DevZest.Data.DbTable`1.DeleteAsync(System.Func{`0,DevZest.Data._Boolean},System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.DbTable-1.DeleteAsync.html#DevZest_Data_DbTable_1_DeleteAsync_System_Func__0_DevZest_Data__Boolean__System_Threading_CancellationToken_">DeleteAsync(Func&lt;T, _Boolean&gt;, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Deletes records in this database table by condition.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_DeleteAsync_System_Threading_CancellationToken_" data-uid="DevZest.Data.DbTable`1.DeleteAsync(System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.DbTable-1.DeleteAsync.html#DevZest_Data_DbTable_1_DeleteAsync_System_Threading_CancellationToken_">DeleteAsync(CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Deletes all records in this database table.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_DeleteAsync__1_DevZest_Data_DataSet___0__System_Func___0__0_DevZest_Data_KeyMapping__System_Threading_CancellationToken_" data-uid="DevZest.Data.DbTable`1.DeleteAsync``1(DevZest.Data.DataSet{``0},System.Func{``0,`0,DevZest.Data.KeyMapping},System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.DbTable-1.DeleteAsync.html#DevZest_Data_DbTable_1_DeleteAsync__1_DevZest_Data_DataSet___0__System_Func___0__0_DevZest_Data_KeyMapping__System_Threading_CancellationToken_">DeleteAsync&lt;TSource&gt;(DataSet&lt;TSource&gt;, Func&lt;TSource, T, KeyMapping&gt;, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Deletes records in this database table from matching DataSet.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_DeleteAsync__1_DevZest_Data_DataSet___0__System_Int32_System_Func___0__0_DevZest_Data_KeyMapping__System_Threading_CancellationToken_" data-uid="DevZest.Data.DbTable`1.DeleteAsync``1(DevZest.Data.DataSet{``0},System.Int32,System.Func{``0,`0,DevZest.Data.KeyMapping},System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.DbTable-1.DeleteAsync.html#DevZest_Data_DbTable_1_DeleteAsync__1_DevZest_Data_DataSet___0__System_Int32_System_Func___0__0_DevZest_Data_KeyMapping__System_Threading_CancellationToken_">DeleteAsync&lt;TSource&gt;(DataSet&lt;TSource&gt;, Int32, Func&lt;TSource, T, KeyMapping&gt;, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Deletes from matching row in DataSet.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_DeleteAsync__1_DevZest_Data_DataSet___0__System_Int32_System_Threading_CancellationToken_" data-uid="DevZest.Data.DbTable`1.DeleteAsync``1(DevZest.Data.DataSet{``0},System.Int32,System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.DbTable-1.DeleteAsync.html#DevZest_Data_DbTable_1_DeleteAsync__1_DevZest_Data_DataSet___0__System_Int32_System_Threading_CancellationToken_">DeleteAsync&lt;TSource&gt;(DataSet&lt;TSource&gt;, Int32, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Deletes from matching row in DataSet.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_DeleteAsync__1_DevZest_Data_DataSet___0__System_Threading_CancellationToken_" data-uid="DevZest.Data.DbTable`1.DeleteAsync``1(DevZest.Data.DataSet{``0},System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.DbTable-1.DeleteAsync.html#DevZest_Data_DbTable_1_DeleteAsync__1_DevZest_Data_DataSet___0__System_Threading_CancellationToken_">DeleteAsync&lt;TSource&gt;(DataSet&lt;TSource&gt;, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Deletes records in this database table from matching DataSet.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_DeleteAsync__1_DevZest_Data_DbSet___0__System_Func___0__0_DevZest_Data_KeyMapping__System_Threading_CancellationToken_" data-uid="DevZest.Data.DbTable`1.DeleteAsync``1(DevZest.Data.DbSet{``0},System.Func{``0,`0,DevZest.Data.KeyMapping},System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.DbTable-1.DeleteAsync.html#DevZest_Data_DbTable_1_DeleteAsync__1_DevZest_Data_DbSet___0__System_Func___0__0_DevZest_Data_KeyMapping__System_Threading_CancellationToken_">DeleteAsync&lt;TSource&gt;(DbSet&lt;TSource&gt;, Func&lt;TSource, T, KeyMapping&gt;, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Deletes records in this database table from matching database recordset.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_DeleteAsync__1_DevZest_Data_DbSet___0__System_Threading_CancellationToken_" data-uid="DevZest.Data.DbTable`1.DeleteAsync``1(DevZest.Data.DbSet{``0},System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.DbTable-1.DeleteAsync.html#DevZest_Data_DbTable_1_DeleteAsync__1_DevZest_Data_DbSet___0__System_Threading_CancellationToken_">DeleteAsync&lt;TSource&gt;(DbSet&lt;TSource&gt;, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Deletes records in this database table from matching database recordset.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_GetChild__1_System_Func__0___0__" data-uid="DevZest.Data.DbTable`1.GetChild``1(System.Func{`0,``0})">
+          <a class="xref" href="DevZest.Data.DbTable-1.GetChild.html#DevZest_Data_DbTable_1_GetChild__1_System_Func__0___0__">GetChild&lt;TChild&gt;(Func&lt;T, TChild&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the child tempoary table.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_InsertAsync_System_Action_DevZest_Data_ColumnMapper__0__System_Action_System_Nullable_System_Int64___System_Threading_CancellationToken_" data-uid="DevZest.Data.DbTable`1.InsertAsync(System.Action{DevZest.Data.ColumnMapper,`0},System.Action{System.Nullable{System.Int64}},System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.DbTable-1.InsertAsync.html#DevZest_Data_DbTable_1_InsertAsync_System_Action_DevZest_Data_ColumnMapper__0__System_Action_System_Nullable_System_Int64___System_Threading_CancellationToken_">InsertAsync(Action&lt;ColumnMapper, T&gt;, Action&lt;Nullable&lt;Int64&gt;&gt;, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Inserts values into this database table.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_InsertAsync_System_Action_DevZest_Data_ColumnMapper__0__System_Threading_CancellationToken_" data-uid="DevZest.Data.DbTable`1.InsertAsync(System.Action{DevZest.Data.ColumnMapper,`0},System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.DbTable-1.InsertAsync.html#DevZest_Data_DbTable_1_InsertAsync_System_Action_DevZest_Data_ColumnMapper__0__System_Threading_CancellationToken_">InsertAsync(Action&lt;ColumnMapper, T&gt;, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Inserts values into this database table.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_InsertAsync_System_Action_System_Nullable_System_Int64___System_Threading_CancellationToken_" data-uid="DevZest.Data.DbTable`1.InsertAsync(System.Action{System.Nullable{System.Int64}},System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.DbTable-1.InsertAsync.html#DevZest_Data_DbTable_1_InsertAsync_System_Action_System_Nullable_System_Int64___System_Threading_CancellationToken_">InsertAsync(Action&lt;Nullable&lt;Int64&gt;&gt;, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Inserts default values into this database table.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_InsertAsync_System_Threading_CancellationToken_" data-uid="DevZest.Data.DbTable`1.InsertAsync(System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.DbTable-1.InsertAsync.html#DevZest_Data_DbTable_1_InsertAsync_System_Threading_CancellationToken_">InsertAsync(CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Inserts default values into this database table.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_InsertAsync__1_DevZest_Data_DataSet___0__System_Action_DevZest_Data_ColumnMapper___0__0__System_Boolean_System_Threading_CancellationToken_" data-uid="DevZest.Data.DbTable`1.InsertAsync``1(DevZest.Data.DataSet{``0},System.Action{DevZest.Data.ColumnMapper,``0,`0},System.Boolean,System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.DbTable-1.InsertAsync.html#DevZest_Data_DbTable_1_InsertAsync__1_DevZest_Data_DataSet___0__System_Action_DevZest_Data_ColumnMapper___0__0__System_Boolean_System_Threading_CancellationToken_">InsertAsync&lt;TSource&gt;(DataSet&lt;TSource&gt;, Action&lt;ColumnMapper, TSource, T&gt;, Boolean, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Inserts into this table from DataSet.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_InsertAsync__1_DevZest_Data_DataSet___0__System_Action_DevZest_Data_ColumnMapper___0__0__System_Threading_CancellationToken_" data-uid="DevZest.Data.DbTable`1.InsertAsync``1(DevZest.Data.DataSet{``0},System.Action{DevZest.Data.ColumnMapper,``0,`0},System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.DbTable-1.InsertAsync.html#DevZest_Data_DbTable_1_InsertAsync__1_DevZest_Data_DataSet___0__System_Action_DevZest_Data_ColumnMapper___0__0__System_Threading_CancellationToken_">InsertAsync&lt;TSource&gt;(DataSet&lt;TSource&gt;, Action&lt;ColumnMapper, TSource, T&gt;, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Inserts into this table from DataSet.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_InsertAsync__1_DevZest_Data_DataSet___0__System_Boolean_System_Threading_CancellationToken_" data-uid="DevZest.Data.DbTable`1.InsertAsync``1(DevZest.Data.DataSet{``0},System.Boolean,System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.DbTable-1.InsertAsync.html#DevZest_Data_DbTable_1_InsertAsync__1_DevZest_Data_DataSet___0__System_Boolean_System_Threading_CancellationToken_">InsertAsync&lt;TSource&gt;(DataSet&lt;TSource&gt;, Boolean, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Inserts into this table from DataSet.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_InsertAsync__1_DevZest_Data_DataSet___0__System_Int32_System_Action_DevZest_Data_ColumnMapper___0__0__System_Boolean_System_Threading_CancellationToken_" data-uid="DevZest.Data.DbTable`1.InsertAsync``1(DevZest.Data.DataSet{``0},System.Int32,System.Action{DevZest.Data.ColumnMapper,``0,`0},System.Boolean,System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.DbTable-1.InsertAsync.html#DevZest_Data_DbTable_1_InsertAsync__1_DevZest_Data_DataSet___0__System_Int32_System_Action_DevZest_Data_ColumnMapper___0__0__System_Boolean_System_Threading_CancellationToken_">InsertAsync&lt;TSource&gt;(DataSet&lt;TSource&gt;, Int32, Action&lt;ColumnMapper, TSource, T&gt;, Boolean, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Inserts specified DataRow in DataSet into this table.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_InsertAsync__1_DevZest_Data_DataSet___0__System_Int32_System_Action_DevZest_Data_ColumnMapper___0__0__System_Threading_CancellationToken_" data-uid="DevZest.Data.DbTable`1.InsertAsync``1(DevZest.Data.DataSet{``0},System.Int32,System.Action{DevZest.Data.ColumnMapper,``0,`0},System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.DbTable-1.InsertAsync.html#DevZest_Data_DbTable_1_InsertAsync__1_DevZest_Data_DataSet___0__System_Int32_System_Action_DevZest_Data_ColumnMapper___0__0__System_Threading_CancellationToken_">InsertAsync&lt;TSource&gt;(DataSet&lt;TSource&gt;, Int32, Action&lt;ColumnMapper, TSource, T&gt;, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Inserts specified DataRow in DataSet into this table.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_InsertAsync__1_DevZest_Data_DataSet___0__System_Int32_System_Threading_CancellationToken_" data-uid="DevZest.Data.DbTable`1.InsertAsync``1(DevZest.Data.DataSet{``0},System.Int32,System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.DbTable-1.InsertAsync.html#DevZest_Data_DbTable_1_InsertAsync__1_DevZest_Data_DataSet___0__System_Int32_System_Threading_CancellationToken_">InsertAsync&lt;TSource&gt;(DataSet&lt;TSource&gt;, Int32, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Inserts specified DataRow in DataSet into this table.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_InsertAsync__1_DevZest_Data_DataSet___0__System_Threading_CancellationToken_" data-uid="DevZest.Data.DbTable`1.InsertAsync``1(DevZest.Data.DataSet{``0},System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.DbTable-1.InsertAsync.html#DevZest_Data_DbTable_1_InsertAsync__1_DevZest_Data_DataSet___0__System_Threading_CancellationToken_">InsertAsync&lt;TSource&gt;(DataSet&lt;TSource&gt;, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Inserts into this table from DataSet.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_InsertAsync__1_DevZest_Data_DbSet___0__System_Action_DevZest_Data_ColumnMapper___0__0__System_Threading_CancellationToken_" data-uid="DevZest.Data.DbTable`1.InsertAsync``1(DevZest.Data.DbSet{``0},System.Action{DevZest.Data.ColumnMapper,``0,`0},System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.DbTable-1.InsertAsync.html#DevZest_Data_DbTable_1_InsertAsync__1_DevZest_Data_DbSet___0__System_Action_DevZest_Data_ColumnMapper___0__0__System_Threading_CancellationToken_">InsertAsync&lt;TSource&gt;(DbSet&lt;TSource&gt;, Action&lt;ColumnMapper, TSource, T&gt;, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Inserts into this database table from database recordset.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_InsertAsync__1_DevZest_Data_DbSet___0__System_Threading_CancellationToken_" data-uid="DevZest.Data.DbTable`1.InsertAsync``1(DevZest.Data.DbSet{``0},System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.DbTable-1.InsertAsync.html#DevZest_Data_DbTable_1_InsertAsync__1_DevZest_Data_DbSet___0__System_Threading_CancellationToken_">InsertAsync&lt;TSource&gt;(DbSet&lt;TSource&gt;, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Inserts into this database table from database recordset.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_ToString" data-uid="DevZest.Data.DbTable`1.ToString">
+          <a class="xref" href="DevZest.Data.DbTable-1.ToString.html#DevZest_Data_DbTable_1_ToString">ToString()</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_UpdateAsync_System_Action_DevZest_Data_ColumnMapper__0__System_Func__0_DevZest_Data__Boolean__System_Threading_CancellationToken_" data-uid="DevZest.Data.DbTable`1.UpdateAsync(System.Action{DevZest.Data.ColumnMapper,`0},System.Func{`0,DevZest.Data._Boolean},System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.DbTable-1.UpdateAsync.html#DevZest_Data_DbTable_1_UpdateAsync_System_Action_DevZest_Data_ColumnMapper__0__System_Func__0_DevZest_Data__Boolean__System_Threading_CancellationToken_">UpdateAsync(Action&lt;ColumnMapper, T&gt;, Func&lt;T, _Boolean&gt;, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Updates subset of records with specified values.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_UpdateAsync_System_Action_DevZest_Data_ColumnMapper__0__System_Threading_CancellationToken_" data-uid="DevZest.Data.DbTable`1.UpdateAsync(System.Action{DevZest.Data.ColumnMapper,`0},System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.DbTable-1.UpdateAsync.html#DevZest_Data_DbTable_1_UpdateAsync_System_Action_DevZest_Data_ColumnMapper__0__System_Threading_CancellationToken_">UpdateAsync(Action&lt;ColumnMapper, T&gt;, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Updates all records with specified values.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_UpdateAsync__1_DevZest_Data_DataSet___0__System_Action_DevZest_Data_ColumnMapper___0__0__System_Func___0__0_DevZest_Data_KeyMapping__System_Threading_CancellationToken_" data-uid="DevZest.Data.DbTable`1.UpdateAsync``1(DevZest.Data.DataSet{``0},System.Action{DevZest.Data.ColumnMapper,``0,`0},System.Func{``0,`0,DevZest.Data.KeyMapping},System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.DbTable-1.UpdateAsync.html#DevZest_Data_DbTable_1_UpdateAsync__1_DevZest_Data_DataSet___0__System_Action_DevZest_Data_ColumnMapper___0__0__System_Func___0__0_DevZest_Data_KeyMapping__System_Threading_CancellationToken_">UpdateAsync&lt;TSource&gt;(DataSet&lt;TSource&gt;, Action&lt;ColumnMapper, TSource, T&gt;, Func&lt;TSource, T, KeyMapping&gt;, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Updates records in this table from matching DataSet.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_UpdateAsync__1_DevZest_Data_DataSet___0__System_Action_DevZest_Data_ColumnMapper___0__0__System_Threading_CancellationToken_" data-uid="DevZest.Data.DbTable`1.UpdateAsync``1(DevZest.Data.DataSet{``0},System.Action{DevZest.Data.ColumnMapper,``0,`0},System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.DbTable-1.UpdateAsync.html#DevZest_Data_DbTable_1_UpdateAsync__1_DevZest_Data_DataSet___0__System_Action_DevZest_Data_ColumnMapper___0__0__System_Threading_CancellationToken_">UpdateAsync&lt;TSource&gt;(DataSet&lt;TSource&gt;, Action&lt;ColumnMapper, TSource, T&gt;, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Updates records in this table from matching DataSet.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_UpdateAsync__1_DevZest_Data_DataSet___0__System_Int32_System_Action_DevZest_Data_ColumnMapper___0__0__System_Func___0__0_DevZest_Data_KeyMapping__System_Threading_CancellationToken_" data-uid="DevZest.Data.DbTable`1.UpdateAsync``1(DevZest.Data.DataSet{``0},System.Int32,System.Action{DevZest.Data.ColumnMapper,``0,`0},System.Func{``0,`0,DevZest.Data.KeyMapping},System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.DbTable-1.UpdateAsync.html#DevZest_Data_DbTable_1_UpdateAsync__1_DevZest_Data_DataSet___0__System_Int32_System_Action_DevZest_Data_ColumnMapper___0__0__System_Func___0__0_DevZest_Data_KeyMapping__System_Threading_CancellationToken_">UpdateAsync&lt;TSource&gt;(DataSet&lt;TSource&gt;, Int32, Action&lt;ColumnMapper, TSource, T&gt;, Func&lt;TSource, T, KeyMapping&gt;, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Updates from matching row in DataSet.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_UpdateAsync__1_DevZest_Data_DataSet___0__System_Int32_System_Threading_CancellationToken_" data-uid="DevZest.Data.DbTable`1.UpdateAsync``1(DevZest.Data.DataSet{``0},System.Int32,System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.DbTable-1.UpdateAsync.html#DevZest_Data_DbTable_1_UpdateAsync__1_DevZest_Data_DataSet___0__System_Int32_System_Threading_CancellationToken_">UpdateAsync&lt;TSource&gt;(DataSet&lt;TSource&gt;, Int32, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Updates from matching row in DataSet.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_UpdateAsync__1_DevZest_Data_DataSet___0__System_Threading_CancellationToken_" data-uid="DevZest.Data.DbTable`1.UpdateAsync``1(DevZest.Data.DataSet{``0},System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.DbTable-1.UpdateAsync.html#DevZest_Data_DbTable_1_UpdateAsync__1_DevZest_Data_DataSet___0__System_Threading_CancellationToken_">UpdateAsync&lt;TSource&gt;(DataSet&lt;TSource&gt;, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Updates records in this table from matching DataSet.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_UpdateAsync__1_DevZest_Data_DbSet___0__System_Action_DevZest_Data_ColumnMapper___0__0__System_Func___0__0_DevZest_Data_KeyMapping__System_Threading_CancellationToken_" data-uid="DevZest.Data.DbTable`1.UpdateAsync``1(DevZest.Data.DbSet{``0},System.Action{DevZest.Data.ColumnMapper,``0,`0},System.Func{``0,`0,DevZest.Data.KeyMapping},System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.DbTable-1.UpdateAsync.html#DevZest_Data_DbTable_1_UpdateAsync__1_DevZest_Data_DbSet___0__System_Action_DevZest_Data_ColumnMapper___0__0__System_Func___0__0_DevZest_Data_KeyMapping__System_Threading_CancellationToken_">UpdateAsync&lt;TSource&gt;(DbSet&lt;TSource&gt;, Action&lt;ColumnMapper, TSource, T&gt;, Func&lt;TSource, T, KeyMapping&gt;, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Updates records from matching database recordset.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_UpdateAsync__1_DevZest_Data_DbSet___0__System_Action_DevZest_Data_ColumnMapper__0__System_Func___0__0_DevZest_Data_KeyMapping__System_Threading_CancellationToken_" data-uid="DevZest.Data.DbTable`1.UpdateAsync``1(DevZest.Data.DbSet{``0},System.Action{DevZest.Data.ColumnMapper,`0},System.Func{``0,`0,DevZest.Data.KeyMapping},System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.DbTable-1.UpdateAsync.html#DevZest_Data_DbTable_1_UpdateAsync__1_DevZest_Data_DbSet___0__System_Action_DevZest_Data_ColumnMapper__0__System_Func___0__0_DevZest_Data_KeyMapping__System_Threading_CancellationToken_">UpdateAsync&lt;TSource&gt;(DbSet&lt;TSource&gt;, Action&lt;ColumnMapper, T&gt;, Func&lt;TSource, T, KeyMapping&gt;, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Updates records from matching database recordset.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DbTable_1_UpdateAsync__1_DevZest_Data_DbSet___0__System_Threading_CancellationToken_" data-uid="DevZest.Data.DbTable`1.UpdateAsync``1(DevZest.Data.DbSet{``0},System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.DbTable-1.UpdateAsync.html#DevZest_Data_DbTable_1_UpdateAsync__1_DevZest_Data_DbSet___0__System_Threading_CancellationToken_">UpdateAsync&lt;TSource&gt;(DbSet&lt;TSource&gt;, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Updates records from matching database recordset.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="DevZest.Data.Extensions.SingleAsync.html#DevZest_Data_Extensions_SingleAsync__2_DevZest_Data_DbSet___0__System_Func___0___1__System_Threading_CancellationToken_">Extensions.SingleAsync&lt;TEntity, T&gt;(DbSet&lt;TEntity&gt;, Func&lt;TEntity, T&gt;, CancellationToken)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Extensions.SingleOrDefaultAsync.html#DevZest_Data_Extensions_SingleOrDefaultAsync__2_DevZest_Data_DbSet___0__System_Func___0___1__System_Threading_CancellationToken_">Extensions.SingleOrDefaultAsync&lt;TEntity, T&gt;(DbSet&lt;TEntity&gt;, Func&lt;TEntity, T&gt;, CancellationToken)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Primitives.DataSourceExtensions.UpdateOriginalDataSource.html#DevZest_Data_Primitives_DataSourceExtensions_UpdateOriginalDataSource_DevZest_Data_DataSource_DevZest_Data_DataSource_System_Boolean_">DataSourceExtensions.UpdateOriginalDataSource(DataSource, DataSource, Boolean)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbTableExtensions.BuildInsertStatement.html#DevZest_Data_Primitives_DbTableExtensions_BuildInsertStatement__2_DevZest_Data_DbTable___1__DevZest_Data_DbSet___0__System_Action_DevZest_Data_ColumnMapper___0___1__">DbTableExtensions.BuildInsertStatement&lt;TSource, TTarget&gt;(DbTable&lt;TTarget&gt;, DbSet&lt;TSource&gt;, Action&lt;ColumnMapper, TSource, TTarget&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbTableExtensions.BuildInsertStatement.html#DevZest_Data_Primitives_DbTableExtensions_BuildInsertStatement__2_DevZest_Data_DbTable___1__DevZest_Data_DbSet___0__System_Collections_Generic_IReadOnlyList_DevZest_Data_ColumnMapping__">DbTableExtensions.BuildInsertStatement&lt;TSource, TTarget&gt;(DbTable&lt;TTarget&gt;, DbSet&lt;TSource&gt;, IReadOnlyList&lt;ColumnMapping&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbTableExtensions.BuildUpdateStatement.html#DevZest_Data_Primitives_DbTableExtensions_BuildUpdateStatement_DevZest_Data_IDbTable_DevZest_Data_IDbTable_System_Collections_Generic_IReadOnlyList_DevZest_Data_ColumnMapping__System_Collections_Generic_IReadOnlyList_DevZest_Data_ColumnMapping__">DbTableExtensions.BuildUpdateStatement(IDbTable, IDbTable, IReadOnlyList&lt;ColumnMapping&gt;, IReadOnlyList&lt;ColumnMapping&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbTableExtensions.BuildUpdateStatement.html#DevZest_Data_Primitives_DbTableExtensions_BuildUpdateStatement__2_DevZest_Data_DbTable___1__DevZest_Data_DbSet___0__System_Collections_Generic_IReadOnlyList_DevZest_Data_ColumnMapping__System_Collections_Generic_IReadOnlyList_DevZest_Data_ColumnMapping__">DbTableExtensions.BuildUpdateStatement&lt;TSource, TTarget&gt;(DbTable&lt;TTarget&gt;, DbSet&lt;TSource&gt;, IReadOnlyList&lt;ColumnMapping&gt;, IReadOnlyList&lt;ColumnMapping&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbTableExtensions.BuildUpdateStatement.html#DevZest_Data_Primitives_DbTableExtensions_BuildUpdateStatement__2_DevZest_Data_DbTable___1__DevZest_Data_DbSet___0__System_Action_DevZest_Data_ColumnMapper___0___1__System_Collections_Generic_IReadOnlyList_DevZest_Data_ColumnMapping__">DbTableExtensions.BuildUpdateStatement&lt;TSource, TTarget&gt;(DbTable&lt;TTarget&gt;, DbSet&lt;TSource&gt;, Action&lt;ColumnMapper, TSource, TTarget&gt;, IReadOnlyList&lt;ColumnMapping&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbTableExtensions.BuildDeleteStatement.html#DevZest_Data_Primitives_DbTableExtensions_BuildDeleteStatement__2_DevZest_Data_DbTable___1__DevZest_Data_DbSet___0__System_Collections_Generic_IReadOnlyList_DevZest_Data_ColumnMapping__">DbTableExtensions.BuildDeleteStatement&lt;TSource, TTarget&gt;(DbTable&lt;TTarget&gt;, DbSet&lt;TSource&gt;, IReadOnlyList&lt;ColumnMapping&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbTableExtensions.UpdateAsync.html#DevZest_Data_Primitives_DbTableExtensions_UpdateAsync_DevZest_Data_IDbTable_DevZest_Data_Primitives_DbSelectStatement_System_Threading_CancellationToken_">DbTableExtensions.UpdateAsync(IDbTable, DbSelectStatement, CancellationToken)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/new/master/apiSpec/new?filename=DevZest_Data_DbTable_1.md&amp;value=---%0Auid%3A%20DevZest.Data.DbTable%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Data/DbTable.Update.cs/#L10" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © Weifen Luo | DevZest</span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

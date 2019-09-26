@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>AdventureWorksLT Sample </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="AdventureWorksLT Sample ">
+    <meta name="generator" content="docfx 2.43.2.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="adventureworkslt-sample">AdventureWorksLT Sample</h1>
+
+<p>The best way to learn RDO.Data is to learn by example. In the source code repo, under <code>Samples</code> (or <code>Samples.vb</code> for Visual Basic), open <code>AdventureWorksLT.sln</code> in Visual Studio, there are 3 projects out there:</p>
+<table>
+<thead>
+<tr>
+<th>Project</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>AdventureWorksLT.Data</code></td>
+<td>Data Access Layer of the application.</td>
+</tr>
+<tr>
+<td><code>AdventureWorksLT.DbDesign</code></td>
+<td>Database mocking and deployment.</td>
+</tr>
+<tr>
+<td><code>AdventureWorksLT.WpfApp</code></td>
+<td>UI Layer of the application in WPF.</td>
+</tr>
+</tbody>
+</table>
+<p>It's a typical fully featured LOB application based on the well known <code>AdventureWorksLT</code> SQL Server sample database. The data access layer (<code>AdventureWorksLT.Data</code> project), consists of the following components:</p>
+<h2 id="business-models">Business Models</h2>
+<p>The following are business models in <code>AdventureWorksLT.Data</code> project:</p>
+<table>
+<thead>
+<tr>
+<th>Models</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Address</code>, <code>Customer</code>, <code>CustomerAddress</code></td>
+<td>Many to many relationship.</td>
+</tr>
+<tr>
+<td><code>ProductCategory</code></td>
+<td>Recursive relationship.</td>
+</tr>
+<tr>
+<td><code>ProductModel</code>, <code>ProductDescription</code>, <code>Product</code></td>
+<td>Master data.</td>
+</tr>
+<tr>
+<td><code>SalesOrderHeader</code>, <code>SalesOrderDetail</code></td>
+<td>Parent-child relationship.</td>
+</tr>
+</tbody>
+</table>
+<p>These business models, derived from type <a class="xref" href="../../api/DevZest.Data.Model.html">Model</a> or <a class="xref" href="../../api/DevZest.Data.Model-1.html">Model&lt;T&gt;</a>, are fundamental part of your application. Your business models consist of:</p>
+<ul>
+<li>Data columns. Computed data column is supported.</li>
+<li>Keys (primary key, reference, foreign key, etc.)</li>
+<li>Database constraint and validation logic.</li>
+<li>Database index.</li>
+<li>Projection: subset of the model.</li>
+<li>Child model to support hierarchical data.</li>
+</ul>
+<p>You may want to go through the sample business models to see how the above features are implemented. It's highly recommended to use <em>Model Visualizer</em> tool window as a starting point.</p>
+<h2 id="database-tables-and-relationships">Database Tables and Relationships</h2>
+<p>The database tables, are defined in the <code>Db.cs</code> (<code>Db.vb</code> in Visual Basic). The <code>Db</code> class is derived from <a class="xref" href="../../api/DevZest.Data.SqlServer.SqlSession.html">SqlSession</a>, and tables are exposed as properties of type <a class="xref" href="../../api/DevZest.Data.DbTable-1.html">DbTable&lt;T&gt;</a>:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-cs">public partial class Db : SqlSession
+{
+    ...
+    private DbTable&lt;Address&gt; _address;
+    [DbTable(&quot;[SalesLT].[Address]&quot;, Description = &quot;Street address information for customers.&quot;)]
+    public DbTable&lt;Address&gt; Address
+    {
+        get { return GetTable(ref _address); }
+    }
+    ...
+}
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-vb">Partial Public Class Db
+    Inherits SqlSession
+
+    ...
+    Private m_Address As DbTable(Of Address)
+    &lt;DbTable(&quot;[SalesLT].[Address]&quot;, Description:=&quot;Street address information for customers.&quot;)&gt;
+    Public ReadOnly Property Address As DbTable(Of Address)
+        Get
+            Return GetTable(m_Address)
+        End Get
+    End Property
+    ...
+End Class
+</code></pre>
+</section>
+</div>
+
+<p>The relationships between tables are also defined in this file. It's highly recommended to use <em>Db Visualizer</em> tool window to manipulate database tables and relationships.</p>
+<h2 id="database-query-and-update">Database Query and Update</h2>
+<p>Database query and update, are implemented as instance method of <code>Db</code> partial class, in <code>Db.Api.cs</code> (or <code>Db.Api.vb</code> if in Visual Basic):</p>
+<ul>
+<li><a class="xref" href="../../api/DevZest.Data.DbQuery-1.html">DbQuery&lt;T&gt;</a> is used to represent a database query. Both <a class="xref" href="../../api/DevZest.Data.DbQuery-1.html">DbQuery&lt;T&gt;</a> and <a class="xref" href="../../api/DevZest.Data.DbTable-1.html">DbTable&lt;T&gt;</a> are derived from <a class="xref" href="../../api/DevZest.Data.DbSet-1.html">DbSet&lt;T&gt;</a>.</li>
+<li><a class="xref" href="../../api/DevZest.Data.DbSet-1.html">DbSet&lt;T&gt;</a> has <a class="xref" href="../../api/DevZest.Data.DbSet-1.ToDataSetAsync.html">ToDataSetAsync</a> method to fill data into <a class="xref" href="../../api/DevZest.Data.DataSet-1.html">DataSet&lt;T&gt;</a>, a local storage of data.</li>
+<li><a class="xref" href="../../api/DevZest.Data.DbTable-1.html">DbTable&lt;T&gt;</a> has <a class="xref" href="../../api/DevZest.Data.DbTable-1.InsertAsync.html">InsertAsync</a>, <a class="xref" href="../../api/DevZest.Data.DbTable-1.DeleteAsync.html">DeleteAsync</a> and <a class="xref" href="../../api/DevZest.Data.DbTable-1.UpdateAsync.html">UpdateAsync</a> methods to update data from database server. All operations are truly set based.</li>
+</ul>
+<p>The above query and update operations will generate SQL Abstract Syntax Tree (AST) and further be translated into native SQL by database provider, with very little overhead. It has best balance of code maintainability and performance.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Docs/articles/programming_rdo_data/adventureworkslt_sample.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © Weifen Luo | DevZest</span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

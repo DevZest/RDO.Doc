@@ -1,0 +1,486 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class RowBinding&lt;T&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class RowBinding&lt;T&gt;
+   ">
+    <meta name="generator" content="docfx 2.43.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="DevZest.Data.Presenters.RowBinding`1">
+  
+  
+  <h1 id="DevZest_Data_Presenters_RowBinding_1" data-uid="DevZest.Data.Presenters.RowBinding`1" class="text-break">Class RowBinding&lt;T&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Represents strongly typed row level data binding.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="DevZest.Data.Presenters.Primitives.Binding.html">Binding</a></div>
+    <div class="level2"><a class="xref" href="DevZest.Data.Presenters.Primitives.TwoWayBinding.html">TwoWayBinding</a></div>
+    <div class="level3"><a class="xref" href="DevZest.Data.Presenters.RowBinding.html">RowBinding</a></div>
+    <div class="level4"><a class="xref" href="DevZest.Data.Presenters.Primitives.RowBindingBase-1.html">RowBindingBase</a>&lt;T&gt;</div>
+    <div class="level5"><span class="xref">RowBinding&lt;T&gt;</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.Collections.Generic.IReadOnlyList</span>&lt;<a class="xref" href="DevZest.Data.Presenters.RowBinding.html">RowBinding</a>&gt;</div>
+    <div><span class="xref">System.Collections.Generic.IReadOnlyCollection</span>&lt;<a class="xref" href="DevZest.Data.Presenters.RowBinding.html">RowBinding</a>&gt;</div>
+    <div><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="DevZest.Data.Presenters.RowBinding.html">RowBinding</a>&gt;</div>
+    <div><span class="xref">System.Collections.IEnumerable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.Primitives.RowBindingBase-1.SettingUpElement.html#DevZest_Data_Presenters_Primitives_RowBindingBase_1_SettingUpElement">RowBindingBase&lt;T&gt;.SettingUpElement</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.Primitives.RowBindingBase-1.Item.html#DevZest_Data_Presenters_Primitives_RowBindingBase_1_Item_DevZest_Data_Presenters_RowPresenter_">RowBindingBase&lt;T&gt;.Item[RowPresenter]</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.Primitives.RowBindingBase-1.ViewType.html#DevZest_Data_Presenters_Primitives_RowBindingBase_1_ViewType">RowBindingBase&lt;T&gt;.ViewType</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.RowBinding.System-Collections-Generic-IReadOnlyCollection-DevZest-Data-Presenters-RowBinding--Count.html#DevZest_Data_Presenters_RowBinding_System_Collections_Generic_IReadOnlyCollection_DevZest_Data_Presenters_RowBinding__Count">RowBinding.IReadOnlyCollection&lt;RowBinding&gt;.Count</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.RowBinding.System-Collections-Generic-IReadOnlyList-DevZest-Data-Presenters-RowBinding--Item.html#DevZest_Data_Presenters_RowBinding_System_Collections_Generic_IReadOnlyList_DevZest_Data_Presenters_RowBinding__Item_System_Int32_">RowBinding.IReadOnlyList&lt;RowBinding&gt;.Item[Int32]</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.RowBinding.System-Collections-Generic-IEnumerable-DevZest-Data-Presenters-RowBinding--GetEnumerator.html#DevZest_Data_Presenters_RowBinding_System_Collections_Generic_IEnumerable_DevZest_Data_Presenters_RowBinding__GetEnumerator">RowBinding.IEnumerable&lt;RowBinding&gt;.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.RowBinding.System-Collections-IEnumerable-GetEnumerator.html#DevZest_Data_Presenters_RowBinding_System_Collections_IEnumerable_GetEnumerator">RowBinding.IEnumerable.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.RowBinding.Parent.html#DevZest_Data_Presenters_RowBinding_Parent">RowBinding.Parent</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.RowBinding.ParentBinding.html#DevZest_Data_Presenters_RowBinding_ParentBinding">RowBinding.ParentBinding</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.RowBinding.SerializableColumns.html#DevZest_Data_Presenters_RowBinding_SerializableColumns">RowBinding.SerializableColumns</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.RowBinding.GetInputTargetColumns.html#DevZest_Data_Presenters_RowBinding_GetInputTargetColumns">RowBinding.GetInputTargetColumns()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.RowBinding.IsEditable.html#DevZest_Data_Presenters_RowBinding_IsEditable">RowBinding.IsEditable</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.Primitives.Binding.Template.html#DevZest_Data_Presenters_Primitives_Binding_Template">Binding.Template</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.Primitives.Binding.GridRange.html#DevZest_Data_Presenters_Primitives_Binding_GridRange">Binding.GridRange</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.Primitives.Binding.Ordinal.html#DevZest_Data_Presenters_Primitives_Binding_Ordinal">Binding.Ordinal</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.Primitives.Binding.IsSealed.html#DevZest_Data_Presenters_Primitives_Binding_IsSealed">Binding.IsSealed</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.Primitives.Binding.Style.html#DevZest_Data_Presenters_Primitives_Binding_Style">Binding.Style</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.Primitives.Binding.AutoSizeOrder.html#DevZest_Data_Presenters_Primitives_Binding_AutoSizeOrder">Binding.AutoSizeOrder</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.Primitives.Binding.AutoSizeWaiver.html#DevZest_Data_Presenters_Primitives_Binding_AutoSizeWaiver">Binding.AutoSizeWaiver</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.Primitives.Binding.AdheresToFrozenLeft.html#DevZest_Data_Presenters_Primitives_Binding_AdheresToFrozenLeft">Binding.AdheresToFrozenLeft</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.Primitives.Binding.AdheresToFrozenTop.html#DevZest_Data_Presenters_Primitives_Binding_AdheresToFrozenTop">Binding.AdheresToFrozenTop</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.Primitives.Binding.AdheresToFrozenRight.html#DevZest_Data_Presenters_Primitives_Binding_AdheresToFrozenRight">Binding.AdheresToFrozenRight</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.Primitives.Binding.AdheresToFrozenBottom.html#DevZest_Data_Presenters_Primitives_Binding_AdheresToFrozenBottom">Binding.AdheresToFrozenBottom</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="DevZest.Data.Presenters.html">DevZest.Data.Presenters</a></h6>
+  <h6><strong>Assembly</strong>: DevZest.Data.WPF.dll</h6>
+  <h5 id="DevZest_Data_Presenters_RowBinding_1_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class RowBinding&lt;T&gt; : RowBindingBase&lt;T&gt;, IConcatList&lt;RowBinding&gt;, IReadOnlyList&lt;RowBinding&gt;, IReadOnlyCollection&lt;RowBinding&gt;, IEnumerable&lt;RowBinding&gt;, IEnumerable where T : UIElement, new()</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of view element.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="constructors">Constructors
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="DevZest_Data_Presenters_RowBinding_1__ctor_System_Action__0_DevZest_Data_Presenters_RowPresenter__" data-uid="DevZest.Data.Presenters.RowBinding`1.#ctor(System.Action{`0,DevZest.Data.Presenters.RowPresenter})">
+          <a class="xref" href="DevZest.Data.Presenters.RowBinding-1.-ctor.html#DevZest_Data_Presenters_RowBinding_1__ctor_System_Action__0_DevZest_Data_Presenters_RowPresenter__">RowBinding(Action&lt;T, RowPresenter&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Initializes a new instance of <a class="xref" href="DevZest.Data.Presenters.RowBinding-1.html">RowBinding&lt;T&gt;</a> class.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_RowBinding_1__ctor_System_Action__0_DevZest_Data_Presenters_RowPresenter__System_Action__0_DevZest_Data_Presenters_RowPresenter__System_Action__0_DevZest_Data_Presenters_RowPresenter__" data-uid="DevZest.Data.Presenters.RowBinding`1.#ctor(System.Action{`0,DevZest.Data.Presenters.RowPresenter},System.Action{`0,DevZest.Data.Presenters.RowPresenter},System.Action{`0,DevZest.Data.Presenters.RowPresenter})">
+          <a class="xref" href="DevZest.Data.Presenters.RowBinding-1.-ctor.html#DevZest_Data_Presenters_RowBinding_1__ctor_System_Action__0_DevZest_Data_Presenters_RowPresenter__System_Action__0_DevZest_Data_Presenters_RowPresenter__System_Action__0_DevZest_Data_Presenters_RowPresenter__">RowBinding(Action&lt;T, RowPresenter&gt;, Action&lt;T, RowPresenter&gt;, Action&lt;T, RowPresenter&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Initializes a new instance of <a class="xref" href="DevZest.Data.Presenters.RowBinding-1.html">RowBinding&lt;T&gt;</a> class.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="DevZest_Data_Presenters_RowBinding_1_Behaviors" data-uid="DevZest.Data.Presenters.RowBinding`1.Behaviors">
+          <a class="xref" href="DevZest.Data.Presenters.RowBinding-1.Behaviors.html#DevZest_Data_Presenters_RowBinding_1_Behaviors">Behaviors</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the row binding behaviors.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_RowBinding_1_ChildBindings" data-uid="DevZest.Data.Presenters.RowBinding`1.ChildBindings">
+          <a class="xref" href="DevZest.Data.Presenters.RowBinding-1.ChildBindings.html#DevZest_Data_Presenters_RowBinding_1_ChildBindings">ChildBindings</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the child bindings.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_RowBinding_1_Input" data-uid="DevZest.Data.Presenters.RowBinding`1.Input">
+          <a class="xref" href="DevZest.Data.Presenters.RowBinding-1.Input.html#DevZest_Data_Presenters_RowBinding_1_Input">Input</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the input that handles flushing from view to presenter.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_RowBinding_1_IsRefreshing" data-uid="DevZest.Data.Presenters.RowBinding`1.IsRefreshing">
+          <a class="xref" href="DevZest.Data.Presenters.RowBinding-1.IsRefreshing.html#DevZest_Data_Presenters_RowBinding_1_IsRefreshing">IsRefreshing</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets a value indicates whether this binding is refreshing.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_RowBinding_1_RowInput" data-uid="DevZest.Data.Presenters.RowBinding`1.RowInput">
+          <a class="xref" href="DevZest.Data.Presenters.RowBinding-1.RowInput.html#DevZest_Data_Presenters_RowBinding_1_RowInput">RowInput</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the row level input.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="DevZest_Data_Presenters_RowBinding_1_ApplyCleanup_System_Action__0_DevZest_Data_Presenters_RowPresenter__" data-uid="DevZest.Data.Presenters.RowBinding`1.ApplyCleanup(System.Action{`0,DevZest.Data.Presenters.RowPresenter})">
+          <a class="xref" href="DevZest.Data.Presenters.RowBinding-1.ApplyCleanup.html#DevZest_Data_Presenters_RowBinding_1_ApplyCleanup_System_Action__0_DevZest_Data_Presenters_RowPresenter__">ApplyCleanup(Action&lt;T, RowPresenter&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Applies delegate to cleanup this binding.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_RowBinding_1_ApplyRefresh_System_Action__0_DevZest_Data_Presenters_RowPresenter__" data-uid="DevZest.Data.Presenters.RowBinding`1.ApplyRefresh(System.Action{`0,DevZest.Data.Presenters.RowPresenter})">
+          <a class="xref" href="DevZest.Data.Presenters.RowBinding-1.ApplyRefresh.html#DevZest_Data_Presenters_RowBinding_1_ApplyRefresh_System_Action__0_DevZest_Data_Presenters_RowPresenter__">ApplyRefresh(Action&lt;T, RowPresenter&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Applies delegate to refresh this binding.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_RowBinding_1_ApplySetup_System_Action__0_DevZest_Data_Presenters_RowPresenter__" data-uid="DevZest.Data.Presenters.RowBinding`1.ApplySetup(System.Action{`0,DevZest.Data.Presenters.RowPresenter})">
+          <a class="xref" href="DevZest.Data.Presenters.RowBinding-1.ApplySetup.html#DevZest_Data_Presenters_RowBinding_1_ApplySetup_System_Action__0_DevZest_Data_Presenters_RowPresenter__">ApplySetup(Action&lt;T, RowPresenter&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Applies delegate to setup this binding.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_RowBinding_1_BeginInput_DevZest_Data_Presenters_Primitives_Trigger__0__DevZest_Data_Presenters_Primitives_Trigger__0__" data-uid="DevZest.Data.Presenters.RowBinding`1.BeginInput(DevZest.Data.Presenters.Primitives.Trigger{`0},DevZest.Data.Presenters.Primitives.Trigger{`0})">
+          <a class="xref" href="DevZest.Data.Presenters.RowBinding-1.BeginInput.html#DevZest_Data_Presenters_RowBinding_1_BeginInput_DevZest_Data_Presenters_Primitives_Trigger__0__DevZest_Data_Presenters_Primitives_Trigger__0__">BeginInput(Trigger&lt;T&gt;, Trigger&lt;T&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Begins input implementation.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_RowBinding_1_BeginInput_System_Windows_DependencyProperty_System_Windows_RoutedEvent_" data-uid="DevZest.Data.Presenters.RowBinding`1.BeginInput(System.Windows.DependencyProperty,System.Windows.RoutedEvent)">
+          <a class="xref" href="DevZest.Data.Presenters.RowBinding-1.BeginInput.html#DevZest_Data_Presenters_RowBinding_1_BeginInput_System_Windows_DependencyProperty_System_Windows_RoutedEvent_">BeginInput(DependencyProperty, RoutedEvent)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Begins input implementation.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_RowBinding_1_BeginInput_System_Windows_RoutedEvent_System_Windows_RoutedEvent_" data-uid="DevZest.Data.Presenters.RowBinding`1.BeginInput(System.Windows.RoutedEvent,System.Windows.RoutedEvent)">
+          <a class="xref" href="DevZest.Data.Presenters.RowBinding-1.BeginInput.html#DevZest_Data_Presenters_RowBinding_1_BeginInput_System_Windows_RoutedEvent_System_Windows_RoutedEvent_">BeginInput(RoutedEvent, RoutedEvent)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Begins input implementation.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_RowBinding_1_WithInput__1_DevZest_Data_Presenters_Primitives_Trigger__0__DevZest_Data_Column___0__System_Func__0___0__" data-uid="DevZest.Data.Presenters.RowBinding`1.WithInput``1(DevZest.Data.Presenters.Primitives.Trigger{`0},DevZest.Data.Column{``0},System.Func{`0,``0})">
+          <a class="xref" href="DevZest.Data.Presenters.RowBinding-1.WithInput.html#DevZest_Data_Presenters_RowBinding_1_WithInput__1_DevZest_Data_Presenters_Primitives_Trigger__0__DevZest_Data_Column___0__System_Func__0___0__">WithInput&lt;TData&gt;(Trigger&lt;T&gt;, Column&lt;TData&gt;, Func&lt;T, TData&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Sets input implementation with specified column.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_RowBinding_1_WithInput__1_DevZest_Data_Presenters_Primitives_Trigger__0__DevZest_Data_Presenters_Primitives_Trigger__0__DevZest_Data_Column___0__System_Func__0___0__" data-uid="DevZest.Data.Presenters.RowBinding`1.WithInput``1(DevZest.Data.Presenters.Primitives.Trigger{`0},DevZest.Data.Presenters.Primitives.Trigger{`0},DevZest.Data.Column{``0},System.Func{`0,``0})">
+          <a class="xref" href="DevZest.Data.Presenters.RowBinding-1.WithInput.html#DevZest_Data_Presenters_RowBinding_1_WithInput__1_DevZest_Data_Presenters_Primitives_Trigger__0__DevZest_Data_Presenters_Primitives_Trigger__0__DevZest_Data_Column___0__System_Func__0___0__">WithInput&lt;TData&gt;(Trigger&lt;T&gt;, Trigger&lt;T&gt;, Column&lt;TData&gt;, Func&lt;T, TData&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Sets input implementation from specified column.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_RowBinding_1_WithInput__1_DevZest_Data_Presenters_Primitives_Trigger__0__DevZest_Data_Presenters_Primitives_Trigger__0__DevZest_Data_Column___0__System_Func_DevZest_Data_Presenters_RowPresenter__0___0__" data-uid="DevZest.Data.Presenters.RowBinding`1.WithInput``1(DevZest.Data.Presenters.Primitives.Trigger{`0},DevZest.Data.Presenters.Primitives.Trigger{`0},DevZest.Data.Column{``0},System.Func{DevZest.Data.Presenters.RowPresenter,`0,``0})">
+          <a class="xref" href="DevZest.Data.Presenters.RowBinding-1.WithInput.html#DevZest_Data_Presenters_RowBinding_1_WithInput__1_DevZest_Data_Presenters_Primitives_Trigger__0__DevZest_Data_Presenters_Primitives_Trigger__0__DevZest_Data_Column___0__System_Func_DevZest_Data_Presenters_RowPresenter__0___0__">WithInput&lt;TData&gt;(Trigger&lt;T&gt;, Trigger&lt;T&gt;, Column&lt;TData&gt;, Func&lt;RowPresenter, T, TData&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Sets input implementation from specified column.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_RowBinding_1_WithInput__1_System_Windows_DependencyProperty_DevZest_Data_Column___0__System_Func__0___0__" data-uid="DevZest.Data.Presenters.RowBinding`1.WithInput``1(System.Windows.DependencyProperty,DevZest.Data.Column{``0},System.Func{`0,``0})">
+          <a class="xref" href="DevZest.Data.Presenters.RowBinding-1.WithInput.html#DevZest_Data_Presenters_RowBinding_1_WithInput__1_System_Windows_DependencyProperty_DevZest_Data_Column___0__System_Func__0___0__">WithInput&lt;TData&gt;(DependencyProperty, Column&lt;TData&gt;, Func&lt;T, TData&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Sets input implementation with specified column.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_RowBinding_1_WithInput__1_System_Windows_DependencyProperty_System_Windows_RoutedEvent_DevZest_Data_Column___0__System_Func__0___0__" data-uid="DevZest.Data.Presenters.RowBinding`1.WithInput``1(System.Windows.DependencyProperty,System.Windows.RoutedEvent,DevZest.Data.Column{``0},System.Func{`0,``0})">
+          <a class="xref" href="DevZest.Data.Presenters.RowBinding-1.WithInput.html#DevZest_Data_Presenters_RowBinding_1_WithInput__1_System_Windows_DependencyProperty_System_Windows_RoutedEvent_DevZest_Data_Column___0__System_Func__0___0__">WithInput&lt;TData&gt;(DependencyProperty, RoutedEvent, Column&lt;TData&gt;, Func&lt;T, TData&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Sets input implementation with specified column.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_RowBinding_1_WithInput__1_System_Windows_DependencyProperty_System_Windows_RoutedEvent_DevZest_Data_Column___0__System_Func_DevZest_Data_Presenters_RowPresenter__0___0__" data-uid="DevZest.Data.Presenters.RowBinding`1.WithInput``1(System.Windows.DependencyProperty,System.Windows.RoutedEvent,DevZest.Data.Column{``0},System.Func{DevZest.Data.Presenters.RowPresenter,`0,``0})">
+          <a class="xref" href="DevZest.Data.Presenters.RowBinding-1.WithInput.html#DevZest_Data_Presenters_RowBinding_1_WithInput__1_System_Windows_DependencyProperty_System_Windows_RoutedEvent_DevZest_Data_Column___0__System_Func_DevZest_Data_Presenters_RowPresenter__0___0__">WithInput&lt;TData&gt;(DependencyProperty, RoutedEvent, Column&lt;TData&gt;, Func&lt;RowPresenter, T, TData&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Sets input implementation with specified column.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_RowBinding_1_WithInput__1_System_Windows_RoutedEvent_DevZest_Data_Column___0__System_Func__0___0__" data-uid="DevZest.Data.Presenters.RowBinding`1.WithInput``1(System.Windows.RoutedEvent,DevZest.Data.Column{``0},System.Func{`0,``0})">
+          <a class="xref" href="DevZest.Data.Presenters.RowBinding-1.WithInput.html#DevZest_Data_Presenters_RowBinding_1_WithInput__1_System_Windows_RoutedEvent_DevZest_Data_Column___0__System_Func__0___0__">WithInput&lt;TData&gt;(RoutedEvent, Column&lt;TData&gt;, Func&lt;T, TData&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Sets input implementation with specified column.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_RowBinding_1_WithInput__1_System_Windows_RoutedEvent_System_Windows_RoutedEvent_DevZest_Data_Column___0__System_Func__0___0__" data-uid="DevZest.Data.Presenters.RowBinding`1.WithInput``1(System.Windows.RoutedEvent,System.Windows.RoutedEvent,DevZest.Data.Column{``0},System.Func{`0,``0})">
+          <a class="xref" href="DevZest.Data.Presenters.RowBinding-1.WithInput.html#DevZest_Data_Presenters_RowBinding_1_WithInput__1_System_Windows_RoutedEvent_System_Windows_RoutedEvent_DevZest_Data_Column___0__System_Func__0___0__">WithInput&lt;TData&gt;(RoutedEvent, RoutedEvent, Column&lt;TData&gt;, Func&lt;T, TData&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Sets input implementation with specified column.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="DevZest.Data.Presenters.BindingFactory.MergeIntoGridCell.html#DevZest_Data_Presenters_BindingFactory_MergeIntoGridCell__1_DevZest_Data_Presenters_RowBinding___0__System_String_System_IFormatProvider_">BindingFactory.MergeIntoGridCell&lt;T&gt;(RowBinding&lt;T&gt;, String, IFormatProvider)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Presenters.BindingFactory.MergeIntoGridCell.html#DevZest_Data_Presenters_BindingFactory_MergeIntoGridCell__2_DevZest_Data_Presenters_RowBinding___0__DevZest_Data_Presenters_RowBinding___1__">BindingFactory.MergeIntoGridCell&lt;TEditor, TInert&gt;(RowBinding&lt;TEditor&gt;, RowBinding&lt;TInert&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Presenters.BindingFactory.AddToGridCell.html#DevZest_Data_Presenters_BindingFactory_AddToGridCell__1_DevZest_Data_Presenters_Primitives_RowBindingBase___0__">BindingFactory.AddToGridCell&lt;T&gt;(RowBindingBase&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Presenters.BindingFactory.BindToValidationPlaceholder.html#DevZest_Data_Presenters_BindingFactory_BindToValidationPlaceholder_System_Collections_Generic_IReadOnlyList_DevZest_Data_Presenters_RowBinding__">BindingFactory.BindToValidationPlaceholder(IReadOnlyList&lt;RowBinding&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Presenters.BindingFactory.MergeIntoInPlaceEditor.html#DevZest_Data_Presenters_BindingFactory_MergeIntoInPlaceEditor__1_DevZest_Data_Presenters_RowBinding___0__System_String_System_IFormatProvider_">BindingFactory.MergeIntoInPlaceEditor&lt;T&gt;(RowBinding&lt;T&gt;, String, IFormatProvider)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Presenters.BindingFactory.MergeIntoInPlaceEditor.html#DevZest_Data_Presenters_BindingFactory_MergeIntoInPlaceEditor__1_DevZest_Data_Presenters_RowBinding___0__System_Func_DevZest_Data_Presenters_RowPresenter_System_String__System_IFormatProvider_">BindingFactory.MergeIntoInPlaceEditor&lt;T&gt;(RowBinding&lt;T&gt;, Func&lt;RowPresenter, String&gt;, IFormatProvider)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Presenters.BindingFactory.MergeIntoInPlaceEditor.html#DevZest_Data_Presenters_BindingFactory_MergeIntoInPlaceEditor__2_DevZest_Data_Presenters_RowBinding___0__DevZest_Data_Presenters_RowBinding___1__">BindingFactory.MergeIntoInPlaceEditor&lt;TEditor, TInert&gt;(RowBinding&lt;TEditor&gt;, RowBinding&lt;TInert&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Presenters.BindingManager.AdhereToFrozenLeft.html#DevZest_Data_Presenters_BindingManager_AdhereToFrozenLeft__1___0_">BindingManager.AdhereToFrozenLeft&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Presenters.BindingManager.AdhereToFrozenTop.html#DevZest_Data_Presenters_BindingManager_AdhereToFrozenTop__1___0_">BindingManager.AdhereToFrozenTop&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Presenters.BindingManager.AdhereToFrozenRight.html#DevZest_Data_Presenters_BindingManager_AdhereToFrozenRight__1___0_">BindingManager.AdhereToFrozenRight&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Presenters.BindingManager.AdhereToFrozenBottom.html#DevZest_Data_Presenters_BindingManager_AdhereToFrozenBottom__1___0_">BindingManager.AdhereToFrozenBottom&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Presenters.BindingManager.WithStyle.html#DevZest_Data_Presenters_BindingManager_WithStyle__1___0_System_Windows_Style_">BindingManager.WithStyle&lt;T&gt;(T, Style)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Presenters.BindingManager.WithStyle.html#DevZest_Data_Presenters_BindingManager_WithStyle__1___0_DevZest_Data_Presenters_StyleId_">BindingManager.WithStyle&lt;T&gt;(T, StyleId)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Presenters.BindingManager.WithAutoSizeOrder.html#DevZest_Data_Presenters_BindingManager_WithAutoSizeOrder__1___0_System_Int32_">BindingManager.WithAutoSizeOrder&lt;T&gt;(T, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Presenters.BindingManager.WithAutoSizeWaiver.html#DevZest_Data_Presenters_BindingManager_WithAutoSizeWaiver__1___0_DevZest_Data_Presenters_AutoSizeWaiver_">BindingManager.WithAutoSizeWaiver&lt;T&gt;(T, AutoSizeWaiver)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Presenters.BindingManager.AddBehavior.html#DevZest_Data_Presenters_BindingManager_AddBehavior__1_DevZest_Data_Presenters_RowBinding___0__DevZest_Data_Presenters_IRowBindingBehavior___0__">BindingManager.AddBehavior&lt;T&gt;(RowBinding&lt;T&gt;, IRowBindingBehavior&lt;T&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Presenters.BindingManager.WithSerializableColumns.html#DevZest_Data_Presenters_BindingManager_WithSerializableColumns__1___0_DevZest_Data_Column___">BindingManager.WithSerializableColumns&lt;T&gt;(T, Column[])</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/new/master/apiSpec/new?filename=DevZest_Data_Presenters_RowBinding_1.md&amp;value=---%0Auid%3A%20DevZest.Data.Presenters.RowBinding%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Data.WPF/Presenters/RowBinding_T.cs/#L13" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © Weifen Luo | DevZest</span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

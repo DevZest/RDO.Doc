@@ -1,0 +1,1061 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Movies.WPF Project </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Movies.WPF Project ">
+    <meta name="generator" content="docfx 2.43.2.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="tutorial_movies_wpf">
+<h1 id="movieswpf-project">Movies.WPF Project</h1>
+
+<p>In this section, we will work on <em>Movies.WPF</em> project, a WPF application to display and manage a database of movies.</p>
+<h2 id="project-setup">Project Setup</h2>
+<p>Make the following changes to <em>Movies.WPF</em> project:</p>
+<p><em>Step 1</em>. Add project reference <em>Movies</em> to this project.</p>
+<p><em>Step 2</em>. Add NuGet package <a href="https://www.nuget.org/packages/DevZest.Data.WPF/">DevZest.Data.WPF</a> to this project.</p>
+<p><em>Step 3</em>. Add the following assembly level attribute to <em>Properties/AssemblyInfo.cs</em> (or <em>My Project/AssemblyInfo.vb</em> if you're using VB.Net):</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-csharp">using DevZest.Data.Presenters;
+using Movies.WPF;
+...
+[assembly: ResourceIdRelativeTo(typeof(App))]
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-vb">Imports DevZest.Data.Presenters
+...
+&lt;Assembly: ResourceIdRelativeTo(GetType(Application))&gt;
+</code></pre>
+</section>
+</div>
+
+<div class="NOTE">
+<h5>Note</h5>
+<p>If you cannot find <em>AssemblyInfo.vb</em> in <em>Solution Explorer</em>, make sure you have enabled &quot;Show all files&quot; on the toolbar of the <em>Solution Explorer</em>.</p>
+</div>
+<p><em>Step 4</em>. Add <em>Movies.mdf</em> and <em>Movies_log.ldf</em> to this project as linking, by right clicking <em>Movies.WPF</em> project in <em>Solution Explorer</em> tool window, then click context menu item &quot;<em>Add</em>&quot; -&gt; &quot;Existing Item...&quot;, select <em>All Files(</em>.<em>)</em> from right bottom combobox, then navigate to <em>LocalDb subfolder</em> of <em>Movies.DbDesign</em> project, select file <em>Movies.mdf</em> and <em>Movies_log.ldf</em>:</p>
+<p><img src="/images/tutorial_add_moviesdb.jpg" alt="image"></p>
+<p>Click the little dropdown arrow next to the <em>Add</em> button and select <em>Add as Link</em>, instead of copying the file into the project directory, Visual Studio will create a link to the original:</p>
+<p><img src="/images/tutorial_linked_moviesdb.jpg" alt="image"></p>
+<p>Select these two files, then right click and select context menu item <em>Properties</em>, make sure <em>Copy to Output Directory</em> is set to <em>Copy Always</em>:</p>
+<p><img src="/images/tutorial_copy_always.jpg" alt="image"></p>
+<h2 id="appapplication">App/Application</h2>
+<p>Change <em>App.xaml.cs</em>(<em>Application.xaml.vb</em> if you're using VB.Net) to:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-1_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-1_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-1_cs" role="tabpanel" data-tab="cs">
+<pre><code class="lang-csharp" name="App">using System;
+using System.IO;
+using System.Reflection;
+using System.Threading.Tasks;
+using System.Windows;
+
+namespace Movies.WPF
+{
+    public partial class App : Application
+    {
+        private static readonly string ConnectionString = GetConnectionString();
+
+        private static string GetConnectionString()
+        {
+            string mdfFilename = &quot;Movies.mdf&quot;;
+            string outputFolder = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            string attachDbFilename = Path.Combine(outputFolder, mdfFilename);
+            return string.Format(@&quot;Data Source=(localdb)\MSSQLLocalDB;AttachDbFilename=&quot;&quot;{0}&quot;&quot;;Integrated Security=True&quot;, attachDbFilename);
+        }
+
+        private static Db CreateDb()
+        {
+            return new Db(App.ConnectionString);
+        }
+
+        public static async Task ExecuteAsync(Func&lt;Db, Task&gt; func)
+        {
+            using (var db = CreateDb())
+            {
+                await func(db);
+            }
+        }
+
+        public static async Task&lt;T&gt; ExecuteAsync&lt;T&gt;(Func&lt;Db, Task&lt;T&gt;&gt; func)
+        {
+            using (var db = CreateDb())
+            {
+                return await func(db);
+            }
+        }
+
+    }
+}
+</code></pre></section>
+<section id="tabpanel_CeZOj-G++Q-1_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-vb" name="Application">Imports System.IO
+Imports System.Reflection
+
+Class Application
+    Private Shared ReadOnly ConnectionString As String = GetConnectionString()
+
+    Private Shared Function GetConnectionString() As String
+        Dim mdfFilename As String = &quot;Movies.mdf&quot;
+        Dim outputFolder As String = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)
+        Dim attachDbFilename As String = Path.Combine(outputFolder, mdfFilename)
+        Return String.Format(&quot;Data Source=(localdb)\MSSQLLocalDB;AttachDbFilename=&quot;&quot;{0}&quot;&quot;;Integrated Security=True&quot;, attachDbFilename)
+    End Function
+
+    Private Shared Function CreateDb() As Db
+        Return New Db(ConnectionString)
+    End Function
+
+    Public Shared Async Function ExecuteAsync(func As Func(Of Db, Task)) As Task
+        Using db = CreateDb()
+            Await func(db)
+        End Using
+    End Function
+
+    Public Shared Async Function ExecuteAsync(Of T)(func As Func(Of Db, Task(Of T))) As Task(Of T)
+        Using db = CreateDb()
+            Return Await func(db)
+        End Using
+    End Function
+End Class
+</code></pre></section>
+</div>
+<h2 id="moviedetailwindow">MovieDetailWindow</h2>
+<p>Add class file <em>MovieDetailWindow.Presenter.cs</em> (<em>MovieDetailWindow.Presenter.vb</em> if you're using VB.Net):</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-2_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-2_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-2_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-2_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-2_cs" role="tabpanel" data-tab="cs">
+<pre><code class="lang-csharp" name="MovieDetailWindowPresenter">using DevZest.Data.Presenters;
+using System.Threading.Tasks;
+
+namespace Movies.WPF
+{
+    partial class MovieDetailWindow
+    {
+        private sealed class Presenter : DataPresenter&lt;Movie&gt;
+        {
+            private const string LABEL_FORMAT = &quot;{0}:&quot;;
+
+            protected override void BuildTemplate(TemplateBuilder builder)
+            {
+                var title = _.Title.BindToTextBox();
+                var releaseDate = _.ReleaseDate.BindToDatePicker();
+                var genre = _.Genre.BindToTextBox();
+                var price = _.Price.BindToTextBox();
+
+                builder
+                    .GridColumns(&quot;Auto&quot;, &quot;*&quot;)
+                    .GridRows(&quot;Auto&quot;, &quot;Auto&quot;, &quot;Auto&quot;, &quot;Auto&quot;)
+                    .AddBinding(0, 0, _.Title.BindToLabel(title, LABEL_FORMAT))
+                    .AddBinding(0, 1, _.ReleaseDate.BindToLabel(releaseDate, LABEL_FORMAT))
+                    .AddBinding(0, 2, _.Genre.BindToLabel(genre, LABEL_FORMAT))
+                    .AddBinding(0, 3, _.Price.BindToLabel(price, LABEL_FORMAT))
+                    .AddBinding(1, 0, title)
+                    .AddBinding(1, 1, releaseDate)
+                    .AddBinding(1, 2, genre)
+                    .AddBinding(1, 3, price);
+            }
+
+            public int ID
+            {
+                get { return _.ID[0].Value; }
+            }
+
+            public bool IsNew
+            {
+                get { return ID &lt; 1; }
+            }
+
+            public Task SaveToDbAsync()
+            {
+                if (IsNew)
+                    return App.ExecuteAsync(db =&gt; db.Movie.InsertAsync(DataSet));
+                else
+                    return App.ExecuteAsync(db =&gt; db.Movie.UpdateAsync(DataSet));
+            }
+        }
+    }
+}
+</code></pre></section>
+<section id="tabpanel_CeZOj-G++Q-2_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-vb" name="MainWindowPresenter">Imports DevZest.Data.Presenters
+
+Partial Class MovieDetailWindow
+    Private NotInheritable Class Presenter
+        Inherits DataPresenter(Of Movie)
+        Private Const LABEL_FORMAT As String = &quot;{0}:&quot;
+
+        Protected Overrides Sub BuildTemplate(builder As TemplateBuilder)
+            Dim title = Entity.Title.BindToTextBox()
+            Dim releaseDate = Entity.ReleaseDate.BindToDatePicker()
+            Dim genre = Entity.Genre.BindToTextBox()
+            Dim price = Entity.Price.BindToTextBox()
+
+            builder.GridColumns(&quot;Auto&quot;, &quot;*&quot;) _
+                .GridRows(&quot;Auto&quot;, &quot;Auto&quot;, &quot;Auto&quot;, &quot;Auto&quot;) _
+                .AddBinding(0, 0, Entity.Title.BindToLabel(title, LABEL_FORMAT)) _
+                .AddBinding(0, 1, Entity.ReleaseDate.BindToLabel(releaseDate, LABEL_FORMAT)) _
+                .AddBinding(0, 2, Entity.Genre.BindToLabel(genre, LABEL_FORMAT)) _
+                .AddBinding(0, 3, Entity.Price.BindToLabel(price, LABEL_FORMAT)) _
+                .AddBinding(1, 0, title) _
+                .AddBinding(1, 1, releaseDate) _
+                .AddBinding(1, 2, genre) _
+                .AddBinding(1, 3, price)
+        End Sub
+
+        Public ReadOnly Property ID() As Integer
+            Get
+                Return Entity.ID(0).Value
+            End Get
+        End Property
+
+        Public ReadOnly Property IsNew() As Boolean
+            Get
+                Return ID &lt; 1
+            End Get
+        End Property
+
+        Public Function SaveToDbAsync() As Task
+            If IsNew Then
+                Return Application.ExecuteAsync(Function(db) db.Movie.InsertAsync(DataSet))
+            Else
+                Return Application.ExecuteAsync(Function(db) db.Movie.UpdateAsync(DataSet))
+            End If
+        End Function
+    End Class
+End Class
+</code></pre></section>
+</div>
+<hr>
+<p>Add window <em>MovieDetailWindow.xaml</em> to project. Change <em>MovieDetailWindow.xaml</em> to:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-3">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-3_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-3_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-3_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-3_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-3_cs" role="tabpanel" data-tab="cs">
+<pre><code class="lang-xaml" name="MovieDetailWindow">&lt;Window x:Class=&quot;Movies.WPF.MovieDetailWindow&quot;
+        xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+        xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+        xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+        xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+        xmlns:local=&quot;clr-namespace:Movies.WPF&quot;
+        xmlns:dz=&quot;http://schemas.devzest.com/data/windows&quot;
+        mc:Ignorable=&quot;d&quot;
+        Title=&quot;Movie&quot; Height=&quot;230&quot; Width=&quot;300&quot; WindowStartupLocation=&quot;CenterOwner&quot;&gt;
+    &lt;Window.Resources&gt;
+        &lt;Style TargetType=&quot;Label&quot;&gt;
+            &lt;Setter Property=&quot;Margin&quot; Value=&quot;5,5,0,5&quot; /&gt;
+            &lt;Setter Property=&quot;HorizontalAlignment&quot; Value=&quot;Right&quot; /&gt;
+        &lt;/Style&gt;
+        &lt;Style TargetType=&quot;TextBox&quot;&gt;
+            &lt;Setter Property=&quot;VerticalAlignment&quot; Value=&quot;Center&quot; /&gt;
+            &lt;Setter Property=&quot;Margin&quot; Value=&quot;5,0,5,0&quot; /&gt;
+        &lt;/Style&gt;
+        &lt;Style TargetType=&quot;DatePicker&quot;&gt;
+            &lt;Setter Property=&quot;VerticalAlignment&quot; Value=&quot;Center&quot; /&gt;
+            &lt;Setter Property=&quot;Margin&quot; Value=&quot;5,0,5,0&quot; /&gt;
+        &lt;/Style&gt;
+        &lt;Style TargetType=&quot;Button&quot;&gt;
+            &lt;Setter Property=&quot;Margin&quot; Value=&quot;5&quot; /&gt;
+        &lt;/Style&gt;
+    &lt;/Window.Resources&gt;
+    &lt;Grid&gt;
+        &lt;Grid.RowDefinitions&gt;
+            &lt;RowDefinition Height=&quot;*&quot; /&gt;
+            &lt;RowDefinition Height=&quot;Auto&quot; /&gt;
+        &lt;/Grid.RowDefinitions&gt;
+        &lt;dz:DataView x:Name=&quot;_dataView&quot; Background=&quot;White&quot; Margin=&quot;5&quot; /&gt;
+        &lt;UniformGrid Width=&quot;180&quot; Columns=&quot;2&quot; HorizontalAlignment=&quot;Right&quot; VerticalAlignment=&quot;Bottom&quot; Grid.Row=&quot;1&quot;&gt;
+            &lt;Button Content=&quot;OK&quot; IsDefault=&quot;True&quot; Command=&quot;{x:Static local:MovieDetailWindow+Commands.Submit}&quot; /&gt;
+            &lt;Button Content=&quot;Cancel&quot; IsCancel=&quot;True&quot; /&gt;
+        &lt;/UniformGrid&gt;
+    &lt;/Grid&gt;
+&lt;/Window&gt;
+</code></pre></section>
+<section id="tabpanel_CeZOj-G++Q-3_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-xaml" name="MainWindow">&lt;Window x:Class=&quot;MovieDetailWindow&quot;
+        xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+        xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+        xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+        xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+        xmlns:local=&quot;clr-namespace:Movies.WPF&quot;
+        xmlns:dz=&quot;http://schemas.devzest.com/data/windows&quot;
+        mc:Ignorable=&quot;d&quot;
+        Title=&quot;Movie&quot; Height=&quot;230&quot; Width=&quot;300&quot; WindowStartupLocation=&quot;CenterOwner&quot;&gt;
+    &lt;Window.Resources&gt;
+        &lt;Style TargetType=&quot;Label&quot;&gt;
+            &lt;Setter Property=&quot;Margin&quot; Value=&quot;5,5,0,5&quot; /&gt;
+            &lt;Setter Property=&quot;HorizontalAlignment&quot; Value=&quot;Right&quot; /&gt;
+        &lt;/Style&gt;
+        &lt;Style TargetType=&quot;TextBox&quot;&gt;
+            &lt;Setter Property=&quot;VerticalAlignment&quot; Value=&quot;Center&quot; /&gt;
+            &lt;Setter Property=&quot;Margin&quot; Value=&quot;5,0,5,0&quot; /&gt;
+        &lt;/Style&gt;
+        &lt;Style TargetType=&quot;DatePicker&quot;&gt;
+            &lt;Setter Property=&quot;VerticalAlignment&quot; Value=&quot;Center&quot; /&gt;
+            &lt;Setter Property=&quot;Margin&quot; Value=&quot;5,0,5,0&quot; /&gt;
+        &lt;/Style&gt;
+        &lt;Style TargetType=&quot;Button&quot;&gt;
+            &lt;Setter Property=&quot;Margin&quot; Value=&quot;5&quot; /&gt;
+        &lt;/Style&gt;
+    &lt;/Window.Resources&gt;
+    &lt;Grid&gt;
+        &lt;Grid.RowDefinitions&gt;
+            &lt;RowDefinition Height=&quot;*&quot; /&gt;
+            &lt;RowDefinition Height=&quot;Auto&quot; /&gt;
+        &lt;/Grid.RowDefinitions&gt;
+        &lt;dz:DataView x:Name=&quot;_dataView&quot; Background=&quot;White&quot; Margin=&quot;5&quot; /&gt;
+        &lt;UniformGrid Width=&quot;180&quot; Columns=&quot;2&quot; HorizontalAlignment=&quot;Right&quot; VerticalAlignment=&quot;Bottom&quot; Grid.Row=&quot;1&quot;&gt;
+            &lt;Button Content=&quot;OK&quot; IsDefault=&quot;True&quot; Command=&quot;{x:Static local:MovieDetailWindow+Commands.Submit}&quot; /&gt;
+            &lt;Button Content=&quot;Cancel&quot; IsCancel=&quot;True&quot; /&gt;
+        &lt;/UniformGrid&gt;
+    &lt;/Grid&gt;
+&lt;/Window&gt;
+</code></pre></section>
+</div>
+<hr>
+<p>Change code behind <em>MovieDetailWindow.xaml.cs</em> (<em>MovieDetailWindow.xaml.vb</em> if you're using VB.Net) to:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-4">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-4_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-4_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-4_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-4_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-4_cs" role="tabpanel" data-tab="cs">
+<pre><code class="lang-csharp" name="MovieDetailWindow">using DevZest.Data;
+using System.Diagnostics;
+using System.Windows;
+using System.Windows.Input;
+
+namespace Movies.WPF
+{
+    public partial class MovieDetailWindow : Window
+    {
+        public static class Commands
+        {
+            public static readonly RoutedCommand Submit = new RoutedCommand(nameof(Submit), typeof(MovieDetailWindow));
+        }
+
+        public static bool Show(DataSet&lt;Movie&gt; data, Window ownerWindow)
+        {
+            return new MovieDetailWindow().ShowDialog(data, ownerWindow);
+        }
+
+        public MovieDetailWindow()
+        {
+            InitializeComponent();
+            CommandBindings.Add(new CommandBinding(Commands.Submit, ExecSubmit, CanExecSubmit));
+        }
+
+        private Presenter _presenter;
+
+        private async void ExecSubmit(object sender, ExecutedRoutedEventArgs e)
+        {
+            if (_presenter.IsEditing)
+                _presenter.CurrentRow.EndEdit();
+
+            if (!_presenter.SubmitInput())
+                return;
+
+            await _presenter.SaveToDbAsync();
+            DialogResult = true;
+            Close();
+        }
+
+        private void CanExecSubmit(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = _presenter.CanSubmitInput;
+        }
+
+        private bool ShowDialog(DataSet&lt;Movie&gt; data, Window ownerWindow)
+        {
+            Debug.Assert(data.Count == 1);
+            _presenter = new Presenter();
+            _presenter.Show(_dataView, data);
+            Owner = ownerWindow;
+            Title = _presenter.IsNew ? &quot;New Movie&quot; : string.Format(&quot;Movie: {0}&quot;, _presenter.ID);
+            return ShowDialog().Value;
+        }
+    }
+}
+</code></pre></section>
+<section id="tabpanel_CeZOj-G++Q-4_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-vb" name="MovieDetailWindow">Imports DevZest.Data
+
+Partial Public Class MovieDetailWindow
+    Public NotInheritable Class Commands
+        Private Sub New()
+        End Sub
+
+        Public Shared ReadOnly Submit As New RoutedCommand(NameOf(Submit), GetType(MovieDetailWindow))
+    End Class
+
+    Public Overloads Shared Function Show(data As DataSet(Of Movie), ownerWindow As Window) As Boolean
+        Return New MovieDetailWindow().ShowDialog(data, ownerWindow)
+    End Function
+
+    Public Sub New()
+        InitializeComponent()
+        CommandBindings.Add(New CommandBinding(Commands.Submit, AddressOf ExecSubmit, AddressOf CanExecSubmit))
+    End Sub
+
+    Private _presenter As Presenter
+
+    Private Async Sub ExecSubmit(sender As Object, e As ExecutedRoutedEventArgs)
+        If _presenter.IsEditing Then
+            _presenter.CurrentRow.EndEdit()
+        End If
+
+        If Not _presenter.SubmitInput() Then
+            Return
+        End If
+
+        Await _presenter.SaveToDbAsync()
+        DialogResult = True
+        Close()
+    End Sub
+
+    Private Sub CanExecSubmit(sender As Object, e As CanExecuteRoutedEventArgs)
+        e.CanExecute = _presenter.CanSubmitInput
+    End Sub
+
+    Private Overloads Function ShowDialog(data As DataSet(Of Movie), ownerWindow As Window) As Boolean
+        Debug.Assert(data.Count = 1)
+        _presenter = New Presenter()
+        _presenter.Show(_dataView, data)
+        Owner = ownerWindow
+        Title = If(_presenter.IsNew, &quot;New Movie&quot;, String.Format(&quot;Movie: {0}&quot;, _presenter.ID))
+        Return ShowDialog().Value
+    End Function
+
+End Class
+</code></pre></section>
+</div>
+<h2 id="mainwindow">MainWindow</h2>
+<p>Add class file <em>MainWindow.Presenter.cs</em> (<em>MainWindow.Presenter.vb</em> if you're using VB.Net):</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-5">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-5_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-5_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-5_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-5_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-5_cs" role="tabpanel" data-tab="cs">
+<pre><code class="lang-csharp" name="MainWindowPresenter">using DevZest.Data;
+using DevZest.Data.Presenters;
+using DevZest.Data.Views;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Windows.Controls;
+
+namespace Movies.WPF
+{
+    partial class MainWindow
+    {
+        public static class Styles
+        {
+            public static readonly StyleId CheckBox = new StyleId(typeof(MainWindow));
+            public static readonly StyleId LeftAlignedTextBlock = new StyleId(typeof(MainWindow));
+            public static readonly StyleId RightAlignedTextBlock = new StyleId(typeof(MainWindow));
+        }
+
+        public sealed class Presenter : DataPresenter&lt;Movie&gt;
+        {
+            public interface IFilter
+            {
+                string Text { get; set; }
+            }
+
+            public Presenter(IFilter filter)
+            {
+                _filter = filter;
+            }
+
+            private readonly IFilter _filter;
+
+            private Task&lt;DataSet&lt;Movie&gt;&gt; LoadDataAsync(CancellationToken ct)
+            {
+                return App.ExecuteAsync(db =&gt; db.GetMoviesAsync(_filter.Text, ct));
+            }
+
+            public void ShowAsync(DataView dataView)
+            {
+                ShowAsync(dataView, LoadDataAsync);
+            }
+
+            public Task RefreshAsync(bool clearFiler)
+            {
+                if (clearFiler)
+                    _filter.Text = null;
+                return RefreshAsync(LoadDataAsync);
+            }
+
+            protected override void BuildTemplate(TemplateBuilder builder)
+            {
+                builder.GridColumns(&quot;20&quot;, &quot;*&quot;, &quot;Auto&quot;, &quot;Auto&quot;, &quot;Auto&quot;)
+                .GridRows(&quot;Auto&quot;, &quot;Auto&quot;)
+                .Layout(Orientation.Vertical)
+                .WithFrozenTop(1)
+                .AddBinding(0, 0, this.BindToCheckBox().WithStyle(Styles.CheckBox))
+                .AddBinding(1, 0, _.Title.BindToColumnHeader())
+                .AddBinding(2, 0, _.ReleaseDate.BindToColumnHeader())
+                .AddBinding(3, 0, _.Genre.BindToColumnHeader())
+                .AddBinding(4, 0, _.Price.BindToColumnHeader())
+                .AddBinding(0, 1, _.BindToCheckBox().WithStyle(Styles.CheckBox))
+                .AddBinding(1, 1, _.Title.BindToTextBlockHyperlink(Commands.Open).WithStyle(Styles.LeftAlignedTextBlock))
+                .AddBinding(2, 1, _.ReleaseDate.BindToTextBlock(&quot;{0:d}&quot;).WithStyle(Styles.RightAlignedTextBlock))
+                .AddBinding(3, 1, _.Genre.BindToTextBlock().WithStyle(Styles.LeftAlignedTextBlock))
+                .AddBinding(4, 1, _.Price.BindToTextBlock(&quot;{0:C}&quot;).WithStyle(Styles.RightAlignedTextBlock));
+            }
+        }
+    }
+}
+</code></pre></section>
+<section id="tabpanel_CeZOj-G++Q-5_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-vb" name="MainWindowPresenter">Imports System.Threading
+Imports DevZest.Data
+Imports DevZest.Data.Presenters
+Imports DevZest.Data.Views
+
+Partial Class MainWindow
+    Public NotInheritable Class Styles
+        Public Shared ReadOnly CheckBox As New StyleId(GetType(MainWindow))
+        Public Shared ReadOnly LeftAlignedTextBlock As New StyleId(GetType(MainWindow))
+        Public Shared ReadOnly RightAlignedTextBlock As New StyleId(GetType(MainWindow))
+    End Class
+
+    Public NotInheritable Class Presenter
+        Inherits DataPresenter(Of Movie)
+
+        Public Interface IFilter
+            Property Text() As String
+        End Interface
+
+        Public Sub New(filter As IFilter)
+            _filter = filter
+        End Sub
+
+        Private ReadOnly _filter As IFilter
+
+        Private Function LoadDataAsync(ct As CancellationToken) As Task(Of DataSet(Of Movie))
+            Return Application.ExecuteAsync(Function(db) db.GetMoviesAsync(_filter.Text, ct))
+        End Function
+
+        Public Overloads Sub ShowAsync(dataView As DataView)
+            ShowAsync(dataView, AddressOf LoadDataAsync)
+        End Sub
+
+        Public Overloads Function RefreshAsync(clearFilder As Boolean) As Task
+            If clearFilder Then
+                _filter.Text = Nothing
+            End If
+            Return RefreshAsync(AddressOf LoadDataAsync)
+        End Function
+
+        Protected Overrides Sub BuildTemplate(builder As TemplateBuilder)
+            builder.GridColumns(&quot;20&quot;, &quot;*&quot;, &quot;Auto&quot;, &quot;Auto&quot;, &quot;Auto&quot;) _
+                .GridRows(&quot;Auto&quot;, &quot;Auto&quot;) _
+                .Layout(Orientation.Vertical) _
+                .WithFrozenTop(1) _
+                .AddBinding(0, 0, Me.BindToCheckBox().WithStyle(Styles.CheckBox)) _
+                .AddBinding(1, 0, Entity.Title.BindToColumnHeader()) _
+                .AddBinding(2, 0, Entity.ReleaseDate.BindToColumnHeader()) _
+                .AddBinding(3, 0, Entity.Genre.BindToColumnHeader()) _
+                .AddBinding(4, 0, Entity.Price.BindToColumnHeader()) _
+                .AddBinding(0, 1, Entity.BindToCheckBox().WithStyle(Styles.CheckBox)) _
+                .AddBinding(1, 1, Entity.Title.BindToTextBlockHyperlink(Commands.Open).WithStyle(Styles.LeftAlignedTextBlock)) _
+                .AddBinding(2, 1, Entity.ReleaseDate.BindToTextBlock(&quot;{0:d}&quot;).WithStyle(Styles.RightAlignedTextBlock)) _
+                .AddBinding(3, 1, Entity.Genre.BindToTextBlock().WithStyle(Styles.LeftAlignedTextBlock)) _
+                .AddBinding(4, 1, Entity.Price.BindToTextBlock(&quot;{0:C}&quot;).WithStyle(Styles.RightAlignedTextBlock))
+        End Sub
+    End Class
+End Class
+</code></pre></section>
+</div>
+<hr>
+<p>Add resource dictionary <em>MainWindow.Styles.xaml</em>:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-6">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-6_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-6_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-6_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-6_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-6_cs" role="tabpanel" data-tab="cs">
+<pre><code class="lang-xaml" name="MainWindowStyles">&lt;ResourceDictionary xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+                    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+                    xmlns:local=&quot;clr-namespace:Movies.WPF&quot;&gt;
+    &lt;Style x:Key=&quot;DefaultTextBlock&quot; TargetType=&quot;TextBlock&quot;&gt;
+        &lt;Setter Property=&quot;Padding&quot; Value=&quot;2&quot; /&gt;
+        &lt;Setter Property=&quot;VerticalAlignment&quot; Value=&quot;Center&quot; /&gt;
+    &lt;/Style&gt;
+    &lt;Style x:Key=&quot;{x:Static local:MainWindow+Styles.CheckBox}&quot; TargetType=&quot;CheckBox&quot;&gt;
+        &lt;Setter Property=&quot;HorizontalAlignment&quot; Value=&quot;Center&quot; /&gt;
+        &lt;Setter Property=&quot;VerticalAlignment&quot; Value=&quot;Center&quot; /&gt;
+    &lt;/Style&gt;
+    &lt;Style x:Key=&quot;{x:Static local:MainWindow+Styles.LeftAlignedTextBlock}&quot; TargetType=&quot;TextBlock&quot; BasedOn=&quot;{StaticResource DefaultTextBlock}&quot;&gt;
+        &lt;Setter Property=&quot;TextAlignment&quot; Value=&quot;Left&quot; /&gt;
+    &lt;/Style&gt;
+    &lt;Style x:Key=&quot;{x:Static local:MainWindow+Styles.RightAlignedTextBlock}&quot; TargetType=&quot;TextBlock&quot; BasedOn=&quot;{StaticResource DefaultTextBlock}&quot;&gt;
+        &lt;Setter Property=&quot;TextAlignment&quot; Value=&quot;Right&quot; /&gt;
+    &lt;/Style&gt;
+&lt;/ResourceDictionary&gt;
+</code></pre></section>
+<section id="tabpanel_CeZOj-G++Q-6_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-xaml" name="MainWindowStyles">&lt;ResourceDictionary xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+                    xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+                    xmlns:local=&quot;clr-namespace:Movies.WPF&quot;&gt;
+    &lt;Style x:Key=&quot;DefaultTextBlock&quot; TargetType=&quot;TextBlock&quot;&gt;
+        &lt;Setter Property=&quot;Padding&quot; Value=&quot;2&quot; /&gt;
+        &lt;Setter Property=&quot;VerticalAlignment&quot; Value=&quot;Center&quot; /&gt;
+    &lt;/Style&gt;
+    &lt;Style x:Key=&quot;{x:Static local:MainWindow+Styles.CheckBox}&quot; TargetType=&quot;CheckBox&quot;&gt;
+        &lt;Setter Property=&quot;HorizontalAlignment&quot; Value=&quot;Center&quot; /&gt;
+        &lt;Setter Property=&quot;VerticalAlignment&quot; Value=&quot;Center&quot; /&gt;
+    &lt;/Style&gt;
+    &lt;Style x:Key=&quot;{x:Static local:MainWindow+Styles.LeftAlignedTextBlock}&quot; TargetType=&quot;TextBlock&quot; BasedOn=&quot;{StaticResource DefaultTextBlock}&quot;&gt;
+        &lt;Setter Property=&quot;TextAlignment&quot; Value=&quot;Left&quot; /&gt;
+    &lt;/Style&gt;
+    &lt;Style x:Key=&quot;{x:Static local:MainWindow+Styles.RightAlignedTextBlock}&quot; TargetType=&quot;TextBlock&quot; BasedOn=&quot;{StaticResource DefaultTextBlock}&quot;&gt;
+        &lt;Setter Property=&quot;TextAlignment&quot; Value=&quot;Right&quot; /&gt;
+    &lt;/Style&gt;
+&lt;/ResourceDictionary&gt;
+</code></pre></section>
+</div>
+<hr>
+<p>Change <em>MainWindow.xaml</em> to:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-7">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-7_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-7_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-7_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-7_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-7_cs" role="tabpanel" data-tab="cs">
+<pre><code class="lang-xaml" name="MainWindow">&lt;Window x:Class=&quot;Movies.WPF.MainWindow&quot;
+        xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+        xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+        xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+        xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+        xmlns:dz=&quot;http://schemas.devzest.com/data/windows&quot;
+        xmlns:local=&quot;clr-namespace:Movies.WPF&quot;
+        mc:Ignorable=&quot;d&quot;
+        Title=&quot;Movies.WPF&quot; Height=&quot;300&quot; Width=&quot;500&quot; WindowStartupLocation=&quot;CenterScreen&quot;&gt;
+    &lt;DockPanel&gt;
+        &lt;ToolBar DockPanel.Dock=&quot;Top&quot;&gt;
+            &lt;Button Command=&quot;{x:Static local:MainWindow+Commands.New}&quot;&gt;New&lt;/Button&gt;
+            &lt;Separator /&gt;
+            &lt;Button Command=&quot;{x:Static local:MainWindow+Commands.Delete}&quot;&gt;Delete&lt;/Button&gt;
+            &lt;Separator /&gt;
+            &lt;Button Command=&quot;{x:Static local:MainWindow+Commands.Refresh}&quot;&gt;Refresh&lt;/Button&gt;
+            &lt;Separator /&gt;
+            &lt;TextBox x:Name=&quot;_textBoxSearch&quot; Width=&quot;150&quot; /&gt;
+            &lt;Button Command=&quot;{x:Static local:MainWindow+Commands.Refresh}&quot;&gt;Search&lt;/Button&gt;
+            &lt;Separator /&gt;
+        &lt;/ToolBar&gt;
+        &lt;dz:DataView x:Name=&quot;_dataView&quot; /&gt;
+    &lt;/DockPanel&gt;
+&lt;/Window&gt;
+</code></pre></section>
+<section id="tabpanel_CeZOj-G++Q-7_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-xaml" name="MainWindow">&lt;Window x:Class=&quot;MainWindow&quot;
+        xmlns=&quot;http://schemas.microsoft.com/winfx/2006/xaml/presentation&quot;
+        xmlns:x=&quot;http://schemas.microsoft.com/winfx/2006/xaml&quot;
+        xmlns:d=&quot;http://schemas.microsoft.com/expression/blend/2008&quot;
+        xmlns:mc=&quot;http://schemas.openxmlformats.org/markup-compatibility/2006&quot;
+        xmlns:dz=&quot;http://schemas.devzest.com/data/windows&quot;
+        xmlns:local=&quot;clr-namespace:Movies.WPF&quot;
+        mc:Ignorable=&quot;d&quot;
+        Title=&quot;Movies.WPF&quot; Height=&quot;300&quot; Width=&quot;500&quot; WindowStartupLocation=&quot;CenterScreen&quot;&gt;
+    &lt;DockPanel&gt;
+        &lt;ToolBar DockPanel.Dock=&quot;Top&quot;&gt;
+            &lt;Button Command=&quot;{x:Static local:MainWindow+Commands.New}&quot;&gt;New&lt;/Button&gt;
+            &lt;Separator /&gt;
+            &lt;Button Command=&quot;{x:Static local:MainWindow+Commands.Delete}&quot;&gt;Delete&lt;/Button&gt;
+            &lt;Separator /&gt;
+            &lt;Button Command=&quot;{x:Static local:MainWindow+Commands.Refresh}&quot;&gt;Refresh&lt;/Button&gt;
+            &lt;Separator /&gt;
+            &lt;TextBox x:Name=&quot;_textBoxSearch&quot; Width=&quot;150&quot; /&gt;
+            &lt;Button Command=&quot;{x:Static local:MainWindow+Commands.Refresh}&quot;&gt;Search&lt;/Button&gt;
+            &lt;Separator /&gt;
+        &lt;/ToolBar&gt;
+        &lt;dz:DataView x:Name=&quot;_dataView&quot; /&gt;
+    &lt;/DockPanel&gt;
+&lt;/Window&gt;
+</code></pre></section>
+</div>
+<hr>
+<p>Change code behind <em>MainWindow.xaml.cs</em> (<em>MainWindow.xaml.vb</em> if you're using VB.Net) to:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-8">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-8_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-8_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-8_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-8_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-8_cs" role="tabpanel" data-tab="cs">
+<pre><code class="lang-csharp" name="MainWindow">using DevZest.Data;
+using System.Diagnostics;
+using System.Windows;
+using System.Windows.Input;
+
+namespace Movies.WPF
+{
+    public partial class MainWindow : Window, MainWindow.Presenter.IFilter
+    {
+        public static class Commands
+        {
+            public static RoutedUICommand New { get { return ApplicationCommands.New; } }
+            public static RoutedUICommand Open { get { return ApplicationCommands.Open; } }
+            public static RoutedUICommand Delete { get { return ApplicationCommands.Delete; } }
+            public static RoutedUICommand Refresh { get { return NavigationCommands.Refresh; } }
+        }
+
+        private readonly Presenter _presenter;
+
+        public MainWindow()
+        {
+            InitializeComponent();
+            InitializeCommandBindings();
+            _presenter = new Presenter(this);
+            _presenter.ShowAsync(_dataView);
+        }
+
+        string Presenter.IFilter.Text
+        {
+            get { return _textBoxSearch.Text; }
+            set { _textBoxSearch.Text = value; }
+        }
+
+        private void InitializeCommandBindings()
+        {
+            CommandBindings.Add(new CommandBinding(Commands.New, New));
+            CommandBindings.Add(new CommandBinding(Commands.Open, Open, CanOpen));
+            CommandBindings.Add(new CommandBinding(Commands.Delete, Delete, CanDelete));
+            CommandBindings.Add(new CommandBinding(Commands.Refresh, Refresh, CanRefresh));
+        }
+
+        private void ShowMovieDetailWindow(DataSet&lt;Movie&gt; movie)
+        {
+            Debug.Assert(movie.Count == 1);
+            var result = MovieDetailWindow.Show(movie, this);
+            if (result)
+                Refresh(true);
+        }
+
+        private void New(object sender, ExecutedRoutedEventArgs e)
+        {
+            var movie = DataSet&lt;Movie&gt;.Create();
+            movie.AddRow();
+            ShowMovieDetailWindow(movie);
+        }
+
+        private Movie _
+        {
+            get { return _presenter._; }
+        }
+
+        private async void Open(object sender, ExecutedRoutedEventArgs e)
+        {
+            var ID = _presenter.CurrentRow.GetValue(_.ID).Value;
+            var movie = await App.ExecuteAsync(db =&gt; db.GetMovieAsync(ID));
+            ShowMovieDetailWindow(movie);
+        }
+
+        private void CanOpen(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = _presenter.CurrentRow != null;
+        }
+
+        private async void Delete(object sender, ExecutedRoutedEventArgs e)
+        {
+            var selectedRows = _presenter.SelectedRows;
+            var json = _presenter.DataSet.Filter(JsonFilter.PrimaryKeyOnly).ToJsonString(_presenter.SelectedDataRows, false);
+            var keys = DataSet&lt;Movie.Key&gt;.ParseJson(json);
+            await App.ExecuteAsync(db =&gt; db.Movie.DeleteAsync(keys, (s, _) =&gt; s.Match(_)));
+            Refresh(false);
+        }
+
+        private void CanDelete(object sender, CanExecuteRoutedEventArgs e)
+        {
+            var selectedRows = _presenter.SelectedRows;
+            e.CanExecute = selectedRows != null &amp;&amp; selectedRows.Count &gt; 0;
+        }
+
+        private void Refresh(object sender, ExecutedRoutedEventArgs e)
+        {
+            Refresh(false);
+        }
+
+        private void Refresh(bool clearFilter)
+        {
+            _presenter.RefreshAsync(clearFilter);
+        }
+
+        private void CanRefresh(object sender, CanExecuteRoutedEventArgs e)
+        {
+            e.CanExecute = _presenter.DataSet != null;
+        }
+    }
+}
+</code></pre></section>
+<section id="tabpanel_CeZOj-G++Q-8_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-vb" name="MainWindow">Imports DevZest.Data
+
+Partial Class MainWindow
+    Implements MainWindow.Presenter.IFilter
+
+    Public NotInheritable Class Commands
+        Private Sub New()
+        End Sub
+
+        Public Shared ReadOnly Property [New]() As RoutedUICommand
+            Get
+                Return ApplicationCommands.[New]
+            End Get
+        End Property
+
+        Public Shared ReadOnly Property Open() As RoutedUICommand
+            Get
+                Return ApplicationCommands.Open
+            End Get
+        End Property
+
+        Public Shared ReadOnly Property Delete() As RoutedUICommand
+            Get
+                Return ApplicationCommands.Delete
+            End Get
+        End Property
+        Public Shared ReadOnly Property Refresh() As RoutedUICommand
+            Get
+                Return NavigationCommands.Refresh
+            End Get
+        End Property
+    End Class
+
+    Private ReadOnly _presenter As Presenter
+
+    Public Sub New()
+        InitializeComponent()
+        InitializeCommandBindings()
+        _presenter = New Presenter(Me)
+        _presenter.ShowAsync(_dataView)
+    End Sub
+
+    Private Property Text() As String Implements Presenter.IFilter.Text
+        Get
+            Return _textBoxSearch.Text
+        End Get
+        Set
+            _textBoxSearch.Text = Value
+        End Set
+    End Property
+
+    Private Sub InitializeCommandBindings()
+        CommandBindings.Add(New CommandBinding(Commands.[New], AddressOf [New]))
+        CommandBindings.Add(New CommandBinding(Commands.Open, AddressOf Open, AddressOf CanOpen))
+        CommandBindings.Add(New CommandBinding(Commands.Delete, AddressOf Delete, AddressOf CanDelete))
+        CommandBindings.Add(New CommandBinding(Commands.Refresh, AddressOf Refresh, AddressOf CanRefresh))
+    End Sub
+
+    Private Sub ShowMovieDetailWindow(movie As DataSet(Of Movie))
+        Debug.Assert(movie.Count = 1)
+        Dim result = MovieDetailWindow.Show(movie, Me)
+        If result Then
+            Refresh(True)
+        End If
+    End Sub
+
+    Private Sub [New](sender As Object, e As ExecutedRoutedEventArgs)
+        Dim movie = DataSet(Of Movie).Create()
+        movie.AddRow()
+        ShowMovieDetailWindow(movie)
+    End Sub
+
+    Private ReadOnly Property Entity() As Movie
+        Get
+            Return _presenter.Entity
+        End Get
+    End Property
+
+    Private Async Sub Open(sender As Object, e As ExecutedRoutedEventArgs)
+        Dim ID = _presenter.CurrentRow.GetValue(Entity.ID).Value
+        Dim movie = Await Application.ExecuteAsync(Function(db) db.GetMovieAsync(ID))
+        ShowMovieDetailWindow(movie)
+    End Sub
+
+    Private Sub CanOpen(sender As Object, e As CanExecuteRoutedEventArgs)
+        e.CanExecute = _presenter.CurrentRow IsNot Nothing
+    End Sub
+
+    Private Async Sub Delete(sender As Object, e As ExecutedRoutedEventArgs)
+        Dim selectedRows = _presenter.SelectedRows
+        Dim json = _presenter.DataSet.Filter(JsonFilter.PrimaryKeyOnly).ToJsonString(_presenter.SelectedDataRows, False)
+        Dim keys = DataSet(Of Movie.Key).ParseJson(json)
+        Await Application.ExecuteAsync(Function(db) db.Movie.DeleteAsync(keys, Function(s, t) s.Match(t)))
+        Refresh(False)
+    End Sub
+
+    Private Sub CanDelete(sender As Object, e As CanExecuteRoutedEventArgs)
+        Dim selectedRows = _presenter.SelectedRows
+        e.CanExecute = selectedRows IsNot Nothing AndAlso selectedRows.Count &gt; 0
+    End Sub
+
+    Private Sub Refresh(sender As Object, e As ExecutedRoutedEventArgs)
+        Refresh(False)
+    End Sub
+
+    Private Sub Refresh(clearFilter As Boolean)
+        _presenter.RefreshAsync(clearFilter)
+    End Sub
+
+    Private Sub CanRefresh(sender As Object, e As CanExecuteRoutedEventArgs)
+        e.CanExecute = _presenter.DataSet IsNot Nothing
+    End Sub
+End Class
+</code></pre></section>
+</div>
+<h2 id="run">Run</h2>
+<p>Press F5 to run project <em>Movies.WPF</em>. You should have a working WPF application to display and manage a database of movies:</p>
+<p><img src="/images/tutorial_movies_wpf_run.jpg" alt="image"></p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Docs/articles/tutorial/movies_wpf.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © Weifen Luo | DevZest</span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

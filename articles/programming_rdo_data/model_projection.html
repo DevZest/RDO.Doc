@@ -1,0 +1,231 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Model Projection </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Model Projection ">
+    <meta name="generator" content="docfx 2.43.2.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="model_projection">
+<h1 id="model-projection">Model Projection</h1>
+
+<p>In Relational algebra, projection means collecting a subset of columns for use in operations, i.e. a projection is the list of columns selected.</p>
+<p>Typically projection is used to lookup data from one model to the master data model, and it's defined as nested class derived from <a class="xref" href="../../api/DevZest.Data.Projection.html">Projection</a>:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-cs">public class Product : ...
+{
+    ...
+    public class Lookup : Projection
+    {
+        static Lookup()
+        {
+            Register((Lookup _) =&gt; _.Name, _Name);
+            Register((Lookup _) =&gt; _.ProductNumber, _ProductNumber);
+        }
+
+        public _String Name { get; private set; }
+
+        public _String ProductNumber { get; private set; }
+    }
+    ...
+}
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-vb">Public Class Product
+    ...
+    Public Class Lookup
+        Inherits Projection
+
+        Shared Sub New()
+            Register(Function(x As Lookup) x.Name, _Name)
+            Register(Function(x As Lookup) x.ProductNumber, _ProductNumber)
+        End Sub
+
+        Private m_Name As _String
+        Public Property Name As _String
+            Get
+                Return m_Name
+            End Get
+            Private Set
+                m_Name = Value
+            End Set
+        End Property
+
+        Private m_ProductNumber As _String
+        Public Property ProductNumber As _String
+            Get
+                Return m_ProductNumber
+            End Get
+            Private Set
+                m_ProductNumber = Value
+            End Set
+        End Property
+    End Class
+    ...
+End Class
+</code></pre>
+</section>
+</div>
+
+<p>The defined projection class can be used for other model:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-1_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-1_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-1_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-cs">public class SalesOrderInfoDetail : ...
+{
+    static SalesOrderInfoDetail()
+    {
+        RegisterProjection((SalesOrderInfoDetail _) =&gt; _.Product);
+    }
+
+    public Product.Lookup Product { get; private set; }
+}
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q-1_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-vb">Public Class SalesOrderInfoDetail
+    ...
+    Shared Sub New()
+        RegisterProjection(Function(x As SalesOrderInfoDetail) x.Product)
+    End Sub
+
+    Private m_Product As Product.Lookup
+    Public Property Product As Product.Lookup
+        Get
+            Return m_Product
+        End Get
+        Private Set
+            m_Product = Value
+        End Set
+    End Property
+    ...
+End Class
+</code></pre>
+</section>
+</div>
+
+<p>You can add projection by clicking the left top drop down button of Model Visualizer tool window, then click 'Add Projection...':</p>
+<p><img src="/images/model_visualizer_add_projection.jpg" alt="image"></p>
+<p>The following dialog will be displayed:</p>
+<p><img src="/images/model_visualizer_add_projection_dialog.jpg" alt="image"></p>
+<p>Fill the dialog form and click &quot;OK&quot;, code of a projection will be generated automatically.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Docs/articles/programming_rdo_data/model_projection.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © Weifen Luo | DevZest</span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,613 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class DataPresenter&lt;T&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class DataPresenter&lt;T&gt;
+   ">
+    <meta name="generator" content="docfx 2.43.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="DevZest.Data.Presenters.DataPresenter`1">
+  
+  
+  <h1 id="DevZest_Data_Presenters_DataPresenter_1" data-uid="DevZest.Data.Presenters.DataPresenter`1" class="text-break">Class DataPresenter&lt;T&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Base class to contain presentation logic for scalar data and strongly typed DataSet.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="DevZest.Data.Presenters.BasePresenter.html">BasePresenter</a></div>
+    <div class="level2"><a class="xref" href="DevZest.Data.Presenters.DataPresenter.html">DataPresenter</a></div>
+    <div class="level3"><span class="xref">DataPresenter&lt;T&gt;</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="DevZest.Data.Presenters.IDataPresenter.html">IDataPresenter</a></div>
+    <div><a class="xref" href="DevZest.Data.Presenters.IService.html">IService</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.View.html#DevZest_Data_Presenters_DataPresenter_View">DataPresenter.View</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.LayoutOrientation.html#DevZest_Data_Presenters_DataPresenter_LayoutOrientation">DataPresenter.LayoutOrientation</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.IsRecursive.html#DevZest_Data_Presenters_DataPresenter_IsRecursive">DataPresenter.IsRecursive</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.Where.html#DevZest_Data_Presenters_DataPresenter_Where">DataPresenter.Where</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.OrderBy.html#DevZest_Data_Presenters_DataPresenter_OrderBy">DataPresenter.OrderBy</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.Apply.html#DevZest_Data_Presenters_DataPresenter_Apply_System_Predicate_DevZest_Data_DataRow__System_Collections_Generic_IComparer_DevZest_Data_DataRow__">DataPresenter.Apply(Predicate&lt;DataRow&gt;, IComparer&lt;DataRow&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.Rows.html#DevZest_Data_Presenters_DataPresenter_Rows">DataPresenter.Rows</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.CurrentRow.html#DevZest_Data_Presenters_DataPresenter_CurrentRow">DataPresenter.CurrentRow</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.CurrentContainerView.html#DevZest_Data_Presenters_DataPresenter_CurrentContainerView">DataPresenter.CurrentContainerView</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.FlowRepeatCount.html#DevZest_Data_Presenters_DataPresenter_FlowRepeatCount">DataPresenter.FlowRepeatCount</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.Select.html#DevZest_Data_Presenters_DataPresenter_Select_DevZest_Data_Presenters_RowPresenter_System_Windows_Controls_SelectionMode_System_Boolean_System_Action_">DataPresenter.Select(RowPresenter, SelectionMode, Boolean, Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.Select.html#DevZest_Data_Presenters_DataPresenter_Select_DevZest_Data_Presenters_RowPresenter___">DataPresenter.Select(RowPresenter[])</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.SelectedRows.html#DevZest_Data_Presenters_DataPresenter_SelectedRows">DataPresenter.SelectedRows</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.SelectedDataRows.html#DevZest_Data_Presenters_DataPresenter_SelectedDataRows">DataPresenter.SelectedDataRows</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.VirtualRow.html#DevZest_Data_Presenters_DataPresenter_VirtualRow">DataPresenter.VirtualRow</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.IsEditing.html#DevZest_Data_Presenters_DataPresenter_IsEditing">DataPresenter.IsEditing</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.EditingRow.html#DevZest_Data_Presenters_DataPresenter_EditingRow">DataPresenter.EditingRow</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.IsInserting.html#DevZest_Data_Presenters_DataPresenter_IsInserting">DataPresenter.IsInserting</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.InsertingRow.html#DevZest_Data_Presenters_DataPresenter_InsertingRow">DataPresenter.InsertingRow</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.CanInsert.html#DevZest_Data_Presenters_DataPresenter_CanInsert">DataPresenter.CanInsert</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.BeginInsertBefore.html#DevZest_Data_Presenters_DataPresenter_BeginInsertBefore_DevZest_Data_Presenters_RowPresenter_">DataPresenter.BeginInsertBefore(RowPresenter)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.BeginInsertAfter.html#DevZest_Data_Presenters_DataPresenter_BeginInsertAfter_DevZest_Data_Presenters_RowPresenter_">DataPresenter.BeginInsertAfter(RowPresenter)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.RowValidation.html#DevZest_Data_Presenters_DataPresenter_RowValidation">DataPresenter.RowValidation</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.Scrollable.html#DevZest_Data_Presenters_DataPresenter_Scrollable">DataPresenter.Scrollable</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.ToggleExpandState.html#DevZest_Data_Presenters_DataPresenter_ToggleExpandState_DevZest_Data_Presenters_RowPresenter_">DataPresenter.ToggleExpandState(RowPresenter)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.HasChildren.html#DevZest_Data_Presenters_DataPresenter_HasChildren_DevZest_Data_Presenters_RowPresenter_">DataPresenter.HasChildren(RowPresenter)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.SubmitInput.html#DevZest_Data_Presenters_DataPresenter_SubmitInput_System_Boolean_">DataPresenter.SubmitInput(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.OnCurrentRowChanged.html#DevZest_Data_Presenters_DataPresenter_OnCurrentRowChanged_DevZest_Data_Presenters_RowPresenter_">DataPresenter.OnCurrentRowChanged(RowPresenter)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.QueryEndEdit.html#DevZest_Data_Presenters_DataPresenter_QueryEndEdit">DataPresenter.QueryEndEdit()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.QueryCancelEdit.html#DevZest_Data_Presenters_DataPresenter_QueryCancelEdit">DataPresenter.QueryCancelEdit()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.ConfirmEndEdit.html#DevZest_Data_Presenters_DataPresenter_ConfirmEndEdit">DataPresenter.ConfirmEndEdit()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.DevZest-Data-Presenters-IService-DataPresenter.html#DevZest_Data_Presenters_DataPresenter_DevZest_Data_Presenters_IService_DataPresenter">DataPresenter.IService.DataPresenter</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.DevZest-Data-Presenters-IService-Initialize.html#DevZest_Data_Presenters_DataPresenter_DevZest_Data_Presenters_IService_Initialize_DevZest_Data_Presenters_DataPresenter_">DataPresenter.IService.Initialize(DataPresenter)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.Select.html#DevZest_Data_Presenters_DataPresenter_Select_DevZest_Data_Presenters_RowPresenter_System_Windows_Input_MouseButton_System_Action_">DataPresenter.Select(RowPresenter, MouseButton, Action)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.PredictSelectionMode.html#DevZest_Data_Presenters_DataPresenter_PredictSelectionMode_System_Windows_Input_MouseButton_DevZest_Data_Presenters_RowPresenter_">DataPresenter.PredictSelectionMode(MouseButton, RowPresenter)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.ConfirmDelete.html#DevZest_Data_Presenters_DataPresenter_ConfirmDelete">DataPresenter.ConfirmDelete()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.GetSerializer.html#DevZest_Data_Presenters_DataPresenter_GetSerializer_DevZest_Data_Column_">DataPresenter.GetSerializer(Column)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.Item.html#DevZest_Data_Presenters_DataPresenter_Item_DevZest_Data_DataRow_">DataPresenter.Item[DataRow]</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.OnEdit.html#DevZest_Data_Presenters_DataPresenter_OnEdit_DevZest_Data_Column_">DataPresenter.OnEdit(Column)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.CanMatchRow.html#DevZest_Data_Presenters_DataPresenter_CanMatchRow">DataPresenter.CanMatchRow</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.Match.html#DevZest_Data_Presenters_DataPresenter_Match_System_Collections_Generic_IReadOnlyList_DevZest_Data_Column__DevZest_Data_DataRow_">DataPresenter.Match(IReadOnlyList&lt;Column&gt;, DataRow)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.Match.html#DevZest_Data_Presenters_DataPresenter_Match_DevZest_Data_Presenters_RowPresenter_System_Boolean_">DataPresenter.Match(RowPresenter, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.OnIsSelectedChanged.html#DevZest_Data_Presenters_DataPresenter_OnIsSelectedChanged_DevZest_Data_Presenters_RowPresenter_">DataPresenter.OnIsSelectedChanged(RowPresenter)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.GetService.html#DevZest_Data_Presenters_DataPresenter_GetService__1_System_Boolean_">DataPresenter.GetService&lt;T&gt;(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.DataPresenter.ExistsService.html#DevZest_Data_Presenters_DataPresenter_ExistsService__1">DataPresenter.ExistsService&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.BasePresenter.ViewInvalidating.html">BasePresenter.ViewInvalidating</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.BasePresenter.ViewInvalidated.html">BasePresenter.ViewInvalidated</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.BasePresenter.ViewRefreshing.html">BasePresenter.ViewRefreshing</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.BasePresenter.ViewRefreshed.html">BasePresenter.ViewRefreshed</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.BasePresenter.ViewChanged.html">BasePresenter.ViewChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.BasePresenter.OnViewChanged.html#DevZest_Data_Presenters_BasePresenter_OnViewChanged">BasePresenter.OnViewChanged()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.BasePresenter.OnViewInvalidating.html#DevZest_Data_Presenters_BasePresenter_OnViewInvalidating">BasePresenter.OnViewInvalidating()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.BasePresenter.OnViewInvalidated.html#DevZest_Data_Presenters_BasePresenter_OnViewInvalidated">BasePresenter.OnViewInvalidated()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.BasePresenter.OnViewRefreshing.html#DevZest_Data_Presenters_BasePresenter_OnViewRefreshing">BasePresenter.OnViewRefreshing()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.BasePresenter.OnViewRefreshed.html#DevZest_Data_Presenters_BasePresenter_OnViewRefreshed">BasePresenter.OnViewRefreshed()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.BasePresenter.IsMounted.html#DevZest_Data_Presenters_BasePresenter_IsMounted">BasePresenter.IsMounted</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.BasePresenter.Mounted.html">BasePresenter.Mounted</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.BasePresenter.OnMounted.html#DevZest_Data_Presenters_BasePresenter_OnMounted_DevZest_Data_Presenters_BasePresenter_MountEventArgs_">BasePresenter.OnMounted(BasePresenter.MountEventArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.BasePresenter.Template.html#DevZest_Data_Presenters_BasePresenter_Template">BasePresenter.Template</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.BasePresenter.ScalarContainer.html#DevZest_Data_Presenters_BasePresenter_ScalarContainer">BasePresenter.ScalarContainer</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.BasePresenter.InvalidateView.html#DevZest_Data_Presenters_BasePresenter_InvalidateView">BasePresenter.InvalidateView()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.BasePresenter.SuspendInvalidateView.html#DevZest_Data_Presenters_BasePresenter_SuspendInvalidateView">BasePresenter.SuspendInvalidateView()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.BasePresenter.ResumeInvalidateView.html#DevZest_Data_Presenters_BasePresenter_ResumeInvalidateView">BasePresenter.ResumeInvalidateView()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.BasePresenter.ScalarValidation.html#DevZest_Data_Presenters_BasePresenter_ScalarValidation">BasePresenter.ScalarValidation</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.BasePresenter.NewScalar.html#DevZest_Data_Presenters_BasePresenter_NewScalar__1___0_System_Collections_Generic_IEqualityComparer___0__">BasePresenter.NewScalar&lt;T&gt;(T, IEqualityComparer&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.BasePresenter.NewLinkedScalar.html#DevZest_Data_Presenters_BasePresenter_NewLinkedScalar__1_System_String_System_Collections_Generic_IEqualityComparer___0__">BasePresenter.NewLinkedScalar&lt;T&gt;(String, IEqualityComparer&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.BasePresenter.NewLinkedScalar.html#DevZest_Data_Presenters_BasePresenter_NewLinkedScalar__1_System_Func___0__System_Action___0__System_Collections_Generic_IEqualityComparer___0__">BasePresenter.NewLinkedScalar&lt;T&gt;(Func&lt;T&gt;, Action&lt;T&gt;, IEqualityComparer&lt;T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.BasePresenter.ValidateScalars.html#DevZest_Data_Presenters_BasePresenter_ValidateScalars_DevZest_Data_Presenters_IScalarValidationErrors_">BasePresenter.ValidateScalars(IScalarValidationErrors)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.BasePresenter.CanSubmitInput.html#DevZest_Data_Presenters_BasePresenter_CanSubmitInput">BasePresenter.CanSubmitInput</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.BasePresenter.InvalidateMeasure.html#DevZest_Data_Presenters_BasePresenter_InvalidateMeasure">BasePresenter.InvalidateMeasure()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.BasePresenter.OnValueChanged.html#DevZest_Data_Presenters_BasePresenter_OnValueChanged_DevZest_Data_Presenters_IScalars_">BasePresenter.OnValueChanged(IScalars)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.BasePresenter.QueryEndEditScalars.html#DevZest_Data_Presenters_BasePresenter_QueryEndEditScalars">BasePresenter.QueryEndEditScalars()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.BasePresenter.ConfirmEndEditScalars.html#DevZest_Data_Presenters_BasePresenter_ConfirmEndEditScalars">BasePresenter.ConfirmEndEditScalars()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.BasePresenter.OnEdit.html#DevZest_Data_Presenters_BasePresenter_OnEdit_DevZest_Data_Presenters_Scalar_">BasePresenter.OnEdit(Scalar)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.BasePresenter.FormatFaultMessage.html#DevZest_Data_Presenters_BasePresenter_FormatFaultMessage_DevZest_Data_Presenters_AsyncValidator_">BasePresenter.FormatFaultMessage(AsyncValidator)</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="DevZest.Data.Presenters.html">DevZest.Data.Presenters</a></h6>
+  <h6><strong>Assembly</strong>: DevZest.Data.WPF.dll</h6>
+  <h5 id="DevZest_Data_Presenters_DataPresenter_1_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class DataPresenter&lt;T&gt; : DataPresenter, ScalarContainer.IOwner, IDataPresenter, IService where T : class, IEntity, new()</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="DevZest_Data_Presenters_DataPresenter_1__" data-uid="DevZest.Data.Presenters.DataPresenter`1._">
+          <a class="xref" href="DevZest.Data.Presenters.DataPresenter-1._.html#DevZest_Data_Presenters_DataPresenter_1__">_</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the entity of the DataSet.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_DataPresenter_1_DataSet" data-uid="DevZest.Data.Presenters.DataPresenter`1.DataSet">
+          <a class="xref" href="DevZest.Data.Presenters.DataPresenter-1.DataSet.html#DevZest_Data_Presenters_DataPresenter_1_DataSet">DataSet</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the underlying DataSet.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_DataPresenter_1_Entity" data-uid="DevZest.Data.Presenters.DataPresenter`1.Entity">
+          <a class="xref" href="DevZest.Data.Presenters.DataPresenter-1.Entity.html#DevZest_Data_Presenters_DataPresenter_1_Entity">Entity</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the entity of DataSet.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="DevZest_Data_Presenters_DataPresenter_1_BuildTemplate_DevZest_Data_Presenters_DataPresenter_TemplateBuilder_" data-uid="DevZest.Data.Presenters.DataPresenter`1.BuildTemplate(DevZest.Data.Presenters.DataPresenter.TemplateBuilder)">
+          <a class="xref" href="DevZest.Data.Presenters.DataPresenter-1.BuildTemplate.html#DevZest_Data_Presenters_DataPresenter_1_BuildTemplate_DevZest_Data_Presenters_DataPresenter_TemplateBuilder_">BuildTemplate(DataPresenter.TemplateBuilder)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Builds the template of this data presenter.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_DataPresenter_1_DetachView" data-uid="DevZest.Data.Presenters.DataPresenter`1.DetachView">
+          <a class="xref" href="DevZest.Data.Presenters.DataPresenter-1.DetachView.html#DevZest_Data_Presenters_DataPresenter_1_DetachView">DetachView()</a>
+        </td>
+        <td class="markdown level1 summary"><p>Detaches this presenter from the view.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_DataPresenter_1_GetMatchColumns__0_" data-uid="DevZest.Data.Presenters.DataPresenter`1.GetMatchColumns(`0)">
+          <a class="xref" href="DevZest.Data.Presenters.DataPresenter-1.GetMatchColumns.html#DevZest_Data_Presenters_DataPresenter_1_GetMatchColumns__0_">GetMatchColumns(T)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets columns which contains values that can match row uniquely.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_DataPresenter_1_Refresh_DevZest_Data_DataSet__0__System_Boolean_" data-uid="DevZest.Data.Presenters.DataPresenter`1.Refresh(DevZest.Data.DataSet{`0},System.Boolean)">
+          <a class="xref" href="DevZest.Data.Presenters.DataPresenter-1.Refresh.html#DevZest_Data_Presenters_DataPresenter_1_Refresh_DevZest_Data_DataSet__0__System_Boolean_">Refresh(DataSet&lt;T&gt;, Boolean)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Refresh by reloading DataSet.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_DataPresenter_1_Refresh_DevZest_Data_DataSet__0__System_Predicate_DevZest_Data_DataRow__System_Collections_Generic_IComparer_DevZest_Data_DataRow__" data-uid="DevZest.Data.Presenters.DataPresenter`1.Refresh(DevZest.Data.DataSet{`0},System.Predicate{DevZest.Data.DataRow},System.Collections.Generic.IComparer{DevZest.Data.DataRow})">
+          <a class="xref" href="DevZest.Data.Presenters.DataPresenter-1.Refresh.html#DevZest_Data_Presenters_DataPresenter_1_Refresh_DevZest_Data_DataSet__0__System_Predicate_DevZest_Data_DataRow__System_Collections_Generic_IComparer_DevZest_Data_DataRow__">Refresh(DataSet&lt;T&gt;, Predicate&lt;DataRow&gt;, IComparer&lt;DataRow&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Refresh by reloading DataSet, with specified filtering condition and sorting comparer.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_DataPresenter_1_RefreshAsync_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task_DevZest_Data_DataSet__0____System_Boolean_" data-uid="DevZest.Data.Presenters.DataPresenter`1.RefreshAsync(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{DevZest.Data.DataSet{`0}}},System.Boolean)">
+          <a class="xref" href="DevZest.Data.Presenters.DataPresenter-1.RefreshAsync.html#DevZest_Data_Presenters_DataPresenter_1_RefreshAsync_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task_DevZest_Data_DataSet__0____System_Boolean_">RefreshAsync(Func&lt;CancellationToken, Task&lt;DataSet&lt;T&gt;&gt;&gt;, Boolean)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Refresh by reloading DataSet asynchronously.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_DataPresenter_1_RefreshAsync_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task_DevZest_Data_DataSet__0____System_Func__0_System_Predicate_DevZest_Data_DataRow___System_Func__0_System_Collections_Generic_IComparer_DevZest_Data_DataRow___" data-uid="DevZest.Data.Presenters.DataPresenter`1.RefreshAsync(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{DevZest.Data.DataSet{`0}}},System.Func{`0,System.Predicate{DevZest.Data.DataRow}},System.Func{`0,System.Collections.Generic.IComparer{DevZest.Data.DataRow}})">
+          <a class="xref" href="DevZest.Data.Presenters.DataPresenter-1.RefreshAsync.html#DevZest_Data_Presenters_DataPresenter_1_RefreshAsync_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task_DevZest_Data_DataSet__0____System_Func__0_System_Predicate_DevZest_Data_DataRow___System_Func__0_System_Collections_Generic_IComparer_DevZest_Data_DataRow___">RefreshAsync(Func&lt;CancellationToken, Task&lt;DataSet&lt;T&gt;&gt;&gt;, Func&lt;T, Predicate&lt;DataRow&gt;&gt;, Func&lt;T, IComparer&lt;DataRow&gt;&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Refresh by reloading DataSet asynchronously, with specified filtering condition and sorting comparer.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_DataPresenter_1_RefreshAsync_System_Func_System_Threading_Tasks_Task_DevZest_Data_DataSet__0____System_Boolean_" data-uid="DevZest.Data.Presenters.DataPresenter`1.RefreshAsync(System.Func{System.Threading.Tasks.Task{DevZest.Data.DataSet{`0}}},System.Boolean)">
+          <a class="xref" href="DevZest.Data.Presenters.DataPresenter-1.RefreshAsync.html#DevZest_Data_Presenters_DataPresenter_1_RefreshAsync_System_Func_System_Threading_Tasks_Task_DevZest_Data_DataSet__0____System_Boolean_">RefreshAsync(Func&lt;Task&lt;DataSet&lt;T&gt;&gt;&gt;, Boolean)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Refresh by reloading DataSet asynchronously.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_DataPresenter_1_RefreshAsync_System_Func_System_Threading_Tasks_Task_DevZest_Data_DataSet__0____System_Func__0_System_Predicate_DevZest_Data_DataRow___System_Func__0_System_Collections_Generic_IComparer_DevZest_Data_DataRow___" data-uid="DevZest.Data.Presenters.DataPresenter`1.RefreshAsync(System.Func{System.Threading.Tasks.Task{DevZest.Data.DataSet{`0}}},System.Func{`0,System.Predicate{DevZest.Data.DataRow}},System.Func{`0,System.Collections.Generic.IComparer{DevZest.Data.DataRow}})">
+          <a class="xref" href="DevZest.Data.Presenters.DataPresenter-1.RefreshAsync.html#DevZest_Data_Presenters_DataPresenter_1_RefreshAsync_System_Func_System_Threading_Tasks_Task_DevZest_Data_DataSet__0____System_Func__0_System_Predicate_DevZest_Data_DataRow___System_Func__0_System_Collections_Generic_IComparer_DevZest_Data_DataRow___">RefreshAsync(Func&lt;Task&lt;DataSet&lt;T&gt;&gt;&gt;, Func&lt;T, Predicate&lt;DataRow&gt;&gt;, Func&lt;T, IComparer&lt;DataRow&gt;&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Refresh by reloading DataSet asynchronously, with specified filtering condition and sorting comparer.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_DataPresenter_1_Show_DevZest_Data_Views_DataView_DevZest_Data_DataSet__0__System_Boolean_" data-uid="DevZest.Data.Presenters.DataPresenter`1.Show(DevZest.Data.Views.DataView,DevZest.Data.DataSet{`0},System.Boolean)">
+          <a class="xref" href="DevZest.Data.Presenters.DataPresenter-1.Show.html#DevZest_Data_Presenters_DataPresenter_1_Show_DevZest_Data_Views_DataView_DevZest_Data_DataSet__0__System_Boolean_">Show(DataView, DataSet&lt;T&gt;, Boolean)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Shows DataSet to DataView.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_DataPresenter_1_Show_DevZest_Data_Views_DataView_DevZest_Data_DataSet__0__System_Predicate_DevZest_Data_DataRow__System_Collections_Generic_IComparer_DevZest_Data_DataRow__" data-uid="DevZest.Data.Presenters.DataPresenter`1.Show(DevZest.Data.Views.DataView,DevZest.Data.DataSet{`0},System.Predicate{DevZest.Data.DataRow},System.Collections.Generic.IComparer{DevZest.Data.DataRow})">
+          <a class="xref" href="DevZest.Data.Presenters.DataPresenter-1.Show.html#DevZest_Data_Presenters_DataPresenter_1_Show_DevZest_Data_Views_DataView_DevZest_Data_DataSet__0__System_Predicate_DevZest_Data_DataRow__System_Collections_Generic_IComparer_DevZest_Data_DataRow__">Show(DataView, DataSet&lt;T&gt;, Predicate&lt;DataRow&gt;, IComparer&lt;DataRow&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Shows DataSet to DataView, with specified filter condition and sorting comparer.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_DataPresenter_1_ShowAsync_DevZest_Data_Views_DataView_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task_DevZest_Data_DataSet__0____System_Boolean_" data-uid="DevZest.Data.Presenters.DataPresenter`1.ShowAsync(DevZest.Data.Views.DataView,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{DevZest.Data.DataSet{`0}}},System.Boolean)">
+          <a class="xref" href="DevZest.Data.Presenters.DataPresenter-1.ShowAsync.html#DevZest_Data_Presenters_DataPresenter_1_ShowAsync_DevZest_Data_Views_DataView_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task_DevZest_Data_DataSet__0____System_Boolean_">ShowAsync(DataView, Func&lt;CancellationToken, Task&lt;DataSet&lt;T&gt;&gt;&gt;, Boolean)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Shows data to DataView asynchronously.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_DataPresenter_1_ShowAsync_DevZest_Data_Views_DataView_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task_DevZest_Data_DataSet__0____System_Func__0_System_Predicate_DevZest_Data_DataRow___System_Func__0_System_Collections_Generic_IComparer_DevZest_Data_DataRow___" data-uid="DevZest.Data.Presenters.DataPresenter`1.ShowAsync(DevZest.Data.Views.DataView,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{DevZest.Data.DataSet{`0}}},System.Func{`0,System.Predicate{DevZest.Data.DataRow}},System.Func{`0,System.Collections.Generic.IComparer{DevZest.Data.DataRow}})">
+          <a class="xref" href="DevZest.Data.Presenters.DataPresenter-1.ShowAsync.html#DevZest_Data_Presenters_DataPresenter_1_ShowAsync_DevZest_Data_Views_DataView_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task_DevZest_Data_DataSet__0____System_Func__0_System_Predicate_DevZest_Data_DataRow___System_Func__0_System_Collections_Generic_IComparer_DevZest_Data_DataRow___">ShowAsync(DataView, Func&lt;CancellationToken, Task&lt;DataSet&lt;T&gt;&gt;&gt;, Func&lt;T, Predicate&lt;DataRow&gt;&gt;, Func&lt;T, IComparer&lt;DataRow&gt;&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Shows data to DataView asynchronously, with specified filter condition and sorting comparer.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_DataPresenter_1_ShowAsync_DevZest_Data_Views_DataView_System_Func_System_Threading_Tasks_Task_DevZest_Data_DataSet__0____System_Boolean_" data-uid="DevZest.Data.Presenters.DataPresenter`1.ShowAsync(DevZest.Data.Views.DataView,System.Func{System.Threading.Tasks.Task{DevZest.Data.DataSet{`0}}},System.Boolean)">
+          <a class="xref" href="DevZest.Data.Presenters.DataPresenter-1.ShowAsync.html#DevZest_Data_Presenters_DataPresenter_1_ShowAsync_DevZest_Data_Views_DataView_System_Func_System_Threading_Tasks_Task_DevZest_Data_DataSet__0____System_Boolean_">ShowAsync(DataView, Func&lt;Task&lt;DataSet&lt;T&gt;&gt;&gt;, Boolean)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Shows data to DataView asynchronously.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_DataPresenter_1_ShowAsync_DevZest_Data_Views_DataView_System_Func_System_Threading_Tasks_Task_DevZest_Data_DataSet__0____System_Func__0_System_Predicate_DevZest_Data_DataRow___System_Func__0_System_Collections_Generic_IComparer_DevZest_Data_DataRow___" data-uid="DevZest.Data.Presenters.DataPresenter`1.ShowAsync(DevZest.Data.Views.DataView,System.Func{System.Threading.Tasks.Task{DevZest.Data.DataSet{`0}}},System.Func{`0,System.Predicate{DevZest.Data.DataRow}},System.Func{`0,System.Collections.Generic.IComparer{DevZest.Data.DataRow}})">
+          <a class="xref" href="DevZest.Data.Presenters.DataPresenter-1.ShowAsync.html#DevZest_Data_Presenters_DataPresenter_1_ShowAsync_DevZest_Data_Views_DataView_System_Func_System_Threading_Tasks_Task_DevZest_Data_DataSet__0____System_Func__0_System_Predicate_DevZest_Data_DataRow___System_Func__0_System_Collections_Generic_IComparer_DevZest_Data_DataRow___">ShowAsync(DataView, Func&lt;Task&lt;DataSet&lt;T&gt;&gt;&gt;, Func&lt;T, Predicate&lt;DataRow&gt;&gt;, Func&lt;T, IComparer&lt;DataRow&gt;&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Shows data to DataView asynchronously, with specified filtering condition and sorting comparer.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_DataPresenter_1_ShowOrRefresh_DevZest_Data_Views_DataView_DevZest_Data_DataSet__0__System_Boolean_" data-uid="DevZest.Data.Presenters.DataPresenter`1.ShowOrRefresh(DevZest.Data.Views.DataView,DevZest.Data.DataSet{`0},System.Boolean)">
+          <a class="xref" href="DevZest.Data.Presenters.DataPresenter-1.ShowOrRefresh.html#DevZest_Data_Presenters_DataPresenter_1_ShowOrRefresh_DevZest_Data_Views_DataView_DevZest_Data_DataSet__0__System_Boolean_">ShowOrRefresh(DataView, DataSet&lt;T&gt;, Boolean)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Show or refresh the DataSet to DataView.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_DataPresenter_1_ShowOrRefresh_DevZest_Data_Views_DataView_DevZest_Data_DataSet__0__System_Predicate_DevZest_Data_DataRow__System_Collections_Generic_IComparer_DevZest_Data_DataRow__" data-uid="DevZest.Data.Presenters.DataPresenter`1.ShowOrRefresh(DevZest.Data.Views.DataView,DevZest.Data.DataSet{`0},System.Predicate{DevZest.Data.DataRow},System.Collections.Generic.IComparer{DevZest.Data.DataRow})">
+          <a class="xref" href="DevZest.Data.Presenters.DataPresenter-1.ShowOrRefresh.html#DevZest_Data_Presenters_DataPresenter_1_ShowOrRefresh_DevZest_Data_Views_DataView_DevZest_Data_DataSet__0__System_Predicate_DevZest_Data_DataRow__System_Collections_Generic_IComparer_DevZest_Data_DataRow__">ShowOrRefresh(DataView, DataSet&lt;T&gt;, Predicate&lt;DataRow&gt;, IComparer&lt;DataRow&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Show or refresh the DataSet to DataView, with specified filtering contition and sorting comparer.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_DataPresenter_1_ShowOrRefreshAsync_DevZest_Data_Views_DataView_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task_DevZest_Data_DataSet__0____System_Boolean_" data-uid="DevZest.Data.Presenters.DataPresenter`1.ShowOrRefreshAsync(DevZest.Data.Views.DataView,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{DevZest.Data.DataSet{`0}}},System.Boolean)">
+          <a class="xref" href="DevZest.Data.Presenters.DataPresenter-1.ShowOrRefreshAsync.html#DevZest_Data_Presenters_DataPresenter_1_ShowOrRefreshAsync_DevZest_Data_Views_DataView_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task_DevZest_Data_DataSet__0____System_Boolean_">ShowOrRefreshAsync(DataView, Func&lt;CancellationToken, Task&lt;DataSet&lt;T&gt;&gt;&gt;, Boolean)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Show or refresh the DataSet to DataView asynchronously.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_DataPresenter_1_ShowOrRefreshAsync_DevZest_Data_Views_DataView_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task_DevZest_Data_DataSet__0____System_Func__0_System_Predicate_DevZest_Data_DataRow___System_Func__0_System_Collections_Generic_IComparer_DevZest_Data_DataRow___" data-uid="DevZest.Data.Presenters.DataPresenter`1.ShowOrRefreshAsync(DevZest.Data.Views.DataView,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{DevZest.Data.DataSet{`0}}},System.Func{`0,System.Predicate{DevZest.Data.DataRow}},System.Func{`0,System.Collections.Generic.IComparer{DevZest.Data.DataRow}})">
+          <a class="xref" href="DevZest.Data.Presenters.DataPresenter-1.ShowOrRefreshAsync.html#DevZest_Data_Presenters_DataPresenter_1_ShowOrRefreshAsync_DevZest_Data_Views_DataView_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task_DevZest_Data_DataSet__0____System_Func__0_System_Predicate_DevZest_Data_DataRow___System_Func__0_System_Collections_Generic_IComparer_DevZest_Data_DataRow___">ShowOrRefreshAsync(DataView, Func&lt;CancellationToken, Task&lt;DataSet&lt;T&gt;&gt;&gt;, Func&lt;T, Predicate&lt;DataRow&gt;&gt;, Func&lt;T, IComparer&lt;DataRow&gt;&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Show or refresh the DataSet to DataView asynchronously, with specified filtering condition and sorting comparer.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_DataPresenter_1_ShowOrRefreshAsync_DevZest_Data_Views_DataView_System_Func_System_Threading_Tasks_Task_DevZest_Data_DataSet__0____System_Boolean_" data-uid="DevZest.Data.Presenters.DataPresenter`1.ShowOrRefreshAsync(DevZest.Data.Views.DataView,System.Func{System.Threading.Tasks.Task{DevZest.Data.DataSet{`0}}},System.Boolean)">
+          <a class="xref" href="DevZest.Data.Presenters.DataPresenter-1.ShowOrRefreshAsync.html#DevZest_Data_Presenters_DataPresenter_1_ShowOrRefreshAsync_DevZest_Data_Views_DataView_System_Func_System_Threading_Tasks_Task_DevZest_Data_DataSet__0____System_Boolean_">ShowOrRefreshAsync(DataView, Func&lt;Task&lt;DataSet&lt;T&gt;&gt;&gt;, Boolean)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Show or refresh the DataSet to DataView asynchronously.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_DataPresenter_1_ShowOrRefreshAsync_DevZest_Data_Views_DataView_System_Func_System_Threading_Tasks_Task_DevZest_Data_DataSet__0____System_Func__0_System_Predicate_DevZest_Data_DataRow___System_Func__0_System_Collections_Generic_IComparer_DevZest_Data_DataRow___" data-uid="DevZest.Data.Presenters.DataPresenter`1.ShowOrRefreshAsync(DevZest.Data.Views.DataView,System.Func{System.Threading.Tasks.Task{DevZest.Data.DataSet{`0}}},System.Func{`0,System.Predicate{DevZest.Data.DataRow}},System.Func{`0,System.Collections.Generic.IComparer{DevZest.Data.DataRow}})">
+          <a class="xref" href="DevZest.Data.Presenters.DataPresenter-1.ShowOrRefreshAsync.html#DevZest_Data_Presenters_DataPresenter_1_ShowOrRefreshAsync_DevZest_Data_Views_DataView_System_Func_System_Threading_Tasks_Task_DevZest_Data_DataSet__0____System_Func__0_System_Predicate_DevZest_Data_DataRow___System_Func__0_System_Collections_Generic_IComparer_DevZest_Data_DataRow___">ShowOrRefreshAsync(DataView, Func&lt;Task&lt;DataSet&lt;T&gt;&gt;&gt;, Func&lt;T, Predicate&lt;DataRow&gt;&gt;, Func&lt;T, IComparer&lt;DataRow&gt;&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Show or refresh the DataSet to DataView asynchronously, with specified filtering condition and sorting comparer.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="DevZest.Data.Presenters.BindingFactory.BindToCheckBox.html#DevZest_Data_Presenters_BindingFactory_BindToCheckBox_DevZest_Data_Presenters_DataPresenter_">BindingFactory.BindToCheckBox(DataPresenter)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Presenters.BindingFactory.BindTo.html#DevZest_Data_Presenters_BindingFactory_BindTo__1_DevZest_Data_Presenters_BasePresenter_">BindingFactory.BindTo&lt;T&gt;(BasePresenter)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Presenters.BindingFactory.BindToGridHeader.html#DevZest_Data_Presenters_BindingFactory_BindToGridHeader_DevZest_Data_Presenters_DataPresenter_">BindingFactory.BindToGridHeader(DataPresenter)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Presenters.BindingFactory.BindToValidationErrorsControl.html#DevZest_Data_Presenters_BindingFactory_BindToValidationErrorsControl_DevZest_Data_Presenters_BasePresenter_">BindingFactory.BindToValidationErrorsControl(BasePresenter)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Presenters.BindingFactory.BindToTextBlock.html#DevZest_Data_Presenters_BindingFactory_BindToTextBlock_DevZest_Data_Presenters_BasePresenter_System_String_">BindingFactory.BindToTextBlock(BasePresenter, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Presenters.ServiceManager.GetRegisteredService.html#DevZest_Data_Presenters_ServiceManager_GetRegisteredService__1_DevZest_Data_Presenters_DataPresenter_System_Boolean_">ServiceManager.GetRegisteredService&lt;T&gt;(DataPresenter, Boolean)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/new/master/apiSpec/new?filename=DevZest_Data_Presenters_DataPresenter_1.md&amp;value=---%0Auid%3A%20DevZest.Data.Presenters.DataPresenter%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Data.WPF/Presenters/DataPresenter_T.cs/#L15" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © Weifen Luo | DevZest</span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

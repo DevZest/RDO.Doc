@@ -1,0 +1,327 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>DataSet </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="DataSet ">
+    <meta name="generator" content="docfx 2.43.2.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="dataset">DataSet</h1>
+
+<p>The <a class="xref" href="../../api/DevZest.Data.DataSet-1.html">DataSet&lt;T&gt;</a> object is a memory-resident representation of data. You can use it independently as your local data store, or you can use it seamlessly with <a class="xref" href="../../api/DevZest.Data.DbSet-1.html">DbSet&lt;T&gt;</a> and JSON.</p>
+<h2 id="create-dataset">Create DataSet</h2>
+<p>DataSet can be created in a couple of ways:</p>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data.DataSet-1.Create.html">DataSet&lt;T&gt;.Create</a></td>
+<td>Create an empty DataSet.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data.DataSet-1.ParseJson.html">DataSet&lt;T&gt;.ParseJson</a></td>
+<td>Create DataSet from JSON.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data.DbSet-1.ToDataSetAsync.html">DbSet&lt;T&gt;.ToDataSetAsync</a></td>
+<td>Create DataSet from <a class="xref" href="../../api/DevZest.Data.DbTable-1.html">DbTable&lt;T&gt;</a> or <a class="xref" href="../../api/DevZest.Data.DbQuery-1.html">DbQuery&lt;T&gt;</a>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="serializedeserialize-dataset">Serialize/Deserialize DataSet</h2>
+<p>DataSet can be serialized/deserialzed to/from JSON:</p>
+<table>
+<thead>
+<tr>
+<th>API</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data.DataSet.ToJsonString.html">DataSet.ToJsonString</a></td>
+<td>Serialize DataSet into JSON.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data.DataSet-1.ParseJson.html">DataSet&lt;T&gt;.ParseJson</a></td>
+<td>Deserialize JSON into DataSet.</td>
+</tr>
+</tbody>
+</table>
+<p>You can provide your own <a class="xref" href="../../api/DevZest.Data.IJsonCustomizer.html">IJsonCustomizer</a> to customize JSON serialization/deserialization.</p>
+<h2 id="access-data-values">Access Data Values</h2>
+<p>You can think of <a class="xref" href="../../api/DevZest.Data.DataSet-1.html">DataSet&lt;T&gt;</a> as two-dimensional array for simplicity: it consists of a collection of <a class="xref" href="../../api/DevZest.Data.DataRow.html">DataRow</a> objects horizontally, and collection of <a class="xref" href="../../api/DevZest.Data.Column.html">Column</a> objects via <a class="xref" href="../../api/DevZest.Data.Model.Columns.html#DevZest_Data_Model_Columns">Model.Columns</a> vertically. Data values are stored in strongly typed <a class="xref" href="../../api/DevZest.Data.Column-1.html">Column&lt;T&gt;</a> objects to avoid boxing and un-boxing.</p>
+<p>You can access data values via indexer of <a class="xref" href="../../api/DevZest.Data.Column-1.html">Column&lt;T&gt;</a> class:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-cs">DataSet&lt;ProductCategory&gt; result = DataSet&lt;ProductCategory&gt;.Create().AddRows(13);
+ProductCategory _ = result._;
+_.SuspendIdentity();
+_.ProductCategoryID[0] = 1;
+_.ProductCategoryID[1] = 2;
+_.ProductCategoryID[2] = 3;
+_.ProductCategoryID[3] = 4;
+_.ProductCategoryID[4] = 5;
+_.ProductCategoryID[5] = 6;
+_.ProductCategoryID[6] = 7;
+_.ProductCategoryID[7] = 8;
+_.ProductCategoryID[8] = 9;
+_.ProductCategoryID[9] = 10;
+_.ProductCategoryID[10] = 11;
+_.ProductCategoryID[11] = 12;
+_.ProductCategoryID[12] = 13;
+_.ParentProductCategoryID[0] = null;
+_.ParentProductCategoryID[1] = null;
+_.ParentProductCategoryID[2] = 1;
+_.ParentProductCategoryID[3] = 1;
+_.ParentProductCategoryID[4] = 1;
+_.ParentProductCategoryID[5] = 1;
+_.ParentProductCategoryID[6] = 2;
+_.ParentProductCategoryID[7] = 6;
+_.ParentProductCategoryID[8] = 6;
+_.ParentProductCategoryID[9] = 6;
+_.ParentProductCategoryID[10] = 7;
+_.ParentProductCategoryID[11] = 7;
+_.ParentProductCategoryID[12] = 7;
+_.Name[0] = &quot;Bikes&quot;;
+_.Name[1] = &quot;Other&quot;;
+_.Name[2] = &quot;Mountain Bikes&quot;;
+_.Name[3] = &quot;Road Bikes&quot;;
+_.Name[4] = &quot;Touring Bikes&quot;;
+_.Name[5] = &quot;Components&quot;;
+_.Name[6] = &quot;Clothing&quot;;
+_.Name[7] = &quot;Handlebars&quot;;
+_.Name[8] = &quot;Bottom Brackets&quot;;
+_.Name[9] = &quot;Brakes&quot;;
+_.Name[10] = &quot;Bib-Shorts&quot;;
+_.Name[11] = &quot;Caps&quot;;
+_.Name[12] = &quot;Gloves&quot;;
+_.RowGuid[0] = new Guid(&quot;cfbda25c-df71-47a7-b81b-64ee161aa37c&quot;);
+_.RowGuid[1] = new Guid(&quot;09e91437-ba4f-4b1a-8215-74184fd95db8&quot;);
+_.RowGuid[2] = new Guid(&quot;2d364ade-264a-433c-b092-4fcbf3804e01&quot;);
+_.RowGuid[3] = new Guid(&quot;000310c0-bcc8-42c4-b0c3-45ae611af06b&quot;);
+_.RowGuid[4] = new Guid(&quot;02c5061d-ecdc-4274-b5f1-e91d76bc3f37&quot;);
+_.RowGuid[5] = new Guid(&quot;c657828d-d808-4aba-91a3-af2ce02300e9&quot;);
+_.RowGuid[6] = new Guid(&quot;10a7c342-ca82-48d4-8a38-46a2eb089b74&quot;);
+_.RowGuid[7] = new Guid(&quot;3ef2c725-7135-4c85-9ae6-ae9a3bdd9283&quot;);
+_.RowGuid[8] = new Guid(&quot;a9e54089-8a1e-4cf5-8646-e3801f685934&quot;);
+_.RowGuid[9] = new Guid(&quot;d43ba4a3-ef0d-426b-90eb-4be4547dd30c&quot;);
+_.RowGuid[10] = new Guid(&quot;67b58d2b-5798-4a90-8c6c-5ddacf057171&quot;);
+_.RowGuid[11] = new Guid(&quot;430dd6a8-a755-4b23-bb05-52520107da5f&quot;);
+_.RowGuid[12] = new Guid(&quot;92d5657b-0032-4e49-bad5-41a441a70942&quot;);
+_.ModifiedDate[0] = Convert.ToDateTime(&quot;2002-06-01T00:00:00.000&quot;);
+_.ModifiedDate[1] = Convert.ToDateTime(&quot;2002-06-01T00:00:00.000&quot;);
+_.ModifiedDate[2] = Convert.ToDateTime(&quot;2002-06-01T00:00:00.000&quot;);
+_.ModifiedDate[3] = Convert.ToDateTime(&quot;2002-06-01T00:00:00.000&quot;);
+_.ModifiedDate[4] = Convert.ToDateTime(&quot;2002-06-01T00:00:00.000&quot;);
+_.ModifiedDate[5] = Convert.ToDateTime(&quot;2002-06-01T00:00:00.000&quot;);
+_.ModifiedDate[6] = Convert.ToDateTime(&quot;2002-06-01T00:00:00.000&quot;);
+_.ModifiedDate[7] = Convert.ToDateTime(&quot;2002-06-01T00:00:00.000&quot;);
+_.ModifiedDate[8] = Convert.ToDateTime(&quot;2002-06-01T00:00:00.000&quot;);
+_.ModifiedDate[9] = Convert.ToDateTime(&quot;2002-06-01T00:00:00.000&quot;);
+_.ModifiedDate[10] = Convert.ToDateTime(&quot;2002-06-01T00:00:00.000&quot;);
+_.ModifiedDate[11] = Convert.ToDateTime(&quot;2002-06-01T00:00:00.000&quot;);
+_.ModifiedDate[12] = Convert.ToDateTime(&quot;2002-06-01T00:00:00.000&quot;);
+_.ResumeIdentity();
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-vb">Dim result As DataSet(Of ProductCategory) = DataSet(Of ProductCategory).Create().AddRows(13)
+Dim x As ProductCategory = result.Entity
+x.SuspendIdentity()
+x.ProductCategoryID(0) = 1
+x.ProductCategoryID(1) = 2
+x.ProductCategoryID(2) = 3
+x.ProductCategoryID(3) = 4
+x.ProductCategoryID(4) = 5
+x.ProductCategoryID(5) = 6
+x.ProductCategoryID(6) = 7
+x.ProductCategoryID(7) = 8
+x.ProductCategoryID(8) = 9
+x.ProductCategoryID(9) = 10
+x.ProductCategoryID(10) = 11
+x.ProductCategoryID(11) = 12
+x.ProductCategoryID(12) = 13
+x.ParentProductCategoryID(0) = Nothing
+x.ParentProductCategoryID(1) = Nothing
+x.ParentProductCategoryID(2) = 1
+x.ParentProductCategoryID(3) = 1
+x.ParentProductCategoryID(4) = 1
+x.ParentProductCategoryID(5) = 1
+x.ParentProductCategoryID(6) = 2
+x.ParentProductCategoryID(7) = 6
+x.ParentProductCategoryID(8) = 6
+x.ParentProductCategoryID(9) = 6
+x.ParentProductCategoryID(10) = 7
+x.ParentProductCategoryID(11) = 7
+x.ParentProductCategoryID(12) = 7
+x.Name(0) = &quot;Bikes&quot;
+x.Name(1) = &quot;Other&quot;
+x.Name(2) = &quot;Mountain Bikes&quot;
+x.Name(3) = &quot;Road Bikes&quot;
+x.Name(4) = &quot;Touring Bikes&quot;
+x.Name(5) = &quot;Components&quot;
+x.Name(6) = &quot;Clothing&quot;
+x.Name(7) = &quot;Handlebars&quot;
+x.Name(8) = &quot;Bottom Brackets&quot;
+x.Name(9) = &quot;Brakes&quot;
+x.Name(10) = &quot;Bib-Shorts&quot;
+x.Name(11) = &quot;Caps&quot;
+x.Name(12) = &quot;Gloves&quot;
+x.RowGuid(0) = New Guid(&quot;cfbda25c-df71-47a7-b81b-64ee161aa37c&quot;)
+x.RowGuid(1) = New Guid(&quot;09e91437-ba4f-4b1a-8215-74184fd95db8&quot;)
+x.RowGuid(2) = New Guid(&quot;2d364ade-264a-433c-b092-4fcbf3804e01&quot;)
+x.RowGuid(3) = New Guid(&quot;000310c0-bcc8-42c4-b0c3-45ae611af06b&quot;)
+x.RowGuid(4) = New Guid(&quot;02c5061d-ecdc-4274-b5f1-e91d76bc3f37&quot;)
+x.RowGuid(5) = New Guid(&quot;c657828d-d808-4aba-91a3-af2ce02300e9&quot;)
+x.RowGuid(6) = New Guid(&quot;10a7c342-ca82-48d4-8a38-46a2eb089b74&quot;)
+x.RowGuid(7) = New Guid(&quot;3ef2c725-7135-4c85-9ae6-ae9a3bdd9283&quot;)
+x.RowGuid(8) = New Guid(&quot;a9e54089-8a1e-4cf5-8646-e3801f685934&quot;)
+x.RowGuid(9) = New Guid(&quot;d43ba4a3-ef0d-426b-90eb-4be4547dd30c&quot;)
+x.RowGuid(10) = New Guid(&quot;67b58d2b-5798-4a90-8c6c-5ddacf057171&quot;)
+x.RowGuid(11) = New Guid(&quot;430dd6a8-a755-4b23-bb05-52520107da5f&quot;)
+x.RowGuid(12) = New Guid(&quot;92d5657b-0032-4e49-bad5-41a441a70942&quot;)
+x.ModifiedDate(0) = Convert.ToDateTime(&quot;2002-06-01T00:00:00.000&quot;)
+x.ModifiedDate(1) = Convert.ToDateTime(&quot;2002-06-01T00:00:00.000&quot;)
+x.ModifiedDate(2) = Convert.ToDateTime(&quot;2002-06-01T00:00:00.000&quot;)
+x.ModifiedDate(3) = Convert.ToDateTime(&quot;2002-06-01T00:00:00.000&quot;)
+x.ModifiedDate(4) = Convert.ToDateTime(&quot;2002-06-01T00:00:00.000&quot;)
+x.ModifiedDate(5) = Convert.ToDateTime(&quot;2002-06-01T00:00:00.000&quot;)
+x.ModifiedDate(6) = Convert.ToDateTime(&quot;2002-06-01T00:00:00.000&quot;)
+x.ModifiedDate(7) = Convert.ToDateTime(&quot;2002-06-01T00:00:00.000&quot;)
+x.ModifiedDate(8) = Convert.ToDateTime(&quot;2002-06-01T00:00:00.000&quot;)
+x.ModifiedDate(9) = Convert.ToDateTime(&quot;2002-06-01T00:00:00.000&quot;)
+x.ModifiedDate(10) = Convert.ToDateTime(&quot;2002-06-01T00:00:00.000&quot;)
+x.ModifiedDate(11) = Convert.ToDateTime(&quot;2002-06-01T00:00:00.000&quot;)
+x.ModifiedDate(12) = Convert.ToDateTime(&quot;2002-06-01T00:00:00.000&quot;)
+x.ResumeIdentity()
+</code></pre>
+</section>
+</div>
+
+<p>You can also use <a class="xref" href="../../api/DevZest.Data.DataRow.html">DataRow</a> object as indexer parameter.</p>
+<h2 id="identity-column">Identity Column</h2>
+<p>An identity column is a column decorated with <a class="xref" href="../../api/DevZest.Data.Annotations.IdentityAttribute.html">IdentityAttribute</a>. Only one identity column allowed for each model. An identity column differs from a primary key in that its values are managed by the server and usually cannot be modified. In many cases an identity column is used as a primary key; however, this is not always the case.</p>
+<p>DataSet handles identity column specially:</p>
+<ul>
+<li>If DataRow is filled from DbSet, identity values will be filled like other values.</li>
+<li>When adding new DataRow into DataSet locally, a default value will be generated automatically. For example, assume identity column is defined with seed 1 and increment 1, the first default value will be 0, the next will be -1, -2, and so on.</li>
+<li>Deleting DataRow will leave identity column values in gap.</li>
+<li>Once new DataRow added, either from DbSet or local, identity column becomes readonly. You can temporarily suspend identity by calling <a class="xref" href="../../api/DevZest.Data.Primitives.ModelExtensions.SuspendIdentity.html">SuspendIdentity</a> and <a class="xref" href="../../api/DevZest.Data.Primitives.ModelExtensions.ResumeIdentity.html">ResumeIdentity</a> in tandem.</li>
+<li>When inserting DataSet into DbTable, you can choose to update identity column with values newly generated in the database. This is implemented by database session provider.</li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Docs/articles/programming_rdo_data/dataset.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © Weifen Luo | DevZest</span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,251 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Db and DbTable </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Db and DbTable ">
+    <meta name="generator" content="docfx 2.43.2.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="db-and-dbtable">Db and DbTable</h1>
+
+<h2 id="database-session">Database Session</h2>
+<p>In RDO.Data, a database session is represented by a class which is derived from database session provider such as  <a class="xref" href="../../api/DevZest.Data.SqlServer.SqlSession.html">SqlSession</a> or <a class="xref" href="../../api/DevZest.Data.MySql.MySqlSession.html">MySqlSession</a>. This class is normally named as <code>Db</code> by convention, with a connection string and/or database connection as constructor parameter:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-cs">public partial class Db : SqlSession
+{
+    public Db(string connectionString, Action&lt;Db&gt; initializer = null)
+        : base(CreateSqlConnection(connectionString))
+    {
+        initializer?.Invoke(this);
+    }
+
+    private static SqlConnection CreateSqlConnection(string connectionString)
+    {
+        if (string.IsNullOrEmpty(connectionString))
+            throw new ArgumentNullException(nameof(connectionString));
+        return new SqlConnection(connectionString);
+    }
+
+    public Db(SqlConnection sqlConnection)
+        : base(sqlConnection)
+    {
+    }
+    ...
+}
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-vb">Partial Public Class Db
+    Inherits SqlSession
+
+    Public Sub New(connectionString As String, Optional initializer As Action(Of Db) = Nothing)
+        MyBase.New(CreateSqlConnection(connectionString))
+        If initializer IsNot Nothing Then initializer(Me)
+    End Sub
+
+    Private Shared Function CreateSqlConnection(connectionString As String) As SqlConnection
+        If String.IsNullOrEmpty(connectionString) Then Throw New ArgumentNullException(NameOf(connectionString))
+        Return New SqlConnection(connectionString)
+    End Function
+
+    Public Sub New(ByVal sqlConnection As SqlConnection)
+        MyBase.New(sqlConnection)
+    End Sub
+    ...
+End Class
+</code></pre>
+</section>
+</div>
+
+<p>The <code>Db</code> object is responsible to make connection and execute commands to the database server.</p>
+<h2 id="database-permanent-table">Database Permanent Table</h2>
+<p>Database permanent table is readonly property of above <code>Db</code> class, with type of <a class="xref" href="../../api/DevZest.Data.DbTable-1.html">DbTable&lt;T&gt;</a>. Optionally, foreign key relationship can be enforced by a pair of <a class="xref" href="../../api/DevZest.Data.Annotations.RelationshipAttribute.html">RelationshipAttribute</a>/<a class="xref" href="../../api/DevZest.Data.Annotations._RelationshipAttribute.html">_RelationshipAttribute</a> and a implementation method. The following code defines two permanent tables SalesOrderHeader and SalesOrderDetail, and relationship between them:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-1_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-1_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-1_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-cs">public partial class Db : ...
+{
+    ...
+    private DbTable&lt;SalesOrderHeader&gt; _salesOrderHeader;
+    public DbTable&lt;SalesOrderHeader&gt; SalesOrderHeader
+    {
+        get { return GetTable(ref _salesOrderHeader); }
+    }
+
+    private DbTable&lt;SalesOrderDetail&gt; _salesOrderDetail;
+    [Relationship(nameof(FK_SalesOrderDetail_SalesOrderHeader))]
+    public DbTable&lt;SalesOrderDetail&gt; SalesOrderDetail
+    {
+        get { return GetTable(ref _salesOrderDetail); }
+    }
+
+    [_Relationship]
+    private KeyMapping FK_SalesOrderDetail_SalesOrderHeader(SalesOrderDetail _)
+    {
+        return _.FK_SalesOrderHeader.Join(SalesOrderHeader._);
+    }
+    ...
+}
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q-1_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-vb">Partial Public Class Db
+    ...
+    Private m_SalesOrderHeader As DbTable(Of SalesOrderHeader)
+    Public ReadOnly Property SalesOrderHeader As DbTable(Of SalesOrderHeader)
+        Get
+            Return GetTable(m_SalesOrderHeader)
+        End Get
+    End Property
+
+    Private m_SalesOrderDetail As DbTable(Of SalesOrderDetail)
+    &lt;Relationship(NameOf(FK_SalesOrderDetail_SalesOrderHeader))&gt;
+    Public ReadOnly Property SalesOrderDetail As DbTable(Of SalesOrderDetail)
+        Get
+            Return GetTable(m_SalesOrderDetail)
+        End Get
+    End Property
+
+    &lt;_Relationship&gt;
+    Private Function FK_SalesOrderDetail_SalesOrderHeader(x As SalesOrderDetail) As KeyMapping
+        Return x.FK_SalesOrderHeader.Join(SalesOrderHeader.Entity)
+    End Function
+    ...
+End Class
+</code></pre>
+</section>
+</div>
+
+<p>The <code>Db</code> class and tables can be manipulated via Db Visualizer tool window. You can show Db Visualizer tool window by clicking menu &quot;View&quot; -&gt; &quot;Other Windows&quot; -&gt; &quot;Db Visualizer&quot; in Visual Studio:</p>
+<p><img src="/images/db_visualizer.jpg" alt="image"></p>
+<p>In Db Visualizer tool window, click the left top <img src="/images/db_visualizer_add_table.jpg" alt="image"> button, the following dialog will be displayed:</p>
+<p><img src="/images/db_visualizer_add_table_dialog.jpg" alt="image"></p>
+<p>Fill the dialog form and click &quot;OK&quot;, code of DbTable definition will be generated automatically.</p>
+<p>To add a foreign key, right click the source table in Db Visualizer to show the context menu:</p>
+<p><img src="/images/db_visualizer_add_relationship.jpg" alt="image"></p>
+<p>Click context menu item &quot;Add Relationship...&quot;, the following dialog will be displayed:</p>
+<p><img src="/images/db_visualizer_add_relationship_dialog.jpg" alt="image"></p>
+<p>Fill the dialog form and click &quot;OK&quot;, code of table relationship will be generated automatically.</p>
+<h2 id="database-temporary-table">Database Temporary Table</h2>
+<p>A temporary table, as the name suggests, is a database table that exists temporarily on the database server during the life time of the session. Temporary tables are particularly useful when you have a large number of records in a table and you repeatedly need to interact with a small subset of those records. In such cases instead of filtering the data again and again to fetch the subset, you can filter the data once and store it in a temporary table. You can then execute your queries on that temporary table.</p>
+<p>You can create temporary tables on-the-fly via Calling <a class="xref" href="../../api/DevZest.Data.Primitives.DbSession.CreateTempTableAsync.html">CreateTempTableAsync</a> method of your <code>Db</code> class. Once created, you can use it as the same way as permanent tables. You don't need to delete the temporary tables, it will be deleted automatically by the underlying database session provider.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Docs/articles/programming_rdo_data/db_and_dbtable.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © Weifen Luo | DevZest</span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,435 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class SqlSession
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class SqlSession
+   ">
+    <meta name="generator" content="docfx 2.43.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="DevZest.Data.SqlServer.SqlSession">
+  
+  
+  <h1 id="DevZest_Data_SqlServer_SqlSession" data-uid="DevZest.Data.SqlServer.SqlSession" class="text-break">Class SqlSession
+  </h1>
+  <div class="markdown level0 summary"><p>SQL Server implementation of database session.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="DevZest.Data.Primitives.AddonBag.html">AddonBag</a></div>
+    <div class="level2"><a class="xref" href="DevZest.Data.Primitives.DbSession.html">DbSession</a></div>
+    <div class="level3"><a class="xref" href="DevZest.Data.Primitives.DbSession-3.html">DbSession</a>&lt;<span class="xref">System.Data.SqlClient.SqlConnection</span>, <span class="xref">System.Data.SqlClient.SqlCommand</span>, <a class="xref" href="DevZest.Data.SqlServer.SqlReader.html">SqlReader</a>&gt;</div>
+    <div class="level4"><span class="xref">SqlSession</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.IDisposable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbSession-3.Connection.html#DevZest_Data_Primitives_DbSession_3_Connection">DbSession&lt;SqlConnection, SqlCommand, SqlReader&gt;.Connection</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbSession-3.OpenConnectionAsync.html#DevZest_Data_Primitives_DbSession_3_OpenConnectionAsync_System_Threading_CancellationToken_">DbSession&lt;SqlConnection, SqlCommand, SqlReader&gt;.OpenConnectionAsync(CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbSession-3.CloseConnection.html#DevZest_Data_Primitives_DbSession_3_CloseConnection">DbSession&lt;SqlConnection, SqlCommand, SqlReader&gt;.CloseConnection()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbSession-3.ExecuteNonQueryAsync.html#DevZest_Data_Primitives_DbSession_3_ExecuteNonQueryAsync__1_System_Threading_CancellationToken_">DbSession&lt;SqlConnection, SqlCommand, SqlReader&gt;.ExecuteNonQueryAsync(SqlCommand, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbSession-3.GetCreateTableCommand.html#DevZest_Data_Primitives_DbSession_3_GetCreateTableCommand_DevZest_Data_Model_System_Boolean_">DbSession&lt;SqlConnection, SqlCommand, SqlReader&gt;.GetCreateTableCommand(Model, Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbSession-3.GetQueryCommand.html#DevZest_Data_Primitives_DbSession_3_GetQueryCommand_DevZest_Data_Primitives_DbQueryStatement_">DbSession&lt;SqlConnection, SqlCommand, SqlReader&gt;.GetQueryCommand(DbQueryStatement)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbSession-3.CreateReaderInvoker.html#DevZest_Data_Primitives_DbSession_3_CreateReaderInvoker_DevZest_Data_Model__1_">DbSession&lt;SqlConnection, SqlCommand, SqlReader&gt;.CreateReaderInvoker(Model, SqlCommand)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbSession-3.ExecuteReaderAsync.html#DevZest_Data_Primitives_DbSession_3_ExecuteReaderAsync_DevZest_Data_IDbSet_System_Threading_CancellationToken_">DbSession&lt;SqlConnection, SqlCommand, SqlReader&gt;.ExecuteReaderAsync(IDbSet, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbSession-3.CreateLogger.html#DevZest_Data_Primitives_DbSession_3_CreateLogger">DbSession&lt;SqlConnection, SqlCommand, SqlReader&gt;.CreateLogger()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbSession-3.SetLogger.html#DevZest_Data_Primitives_DbSession_3_SetLogger_System_Action_System_String__DevZest_Data_LogCategory_">DbSession&lt;SqlConnection, SqlCommand, SqlReader&gt;.SetLogger(Action&lt;String&gt;, LogCategory)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbSession-3.GetInsertCommand.html#DevZest_Data_Primitives_DbSession_3_GetInsertCommand_DevZest_Data_Primitives_DbSelectStatement_">DbSession&lt;SqlConnection, SqlCommand, SqlReader&gt;.GetInsertCommand(DbSelectStatement)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbSession-3.GetUpdateCommand.html#DevZest_Data_Primitives_DbSession_3_GetUpdateCommand_DevZest_Data_Primitives_DbSelectStatement_">DbSession&lt;SqlConnection, SqlCommand, SqlReader&gt;.GetUpdateCommand(DbSelectStatement)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbSession-3.GetDeleteCommand.html#DevZest_Data_Primitives_DbSession_3_GetDeleteCommand_DevZest_Data_Primitives_DbSelectStatement_">DbSession&lt;SqlConnection, SqlCommand, SqlReader&gt;.GetDeleteCommand(DbSelectStatement)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbSession-3.TransactionCount.html#DevZest_Data_Primitives_DbSession_3_TransactionCount">DbSession&lt;SqlConnection, SqlCommand, SqlReader&gt;.TransactionCount</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbSession-3.CurrentTransaction.html#DevZest_Data_Primitives_DbSession_3_CurrentTransaction">DbSession&lt;SqlConnection, SqlCommand, SqlReader&gt;.CurrentTransaction</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbSession-3.BeginTransaction.html#DevZest_Data_Primitives_DbSession_3_BeginTransaction_System_String_">DbSession&lt;SqlConnection, SqlCommand, SqlReader&gt;.BeginTransaction(String)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbSession-3.BeginTransaction.html#DevZest_Data_Primitives_DbSession_3_BeginTransaction_System_Nullable_System_Data_IsolationLevel__System_String_">DbSession&lt;SqlConnection, SqlCommand, SqlReader&gt;.BeginTransaction(Nullable&lt;IsolationLevel&gt;, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbSession-3.PerformBeginTransaction.html#DevZest_Data_Primitives_DbSession_3_PerformBeginTransaction_System_Nullable_System_Data_IsolationLevel__System_String_">DbSession&lt;SqlConnection, SqlCommand, SqlReader&gt;.PerformBeginTransaction(Nullable&lt;IsolationLevel&gt;, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbSession.Dispose.html#DevZest_Data_Primitives_DbSession_Dispose">DbSession.Dispose()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbSession.Dispose.html#DevZest_Data_Primitives_DbSession_Dispose_System_Boolean_">DbSession.Dispose(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbSession.Connection.html#DevZest_Data_Primitives_DbSession_Connection">DbSession.Connection</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbSession.OpenConnectionAsync.html#DevZest_Data_Primitives_DbSession_OpenConnectionAsync_System_Threading_CancellationToken_">DbSession.OpenConnectionAsync(CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbSession.CloseConnection.html#DevZest_Data_Primitives_DbSession_CloseConnection">DbSession.CloseConnection()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbSession.GetTable.html#DevZest_Data_Primitives_DbSession_GetTable__1_DevZest_Data_DbTable___0___System_String_">DbSession.GetTable&lt;T&gt;(DbTable&lt;T&gt;, String)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbSession.CreateTempTableAsync.html#DevZest_Data_Primitives_DbSession_CreateTempTableAsync__1_System_Threading_CancellationToken_">DbSession.CreateTempTableAsync&lt;T&gt;(CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbSession.CreateTempTableAsync.html#DevZest_Data_Primitives_DbSession_CreateTempTableAsync__1___0_System_Threading_CancellationToken_">DbSession.CreateTempTableAsync&lt;T&gt;(T, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbSession.CreateTempTableAsync.html#DevZest_Data_Primitives_DbSession_CreateTempTableAsync__1_System_Action___0__System_Threading_CancellationToken_">DbSession.CreateTempTableAsync&lt;T&gt;(Action&lt;T&gt;, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbSession.CreateTempTableAsync.html#DevZest_Data_Primitives_DbSession_CreateTempTableAsync__1___0_System_Action___0__System_Threading_CancellationToken_">DbSession.CreateTempTableAsync&lt;T&gt;(T, Action&lt;T&gt;, CancellationToken)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbSession.CreateQuery.html#DevZest_Data_Primitives_DbSession_CreateQuery__1_System_Action_DevZest_Data_DbQueryBuilder___0__">DbSession.CreateQuery&lt;T&gt;(Action&lt;DbQueryBuilder, T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbSession.CreateQuery.html#DevZest_Data_Primitives_DbSession_CreateQuery__1___0_System_Action_DevZest_Data_DbQueryBuilder___0__">DbSession.CreateQuery&lt;T&gt;(T, Action&lt;DbQueryBuilder, T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbSession.CreateQuery.html#DevZest_Data_Primitives_DbSession_CreateQuery__1_System_Action___0__System_Action_DevZest_Data_DbQueryBuilder___0__">DbSession.CreateQuery&lt;T&gt;(Action&lt;T&gt;, Action&lt;DbQueryBuilder, T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbSession.CreateQuery.html#DevZest_Data_Primitives_DbSession_CreateQuery__1___0_System_Action___0__System_Action_DevZest_Data_DbQueryBuilder___0__">DbSession.CreateQuery&lt;T&gt;(T, Action&lt;T&gt;, Action&lt;DbQueryBuilder, T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbSession.CreateAggregateQuery.html#DevZest_Data_Primitives_DbSession_CreateAggregateQuery__1_System_Action_DevZest_Data_DbAggregateQueryBuilder___0__">DbSession.CreateAggregateQuery&lt;T&gt;(Action&lt;DbAggregateQueryBuilder, T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbSession.CreateAggregateQuery.html#DevZest_Data_Primitives_DbSession_CreateAggregateQuery__1___0_System_Action_DevZest_Data_DbAggregateQueryBuilder___0__">DbSession.CreateAggregateQuery&lt;T&gt;(T, Action&lt;DbAggregateQueryBuilder, T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbSession.CreateAggregateQuery.html#DevZest_Data_Primitives_DbSession_CreateAggregateQuery__1_System_Action___0__System_Action_DevZest_Data_DbAggregateQueryBuilder___0__">DbSession.CreateAggregateQuery&lt;T&gt;(Action&lt;T&gt;, Action&lt;DbAggregateQueryBuilder, T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbSession.CreateAggregateQuery.html#DevZest_Data_Primitives_DbSession_CreateAggregateQuery__1___0_System_Action___0__System_Action_DevZest_Data_DbAggregateQueryBuilder___0__">DbSession.CreateAggregateQuery&lt;T&gt;(T, Action&lt;T&gt;, Action&lt;DbAggregateQueryBuilder, T&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbSession.SetLogger.html#DevZest_Data_Primitives_DbSession_SetLogger_System_Action_System_String__">DbSession.SetLogger(Action&lt;String&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.DbSession.SetLogger.html#DevZest_Data_Primitives_DbSession_SetLogger_System_Action_System_String__DevZest_Data_LogCategory_">DbSession.SetLogger(Action&lt;String&gt;, LogCategory)</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="DevZest.Data.SqlServer.html">DevZest.Data.SqlServer</a></h6>
+  <h6><strong>Assembly</strong>: DevZest.Data.SqlServer.dll</h6>
+  <h5 id="DevZest_Data_SqlServer_SqlSession_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class SqlSession : DbSession&lt;SqlConnection, SqlCommand, SqlReader&gt;, IDisposable</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="DevZest_Data_SqlServer_SqlSession__ctor_System_Data_SqlClient_SqlConnection_" data-uid="DevZest.Data.SqlServer.SqlSession.#ctor(System.Data.SqlClient.SqlConnection)">
+          <a class="xref" href="DevZest.Data.SqlServer.SqlSession.-ctor.html#DevZest_Data_SqlServer_SqlSession__ctor_System_Data_SqlClient_SqlConnection_">SqlSession(SqlConnection)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Initializes a new instance of <a class="xref" href="DevZest.Data.SqlServer.SqlSession.html">SqlSession</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="DevZest_Data_SqlServer_SqlSession_CurrentTransaction" data-uid="DevZest.Data.SqlServer.SqlSession.CurrentTransaction">
+          <a class="xref" href="DevZest.Data.SqlServer.SqlSession.CurrentTransaction.html#DevZest_Data_SqlServer_SqlSession_CurrentTransaction">CurrentTransaction</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_SqlServer_SqlSession_SqlVersion" data-uid="DevZest.Data.SqlServer.SqlSession.SqlVersion">
+          <a class="xref" href="DevZest.Data.SqlServer.SqlSession.SqlVersion.html#DevZest_Data_SqlServer_SqlSession_SqlVersion">SqlVersion</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets or sets the SQL Server version.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_SqlServer_SqlSession_TransactionCount" data-uid="DevZest.Data.SqlServer.SqlSession.TransactionCount">
+          <a class="xref" href="DevZest.Data.SqlServer.SqlSession.TransactionCount.html#DevZest_Data_SqlServer_SqlSession_TransactionCount">TransactionCount</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="DevZest_Data_SqlServer_SqlSession_AssignTempTableName_DevZest_Data_Model_" data-uid="DevZest.Data.SqlServer.SqlSession.AssignTempTableName(DevZest.Data.Model)">
+          <a class="xref" href="DevZest.Data.SqlServer.SqlSession.AssignTempTableName.html#DevZest_Data_SqlServer_SqlSession_AssignTempTableName_DevZest_Data_Model_">AssignTempTableName(Model)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_SqlServer_SqlSession_CreateMockDbAsync_System_Threading_CancellationToken_" data-uid="DevZest.Data.SqlServer.SqlSession.CreateMockDbAsync(System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.SqlServer.SqlSession.CreateMockDbAsync.html#DevZest_Data_SqlServer_SqlSession_CreateMockDbAsync_System_Threading_CancellationToken_">CreateMockDbAsync(CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_SqlServer_SqlSession_CreateReaderInvoker_DevZest_Data_Model_System_Data_SqlClient_SqlCommand_" data-uid="DevZest.Data.SqlServer.SqlSession.CreateReaderInvoker(DevZest.Data.Model,System.Data.SqlClient.SqlCommand)">
+          <a class="xref" href="DevZest.Data.SqlServer.SqlSession.CreateReaderInvoker.html#DevZest_Data_SqlServer_SqlSession_CreateReaderInvoker_DevZest_Data_Model_System_Data_SqlClient_SqlCommand_">CreateReaderInvoker(Model, SqlCommand)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_SqlServer_SqlSession_DeleteAsync__2_DevZest_Data_DataSet___0__DevZest_Data_DbTable___1__DevZest_Data_CandidateKey_System_Threading_CancellationToken_" data-uid="DevZest.Data.SqlServer.SqlSession.DeleteAsync``2(DevZest.Data.DataSet{``0},DevZest.Data.DbTable{``1},DevZest.Data.CandidateKey,System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.SqlServer.SqlSession.DeleteAsync.html#DevZest_Data_SqlServer_SqlSession_DeleteAsync__2_DevZest_Data_DataSet___0__DevZest_Data_DbTable___1__DevZest_Data_CandidateKey_System_Threading_CancellationToken_">DeleteAsync&lt;TSource, TTarget&gt;(DataSet&lt;TSource&gt;, DbTable&lt;TTarget&gt;, CandidateKey, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_SqlServer_SqlSession_GetCreateTableCommand_DevZest_Data_Model_System_Boolean_" data-uid="DevZest.Data.SqlServer.SqlSession.GetCreateTableCommand(DevZest.Data.Model,System.Boolean)">
+          <a class="xref" href="DevZest.Data.SqlServer.SqlSession.GetCreateTableCommand.html#DevZest_Data_SqlServer_SqlSession_GetCreateTableCommand_DevZest_Data_Model_System_Boolean_">GetCreateTableCommand(Model, Boolean)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_SqlServer_SqlSession_GetDeleteCommand_DevZest_Data_Primitives_DbSelectStatement_" data-uid="DevZest.Data.SqlServer.SqlSession.GetDeleteCommand(DevZest.Data.Primitives.DbSelectStatement)">
+          <a class="xref" href="DevZest.Data.SqlServer.SqlSession.GetDeleteCommand.html#DevZest_Data_SqlServer_SqlSession_GetDeleteCommand_DevZest_Data_Primitives_DbSelectStatement_">GetDeleteCommand(DbSelectStatement)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_SqlServer_SqlSession_GetInsertCommand_DevZest_Data_Primitives_DbSelectStatement_" data-uid="DevZest.Data.SqlServer.SqlSession.GetInsertCommand(DevZest.Data.Primitives.DbSelectStatement)">
+          <a class="xref" href="DevZest.Data.SqlServer.SqlSession.GetInsertCommand.html#DevZest_Data_SqlServer_SqlSession_GetInsertCommand_DevZest_Data_Primitives_DbSelectStatement_">GetInsertCommand(DbSelectStatement)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_SqlServer_SqlSession_GetMockTableName_System_String_System_Object_" data-uid="DevZest.Data.SqlServer.SqlSession.GetMockTableName(System.String,System.Object)">
+          <a class="xref" href="DevZest.Data.SqlServer.SqlSession.GetMockTableName.html#DevZest_Data_SqlServer_SqlSession_GetMockTableName_System_String_System_Object_">GetMockTableName(String, Object)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_SqlServer_SqlSession_GetQueryCommand_DevZest_Data_Primitives_DbQueryStatement_" data-uid="DevZest.Data.SqlServer.SqlSession.GetQueryCommand(DevZest.Data.Primitives.DbQueryStatement)">
+          <a class="xref" href="DevZest.Data.SqlServer.SqlSession.GetQueryCommand.html#DevZest_Data_SqlServer_SqlSession_GetQueryCommand_DevZest_Data_Primitives_DbQueryStatement_">GetQueryCommand(DbQueryStatement)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_SqlServer_SqlSession_GetSqlString_DevZest_Data_Primitives_DbQueryStatement_" data-uid="DevZest.Data.SqlServer.SqlSession.GetSqlString(DevZest.Data.Primitives.DbQueryStatement)">
+          <a class="xref" href="DevZest.Data.SqlServer.SqlSession.GetSqlString.html#DevZest_Data_SqlServer_SqlSession_GetSqlString_DevZest_Data_Primitives_DbQueryStatement_">GetSqlString(DbQueryStatement)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_SqlServer_SqlSession_GetUpdateCommand_DevZest_Data_Primitives_DbSelectStatement_" data-uid="DevZest.Data.SqlServer.SqlSession.GetUpdateCommand(DevZest.Data.Primitives.DbSelectStatement)">
+          <a class="xref" href="DevZest.Data.SqlServer.SqlSession.GetUpdateCommand.html#DevZest_Data_SqlServer_SqlSession_GetUpdateCommand_DevZest_Data_Primitives_DbSelectStatement_">GetUpdateCommand(DbSelectStatement)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_SqlServer_SqlSession_InsertAsync__2_DevZest_Data_DataSet___0__DevZest_Data_DbTable___1__System_Action_DevZest_Data_ColumnMapper___0___1__System_Boolean_System_Threading_CancellationToken_" data-uid="DevZest.Data.SqlServer.SqlSession.InsertAsync``2(DevZest.Data.DataSet{``0},DevZest.Data.DbTable{``1},System.Action{DevZest.Data.ColumnMapper,``0,``1},System.Boolean,System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.SqlServer.SqlSession.InsertAsync.html#DevZest_Data_SqlServer_SqlSession_InsertAsync__2_DevZest_Data_DataSet___0__DevZest_Data_DbTable___1__System_Action_DevZest_Data_ColumnMapper___0___1__System_Boolean_System_Threading_CancellationToken_">InsertAsync&lt;TSource, TTarget&gt;(DataSet&lt;TSource&gt;, DbTable&lt;TTarget&gt;, Action&lt;ColumnMapper, TSource, TTarget&gt;, Boolean, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_SqlServer_SqlSession_InsertScalarAsync_DevZest_Data_Primitives_DbSelectStatement_System_Boolean_System_Threading_CancellationToken_" data-uid="DevZest.Data.SqlServer.SqlSession.InsertScalarAsync(DevZest.Data.Primitives.DbSelectStatement,System.Boolean,System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.SqlServer.SqlSession.InsertScalarAsync.html#DevZest_Data_SqlServer_SqlSession_InsertScalarAsync_DevZest_Data_Primitives_DbSelectStatement_System_Boolean_System_Threading_CancellationToken_">InsertScalarAsync(DbSelectStatement, Boolean, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_SqlServer_SqlSession_OpenJson__1_System_String_System_String_" data-uid="DevZest.Data.SqlServer.SqlSession.OpenJson``1(System.String,System.String)">
+          <a class="xref" href="DevZest.Data.SqlServer.SqlSession.OpenJson.html#DevZest_Data_SqlServer_SqlSession_OpenJson__1_System_String_System_String_">OpenJson&lt;T&gt;(String, String)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Opens JSON string as DbSet.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_SqlServer_SqlSession_PerformBeginTransaction_System_Nullable_System_Data_IsolationLevel__System_String_" data-uid="DevZest.Data.SqlServer.SqlSession.PerformBeginTransaction(System.Nullable{System.Data.IsolationLevel},System.String)">
+          <a class="xref" href="DevZest.Data.SqlServer.SqlSession.PerformBeginTransaction.html#DevZest_Data_SqlServer_SqlSession_PerformBeginTransaction_System_Nullable_System_Data_IsolationLevel__System_String_">PerformBeginTransaction(Nullable&lt;IsolationLevel&gt;, String)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_SqlServer_SqlSession_UpdateAsync__2_DevZest_Data_DataSet___0__DevZest_Data_DbTable___1__System_Action_DevZest_Data_ColumnMapper___0___1__DevZest_Data_CandidateKey_System_Threading_CancellationToken_" data-uid="DevZest.Data.SqlServer.SqlSession.UpdateAsync``2(DevZest.Data.DataSet{``0},DevZest.Data.DbTable{``1},System.Action{DevZest.Data.ColumnMapper,``0,``1},DevZest.Data.CandidateKey,System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.SqlServer.SqlSession.UpdateAsync.html#DevZest_Data_SqlServer_SqlSession_UpdateAsync__2_DevZest_Data_DataSet___0__DevZest_Data_DbTable___1__System_Action_DevZest_Data_ColumnMapper___0___1__DevZest_Data_CandidateKey_System_Threading_CancellationToken_">UpdateAsync&lt;TSource, TTarget&gt;(DataSet&lt;TSource&gt;, DbTable&lt;TTarget&gt;, Action&lt;ColumnMapper, TSource, TTarget&gt;, CandidateKey, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/new/master/apiSpec/new?filename=DevZest_Data_SqlServer_SqlSession.md&amp;value=---%0Auid%3A%20DevZest.Data.SqlServer.SqlSession%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Data.SqlServer/SqlSession.SqlReaderInvoker.cs/#L7" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © Weifen Luo | DevZest</span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

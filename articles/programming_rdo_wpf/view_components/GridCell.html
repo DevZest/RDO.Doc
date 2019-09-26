@@ -1,0 +1,306 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>GridCell </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="GridCell ">
+    <meta name="generator" content="docfx 2.43.2.0">
+    
+    <link rel="shortcut icon" href="../../../favicon.ico">
+    <link rel="stylesheet" href="../../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../../styles/docfx.css">
+    <link rel="stylesheet" href="../../../styles/main.css">
+    <meta property="docfx:navrel" content="../../../toc.html">
+    <meta property="docfx:tocrel" content="../../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../../index.html">
+                <img id="logo" class="svg" src="../../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="gridcell">GridCell</h1>
+
+<p><a class="xref" href="../../../api/DevZest.Data.Views.InPlaceEditor.html">InPlaceEditor</a> represents the container of single child element that can perform either selection or editing operation, as demonstrated in <code>AdventureWorksLT.WpfApp</code> sample:</p>
+<p><img src="/images/GridCell.jpg" alt="image"></p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Select single or consecutive grid cells.</li>
+<li>Copy value of selected grid cells to clipboard.</li>
+<li>In-place editing.</li>
+</ul>
+<h2 id="usage">Usage</h2>
+<p>Add <a class="xref" href="../../../api/DevZest.Data.Views.GridCell.html">GridCell</a> as row binding via <a class="xref" href="../../../api/DevZest.Data.Presenters.BindingFactory.MergeIntoGridCell.html">MergeIntoGridCell</a> or <a class="xref" href="../../../api/DevZest.Data.Presenters.BindingFactory.AddToGridCell.html">AddToGridCell</a>, as demonstrated in <code>AdventureWorksLT.WpfApp</code> sample:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-csharp">protected override void BuildTemplate(TemplateBuilder builder)
+{
+    builder
+        ...
+        .AddBinding(1, 1, _.FK_Product.BindToForeignKeyBox(product, GetProductNumber).MergeIntoGridCell(product.ProductNumber.BindToTextBlock()).WithSerializableColumns(_.ProductID, product.ProductNumber))
+        .AddBinding(2, 1, product.Name.BindToTextBlock().AddToGridCell().WithSerializableColumns(product.Name))
+        .AddBinding(3, 1, _.UnitPrice.BindToTextBox().MergeIntoGridCell())
+        .AddBinding(4, 1, _.UnitPriceDiscount.BindToTextBox(new PercentageConverter()).MergeIntoGridCell(_.UnitPriceDiscount.BindToTextBlock(&quot;{0:P}&quot;)))
+        .AddBinding(5, 1, _.OrderQty.BindToTextBox().MergeIntoGridCell())
+        .AddBinding(6, 1, _.LineTotal.BindToTextBlock(&quot;{0:C}&quot;).AddToGridCell().WithSerializableColumns(_.LineTotal));
+}
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-vb">Protected Overrides Sub BuildTemplate(builder As TemplateBuilder)
+    Dim e = Entity
+    builder
+        ...
+        .AddBinding(1, 1, e.FK_Product.BindToForeignKeyBox(product, AddressOf GetProductNumber).MergeIntoGridCell(product.ProductNumber.BindToTextBlock()).WithSerializableColumns(e.ProductID, product.ProductNumber)) _
+        .AddBinding(2, 1, product.Name.BindToTextBlock().AddToGridCell().WithSerializableColumns(product.Name)) _
+        .AddBinding(3, 1, e.UnitPrice.BindToTextBox().MergeIntoGridCell()) _
+        .AddBinding(4, 1, e.UnitPriceDiscount.BindToTextBox(New PercentageConverter()).MergeIntoGridCell(e.UnitPriceDiscount.BindToTextBlock(&quot;{0:P}&quot;))) _
+        .AddBinding(5, 1, e.OrderQty.BindToTextBox().MergeIntoGridCell()) _
+        .AddBinding(6, 1, e.LineTotal.BindToTextBlock(&quot;{0:C}&quot;).AddToGridCell().WithSerializableColumns(e.LineTotal))
+End Sub
+</code></pre>
+</section>
+</div>
+<h2 id="implemented-commands">Implemented Commands</h2>
+<table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Input</th>
+<th>Implementation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="../../../api/DevZest.Data.Views.GridCell.Commands.ToggleMode.html#DevZest_Data_Views_GridCell_Commands_ToggleMode">ToggleMode</a></td>
+<td>F8 Key</td>
+<td>Toggles between selection and editing mode.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../../api/DevZest.Data.Views.GridCell.Commands.ExitEditMode.html#DevZest_Data_Views_GridCell_Commands_ExitEditMode">ExitEditMode</a></td>
+<td>ESC Key</td>
+<td>Exits editing mode.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../../api/DevZest.Data.Views.GridCell.Commands.Activate.html#DevZest_Data_Views_GridCell_Commands_Activate">Activate</a></td>
+<td>Left mouse click</td>
+<td>Actives the grid cell for editing.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../../api/DevZest.Data.Views.GridCell.Commands.SelectTo.html#DevZest_Data_Views_GridCell_Commands_SelectTo">SelectTo</a></td>
+<td>SHIFT + Left mouse click</td>
+<td>Selects consecutive grid cells.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../../api/DevZest.Data.Views.GridCell.Commands.SelectAll.html#DevZest_Data_Views_GridCell_Commands_SelectAll">SelectAll</a></td>
+<td>CTRL-A</td>
+<td>Selects all grid cells.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../../api/DevZest.Data.Views.GridCell.Commands.Copy.html#DevZest_Data_Views_GridCell_Commands_Copy">Copy</a></td>
+<td>CTRL-C</td>
+<td>Copies content of selected grid cells to clipboard.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../../api/DevZest.Data.Views.GridCell.Commands.SelectLeft.html#DevZest_Data_Views_GridCell_Commands_SelectLeft">SelectLeft</a></td>
+<td>LEFT key</td>
+<td>Selects grid cell of left.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../../api/DevZest.Data.Views.GridCell.Commands.SelectRight.html#DevZest_Data_Views_GridCell_Commands_SelectRight">SelectRight</a></td>
+<td>RIGHT key</td>
+<td>Selects grid cell of right.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../../api/DevZest.Data.Views.GridCell.Commands.SelectUp.html#DevZest_Data_Views_GridCell_Commands_SelectUp">SelectUp</a></td>
+<td>UP key</td>
+<td>Selects grid cell of up.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../../api/DevZest.Data.Views.GridCell.Commands.SelectDown.html#DevZest_Data_Views_GridCell_Commands_SelectDown">SelectDown</a></td>
+<td>DOWN key</td>
+<td>Selects grid cell of down.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../../api/DevZest.Data.Views.GridCell.Commands.SelectPageUp.html#DevZest_Data_Views_GridCell_Commands_SelectPageUp">SelectPageUp</a></td>
+<td>PageUp key</td>
+<td>Selects grid cell of page up.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../../api/DevZest.Data.Views.GridCell.Commands.SelectPageDown.html#DevZest_Data_Views_GridCell_Commands_SelectPageDown">SelectPageDown</a></td>
+<td>PageDown key</td>
+<td>Selects grid cell of page down.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../../api/DevZest.Data.Views.GridCell.Commands.SelectRowHome.html#DevZest_Data_Views_GridCell_Commands_SelectRowHome">SelectRowHome</a></td>
+<td>HOME key</td>
+<td>Selects grid cells of first row.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../../api/DevZest.Data.Views.GridCell.Commands.SelectRowEnd.html#DevZest_Data_Views_GridCell_Commands_SelectRowEnd">SelectRowEnd</a></td>
+<td>END key</td>
+<td>Selects grid cells of last row.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../../api/DevZest.Data.Views.GridCell.Commands.SelectHome.html#DevZest_Data_Views_GridCell_Commands_SelectHome">SelectHome</a></td>
+<td>CTRL-HOME key</td>
+<td>Selects the first grid cell.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../../api/DevZest.Data.Views.GridCell.Commands.SelectEnd.html#DevZest_Data_Views_GridCell_Commands_SelectEnd">SelectEnd</a></td>
+<td>CTRL-END key</td>
+<td>Selects the last grid cell.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../../api/DevZest.Data.Views.GridCell.Commands.SelectToLeft.html#DevZest_Data_Views_GridCell_Commands_SelectToLeft">SelectToLeft</a></td>
+<td>SHIFT-LEFT key</td>
+<td>Selects consecutive grid cells to left.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../../api/DevZest.Data.Views.GridCell.Commands.SelectRight.html#DevZest_Data_Views_GridCell_Commands_SelectRight">SelectRight</a></td>
+<td>SHIFT-RIGHT key</td>
+<td>Selects consecutive grid cells to right.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../../api/DevZest.Data.Views.GridCell.Commands.SelectUp.html#DevZest_Data_Views_GridCell_Commands_SelectUp">SelectUp</a></td>
+<td>SHIFT-UP key</td>
+<td>Selects consecutive grid cells to up.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../../api/DevZest.Data.Views.GridCell.Commands.SelectDown.html#DevZest_Data_Views_GridCell_Commands_SelectDown">SelectDown</a></td>
+<td>SHIFT-DOWN key</td>
+<td>Selects consecutive grid cells to down.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../../api/DevZest.Data.Views.GridCell.Commands.SelectPageUp.html#DevZest_Data_Views_GridCell_Commands_SelectPageUp">SelectPageUp</a></td>
+<td>SHIFT-PageUp key</td>
+<td>Selects consecutive grid cells to page up.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../../api/DevZest.Data.Views.GridCell.Commands.SelectPageDown.html#DevZest_Data_Views_GridCell_Commands_SelectPageDown">SelectPageDown</a></td>
+<td>SHIFT-PageDown key</td>
+<td>Selects consecutive grid cells to page down.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../../api/DevZest.Data.Views.GridCell.Commands.SelectRowHome.html#DevZest_Data_Views_GridCell_Commands_SelectRowHome">SelectRowHome</a></td>
+<td>SHIFT-HOME key</td>
+<td>Selects consecutive grid cells to first row.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../../api/DevZest.Data.Views.GridCell.Commands.SelectRowEnd.html#DevZest_Data_Views_GridCell_Commands_SelectRowEnd">SelectRowEnd</a></td>
+<td>SHIFT-END key</td>
+<td>Selects consecutive grid cells to last row.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../../api/DevZest.Data.Views.GridCell.Commands.SelectHome.html#DevZest_Data_Views_GridCell_Commands_SelectHome">SelectHome</a></td>
+<td>CTRL-SHIFT-HOME key</td>
+<td>Selects consecutive grid cells to the first grid cell.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../../api/DevZest.Data.Views.GridCell.Commands.SelectEnd.html#DevZest_Data_Views_GridCell_Commands_SelectEnd">SelectEnd</a></td>
+<td>CTRL-SHIFT-END key</td>
+<td>Selects consecutive grid cells to the last grid cell.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="customizable-services">Customizable Services</h2>
+<ul>
+<li><a class="xref" href="../../../api/DevZest.Data.Views.GridCell.ICommandService.html">GridCell.ICommandService</a>: Your data presenter can implement this service to change the commands implementation of this class.</li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Docs/articles/programming_rdo_wpf/view_components/GridCell.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © Weifen Luo | DevZest</span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../../styles/main.js"></script>
+  </body>
+</html>

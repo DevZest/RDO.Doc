@@ -1,0 +1,474 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class DataSetReader
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class DataSetReader
+   ">
+    <meta name="generator" content="docfx 2.43.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="DevZest.Data.DataSetReader">
+  
+  
+  <h1 id="DevZest_Data_DataSetReader" data-uid="DevZest.Data.DataSetReader" class="text-break">Class DataSetReader
+  </h1>
+  <div class="markdown level0 summary"><p>Retrieves a read-only, forward-only stream of data from a DataSet.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">System.MarshalByRefObject</span></div>
+    <div class="level2"><span class="xref">System.Data.Common.DbDataReader</span></div>
+    <div class="level3"><span class="xref">DataSetReader</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.Collections.IEnumerable</span></div>
+    <div><span class="xref">System.Data.IDataReader</span></div>
+    <div><span class="xref">System.Data.IDataRecord</span></div>
+    <div><span class="xref">System.IDisposable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Data.Common.DbDataReader.Dispose(System.Boolean)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.Common.DbDataReader.GetDbDataReader(System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.Common.DbDataReader.GetFieldValue&lt;T&gt;(System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.Common.DbDataReader.GetFieldValueAsync&lt;T&gt;(System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.Common.DbDataReader.GetFieldValueAsync&lt;T&gt;(System.Int32, System.Threading.CancellationToken)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.Common.DbDataReader.GetStream(System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.Common.DbDataReader.GetTextReader(System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.Common.DbDataReader.IsDBNullAsync(System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.Common.DbDataReader.IsDBNullAsync(System.Int32, System.Threading.CancellationToken)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.Common.DbDataReader.NextResultAsync()</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.Common.DbDataReader.NextResultAsync(System.Threading.CancellationToken)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.Common.DbDataReader.ReadAsync()</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.Common.DbDataReader.ReadAsync(System.Threading.CancellationToken)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.Common.DbDataReader.System.Data.IDataRecord.GetData(System.Int32)</span>
+    </div>
+    <div>
+      <span class="xref">System.Data.Common.DbDataReader.VisibleFieldCount</span>
+    </div>
+    <div>
+      <span class="xref">System.MarshalByRefObject.GetLifetimeService()</span>
+    </div>
+    <div>
+      <span class="xref">System.MarshalByRefObject.InitializeLifetimeService()</span>
+    </div>
+    <div>
+      <span class="xref">System.MarshalByRefObject.MemberwiseClone(System.Boolean)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="DevZest.Data.html">DevZest.Data</a></h6>
+  <h6><strong>Assembly</strong>: DevZest.Data.dll</h6>
+  <h5 id="DevZest_Data_DataSetReader_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class DataSetReader : DbDataReader, IEnumerable, IDataReader, IDataRecord, IDisposable</code></pre>
+  </div>
+  <h5 id="DevZest_Data_DataSetReader_remarks"><strong>Remarks</strong></h5>
+  <div class="markdown level0 remarks"><p>You can use this class as data source for bulk copy.</p>
+</div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="DevZest_Data_DataSetReader__ctor_DevZest_Data_DataSet_" data-uid="DevZest.Data.DataSetReader.#ctor(DevZest.Data.DataSet)">
+          <a class="xref" href="DevZest.Data.DataSetReader.-ctor.html#DevZest_Data_DataSetReader__ctor_DevZest_Data_DataSet_">DataSetReader(DataSet)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Initializes a new instance of <a class="xref" href="DevZest.Data.DataSetReader.html">DataSetReader</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="DevZest_Data_DataSetReader_Depth" data-uid="DevZest.Data.DataSetReader.Depth">
+          <a class="xref" href="DevZest.Data.DataSetReader.Depth.html#DevZest_Data_DataSetReader_Depth">Depth</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSetReader_FieldCount" data-uid="DevZest.Data.DataSetReader.FieldCount">
+          <a class="xref" href="DevZest.Data.DataSetReader.FieldCount.html#DevZest_Data_DataSetReader_FieldCount">FieldCount</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSetReader_HasRows" data-uid="DevZest.Data.DataSetReader.HasRows">
+          <a class="xref" href="DevZest.Data.DataSetReader.HasRows.html#DevZest_Data_DataSetReader_HasRows">HasRows</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSetReader_IsClosed" data-uid="DevZest.Data.DataSetReader.IsClosed">
+          <a class="xref" href="DevZest.Data.DataSetReader.IsClosed.html#DevZest_Data_DataSetReader_IsClosed">IsClosed</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSetReader_Item_System_Int32_" data-uid="DevZest.Data.DataSetReader.Item(System.Int32)">
+          <a class="xref" href="DevZest.Data.DataSetReader.Item.html#DevZest_Data_DataSetReader_Item_System_Int32_">Item[Int32]</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSetReader_Item_System_String_" data-uid="DevZest.Data.DataSetReader.Item(System.String)">
+          <a class="xref" href="DevZest.Data.DataSetReader.Item.html#DevZest_Data_DataSetReader_Item_System_String_">Item[String]</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSetReader_RecordsAffected" data-uid="DevZest.Data.DataSetReader.RecordsAffected">
+          <a class="xref" href="DevZest.Data.DataSetReader.RecordsAffected.html#DevZest_Data_DataSetReader_RecordsAffected">RecordsAffected</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="DevZest_Data_DataSetReader_Close" data-uid="DevZest.Data.DataSetReader.Close">
+          <a class="xref" href="DevZest.Data.DataSetReader.Close.html#DevZest_Data_DataSetReader_Close">Close()</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSetReader_GetBoolean_System_Int32_" data-uid="DevZest.Data.DataSetReader.GetBoolean(System.Int32)">
+          <a class="xref" href="DevZest.Data.DataSetReader.GetBoolean.html#DevZest_Data_DataSetReader_GetBoolean_System_Int32_">GetBoolean(Int32)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSetReader_GetByte_System_Int32_" data-uid="DevZest.Data.DataSetReader.GetByte(System.Int32)">
+          <a class="xref" href="DevZest.Data.DataSetReader.GetByte.html#DevZest_Data_DataSetReader_GetByte_System_Int32_">GetByte(Int32)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSetReader_GetBytes_System_Int32_System_Int64_System_Byte___System_Int32_System_Int32_" data-uid="DevZest.Data.DataSetReader.GetBytes(System.Int32,System.Int64,System.Byte[],System.Int32,System.Int32)">
+          <a class="xref" href="DevZest.Data.DataSetReader.GetBytes.html#DevZest_Data_DataSetReader_GetBytes_System_Int32_System_Int64_System_Byte___System_Int32_System_Int32_">GetBytes(Int32, Int64, Byte[], Int32, Int32)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSetReader_GetChar_System_Int32_" data-uid="DevZest.Data.DataSetReader.GetChar(System.Int32)">
+          <a class="xref" href="DevZest.Data.DataSetReader.GetChar.html#DevZest_Data_DataSetReader_GetChar_System_Int32_">GetChar(Int32)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSetReader_GetChars_System_Int32_System_Int64_System_Char___System_Int32_System_Int32_" data-uid="DevZest.Data.DataSetReader.GetChars(System.Int32,System.Int64,System.Char[],System.Int32,System.Int32)">
+          <a class="xref" href="DevZest.Data.DataSetReader.GetChars.html#DevZest_Data_DataSetReader_GetChars_System_Int32_System_Int64_System_Char___System_Int32_System_Int32_">GetChars(Int32, Int64, Char[], Int32, Int32)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSetReader_GetDataTypeName_System_Int32_" data-uid="DevZest.Data.DataSetReader.GetDataTypeName(System.Int32)">
+          <a class="xref" href="DevZest.Data.DataSetReader.GetDataTypeName.html#DevZest_Data_DataSetReader_GetDataTypeName_System_Int32_">GetDataTypeName(Int32)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSetReader_GetDateTime_System_Int32_" data-uid="DevZest.Data.DataSetReader.GetDateTime(System.Int32)">
+          <a class="xref" href="DevZest.Data.DataSetReader.GetDateTime.html#DevZest_Data_DataSetReader_GetDateTime_System_Int32_">GetDateTime(Int32)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSetReader_GetDecimal_System_Int32_" data-uid="DevZest.Data.DataSetReader.GetDecimal(System.Int32)">
+          <a class="xref" href="DevZest.Data.DataSetReader.GetDecimal.html#DevZest_Data_DataSetReader_GetDecimal_System_Int32_">GetDecimal(Int32)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSetReader_GetDouble_System_Int32_" data-uid="DevZest.Data.DataSetReader.GetDouble(System.Int32)">
+          <a class="xref" href="DevZest.Data.DataSetReader.GetDouble.html#DevZest_Data_DataSetReader_GetDouble_System_Int32_">GetDouble(Int32)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSetReader_GetEnumerator" data-uid="DevZest.Data.DataSetReader.GetEnumerator">
+          <a class="xref" href="DevZest.Data.DataSetReader.GetEnumerator.html#DevZest_Data_DataSetReader_GetEnumerator">GetEnumerator()</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSetReader_GetFieldType_System_Int32_" data-uid="DevZest.Data.DataSetReader.GetFieldType(System.Int32)">
+          <a class="xref" href="DevZest.Data.DataSetReader.GetFieldType.html#DevZest_Data_DataSetReader_GetFieldType_System_Int32_">GetFieldType(Int32)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSetReader_GetFloat_System_Int32_" data-uid="DevZest.Data.DataSetReader.GetFloat(System.Int32)">
+          <a class="xref" href="DevZest.Data.DataSetReader.GetFloat.html#DevZest_Data_DataSetReader_GetFloat_System_Int32_">GetFloat(Int32)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSetReader_GetGuid_System_Int32_" data-uid="DevZest.Data.DataSetReader.GetGuid(System.Int32)">
+          <a class="xref" href="DevZest.Data.DataSetReader.GetGuid.html#DevZest_Data_DataSetReader_GetGuid_System_Int32_">GetGuid(Int32)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSetReader_GetInt16_System_Int32_" data-uid="DevZest.Data.DataSetReader.GetInt16(System.Int32)">
+          <a class="xref" href="DevZest.Data.DataSetReader.GetInt16.html#DevZest_Data_DataSetReader_GetInt16_System_Int32_">GetInt16(Int32)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSetReader_GetInt32_System_Int32_" data-uid="DevZest.Data.DataSetReader.GetInt32(System.Int32)">
+          <a class="xref" href="DevZest.Data.DataSetReader.GetInt32.html#DevZest_Data_DataSetReader_GetInt32_System_Int32_">GetInt32(Int32)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSetReader_GetInt64_System_Int32_" data-uid="DevZest.Data.DataSetReader.GetInt64(System.Int32)">
+          <a class="xref" href="DevZest.Data.DataSetReader.GetInt64.html#DevZest_Data_DataSetReader_GetInt64_System_Int32_">GetInt64(Int32)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSetReader_GetName_System_Int32_" data-uid="DevZest.Data.DataSetReader.GetName(System.Int32)">
+          <a class="xref" href="DevZest.Data.DataSetReader.GetName.html#DevZest_Data_DataSetReader_GetName_System_Int32_">GetName(Int32)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSetReader_GetOrdinal_System_String_" data-uid="DevZest.Data.DataSetReader.GetOrdinal(System.String)">
+          <a class="xref" href="DevZest.Data.DataSetReader.GetOrdinal.html#DevZest_Data_DataSetReader_GetOrdinal_System_String_">GetOrdinal(String)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSetReader_GetProviderSpecificFieldType_System_Int32_" data-uid="DevZest.Data.DataSetReader.GetProviderSpecificFieldType(System.Int32)">
+          <a class="xref" href="DevZest.Data.DataSetReader.GetProviderSpecificFieldType.html#DevZest_Data_DataSetReader_GetProviderSpecificFieldType_System_Int32_">GetProviderSpecificFieldType(Int32)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSetReader_GetProviderSpecificValues_System_Object___" data-uid="DevZest.Data.DataSetReader.GetProviderSpecificValues(System.Object[])">
+          <a class="xref" href="DevZest.Data.DataSetReader.GetProviderSpecificValues.html#DevZest_Data_DataSetReader_GetProviderSpecificValues_System_Object___">GetProviderSpecificValues(Object[])</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSetReader_GetSchemaTable" data-uid="DevZest.Data.DataSetReader.GetSchemaTable">
+          <a class="xref" href="DevZest.Data.DataSetReader.GetSchemaTable.html#DevZest_Data_DataSetReader_GetSchemaTable">GetSchemaTable()</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSetReader_GetString_System_Int32_" data-uid="DevZest.Data.DataSetReader.GetString(System.Int32)">
+          <a class="xref" href="DevZest.Data.DataSetReader.GetString.html#DevZest_Data_DataSetReader_GetString_System_Int32_">GetString(Int32)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSetReader_GetValue_System_Int32_" data-uid="DevZest.Data.DataSetReader.GetValue(System.Int32)">
+          <a class="xref" href="DevZest.Data.DataSetReader.GetValue.html#DevZest_Data_DataSetReader_GetValue_System_Int32_">GetValue(Int32)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSetReader_GetValues_System_Object___" data-uid="DevZest.Data.DataSetReader.GetValues(System.Object[])">
+          <a class="xref" href="DevZest.Data.DataSetReader.GetValues.html#DevZest_Data_DataSetReader_GetValues_System_Object___">GetValues(Object[])</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSetReader_IsDBNull_System_Int32_" data-uid="DevZest.Data.DataSetReader.IsDBNull(System.Int32)">
+          <a class="xref" href="DevZest.Data.DataSetReader.IsDBNull.html#DevZest_Data_DataSetReader_IsDBNull_System_Int32_">IsDBNull(Int32)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSetReader_NextResult" data-uid="DevZest.Data.DataSetReader.NextResult">
+          <a class="xref" href="DevZest.Data.DataSetReader.NextResult.html#DevZest_Data_DataSetReader_NextResult">NextResult()</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSetReader_Read" data-uid="DevZest.Data.DataSetReader.Read">
+          <a class="xref" href="DevZest.Data.DataSetReader.Read.html#DevZest_Data_DataSetReader_Read">Read()</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/new/master/apiSpec/new?filename=DevZest_Data_DataSetReader.md&amp;value=---%0Auid%3A%20DevZest.Data.DataSetReader%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Data/DataSetReader.cs/#L15" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © Weifen Luo | DevZest</span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

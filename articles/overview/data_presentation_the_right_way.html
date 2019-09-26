@@ -1,0 +1,398 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Data Presentation, the Right Way </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Data Presentation, the Right Way ">
+    <meta name="generator" content="docfx 2.43.2.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="data_presentation_the_right_way">
+<h1 id="data-presentation-the-right-way">Data Presentation, the Right Way</h1>
+
+<p>Separation of the graphical user interface from the business logic or back-end logic (the data model), is still a challenge task. Frameworks such as <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel">MVVM</a> introduces a new layer (the view model), trying to handle most if not all of the view's display logic.</p>
+<p>Presentation logic is complex - it's responsible for overcoming the gap between computer and human being, which is a big (maybe biggest) challenge in computer science. To encapsulate presentation logic into a separate layer, we need to plan carefully at the very beginning. Unfortunately, existing MVVM implementations, among other similar frameworks, are built as an afterthought.</p>
+<h2 id="the-anti-patterns">The Anti-Patterns</h2>
+<h3 id="the-poco-obsession-again">The POCO Obsession, Again</h3>
+<p>When model is arbitrary object (POCO), hiding the model from the view is simply not possible. The presentation layer can do little about it, in many cases, it just expose the model object via aggregation, without any value-added.</p>
+<p>On the other hand, data model cannot be 100% POCO. For example, <code>INotifyPropertyChanged</code> interface is mandatory for most data models, and <code>IDataErrorInfo</code> interface is required if you want to bind to custom validation error. Since these interfaces must be implemented by all data models, they must be dead simple.</p>
+<p>In the end, your presentation layer can do little with the data model.</p>
+<h3 id="complex-control">Complex Control</h3>
+<p>Complex control, such as <code>DataGrid</code>, has very complex presentation logics. Since these controls are built without existing presentation layer, these logics are naturally encapsulated into the control itself - the view. This puts the presentation layer into an embarrassed situation: for simple control without complex view state such as <code>TextBox</code>, it has little job to do; for complex control such as <code>DataGrid</code>, the control has done the job.</p>
+<p>In the end, your presentation layer can do little with the view too.</p>
+<p>Put it together, if the presentation layer is an afterthought, there is little room left for implementation, especially at abstraction level.</p>
+<h2 id="the-right-way">The Right Way</h2>
+<p>Thanks to <a class="xref" href="orm_data_access_the_right_way.html#rich-metadata---relational-data-objects">Rich Metadata</a>, we now have foundations to implement a comprehensive Model-View-Presenter (MVP) to improve the separation of concerns in presentation logic. The following is the architecture of RDO.WPF MVP:</p>
+<p><img src="/images/RdoWpfMvpArchitecture.jpg" alt="image"></p>
+<ul>
+<li>The model contains the data values and data logic such as computation and validation in a <a class="xref" href="../../api/DevZest.Data.DataSet-1.html">DataSet&lt;T&gt;</a> object. The <a class="xref" href="../../api/DevZest.Data.DataSet-1.html">DataSet&lt;T&gt;</a> object contains collection of <a class="xref" href="../../api/DevZest.Data.DataRow.html">DataRow</a> objects and <a class="xref" href="../../api/DevZest.Data.Column.html">Column</a> objects, similar as two dimensional array. The model provides events to notify data changes, it does not aware the existence of the presenter at all.</li>
+<li>The view contains UI components which directly interacts with user. These UI components are designed as dumb as possible, all presentation logic are implemented in the presenter. Despite the container UI components such as <a class="xref" href="../../api/DevZest.Data.Views.DataView.html">DataView</a>, <a class="xref" href="../../api/DevZest.Data.Views.BlockView.html">BlockView</a> and <a class="xref" href="../../api/DevZest.Data.Views.RowView.html">RowView</a>, or controls depending on presentation logic implemented in presenter (such as <a class="xref" href="../../api/DevZest.Data.Views.ColumnHeader.html">ColumnHeader</a>), most UI elements do not aware the existence of the presenter at all.</li>
+<li>The presenter is the core to tie model and view together, it implements the following presentation logic:
+<ul>
+<li>Selection, filtering and hierarchical grouping.</li>
+<li>UI elements life time management and data binding.</li>
+<li>Editing and validation.</li>
+<li>Layout and UI virtualization.</li>
+</ul>
+</li>
+</ul>
+<p>Since presenting collection of data is extensively and exclusively supported by the presenter, all the complex controls (controls derived from <code>System.Windows.Controls.ItemsControl</code> such as <code>ListBox</code> and <code>DataGrid</code>) are not necessary any more. By using RDO.WPF, your application only need to deal with simple controls such as <code>TextBlock</code> and <code>TextBox</code>, via data binding, in an unified way.</p>
+
+<p>Simply derive you data presenter from <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter-1.html">DataPresenter&lt;T&gt;</a> class, and put a <a class="xref" href="../../api/DevZest.Data.Views.DataView.html">DataView</a> into your view, you got all the above features immediately, without any complex control. The following code:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q_cs" role="tabpanel" data-tab="cs">
+<pre><code class="lang-csharp" name="DetailPresenter">using DevZest.Data.Presenters;
+using DevZest.Data.Views;
+using DevZest.Data;
+using System.Windows;
+using System;
+using System.Windows.Controls;
+using System.Collections.Generic;
+using System.Diagnostics;
+
+namespace DevZest.Samples.AdventureWorksLT
+{
+    partial class SalesOrderWindow
+    {
+        private class DetailPresenter : DataPresenter&lt;SalesOrderInfoDetail&gt;, ForeignKeyBox.ILookupService, DataView.IPasteAppendService
+        {
+            public DetailPresenter(Window ownerWindow)
+            {
+                _ownerWindow = ownerWindow;
+            }
+
+            private readonly Window _ownerWindow;
+
+            protected override void BuildTemplate(TemplateBuilder builder)
+            {
+                var product = _.Product;
+                builder.GridRows(&quot;Auto&quot;, &quot;20&quot;)
+                    .GridColumns(&quot;20&quot;, &quot;*&quot;, &quot;*&quot;, &quot;Auto&quot;, &quot;Auto&quot;, &quot;Auto&quot;, &quot;Auto&quot;)
+                    .WithFrozenTop(1)
+                    .GridLineX(new GridPoint(0, 2), 7)
+                    .GridLineY(new GridPoint(2, 1), 1).GridLineY(new GridPoint(3, 1), 1).GridLineY(new GridPoint(4, 1), 1)
+                    .GridLineY(new GridPoint(5, 1), 1).GridLineY(new GridPoint(6, 1), 1).GridLineY(new GridPoint(7, 1), 1)
+                    .Layout(Orientation.Vertical)
+                    .WithVirtualRowPlacement(VirtualRowPlacement.Tail)
+                    .AllowDelete()
+                    .AddBinding(0, 0, this.BindToGridHeader())
+                    .AddBinding(1, 0, product.ProductNumber.BindToColumnHeader(&quot;Product No.&quot;))
+                    .AddBinding(2, 0, product.Name.BindToColumnHeader(&quot;Product&quot;))
+                    .AddBinding(3, 0, _.UnitPrice.BindToColumnHeader(&quot;Unit Price&quot;))
+                    .AddBinding(4, 0, _.UnitPriceDiscount.BindToColumnHeader(&quot;Discount&quot;))
+                    .AddBinding(5, 0, _.OrderQty.BindToColumnHeader(&quot;Qty&quot;))
+                    .AddBinding(6, 0, _.LineTotal.BindToColumnHeader(&quot;Total&quot;))
+                    .AddBinding(0, 1, _.BindTo&lt;RowHeader&gt;())
+                    .AddBinding(1, 1, _.FK_Product.BindToForeignKeyBox(product, GetProductNumber).MergeIntoGridCell(product.ProductNumber.BindToTextBlock()).WithSerializableColumns(_.ProductID, product.ProductNumber))
+                    .AddBinding(2, 1, product.Name.BindToTextBlock().AddToGridCell().WithSerializableColumns(product.Name))
+                    .AddBinding(3, 1, _.UnitPrice.BindToTextBox().MergeIntoGridCell())
+                    .AddBinding(4, 1, _.UnitPriceDiscount.BindToTextBox(new PercentageConverter()).MergeIntoGridCell(_.UnitPriceDiscount.BindToTextBlock(&quot;{0:P}&quot;)))
+                    .AddBinding(5, 1, _.OrderQty.BindToTextBox().MergeIntoGridCell())
+                    .AddBinding(6, 1, _.LineTotal.BindToTextBlock(&quot;{0:C}&quot;).AddToGridCell().WithSerializableColumns(_.LineTotal));
+            }
+
+            private static string GetProductNumber(ColumnValueBag valueBag, Product.PK productKey, Product.Lookup productLookup)
+            {
+                return valueBag.GetValue(productLookup.ProductNumber);
+            }
+
+            bool ForeignKeyBox.ILookupService.CanLookup(CandidateKey foreignKey)
+            {
+                if (foreignKey == _.FK_Product)
+                    return true;
+                else
+                    return false;
+            }
+
+            void ForeignKeyBox.ILookupService.BeginLookup(ForeignKeyBox foreignKeyBox)
+            {
+                if (foreignKeyBox.ForeignKey == _.FK_Product)
+                {
+                    var dialogWindow = new ProductLookupWindow();
+                    dialogWindow.Show(_ownerWindow, foreignKeyBox, CurrentRow.GetValue(_.ProductID));
+                }
+                else
+                    throw new NotSupportedException();
+            }
+
+            protected override bool ConfirmDelete()
+            {
+                return MessageBox.Show(string.Format(&quot;Are you sure you want to delete selected {0} rows?&quot;, SelectedRows.Count), &quot;Delete&quot;, MessageBoxButton.YesNo) == MessageBoxResult.Yes;
+            }
+
+            bool DataView.IPasteAppendService.Verify(IReadOnlyList&lt;ColumnValueBag&gt; data)
+            {
+                var foreignKeys = DataSet&lt;Product.Ref&gt;.Create();
+                for (int i = 0; i &lt; data.Count; i++)
+                {
+                    var valueBag = data[i];
+                    var productId = valueBag.ContainsKey(_.ProductID) ? valueBag[_.ProductID] : null;
+                    foreignKeys.AddRow((_, dataRow) =&gt;
+                    {
+                        _.ProductID.SetValue(dataRow, productId);
+                    });
+                }
+
+                if (!App.Execute((db, ct) =&gt; db.LookupAsync(foreignKeys, ct), Window.GetWindow(View), out var lookup))
+                    return false;
+
+                Debug.Assert(lookup.Count == data.Count);
+                var product = _.Product;
+                for (int i = 0; i &lt; lookup.Count; i++)
+                {
+                    data[i].SetValue(product.Name, lookup._.Name[i]);
+                    data[i].SetValue(product.ProductNumber, lookup._.ProductNumber[i]);
+                }
+                return true;
+            }
+        }
+    }
+}
+</code></pre></section>
+<section id="tabpanel_CeZOj-G++Q_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-vb" name="DetailPresenter">Imports DevZest.Data
+Imports DevZest.Data.Presenters
+Imports DevZest.Data.Views
+
+Partial Class SalesOrderWindow
+    Private Class DetailPresenter
+        Inherits DataPresenter(Of SalesOrderInfoDetail)
+        Implements ForeignKeyBox.ILookupService
+        Implements DataView.IPasteAppendService
+        Public Sub New(ownerWindow As Window)
+            _ownerWindow = ownerWindow
+        End Sub
+
+        Private ReadOnly _ownerWindow As Window
+
+        Protected Overrides Sub BuildTemplate(builder As TemplateBuilder)
+            Dim e = Entity
+            Dim product = e.Product
+            builder.GridRows(&quot;Auto&quot;, &quot;20&quot;) _
+                .GridColumns(&quot;20&quot;, &quot;*&quot;, &quot;*&quot;, &quot;Auto&quot;, &quot;Auto&quot;, &quot;Auto&quot;, &quot;Auto&quot;) _
+                .WithFrozenTop(1) _
+                .GridLineX(New GridPoint(0, 2), 7) _
+                .GridLineY(New GridPoint(2, 1), 1) _
+                .GridLineY(New GridPoint(3, 1), 1) _
+                .GridLineY(New GridPoint(4, 1), 1) _
+                .GridLineY(New GridPoint(5, 1), 1) _
+                .GridLineY(New GridPoint(6, 1), 1) _
+                .GridLineY(New GridPoint(7, 1), 1) _
+                .Layout(Orientation.Vertical) _
+                .WithVirtualRowPlacement(VirtualRowPlacement.Tail) _
+                .AllowDelete() _
+                .AddBinding(0, 0, Me.BindToGridHeader()) _
+                .AddBinding(1, 0, product.ProductNumber.BindToColumnHeader(&quot;Product No.&quot;)) _
+                .AddBinding(2, 0, product.Name.BindToColumnHeader(&quot;Product&quot;)) _
+                .AddBinding(3, 0, e.UnitPrice.BindToColumnHeader(&quot;Unit Price&quot;)) _
+                .AddBinding(4, 0, e.UnitPriceDiscount.BindToColumnHeader(&quot;Discount&quot;)) _
+                .AddBinding(5, 0, e.OrderQty.BindToColumnHeader(&quot;Qty&quot;)) _
+                .AddBinding(6, 0, e.LineTotal.BindToColumnHeader(&quot;Total&quot;)) _
+                .AddBinding(0, 1, e.BindTo(Of RowHeader)()) _
+                .AddBinding(1, 1, e.FK_Product.BindToForeignKeyBox(product, AddressOf GetProductNumber).MergeIntoGridCell(product.ProductNumber.BindToTextBlock()).WithSerializableColumns(e.ProductID, product.ProductNumber)) _
+                .AddBinding(2, 1, product.Name.BindToTextBlock().AddToGridCell().WithSerializableColumns(product.Name)) _
+                .AddBinding(3, 1, e.UnitPrice.BindToTextBox().MergeIntoGridCell()) _
+                .AddBinding(4, 1, e.UnitPriceDiscount.BindToTextBox(New PercentageConverter()).MergeIntoGridCell(e.UnitPriceDiscount.BindToTextBlock(&quot;{0:P}&quot;))) _
+                .AddBinding(5, 1, e.OrderQty.BindToTextBox().MergeIntoGridCell()) _
+                .AddBinding(6, 1, e.LineTotal.BindToTextBlock(&quot;{0:C}&quot;).AddToGridCell().WithSerializableColumns(e.LineTotal))
+        End Sub
+
+        Private Shared Function GetProductNumber(valueBag As ColumnValueBag, productKey As Product.PK, productLookup As Product.Lookup) As String
+            Return valueBag.GetValue(productLookup.ProductNumber)
+        End Function
+
+        Private Function CanLookup(foreignKey As CandidateKey) As Boolean Implements ForeignKeyBox.ILookupService.CanLookup
+            If foreignKey Is Entity.FK_Product Then
+                Return True
+            Else
+                Return False
+            End If
+        End Function
+
+        Private Sub BeginLookup(foreignKeyBox As ForeignKeyBox) Implements ForeignKeyBox.ILookupService.BeginLookup
+            If foreignKeyBox.ForeignKey Is Entity.FK_Product Then
+                Dim dialogWindow = New ProductLookupWindow()
+                dialogWindow.Show(_ownerWindow, foreignKeyBox, CurrentRow.GetValue(Entity.ProductID))
+            Else
+                Throw New NotSupportedException()
+            End If
+        End Sub
+
+        Protected Overrides Function ConfirmDelete() As Boolean
+            Return MessageBox.Show(String.Format(&quot;Are you sure you want to delete selected {0} rows?&quot;, SelectedRows.Count), &quot;Delete&quot;, MessageBoxButton.YesNo) = MessageBoxResult.Yes
+        End Function
+
+        Private Function Verify(data As IReadOnlyList(Of ColumnValueBag)) As Boolean Implements DataView.IPasteAppendService.Verify
+            Dim foreignKeys = DevZest.Data.DataSet(Of Product.Ref).Create()
+            For i = 0 To data.Count
+                Dim valueBag = data(i)
+                Dim productId = If(valueBag.ContainsKey(Entity.ProductID), valueBag(Entity.ProductID), Nothing)
+                foreignKeys.AddRow(Sub(e, dataRow) e.ProductID.SetValue(dataRow, productId))
+            Next
+
+            Dim lookup As DataSet(Of Product.Lookup) = Nothing
+            If Not App.Execute(Function(db, ct) db.LookupAsync(foreignKeys, ct), Window.GetWindow(View), lookup) Then
+                Return False
+            End If
+
+            Debug.Assert(lookup.Count = data.Count)
+            Dim product = Entity.Product
+            For i = 0 To lookup.Count
+                data(i).SetValue(product.Name, lookup.Entity.Name(i))
+                data(i).SetValue(product.ProductNumber, lookup.Entity.ProductNumber(i))
+            Next
+            Return True
+        End Function
+    End Class
+End Class
+</code></pre></section>
+</div>
+
+<p>Will produce the following data grid UI, with foreign key lookup and paste append from clipboard implemented:
+<img src="/images/SalesOrderDetailUI.jpg" alt="image"></p>
+<p>In the end, you have ALL of your presentation logic in 100% strongly typed, extremely clean code!</p>
+<p>The data presentation described previously has been implemented in Windows Presentation Foundation (WPF) desktop development. Unfortunately, the whole thing cannot be ported to the world of web development, at this moment.</p>
+<h2 id="web-development-now-and-future">Web Development, Now and Future</h2>
+<p>Web development is further divided into <a href="https://en.wikipedia.org/wiki/Server-side_scripting">server-side</a> and <a href="https://en.wikipedia.org/wiki/Dynamic_web_page#Client-side_scripting">client-side</a> development. ASP.Net Core is the answer from Microsoft to web development:</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://docs.microsoft.com/en-us/aspnet/core/razor-pages/">Razor Pages</a></td>
+<td>Server-side page-focused framework.</td>
+</tr>
+<tr>
+<td><a href="https://docs.microsoft.com/en-us/aspnet/core/mvc/">MVC</a></td>
+<td>Server-side traditional Model-View-Controller framework.</td>
+</tr>
+<tr>
+<td><a href="https://docs.microsoft.com/en-us/aspnet/core/blazor/">Blazor</a></td>
+<td>Client-side web UI framework with .NET</td>
+</tr>
+<tr>
+<td>SPA</td>
+<td>Client-side frameworks support: <a href="https://docs.microsoft.com/en-us/aspnet/core/client-side/spa/angular">Angular</a>, <a href="https://docs.microsoft.com/en-us/aspnet/core/client-side/spa/react">React</a>, <a href="https://docs.microsoft.com/en-us/aspnet/core/client-side/spa/react-with-redux">React with Redux</a>, <a href="https://docs.microsoft.com/en-us/aspnet/core/client-side/spa-services">JavaScript Services</a></td>
+</tr>
+</tbody>
+</table>
+<p>Razor Pages and MVC are very similar in terms of data presentation. The key difference between Razor pages and MVC is that the model and controller code is also included within the Razor Page itself[<a href="https://hackernoon.com/asp-net-core-razor-pages-vs-mvc-which-will-create-better-web-apps-in-2018-bd137ae0acaa">1</a>]. They are perfect for simple pages that are read-only or do basic data input. Since web application is stateless and there is no UI on the server, the complex UI logic cannot and should not be handled on the server.</p>
+<p>Blazor, on the other hand, relies on <a href="https://webassembly.org/">WebAssembly</a> (abbreviated wasm), with .Net runtime hosted in the browser. Despite it's still in beta phase, the real challenge is DOM: DOM is not designed for interactive UI, so the complex UI logic cannot be handled, or at least elegantly, either.</p>
+<p>At this moment, RDO.Net provides DataSet support for Razor Pages server-side development, as NuGet package <a href="https://www.nuget.org/packages/DevZest.Data.AspNetCore/">DevZest.Data.AspNetCore</a>:</p>
+<ul>
+<li>DataSet JSON serialization/deserialization;</li>
+<li>DataSet model binding;</li>
+<li>DataSet tag helpers;</li>
+<li>DataSet validation.</li>
+</ul>
+<p>In the future, when WebAssembly becomes mature and popular, with an additional layer of non-DOM based (canvas based, for example) simple UI components, the data presentation described previously can be ported to client-side web development.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Docs/articles/overview/data_presentation_the_right_way.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © Weifen Luo | DevZest</span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

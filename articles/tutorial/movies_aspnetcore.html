@@ -1,0 +1,615 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Movies.AspNetCore Project </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Movies.AspNetCore Project ">
+    <meta name="generator" content="docfx 2.43.2.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="tutorial_movies_aspnetcore">
+<h1 id="moviesaspnetcore-project">Movies.AspNetCore Project</h1>
+
+<p>In this section, we will work on <em>Movies.AspNetCore</em> project, a ASP.Net Core Razor Pages application to display and manage a database of movies.</p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>It appears Visual Studio does not support VB.Net for ASP.Net Core Web Application. <em>Movies.AspNetCore</em> is only available in C#.</p>
+</div>
+<h2 id="project-setup">Project Setup</h2>
+<p>Make the following changes to <em>Movies.AspNetCore</em> project:</p>
+<p><em>Step 1</em>. Add project reference <em>Movies</em> to this project.</p>
+<p><em>Step 2</em>. Add NuGet package <a href="https://www.nuget.org/packages/DevZest.Data.AspNetCore/">DevZest.Data.AspNetCore</a> to this project.</p>
+<p><em>Step 3</em>. Create subfolder <em>App_Data</em> under project root directory. Ignore this folder in source control.</p>
+<p><em>Step 4</em>. Add following pre-build event command line to this project, in <em>Build Events</em> tab -&gt; <em>Pre-build event command line</em> in project property document. To show project property document, right click <em>Movies.AspNetCore</em> project in <em>Solution Explorer</em> tool window, then click <em>Properties</em> context menu item:</p>
+<pre><code class="lang-shell">COPY /Y &quot;$(ProjectDir)..\Movies.DbDesign\LocalDb\Movies.mdf&quot; &quot;$(ProjectDir)App_Data&quot;
+COPY /Y &quot;$(ProjectDir)..\Movies.DbDesign\LocalDb\Movies_log.ldf&quot; &quot;$(ProjectDir)App_Data&quot;
+</code></pre>
+<p>Build project <em>Movies.AspNetCore</em>, you should have two files <em>Movies.mdf</em> and <em>Movies_log.ldf</em> copied to <em>App_Data</em> folder.</p>
+<p><em>Step 5</em>. Change <em>appsettings.Development.json</em> to add connection string:</p>
+<pre><code class="lang-json" name="appsetting">{
+  &quot;ConnectionStrings&quot;: {
+    &quot;Movies&quot;: &quot;Data Source=(localdb)\\MSSQLLocalDB;AttachDBFilename=\&quot;%CONTENTROOTPATH%\\App_Data\\Movies.mdf\&quot;;Trusted_Connection=True;&quot;
+  },
+  &quot;Logging&quot;: {
+    &quot;LogLevel&quot;: {
+      &quot;Default&quot;: &quot;Debug&quot;,
+      &quot;System&quot;: &quot;Information&quot;,
+      &quot;Microsoft&quot;: &quot;Information&quot;
+    }
+  }
+}
+</code></pre><h2 id="configure-services">Configure Services</h2>
+<p>Change <em>Startup.cs</em> to add DataSet MVC support:</p>
+<pre><code class="lang-csharp" name="startup">using DevZest.Data.AspNetCore;
+using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+
+namespace Movies.AspNetCore
+{
+    public class Startup
+    {
+        private const string CONTENT_ROOT_PATH = &quot;%CONTENTROOTPATH%&quot;;
+
+        public Startup(IConfiguration configuration, IHostingEnvironment env)
+        {
+            Configuration = configuration;
+            Env = env;
+        }
+
+        public IConfiguration Configuration { get; }
+
+        public IHostingEnvironment Env { get; }
+
+        public void ConfigureServices(IServiceCollection services)
+        {
+            services.Configure&lt;CookiePolicyOptions&gt;(options =&gt;
+            {
+                options.CheckConsentNeeded = context =&gt; true;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
+
+
+            services.AddMvc()
+                .AddDataSetMvc()    // Add DataSet MVC support
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            // Inject Db and IDataSetHtmlGenerator
+            var connectionString = Configuration.GetConnectionString(&quot;Movies&quot;);
+            if (Env.IsDevelopment())
+            {
+                if (connectionString.Contains(CONTENT_ROOT_PATH))
+                    connectionString = connectionString.Replace(CONTENT_ROOT_PATH, Env.ContentRootPath);
+            }
+            services.AddScoped(serviceProvider =&gt; new Db(connectionString));
+        }
+
+        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+        {
+            if (env.IsDevelopment())
+            {
+                app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseExceptionHandler(&quot;/Error&quot;);
+                app.UseHsts();
+            }
+
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
+            app.UseCookiePolicy();
+
+            app.UseMvc();
+        }
+    }
+}
+</code></pre><h2 id="add-tag-helpers">Add Tag Helpers</h2>
+<p>Add tag helpers by changing <em>Pages/_ViewImports.cshtml</em> to:</p>
+<pre><code class="lang-cshtml" name="_ViewImports">@using Movies.AspNetCore
+@namespace Movies.AspNetCore.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, DevZest.Data.AspNetCore
+</code></pre><h2 id="razor-page-index">Razor Page Index</h2>
+<p>Change <em>Pages/Index.cshtml</em> to:</p>
+<pre><code class="lang-cshtml" name="Index">@page
+@model IndexModel
+
+@{
+    ViewData[&quot;Title&quot;] = &quot;Index&quot;;
+    var _ = Model.Movies._;
+}
+
+&lt;h1&gt;Index&lt;/h1&gt;
+
+&lt;p&gt;
+    &lt;a asp-page=&quot;Create&quot;&gt;Create New&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;form&gt;
+    &lt;p&gt;
+        &lt;input type=&quot;text&quot; asp-for=&quot;SearchString&quot; /&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;Filter&quot; /&gt;
+    &lt;/p&gt;
+&lt;/form&gt;
+
+&lt;table class=&quot;table&quot;&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;@_.Title.DisplayName&lt;/th&gt;
+            &lt;th&gt;@_.ReleaseDate.DisplayName&lt;/th&gt;
+            &lt;th&gt;@_.Genre.DisplayName&lt;/th&gt;
+            &lt;th&gt;@_.Price.DisplayName&lt;/th&gt;
+            &lt;th&gt;&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        @foreach (var dataRow in Model.Movies)
+        {
+            &lt;tr&gt;
+                &lt;td&gt;@_.Title[dataRow]&lt;/td&gt;
+                &lt;td&gt;@_.ReleaseDate[dataRow]?.ToString(&quot;yyyy-MM-dd&quot;)&lt;/td&gt;
+                &lt;td&gt;@_.Genre[dataRow]&lt;/td&gt;
+                &lt;td&gt;@_.Price[dataRow]?.ToString(&quot;C&quot;)&lt;/td&gt;
+                &lt;td&gt;
+                    &lt;a asp-page=&quot;./Edit&quot; asp-route-id=&quot;@_.ID[dataRow]&quot;&gt;Edit&lt;/a&gt; |
+                    &lt;a asp-page=&quot;./Details&quot; asp-route-id=&quot;@_.ID[dataRow]&quot;&gt;Details&lt;/a&gt; |
+                    &lt;a asp-page=&quot;./Delete&quot; asp-route-id=&quot;@_.ID[dataRow]&quot;&gt;Delete&lt;/a&gt;
+                &lt;/td&gt;
+            &lt;/tr&gt;
+        }
+    &lt;/tbody&gt;
+&lt;/table&gt;
+</code></pre>
+<p>Change <em>Pages/Index.cshtml.cs</em> to:</p>
+<pre><code class="lang-csharp" name="Index">using DevZest.Data;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Threading.Tasks;
+
+namespace Movies.AspNetCore.Pages
+{
+    public class IndexModel : PageModel
+    {
+        private readonly Db _db;
+
+        public IndexModel(Db db)
+        {
+            _db = db;
+        }
+
+        public DataSet&lt;Movie&gt; Movies { get; set; }
+
+        [BindProperty(SupportsGet = true)]
+        public string SearchString { get; set; }
+
+        public async Task OnGetAsync()
+        {
+            Movies = await _db.GetMoviesAsync(SearchString);
+        }
+    }
+}
+</code></pre><h2 id="razor-page-create">Razor Page Create</h2>
+<p>Add razor page <em>Pages/Create.cshtml</em>:</p>
+<pre><code class="lang-cshtml" name="Create">@page
+@model CreateModel
+
+@{
+    ViewData[&quot;Title&quot;] = &quot;Create&quot;;
+    var _ = Model.Movie._;
+}
+
+&lt;h1&gt;Create&lt;/h1&gt;
+
+&lt;h4&gt;Movie&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-md-4&quot;&gt;
+        &lt;form method=&quot;post&quot;&gt;
+            &lt;div asp-validation-summary=&quot;ModelOnly&quot; class=&quot;text-danger&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;label dataset-for=&quot;Movie&quot; dataset-column=&quot;@_.Title&quot; class=&quot;control-label&quot;&gt;&lt;/label&gt;
+                &lt;input dataset-for=&quot;Movie&quot; dataset-column=&quot;@_.Title&quot; class=&quot;form-control&quot; /&gt;
+                &lt;span dataset-validation-for=&quot;Movie&quot; dataset-column=&quot;@_.Title&quot; class=&quot;text-danger&quot;&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;label dataset-for=&quot;Movie&quot; dataset-column=&quot;@_.ReleaseDate&quot; class=&quot;control-label&quot;&gt;&lt;/label&gt;
+                &lt;input dataset-for=&quot;Movie&quot; dataset-column=&quot;@_.ReleaseDate&quot; class=&quot;form-control&quot; /&gt;
+                &lt;span dataset-validation-for=&quot;Movie&quot; dataset-column=&quot;@_.ReleaseDate&quot; class=&quot;text-danger&quot;&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;label dataset-for=&quot;Movie&quot; dataset-column=&quot;@_.Genre&quot; class=&quot;control-label&quot;&gt;&lt;/label&gt;
+                &lt;input dataset-for=&quot;Movie&quot; dataset-column=&quot;@_.Genre&quot; class=&quot;form-control&quot; /&gt;
+                &lt;span dataset-validation-for=&quot;Movie&quot; dataset-column=&quot;@_.Genre&quot; class=&quot;text-danger&quot;&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;label dataset-for=&quot;Movie&quot; dataset-column=&quot;@_.Price&quot; class=&quot;control-label&quot;&gt;&lt;/label&gt;
+                &lt;input dataset-for=&quot;Movie&quot; dataset-column=&quot;@_.Price&quot; class=&quot;form-control&quot; /&gt;
+                &lt;span dataset-validation-for=&quot;Movie&quot; dataset-column=&quot;@_.Price&quot; class=&quot;text-danger&quot;&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;input type=&quot;submit&quot; value=&quot;Create&quot; class=&quot;btn btn-primary&quot; /&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+    &lt;a asp-page=&quot;Index&quot;&gt;Back to List&lt;/a&gt;
+&lt;/div&gt;
+
+@section Scripts {
+    @{await Html.RenderPartialAsync(&quot;_ValidationScriptsPartial&quot;);}
+}
+</code></pre>
+<p>Change code behind <em>Pages/Create.cshtml.cs</em> to:</p>
+<pre><code class="lang-csharp" name="Create">using System.Threading.Tasks;
+using DevZest.Data;
+using DevZest.Data.AspNetCore;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+
+namespace Movies.AspNetCore.Pages
+{
+    public class CreateModel : PageModel
+    {
+        private readonly Db _db;
+
+        public CreateModel(Db db)
+        {
+            _db = db;
+            Movie = DataSet&lt;Movie&gt;.Create();
+        }
+
+        public IActionResult OnGet()
+        {
+            return Page();
+        }
+
+        [BindProperty]
+        [Scalar]
+        public DataSet&lt;Movie&gt; Movie { get; set; }
+
+        public async Task&lt;IActionResult&gt; OnPostAsync()
+        {
+            if (!ModelState.IsValid)
+                return Page();
+
+            await _db.Movie.InsertAsync(Movie);
+
+            return RedirectToPage(&quot;./Index&quot;);
+        }
+    }
+}
+</code></pre><h2 id="razor-page-edit">Razor Page Edit</h2>
+<p>Add razor page <em>Pages/Edit.cshtml</em>:</p>
+<pre><code class="lang-cshtml" name="Edit">@page &quot;{id:int}&quot;
+@model EditModel
+
+@{
+    ViewData[&quot;Title&quot;] = &quot;Edit&quot;;
+    var _ = Model.Movie._;
+}
+
+&lt;h1&gt;Edit&lt;/h1&gt;
+
+&lt;h4&gt;Movie&lt;/h4&gt;
+&lt;hr /&gt;
+&lt;div class=&quot;row&quot;&gt;
+    &lt;div class=&quot;col-md-4&quot;&gt;
+        &lt;form method=&quot;post&quot;&gt;
+            &lt;div asp-validation-summary=&quot;ModelOnly&quot; class=&quot;text-danger&quot;&gt;&lt;/div&gt;
+            &lt;input type=&quot;hidden&quot; dataset-for=&quot;Movie&quot; dataset-column=&quot;@_.ID&quot; /&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;label dataset-for=&quot;Movie&quot; dataset-column=&quot;@_.Title&quot; class=&quot;control-label&quot;&gt;&lt;/label&gt;
+                &lt;input dataset-for=&quot;Movie&quot; dataset-column=&quot;@_.Title&quot; class=&quot;form-control&quot; /&gt;
+                &lt;span dataset-validation-for=&quot;Movie&quot; dataset-column=&quot;@_.Title&quot; class=&quot;text-danger&quot;&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;label dataset-for=&quot;Movie&quot; dataset-column=&quot;@_.ReleaseDate&quot; class=&quot;control-label&quot;&gt;&lt;/label&gt;
+                &lt;input dataset-for=&quot;Movie&quot; dataset-column=&quot;@_.ReleaseDate&quot; class=&quot;form-control&quot; /&gt;
+                &lt;span dataset-validation-for=&quot;Movie&quot; dataset-column=&quot;@_.ReleaseDate&quot; class=&quot;text-danger&quot;&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;label dataset-for=&quot;Movie&quot; dataset-column=&quot;@_.Genre&quot; class=&quot;control-label&quot;&gt;&lt;/label&gt;
+                &lt;input dataset-for=&quot;Movie&quot; dataset-column=&quot;@_.Genre&quot; class=&quot;form-control&quot; /&gt;
+                &lt;span dataset-validation-for=&quot;Movie&quot; dataset-column=&quot;@_.Genre&quot; class=&quot;text-danger&quot;&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;label dataset-for=&quot;Movie&quot; dataset-column=&quot;@_.Price&quot; class=&quot;control-label&quot;&gt;&lt;/label&gt;
+                &lt;input dataset-for=&quot;Movie&quot; dataset-column=&quot;@_.Price&quot; class=&quot;form-control&quot; /&gt;
+                &lt;span dataset-validation-for=&quot;Movie&quot; dataset-column=&quot;@_.Price&quot; class=&quot;text-danger&quot;&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;form-group&quot;&gt;
+                &lt;input type=&quot;submit&quot; value=&quot;Save&quot; class=&quot;btn btn-primary&quot; /&gt;
+            &lt;/div&gt;
+        &lt;/form&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div&gt;
+    &lt;a asp-page=&quot;./Index&quot;&gt;Back to List&lt;/a&gt;
+&lt;/div&gt;
+
+@section Scripts {
+    @{await Html.RenderPartialAsync(&quot;_ValidationScriptsPartial&quot;);}
+}
+</code></pre>
+<p>Change code behind <em>Pages/Edit.cshtml.cs</em> to:</p>
+<pre><code class="lang-csharp" name="Edit">using DevZest.Data;
+using DevZest.Data.AspNetCore;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Threading.Tasks;
+
+namespace Movies.AspNetCore.Pages
+{
+    public class EditModel : PageModel
+    {
+        private readonly Db _db;
+
+        public EditModel(Db db)
+        {
+            _db = db;
+        }
+
+        [BindProperty]
+        [Scalar]
+        public DataSet&lt;Movie&gt; Movie { get; set; }
+
+        public async Task&lt;IActionResult&gt; OnGetAsync(int id)
+        {
+            Movie = await _db.GetMovieAsync(id);
+
+            if (Movie.Count == 0)
+                return NotFound();
+
+            return Page();
+        }
+
+        public async Task&lt;IActionResult&gt; OnPostAsync()
+        {
+            if (!ModelState.IsValid)
+                return Page();
+
+            await _db.Movie.UpdateAsync(Movie);
+
+            return RedirectToPage(&quot;./Index&quot;);
+        }
+    }
+}
+</code></pre><h2 id="razor-page-details">Razor Page Details</h2>
+<p>Add razor page <em>Pages/Details.cshtml</em>:</p>
+<pre><code class="lang-cshtml" name="Details">@page &quot;{id:int}&quot;
+@model DetailsModel
+
+@{
+    ViewData[&quot;Title&quot;] = &quot;Details&quot;;
+    var _ = Model.Movie._;
+}
+
+&lt;h1&gt;Details&lt;/h1&gt;
+
+&lt;div&gt;
+    &lt;h4&gt;Movie&lt;/h4&gt;
+    &lt;hr /&gt;
+    &lt;dl class=&quot;row&quot;&gt;
+        &lt;dt class=&quot;col-sm-2&quot;&gt;@_.Title.DisplayName&lt;/dt&gt;
+        &lt;dd class=&quot;col-sm-10&quot;&gt;@_.Title[0]&lt;/dd&gt;
+        &lt;dt class=&quot;col-sm-2&quot;&gt;@_.ReleaseDate.DisplayName&lt;/dt&gt;
+        &lt;dd class=&quot;col-sm-10&quot;&gt;@_.ReleaseDate[0]?.ToString(&quot;yyyy-MM-dd&quot;)&lt;/dd&gt;
+        &lt;dt class=&quot;col-sm-2&quot;&gt;@_.Genre.DisplayName&lt;/dt&gt;
+        &lt;dd class=&quot;col-sm-10&quot;&gt;@_.Genre[0]&lt;/dd&gt;
+        &lt;dt class=&quot;col-sm-2&quot;&gt;@_.Price.DisplayName&lt;/dt&gt;
+        &lt;dd class=&quot;col-sm-10&quot;&gt;@_.Price[0]?.ToString(&quot;C&quot;)&lt;/dd&gt;
+    &lt;/dl&gt;
+&lt;/div&gt;
+&lt;div&gt;
+    &lt;a asp-page=&quot;./Edit&quot; asp-route-id=&quot;@_.ID[0]&quot;&gt;Edit&lt;/a&gt; |
+    &lt;a asp-page=&quot;./Index&quot;&gt;Back to List&lt;/a&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Change code behind <em>Pages/Details.cshtml.cs</em> to:</p>
+<pre><code class="lang-csharp" name="Details">using DevZest.Data;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Threading.Tasks;
+
+namespace Movies.AspNetCore.Pages
+{
+    public class DetailsModel : PageModel
+    {
+        private readonly Db _db;
+
+        public DetailsModel(Db db)
+        {
+            _db = db;
+        }
+
+        public DataSet&lt;Movie&gt; Movie { get; private set; }
+
+        public async Task&lt;IActionResult&gt; OnGetAsync(int id)
+        {
+            Movie = await _db.GetMovieAsync(id);
+
+            if (Movie.Count == 0)
+                return NotFound();
+
+            return Page();
+        }
+    }
+}
+</code></pre><h2 id="razor-page-delete">Razor Page Delete</h2>
+<p>Add razor page <em>Pages/Delete.cshtml</em>:</p>
+<pre><code class="lang-cshtml" name="Delete">@page &quot;{id:int}&quot;
+@model DeleteModel
+
+@{
+    ViewData[&quot;Title&quot;] = &quot;Delete&quot;;
+    var _ = Model.Movie._;
+}
+
+&lt;h1&gt;Delete&lt;/h1&gt;
+
+&lt;h3&gt;Are you sure you want to delete this?&lt;/h3&gt;
+&lt;div&gt;
+    &lt;h4&gt;Movie&lt;/h4&gt;
+    &lt;hr /&gt;
+    &lt;dl class=&quot;row&quot;&gt;
+        &lt;dt class=&quot;col-sm-2&quot;&gt;@_.Title.DisplayName&lt;/dt&gt;
+        &lt;dd class=&quot;col-sm-10&quot;&gt;@_.Title[0]&lt;/dd&gt;
+        &lt;dt class=&quot;col-sm-2&quot;&gt;@_.ReleaseDate.DisplayName&lt;/dt&gt;
+        &lt;dd class=&quot;col-sm-10&quot;&gt;@_.ReleaseDate[0]?.ToString(&quot;yyyy-MM-dd&quot;)&lt;/dd&gt;
+        &lt;dt class=&quot;col-sm-2&quot;&gt;@_.Genre.DisplayName&lt;/dt&gt;
+        &lt;dd class=&quot;col-sm-10&quot;&gt;@_.Genre[0]&lt;/dd&gt;
+        &lt;dt class=&quot;col-sm-2&quot;&gt;@_.Price.DisplayName&lt;/dt&gt;
+        &lt;dd class=&quot;col-sm-10&quot;&gt;@_.Price[0]?.ToString(&quot;C&quot;)&lt;/dd&gt;
+    &lt;/dl&gt;
+
+    &lt;form method=&quot;post&quot;&gt;
+        &lt;input type=&quot;hidden&quot; name=&quot;id&quot; value=&quot;@_.ID[0]&quot; /&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;Delete&quot; class=&quot;btn btn-danger&quot; /&gt; |
+        &lt;a asp-page=&quot;./Index&quot;&gt;Back to List&lt;/a&gt;
+    &lt;/form&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Change code behind <em>Pages/Delete.cshtml.cs</em> to:</p>
+<pre><code class="lang-csharp" name="Delete">using DevZest.Data;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Threading.Tasks;
+
+namespace Movies.AspNetCore.Pages
+{
+    public class DeleteModel : PageModel
+    {
+        private readonly Db _db;
+
+        public DeleteModel(Db db)
+        {
+            _db = db;
+        }
+
+        public DataSet&lt;Movie&gt; Movie { get; private set; }
+
+        public async Task&lt;IActionResult&gt; OnGetAsync(int id)
+        {
+            Movie = await _db.GetMovieAsync(id);
+
+            if (Movie.Count == 0)
+                return NotFound();
+
+            return Page();
+        }
+
+        public async Task&lt;IActionResult&gt; OnPostAsync(int id)
+        {
+            await _db.Movie.DeleteAsync(m =&gt; m.ID == id);
+            return RedirectToPage(&quot;./Index&quot;);
+        }
+    }
+}
+</code></pre><h2 id="run">Run</h2>
+<p>Press F5 to run project <em>Movies.AspNetCore</em>. You should have a working ASP.Net Core application to display and manage a database of movies:</p>
+<p><img src="/images/tutorial_movies_aspnetcore_run.jpg" alt="image"></p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Docs/articles/tutorial/movies_aspnetcore.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © Weifen Luo | DevZest</span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

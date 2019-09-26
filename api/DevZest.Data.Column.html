@@ -1,0 +1,820 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Column
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Column
+   ">
+    <meta name="generator" content="docfx 2.43.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="DevZest.Data.Column">
+  
+  
+  <h1 id="DevZest_Data_Column" data-uid="DevZest.Data.Column" class="text-break">Class Column
+  </h1>
+  <div class="markdown level0 summary"><p>Represents a data column.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="DevZest.Data.Primitives.AddonBag.html">AddonBag</a></div>
+    <div class="level2"><a class="xref" href="DevZest.Data.Primitives.ModelMember.html">ModelMember</a></div>
+    <div class="level3"><span class="xref">Column</span></div>
+      <div class="level4"><a class="xref" href="DevZest.Data.Column-1.html">Column&lt;T&gt;</a></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="DevZest.Data.IColumns.html">IColumns</a></div>
+    <div><span class="xref">System.Collections.Generic.IReadOnlyCollection</span>&lt;<a class="xref" href="DevZest.Data.Column.html">Column</a>&gt;</div>
+    <div><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="DevZest.Data.Column.html">Column</a>&gt;</div>
+    <div><span class="xref">System.Collections.IEnumerable</span></div>
+    <div><span class="xref">System.Collections.Generic.IComparer</span>&lt;<a class="xref" href="DevZest.Data.DataRow.html">DataRow</a>&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.ModelMember.GetParent.html#DevZest_Data_Primitives_ModelMember_GetParent">ModelMember.GetParent()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.ModelMember.DesignMode.html#DevZest_Data_Primitives_ModelMember_DesignMode">ModelMember.DesignMode</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.ModelMember.VerifyDesignMode.html#DevZest_Data_Primitives_ModelMember_VerifyDesignMode">ModelMember.VerifyDesignMode()</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="DevZest.Data.html">DevZest.Data</a></h6>
+  <h6><strong>Assembly</strong>: DevZest.Data.dll</h6>
+  <h5 id="DevZest_Data_Column_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class Column : ModelMember, IDesignable, IColumns, IReadOnlyCollection&lt;Column&gt;, IEnumerable&lt;Column&gt;, IEnumerable, IComparer&lt;DataRow&gt;</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="DevZest_Data_Column__ctor" data-uid="DevZest.Data.Column.#ctor">
+          <a class="xref" href="DevZest.Data.Column.-ctor.html#DevZest_Data_Column__ctor">Column()</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates a new instance of <a class="xref" href="DevZest.Data.Column.html">Column</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="DevZest_Data_Column_AggregateSourceModels" data-uid="DevZest.Data.Column.AggregateSourceModels">
+          <a class="xref" href="DevZest.Data.Column.AggregateSourceModels.html#DevZest_Data_Column_AggregateSourceModels">AggregateSourceModels</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the set of parent <a class="xref" href="DevZest.Data.Column.Model.html#DevZest_Data_Column_Model">Model</a> objects aggregated to this <a class="xref" href="DevZest.Data.Column.html">Column</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_BaseColumns" data-uid="DevZest.Data.Column.BaseColumns">
+          <a class="xref" href="DevZest.Data.Column.BaseColumns.html#DevZest_Data_Column_BaseColumns">BaseColumns</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the referenced columns of the expression.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_DataType" data-uid="DevZest.Data.Column.DataType">
+          <a class="xref" href="DevZest.Data.Column.DataType.html#DevZest_Data_Column_DataType">DataType</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the data type of this <a class="xref" href="DevZest.Data.Column.html">Column</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_DbColumnDescription" data-uid="DevZest.Data.Column.DbColumnDescription">
+          <a class="xref" href="DevZest.Data.Column.DbColumnDescription.html#DevZest_Data_Column_DbColumnDescription">DbColumnDescription</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets or sets the column description in database.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_DbColumnName" data-uid="DevZest.Data.Column.DbColumnName">
+          <a class="xref" href="DevZest.Data.Column.DbColumnName.html#DevZest_Data_Column_DbColumnName">DbColumnName</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets or sets the column name in database.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_DbComputedExpression" data-uid="DevZest.Data.Column.DbComputedExpression">
+          <a class="xref" href="DevZest.Data.Column.DbComputedExpression.html#DevZest_Data_Column_DbComputedExpression">DbComputedExpression</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the database computation expression.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_DbExpression" data-uid="DevZest.Data.Column.DbExpression">
+          <a class="xref" href="DevZest.Data.Column.DbExpression.html#DevZest_Data_Column_DbExpression">DbExpression</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the <a class="xref" href="DevZest.Data.Column.DbExpression.html#DevZest_Data_Column_DbExpression">DbExpression</a> of this column for SQL generation.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_DisplayDescription" data-uid="DevZest.Data.Column.DisplayDescription">
+          <a class="xref" href="DevZest.Data.Column.DisplayDescription.html#DevZest_Data_Column_DisplayDescription">DisplayDescription</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets or sets a value that is used to display a description in the UI.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_DisplayName" data-uid="DevZest.Data.Column.DisplayName">
+          <a class="xref" href="DevZest.Data.Column.DisplayName.html#DevZest_Data_Column_DisplayName">DisplayName</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets or sets a value that is used for display the name in the UI.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_DisplayPrompt" data-uid="DevZest.Data.Column.DisplayPrompt">
+          <a class="xref" href="DevZest.Data.Column.DisplayPrompt.html#DevZest_Data_Column_DisplayPrompt">DisplayPrompt</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets or sets a value that will be used to set the watermark for prompts in the UI.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_DisplayShortName" data-uid="DevZest.Data.Column.DisplayShortName">
+          <a class="xref" href="DevZest.Data.Column.DisplayShortName.html#DevZest_Data_Column_DisplayShortName">DisplayShortName</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets or sets a value that is used for display the short name in the UI.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_HasDefaultComparer" data-uid="DevZest.Data.Column.HasDefaultComparer">
+          <a class="xref" href="DevZest.Data.Column.HasDefaultComparer.html#DevZest_Data_Column_HasDefaultComparer">HasDefaultComparer</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets a value indicates whether a default comparer exists for underlying data type.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_HasValueComparer" data-uid="DevZest.Data.Column.HasValueComparer">
+          <a class="xref" href="DevZest.Data.Column.HasValueComparer.html#DevZest_Data_Column_HasValueComparer">HasValueComparer</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets a value indicates whether this column has value comparer.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_Id" data-uid="DevZest.Data.Column.Id">
+          <a class="xref" href="DevZest.Data.Column.Id.html#DevZest_Data_Column_Id">Id</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the Id of the column.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_IsAbsoluteExpression" data-uid="DevZest.Data.Column.IsAbsoluteExpression">
+          <a class="xref" href="DevZest.Data.Column.IsAbsoluteExpression.html#DevZest_Data_Column_IsAbsoluteExpression">IsAbsoluteExpression</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets a value indicates whether this column is an expression and not a member of model.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_IsConcrete" data-uid="DevZest.Data.Column.IsConcrete">
+          <a class="xref" href="DevZest.Data.Column.IsConcrete.html#DevZest_Data_Column_IsConcrete">IsConcrete</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets a value indicates whether this column stores concrete data values.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_IsDbComputed" data-uid="DevZest.Data.Column.IsDbComputed">
+          <a class="xref" href="DevZest.Data.Column.IsDbComputed.html#DevZest_Data_Column_IsDbComputed">IsDbComputed</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets a value indicates whether this column is computed in database.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_IsDeserializable" data-uid="DevZest.Data.Column.IsDeserializable">
+          <a class="xref" href="DevZest.Data.Column.IsDeserializable.html#DevZest_Data_Column_IsDeserializable">IsDeserializable</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets a value indicates whether this column is deserializable.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_IsExpression" data-uid="DevZest.Data.Column.IsExpression">
+          <a class="xref" href="DevZest.Data.Column.IsExpression.html#DevZest_Data_Column_IsExpression">IsExpression</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets a value indicates whether current column is expression.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_IsIdentity" data-uid="DevZest.Data.Column.IsIdentity">
+          <a class="xref" href="DevZest.Data.Column.IsIdentity.html#DevZest_Data_Column_IsIdentity">IsIdentity</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets a value indicates whether this column is identity (auto increment).</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_IsNullable" data-uid="DevZest.Data.Column.IsNullable">
+          <a class="xref" href="DevZest.Data.Column.IsNullable.html#DevZest_Data_Column_IsNullable">IsNullable</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets a value indicates whether this column is nullable.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_IsPrimaryKey" data-uid="DevZest.Data.Column.IsPrimaryKey">
+          <a class="xref" href="DevZest.Data.Column.IsPrimaryKey.html#DevZest_Data_Column_IsPrimaryKey">IsPrimaryKey</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets a value indicates whether this column is part of primary key.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_IsSerializable" data-uid="DevZest.Data.Column.IsSerializable">
+          <a class="xref" href="DevZest.Data.Column.IsSerializable.html#DevZest_Data_Column_IsSerializable">IsSerializable</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets a value indicates whether this column is serializable.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_IsSystem" data-uid="DevZest.Data.Column.IsSystem">
+          <a class="xref" href="DevZest.Data.Column.IsSystem.html#DevZest_Data_Column_IsSystem">IsSystem</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets a value indicates whether this is a system column.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_IsUnique" data-uid="DevZest.Data.Column.IsUnique">
+          <a class="xref" href="DevZest.Data.Column.IsUnique.html#DevZest_Data_Column_IsUnique">IsUnique</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets a value indicates whether values of this column must be unique.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_Kind" data-uid="DevZest.Data.Column.Kind">
+          <a class="xref" href="DevZest.Data.Column.Kind.html#DevZest_Data_Column_Kind">Kind</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the <a class="xref" href="DevZest.Data.ColumnKind.html">ColumnKind</a> of this column.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_LogicalDataType" data-uid="DevZest.Data.Column.LogicalDataType">
+          <a class="xref" href="DevZest.Data.Column.LogicalDataType.html#DevZest_Data_Column_LogicalDataType">LogicalDataType</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets or sets the logical data type for this column.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_Model" data-uid="DevZest.Data.Column.Model">
+          <a class="xref" href="DevZest.Data.Column.Model.html#DevZest_Data_Column_Model">Model</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the parent model of this column.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_Name" data-uid="DevZest.Data.Column.Name">
+          <a class="xref" href="DevZest.Data.Column.Name.html#DevZest_Data_Column_Name">Name</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the name of the <a class="xref" href="DevZest.Data.Column.html">Column</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_Ordinal" data-uid="DevZest.Data.Column.Ordinal">
+          <a class="xref" href="DevZest.Data.Column.Ordinal.html#DevZest_Data_Column_Ordinal">Ordinal</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the zero-based position of the column in the <a class="xref" href="DevZest.Data.Model.Columns.html#DevZest_Data_Model_Columns">Columns</a> collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_OriginalDeclaringType" data-uid="DevZest.Data.Column.OriginalDeclaringType">
+          <a class="xref" href="DevZest.Data.Column.OriginalDeclaringType.html#DevZest_Data_Column_OriginalDeclaringType">OriginalDeclaringType</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the original owner type of this <a class="xref" href="DevZest.Data.Column.html">Column</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_OriginalId" data-uid="DevZest.Data.Column.OriginalId">
+          <a class="xref" href="DevZest.Data.Column.OriginalId.html#DevZest_Data_Column_OriginalId">OriginalId</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the original Id of the column.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_OriginalName" data-uid="DevZest.Data.Column.OriginalName">
+          <a class="xref" href="DevZest.Data.Column.OriginalName.html#DevZest_Data_Column_OriginalName">OriginalName</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the original name of this <a class="xref" href="DevZest.Data.Column.html">Column</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_RelativeName" data-uid="DevZest.Data.Column.RelativeName">
+          <a class="xref" href="DevZest.Data.Column.RelativeName.html#DevZest_Data_Column_RelativeName">RelativeName</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the relative name of this column, which exludes the parent projection name.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_ScalarSourceModels" data-uid="DevZest.Data.Column.ScalarSourceModels">
+          <a class="xref" href="DevZest.Data.Column.ScalarSourceModels.html#DevZest_Data_Column_ScalarSourceModels">ScalarSourceModels</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the set of <a class="xref" href="DevZest.Data.Column.Model.html#DevZest_Data_Column_Model">Model</a> objects directly combined this <a class="xref" href="DevZest.Data.Column.html">Column</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="DevZest_Data_Column_Asc" data-uid="DevZest.Data.Column.Asc">
+          <a class="xref" href="DevZest.Data.Column.Asc.html#DevZest_Data_Column_Asc">Asc()</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets this column as asending sorted.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_CastToString" data-uid="DevZest.Data.Column.CastToString">
+          <a class="xref" href="DevZest.Data.Column.CastToString.html#DevZest_Data_Column_CastToString">CastToString()</a>
+        </td>
+        <td class="markdown level1 summary"><p>Casts this column into a <a class="xref" href="DevZest.Data._String.html">_String</a> column.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_Compare_DevZest_Data_DataRow_DevZest_Data_DataRow_" data-uid="DevZest.Data.Column.Compare(DevZest.Data.DataRow,DevZest.Data.DataRow)">
+          <a class="xref" href="DevZest.Data.Column.Compare.html#DevZest_Data_Column_Compare_DevZest_Data_DataRow_DevZest_Data_DataRow_">Compare(DataRow, DataRow)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Compares values of two <a class="xref" href="DevZest.Data.DataRow.html">DataRow</a> objects.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_Compare_DevZest_Data_DataRow_DevZest_Data_DataRow_DevZest_Data_SortDirection_" data-uid="DevZest.Data.Column.Compare(DevZest.Data.DataRow,DevZest.Data.DataRow,DevZest.Data.SortDirection)">
+          <a class="xref" href="DevZest.Data.Column.Compare.html#DevZest_Data_Column_Compare_DevZest_Data_DataRow_DevZest_Data_DataRow_DevZest_Data_SortDirection_">Compare(DataRow, DataRow, SortDirection)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Compares values of two <a class="xref" href="DevZest.Data.DataRow.html">DataRow</a> objects, with specified sorting order.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_CreateParam_DevZest_Data_DataRow_" data-uid="DevZest.Data.Column.CreateParam(DevZest.Data.DataRow)">
+          <a class="xref" href="DevZest.Data.Column.CreateParam.html#DevZest_Data_Column_CreateParam_DevZest_Data_DataRow_">CreateParam(DataRow)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates column of parameter expression using value of given <a class="xref" href="DevZest.Data.DataRow.html">DataRow</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_Desc" data-uid="DevZest.Data.Column.Desc">
+          <a class="xref" href="DevZest.Data.Column.Desc.html#DevZest_Data_Column_Desc">Desc()</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets this column as descending sorted.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_Deserialize_System_Int32_DevZest_Data_JsonValue_" data-uid="DevZest.Data.Column.Deserialize(System.Int32,DevZest.Data.JsonValue)">
+          <a class="xref" href="DevZest.Data.Column.Deserialize.html#DevZest_Data_Column_Deserialize_System_Int32_DevZest_Data_JsonValue_">Deserialize(Int32, JsonValue)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Deserializes the value at given <a class="xref" href="DevZest.Data.DataRow.html">DataRow</a> ordinal from JSON.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_Equals_DevZest_Data_DataRow_DevZest_Data_Column_DevZest_Data_DataRow_" data-uid="DevZest.Data.Column.Equals(DevZest.Data.DataRow,DevZest.Data.Column,DevZest.Data.DataRow)">
+          <a class="xref" href="DevZest.Data.Column.Equals.html#DevZest_Data_Column_Equals_DevZest_Data_DataRow_DevZest_Data_Column_DevZest_Data_DataRow_">Equals(DataRow, Column, DataRow)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Determines whether two data values are equal.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_GetDefault" data-uid="DevZest.Data.Column.GetDefault">
+          <a class="xref" href="DevZest.Data.Column.GetDefault.html#DevZest_Data_Column_GetDefault">GetDefault()</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the <a class="xref" href="DevZest.Data.Addons.ColumnDefault.html">ColumnDefault</a> object associated with this column.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_GetDefaultValue" data-uid="DevZest.Data.Column.GetDefaultValue">
+          <a class="xref" href="DevZest.Data.Column.GetDefaultValue.html#DevZest_Data_Column_GetDefaultValue">GetDefaultValue()</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the default value of the column.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_GetExpression" data-uid="DevZest.Data.Column.GetExpression">
+          <a class="xref" href="DevZest.Data.Column.GetExpression.html#DevZest_Data_Column_GetExpression">GetExpression()</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the expression of this column.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_GetHashCode_DevZest_Data_DataRow_" data-uid="DevZest.Data.Column.GetHashCode(DevZest.Data.DataRow)">
+          <a class="xref" href="DevZest.Data.Column.GetHashCode.html#DevZest_Data_Column_GetHashCode_DevZest_Data_DataRow_">GetHashCode(DataRow)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Calculates the hash code for specified <a class="xref" href="DevZest.Data.DataRow.html">DataRow</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_GetIdentity_System_Boolean_" data-uid="DevZest.Data.Column.GetIdentity(System.Boolean)">
+          <a class="xref" href="DevZest.Data.Column.GetIdentity.html#DevZest_Data_Column_GetIdentity_System_Boolean_">GetIdentity(Boolean)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the <a class="xref" href="DevZest.Data.Addons.Identity.html">Identity</a> object if this column is identity column.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_GetValue_DevZest_Data_DataRow_System_Boolean_" data-uid="DevZest.Data.Column.GetValue(DevZest.Data.DataRow,System.Boolean)">
+          <a class="xref" href="DevZest.Data.Column.GetValue.html#DevZest_Data_Column_GetValue_DevZest_Data_DataRow_System_Boolean_">GetValue(DataRow, Boolean)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the data value of specified <a class="xref" href="DevZest.Data.DataRow.html">DataRow</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_IsNull_DevZest_Data_DataRow_" data-uid="DevZest.Data.Column.IsNull(DevZest.Data.DataRow)">
+          <a class="xref" href="DevZest.Data.Column.IsNull.html#DevZest_Data_Column_IsNull_DevZest_Data_DataRow_">IsNull(DataRow)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Determines whether the value of given <a class="xref" href="DevZest.Data.DataRow.html">DataRow</a> is null.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_IsReadOnly_DevZest_Data_DataRow_" data-uid="DevZest.Data.Column.IsReadOnly(DevZest.Data.DataRow)">
+          <a class="xref" href="DevZest.Data.Column.IsReadOnly.html#DevZest_Data_Column_IsReadOnly_DevZest_Data_DataRow_">IsReadOnly(DataRow)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets a value indicates whether this column is readonly for specified <a class="xref" href="DevZest.Data.DataRow.html">DataRow</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_MapFrom_DevZest_Data_Column_" data-uid="DevZest.Data.Column.MapFrom(DevZest.Data.Column)">
+          <a class="xref" href="DevZest.Data.Column.MapFrom.html#DevZest_Data_Column_MapFrom_DevZest_Data_Column_">MapFrom(Column)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Creates <a class="xref" href="DevZest.Data.ColumnMapping.html">ColumnMapping</a> from given <a class="xref" href="DevZest.Data.Column.html">Column</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_Nullable_System_Boolean_" data-uid="DevZest.Data.Column.Nullable(System.Boolean)">
+          <a class="xref" href="DevZest.Data.Column.Nullable.html#DevZest_Data_Column_Nullable_System_Boolean_">Nullable(Boolean)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Declares nullability of this column.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_Serialize_System_Int32_" data-uid="DevZest.Data.Column.Serialize(System.Int32)">
+          <a class="xref" href="DevZest.Data.Column.Serialize.html#DevZest_Data_Column_Serialize_System_Int32_">Serialize(Int32)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Serializes the value at given <a class="xref" href="DevZest.Data.DataRow.html">DataRow</a> oridinal as JSON.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_SetDefaultValue_System_Object_System_String_System_String_" data-uid="DevZest.Data.Column.SetDefaultValue(System.Object,System.String,System.String)">
+          <a class="xref" href="DevZest.Data.Column.SetDefaultValue.html#DevZest_Data_Column_SetDefaultValue_System_Object_System_String_System_String_">SetDefaultValue(Object, String, String)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Sets default value for this column.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_SetDisplayDescription_System_Func_System_String__" data-uid="DevZest.Data.Column.SetDisplayDescription(System.Func{System.String})">
+          <a class="xref" href="DevZest.Data.Column.SetDisplayDescription.html#DevZest_Data_Column_SetDisplayDescription_System_Func_System_String__">SetDisplayDescription(Func&lt;String&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Sets the <a class="xref" href="DevZest.Data.Column.DisplayDescription.html#DevZest_Data_Column_DisplayDescription">DisplayDescription</a> value getter.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_SetDisplayName_System_Func_System_String__" data-uid="DevZest.Data.Column.SetDisplayName(System.Func{System.String})">
+          <a class="xref" href="DevZest.Data.Column.SetDisplayName.html#DevZest_Data_Column_SetDisplayName_System_Func_System_String__">SetDisplayName(Func&lt;String&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Sets the <a class="xref" href="DevZest.Data.Column.DisplayName.html#DevZest_Data_Column_DisplayName">DisplayName</a> value getter.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_SetDisplayPrompt_System_Func_System_String__" data-uid="DevZest.Data.Column.SetDisplayPrompt(System.Func{System.String})">
+          <a class="xref" href="DevZest.Data.Column.SetDisplayPrompt.html#DevZest_Data_Column_SetDisplayPrompt_System_Func_System_String__">SetDisplayPrompt(Func&lt;String&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Sets the <a class="xref" href="DevZest.Data.Column.DisplayPrompt.html#DevZest_Data_Column_DisplayPrompt">DisplayPrompt</a> value getter.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_SetDisplayShortName_System_Func_System_String__" data-uid="DevZest.Data.Column.SetDisplayShortName(System.Func{System.String})">
+          <a class="xref" href="DevZest.Data.Column.SetDisplayShortName.html#DevZest_Data_Column_SetDisplayShortName_System_Func_System_String__">SetDisplayShortName(Func&lt;String&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Sets the <a class="xref" href="DevZest.Data.Column.DisplayShortName.html#DevZest_Data_Column_DisplayShortName">DisplayShortName</a> value getter.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_SetValue_DevZest_Data_DataRow_System_Object_System_Boolean_" data-uid="DevZest.Data.Column.SetValue(DevZest.Data.DataRow,System.Object,System.Boolean)">
+          <a class="xref" href="DevZest.Data.Column.SetValue.html#DevZest_Data_Column_SetValue_DevZest_Data_DataRow_System_Object_System_Boolean_">SetValue(DataRow, Object, Boolean)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Sets the data value of specified <a class="xref" href="DevZest.Data.DataRow.html">DataRow</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_ToString" data-uid="DevZest.Data.Column.ToString">
+          <a class="xref" href="DevZest.Data.Column.ToString.html#DevZest_Data_Column_ToString">ToString()</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_VerifyDbReader_DevZest_Data_DbReader_" data-uid="DevZest.Data.Column.VerifyDbReader(DevZest.Data.DbReader)">
+          <a class="xref" href="DevZest.Data.Column.VerifyDbReader.html#DevZest_Data_Column_VerifyDbReader_DevZest_Data_DbReader_">VerifyDbReader(DbReader)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Verifies whether this column belongs to provided <a class="xref" href="DevZest.Data.DbReader.html">DbReader</a>.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="eii">Explicit Interface Implementations
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="DevZest_Data_Column_DevZest_Data_IColumns_Add_DevZest_Data_Column_" data-uid="DevZest.Data.Column.DevZest#Data#IColumns#Add(DevZest.Data.Column)">
+          <a class="xref" href="DevZest.Data.Column.DevZest-Data-IColumns-Add.html#DevZest_Data_Column_DevZest_Data_IColumns_Add_DevZest_Data_Column_">IColumns.Add(Column)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_DevZest_Data_IColumns_Clear" data-uid="DevZest.Data.Column.DevZest#Data#IColumns#Clear">
+          <a class="xref" href="DevZest.Data.Column.DevZest-Data-IColumns-Clear.html#DevZest_Data_Column_DevZest_Data_IColumns_Clear">IColumns.Clear()</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_DevZest_Data_IColumns_Contains_DevZest_Data_Column_" data-uid="DevZest.Data.Column.DevZest#Data#IColumns#Contains(DevZest.Data.Column)">
+          <a class="xref" href="DevZest.Data.Column.DevZest-Data-IColumns-Contains.html#DevZest_Data_Column_DevZest_Data_IColumns_Contains_DevZest_Data_Column_">IColumns.Contains(Column)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_DevZest_Data_IColumns_IsSealed" data-uid="DevZest.Data.Column.DevZest#Data#IColumns#IsSealed">
+          <a class="xref" href="DevZest.Data.Column.DevZest-Data-IColumns-IsSealed.html#DevZest_Data_Column_DevZest_Data_IColumns_IsSealed">IColumns.IsSealed</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_DevZest_Data_IColumns_Remove_DevZest_Data_Column_" data-uid="DevZest.Data.Column.DevZest#Data#IColumns#Remove(DevZest.Data.Column)">
+          <a class="xref" href="DevZest.Data.Column.DevZest-Data-IColumns-Remove.html#DevZest_Data_Column_DevZest_Data_IColumns_Remove_DevZest_Data_Column_">IColumns.Remove(Column)</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_DevZest_Data_IColumns_Seal" data-uid="DevZest.Data.Column.DevZest#Data#IColumns#Seal">
+          <a class="xref" href="DevZest.Data.Column.DevZest-Data-IColumns-Seal.html#DevZest_Data_Column_DevZest_Data_IColumns_Seal">IColumns.Seal()</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_System_Collections_Generic_IEnumerable_DevZest_Data_Column__GetEnumerator" data-uid="DevZest.Data.Column.System#Collections#Generic#IEnumerable{DevZest#Data#Column}#GetEnumerator">
+          <a class="xref" href="DevZest.Data.Column.System-Collections-Generic-IEnumerable-DevZest-Data-Column--GetEnumerator.html#DevZest_Data_Column_System_Collections_Generic_IEnumerable_DevZest_Data_Column__GetEnumerator">IEnumerable&lt;Column&gt;.GetEnumerator()</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_System_Collections_Generic_IReadOnlyCollection_DevZest_Data_Column__Count" data-uid="DevZest.Data.Column.System#Collections#Generic#IReadOnlyCollection{DevZest#Data#Column}#Count">
+          <a class="xref" href="DevZest.Data.Column.System-Collections-Generic-IReadOnlyCollection-DevZest-Data-Column--Count.html#DevZest_Data_Column_System_Collections_Generic_IReadOnlyCollection_DevZest_Data_Column__Count">IReadOnlyCollection&lt;Column&gt;.Count</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Column_System_Collections_IEnumerable_GetEnumerator" data-uid="DevZest.Data.Column.System#Collections#IEnumerable#GetEnumerator">
+          <a class="xref" href="DevZest.Data.Column.System-Collections-IEnumerable-GetEnumerator.html#DevZest_Data_Column_System_Collections_IEnumerable_GetEnumerator">IEnumerable.GetEnumerator()</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="DevZest.Data.Columns.Except.html#DevZest_Data_Columns_Except_DevZest_Data_IColumns_DevZest_Data_IColumns_">Columns.Except(IColumns, IColumns)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Columns.Intersect.html#DevZest_Data_Columns_Intersect_DevZest_Data_IColumns_DevZest_Data_IColumns_">Columns.Intersect(IColumns, IColumns)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Columns.IsProperSubsetOf.html#DevZest_Data_Columns_IsProperSubsetOf_DevZest_Data_IColumns_DevZest_Data_IColumns_">Columns.IsProperSubsetOf(IColumns, IColumns)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Columns.IsProperSupersetOf.html#DevZest_Data_Columns_IsProperSupersetOf_DevZest_Data_IColumns_DevZest_Data_IColumns_">Columns.IsProperSupersetOf(IColumns, IColumns)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Columns.IsSubsetOf.html#DevZest_Data_Columns_IsSubsetOf_DevZest_Data_IColumns_DevZest_Data_IColumns_">Columns.IsSubsetOf(IColumns, IColumns)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Columns.IsSupersetOf.html#DevZest_Data_Columns_IsSupersetOf_DevZest_Data_IColumns_DevZest_Data_IColumns_">Columns.IsSupersetOf(IColumns, IColumns)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Columns.Overlaps.html#DevZest_Data_Columns_Overlaps_DevZest_Data_IColumns_DevZest_Data_IColumns_">Columns.Overlaps(IColumns, IColumns)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Columns.SetEquals.html#DevZest_Data_Columns_SetEquals_DevZest_Data_IColumns_DevZest_Data_IColumns_">Columns.SetEquals(IColumns, IColumns)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Columns.SymmetricExcept.html#DevZest_Data_Columns_SymmetricExcept_DevZest_Data_IColumns_DevZest_Data_IColumns_">Columns.SymmetricExcept(IColumns, IColumns)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Columns.Union.html#DevZest_Data_Columns_Union_DevZest_Data_IColumns_DevZest_Data_IColumns_">Columns.Union(IColumns, IColumns)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.DataRowComparer.ThenBy.html#DevZest_Data_DataRowComparer_ThenBy_System_Collections_Generic_IComparer_DevZest_Data_DataRow__System_Collections_Generic_IComparer_DevZest_Data_DataRow__">DataRowComparer.ThenBy(IComparer&lt;DataRow&gt;, IComparer&lt;DataRow&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Functions.Count.html#DevZest_Data_Functions_Count_DevZest_Data_Column_">Functions.Count(Column)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Functions.CountRows.html#DevZest_Data_Functions_CountRows_DevZest_Data_Column_">Functions.CountRows(Column)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Functions.First.html#DevZest_Data_Functions_First__1___0_">Functions.First&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Functions.IsNotNull.html#DevZest_Data_Functions_IsNotNull_DevZest_Data_Column_">Functions.IsNotNull(Column)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Functions.IsNull.html#DevZest_Data_Functions_IsNull_DevZest_Data_Column_">Functions.IsNull(Column)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Functions.Last.html#DevZest_Data_Functions_Last__1___0_">Functions.Last&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Functions.Max.html#DevZest_Data_Functions_Max__1___0_">Functions.Max&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Functions.Min.html#DevZest_Data_Functions_Min__1___0_">Functions.Min&lt;T&gt;(T)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Addons.AddonBagExtensions.GetAddons.html#DevZest_Data_Addons_AddonBagExtensions_GetAddons__1_DevZest_Data_Primitives_AddonBag_">AddonBagExtensions.GetAddons&lt;T&gt;(AddonBag)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Addons.AddonBagExtensions.GetAddon.html#DevZest_Data_Addons_AddonBagExtensions_GetAddon__1_DevZest_Data_Primitives_AddonBag_">AddonBagExtensions.GetAddon&lt;T&gt;(AddonBag)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Addons.AddonBagExtensions.GetAddon.html#DevZest_Data_Addons_AddonBagExtensions_GetAddon_DevZest_Data_Primitives_AddonBag_System_Object_">AddonBagExtensions.GetAddon(AddonBag, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Addons.AddonBagExtensions.Add.html#DevZest_Data_Addons_AddonBagExtensions_Add_DevZest_Data_Primitives_AddonBag_DevZest_Data_Addons_IAddon_">AddonBagExtensions.Add(AddonBag, IAddon)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Addons.AddonBagExtensions.AddOrUpdate.html#DevZest_Data_Addons_AddonBagExtensions_AddOrUpdate_DevZest_Data_Primitives_AddonBag_DevZest_Data_Addons_IAddon_">AddonBagExtensions.AddOrUpdate(AddonBag, IAddon)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Addons.AddonBagExtensions.ContainsAddon.html#DevZest_Data_Addons_AddonBagExtensions_ContainsAddon_DevZest_Data_Primitives_AddonBag_System_Object_">AddonBagExtensions.ContainsAddon(AddonBag, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Addons.AddonBagExtensions.RemoveAddon.html#DevZest_Data_Addons_AddonBagExtensions_RemoveAddon_DevZest_Data_Primitives_AddonBag_System_Object_">AddonBagExtensions.RemoveAddon(AddonBag, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Primitives.ColumnExtensions.TranslateTo.html#DevZest_Data_Primitives_ColumnExtensions_TranslateTo__1___0_DevZest_Data_Model_">ColumnExtensions.TranslateTo&lt;T&gt;(T, Model)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Primitives.ColumnExtensions.UnsafeMap.html#DevZest_Data_Primitives_ColumnExtensions_UnsafeMap_DevZest_Data_Column_DevZest_Data_Column_">ColumnExtensions.UnsafeMap(Column, Column)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Presenters.BindingFactory.BindToColumnHeader.html#DevZest_Data_Presenters_BindingFactory_BindToColumnHeader_DevZest_Data_Column_System_Object_">BindingFactory.BindToColumnHeader(Column, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Presenters.BindingFactory.BindToLabel.html#DevZest_Data_Presenters_BindingFactory_BindToLabel__1_DevZest_Data_Column_DevZest_Data_Presenters_RowBinding___0__System_String_System_IFormatProvider_">BindingFactory.BindToLabel&lt;TTarget&gt;(Column, RowBinding&lt;TTarget&gt;, String, IFormatProvider)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Presenters.BindingFactory.BindToTextBlock.html#DevZest_Data_Presenters_BindingFactory_BindToTextBlock_DevZest_Data_Column_System_String_System_IFormatProvider_">BindingFactory.BindToTextBlock(Column, String, IFormatProvider)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Presenters.BindingFactory.BindToTextBlock.html#DevZest_Data_Presenters_BindingFactory_BindToTextBlock_DevZest_Data_Column_System_Func_DevZest_Data_Presenters_RowPresenter_System_String__System_IFormatProvider_">BindingFactory.BindToTextBlock(Column, Func&lt;RowPresenter, String&gt;, IFormatProvider)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Presenters.BindingFactory.BindToHyperlink.html#DevZest_Data_Presenters_BindingFactory_BindToHyperlink_DevZest_Data_Column_System_Windows_Input_ICommand_System_String_System_IFormatProvider_">BindingFactory.BindToHyperlink(Column, ICommand, String, IFormatProvider)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Presenters.BindingFactory.BindToTextBox.html#DevZest_Data_Presenters_BindingFactory_BindToTextBox_DevZest_Data_Column_System_Windows_Data_IValueConverter_System_String_">BindingFactory.BindToTextBox(Column, IValueConverter, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Presenters.BindingFactory.BindToTextBox.html#DevZest_Data_Presenters_BindingFactory_BindToTextBox_DevZest_Data_Column_System_Windows_Data_IValueConverter_System_Globalization_CultureInfo_System_String_">BindingFactory.BindToTextBox(Column, IValueConverter, CultureInfo, String)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/new/master/apiSpec/new?filename=DevZest_Data_Column.md&amp;value=---%0Auid%3A%20DevZest.Data.Column%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Data/Column.cs/#L14" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © Weifen Luo | DevZest</span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

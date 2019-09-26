@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Expression Column </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Expression Column ">
+    <meta name="generator" content="docfx 2.43.2.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="expression_column">
+<h1 id="expression-column">Expression Column</h1>
+
+<p>Expression column is a <a class="xref" href="../../api/DevZest.Data.Column-1.html">Column&lt;T&gt;</a> derived object with its <a class="xref" href="../../api/DevZest.Data.Column-1.Expression.html#DevZest_Data_Column_1_Expression">Expression</a> property returns non null value and its <a class="xref" href="../../api/DevZest.Data.Column-1.IsExpression.html#DevZest_Data_Column_1_IsExpression">IsExpression</a> returns true. The <a class="xref" href="../../api/DevZest.Data.Column-1.Expression.html#DevZest_Data_Column_1_Expression">Expression</a> property, of type <a class="xref" href="../../api/DevZest.Data.Primitives.ColumnExpression-1.html">ColumnExpression&lt;T&gt;</a>, contains an expression tree for an expression column. This expression tree can be evaluated locally, or translated to native SQL expression by database providers.</p>
+<p>Concrete column class normally provide members such as static methods, operator overloads and type converters so that you can use to construct expression column. For example, <a class="xref" href="../../api/DevZest.Data._Int32.html">_Int32</a> provides following members:</p>
+<ul>
+<li>Static methods: <a class="xref" href="../../api/DevZest.Data._Int32.Param.html">Param</a> and <a class="xref" href="../../api/DevZest.Data._Int32.Const.html">Const</a>;</li>
+<li>Binary operator overrides: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code>, <code>&amp;</code>, <code>|</code>, <code>^</code>, <code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code></li>
+<li>Unary operator overrides: <code>-</code>(negates) and <code>~</code>(OnesComplement);</li>
+<li>Type casting, either implicitly or explicitly, from underlying data type and other column types.</li>
+</ul>
+<p>You can write expression using columns in a similar way of using their underlying data types. For example, the code <code>UnitPrice * (_Decimal.Const(1) - UnitPriceDiscount) * OrderQty).IfNull(_Decimal.Const(0))</code> produce a expression column to calculate order subtotal as <code>UnitPrice * (1 - UnitPriceDiscount) * OrderQty</code>.</p>
+<p>Pay attention when writing expression column:</p>
+<ul>
+<li>Understand the difference between value expression created by <code>Param</code> (implicit conversion) and <code>Const</code> (explicit conversion), which will create <a class="xref" href="../../api/DevZest.Data.Primitives.ParamExpression-1.html">ParamExpression&lt;T&gt;</a> and <a class="xref" href="../../api/DevZest.Data.Primitives.ConstantExpression-1.html">ConstantExpression&lt;T&gt;</a> respectively. Be aware of possible <strong>SQL injection</strong> if you're using <code>Const</code> expression when the value is provided by user.</li>
+<li>Since logical operator override is only allowed by boolean types, <a class="xref" href="../../api/DevZest.Data._Boolean.html">_Boolean</a> column type overrides '&amp;' and '|' instead of '&amp;&amp;' and '||'.</li>
+<li>Most column types override '==' and '!=' operator to compare underlying values. If you want to compare two column object reference, use <code>Object.ReferenceEquals</code> method instead.</li>
+</ul>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Docs/articles/programming_rdo_data/expression_column.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © Weifen Luo | DevZest</span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,206 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Tutorial: Get Started </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Tutorial: Get Started ">
+    <meta name="generator" content="docfx 2.43.2.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="tutorial_get_started">
+<h1 id="tutorial-get-started">Tutorial: Get Started</h1>
+
+<h2 id="overview">Overview</h2>
+<p>This tutorial contains step by step information to demonstrate the basics of RDO.Net. At the end, you'll have a WPF application:</p>
+<p><img src="/images/tutorial_movies_wpf_run.jpg" alt="image"></p>
+<p>and an ASP.Net Core Application(C# only):</p>
+<p><img src="/images/tutorial_movies_aspnetcore_run.jpg" alt="image"></p>
+<p>that can display and manage a database of movies.</p>
+<p>You can find the sample code under <code>samples/Tutorial</code> or <code>samples.vb/Tutorial/</code> in the source code repo.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li>Visual Studio 2017 (version &gt;= 15.3) or Visual Studio 2019 (all versions), with <em>.Net desktop development</em> and <em>ASP.NET web development</em> workloads installed.</li>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=DevZest.Data.Tools">RDO.Tools</a> installed and <a class="xref" href="../getting_started/get_started.html#rdotools-activation">activated</a>.</li>
+<li><a href="https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms">SQL Server Management Studio</a>, Version 17.0 or later.</li>
+</ul>
+<h2 id="create-the-solution">Create the Solution</h2>
+<ol>
+<li>In Visual Studio, create a blank solution <em>Tutorial</em>:</li>
+</ol>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_vs2017" role="tab" aria-controls="tabpanel_CeZOj-G++Q_vs2017" data-tab="vs2017" tabindex="0" aria-selected="true">VS2017</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_vs2019" role="tab" aria-controls="tabpanel_CeZOj-G++Q_vs2019" data-tab="vs2019" tabindex="-1">VS2019</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q_vs2017" role="tabpanel" data-tab="vs2017">
+
+<p><img src="/images/tutorial_create_solution_vs2017.jpg" alt="image"></p>
+</section>
+<section id="tabpanel_CeZOj-G++Q_vs2019" role="tabpanel" data-tab="vs2019" aria-hidden="true" hidden="hidden">
+
+<p><img src="/images/tutorial_create_solution_vs2019.jpg" alt="image"></p>
+</section>
+</div>
+
+<ol start="2">
+<li>Add projects into the solution:</li>
+</ol>
+<p>In Visual Studio <em>Solution Explorer</em> tool window, right click the solution <em>Tutorial</em>, then click &quot;<em>Add...</em>&quot;-&gt; &quot;<em>New Project...</em>&quot; from the context menu, to add the following projects:</p>
+<table>
+<thead>
+<tr>
+<th>Project Name</th>
+<th>Project Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><em>Movies</em></td>
+<td>Class Library (.Net Standard)</td>
+</tr>
+<tr>
+<td><em>Movies.DbInit</em></td>
+<td>Console App (.Net Core)</td>
+</tr>
+<tr>
+<td><em>Movies.Test</em></td>
+<td>MSTest Project (.Net Core)</td>
+</tr>
+<tr>
+<td><em>Movies.WPF</em></td>
+<td>WPF App (.Net Framework)</td>
+</tr>
+<tr>
+<td><em>Movies.AspNetCore</em></td>
+<td>ASP.Net Core Web Application (C# only)</td>
+</tr>
+</tbody>
+</table>
+<div class="NOTE">
+<h5>Note</h5>
+<ul>
+<li>It's important to name the projects correctly so the namespaces will match when you copy and paste code.</li>
+<li>It appears Visual Studio does not support VB.Net for ASP.Net Core Web Application. <em>Movies.AspNetCore</em> is only available in C#.</li>
+</ul>
+</div>
+<p>In the end, you will have following projects created in Visual Studio:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-1_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-1_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-1_cs" role="tabpanel" data-tab="cs">
+
+<p><img src="/images/tutorial_projects_cs.jpg" alt="image"></p>
+</section>
+<section id="tabpanel_CeZOj-G++Q-1_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<p><img src="/images/tutorial_projects_vb.jpg" alt="image"></p>
+</section>
+</div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Docs/articles/tutorial/get_started.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © Weifen Luo | DevZest</span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

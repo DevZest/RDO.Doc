@@ -1,0 +1,173 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Database Query </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Database Query ">
+    <meta name="generator" content="docfx 2.43.2.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="database-query">Database Query</h1>
+
+<p>Represented by a <a class="xref" href="../../api/DevZest.Data.DbQuery-1.html">DbQuery&lt;T&gt;</a> object, database query encapsulates a <a class="xref" href="../../api/DevZest.Data.Primitives.DbQueryStatement.html">DbQueryStatement</a> object which can be translated to native SQL by database session provider.</p>
+<h2 id="simple-query">Simple Query</h2>
+<p>You can make simple query by invoking the following methods of <a class="xref" href="../../api/DevZest.Data.DbSet-1.html">DbSet&lt;T&gt;</a> class, which is the base class for both <a class="xref" href="../../api/DevZest.Data.DbTable-1.html">DbTable&lt;T&gt;</a> and <a class="xref" href="../../api/DevZest.Data.DbQuery-1.html">DbQuery&lt;T&gt;</a>:</p>
+<ul>
+<li><a class="xref" href="../../api/DevZest.Data.DbSet-1.Where.html">Where</a>: Filtering, to extract only those records that fulfill a specified condition.</li>
+<li><a class="xref" href="../../api/DevZest.Data.DbSet-1.OrderBy.html">OrderBy</a>: Sorting the result-set in ascending or descending order, optionally you can specify <code>offset</code> and <code>fetch</code> parameters to limit the number of rows to be returned by the query.</li>
+<li><a class="xref" href="../../api/DevZest.Data.DbSet-1.Union.html">Union</a>/<a class="xref" href="../../api/DevZest.Data.DbSet-1.UnionAll.html">UnionAll</a>: Combining two <a class="xref" href="../../api/DevZest.Data.DbSet-1.html">DbSet&lt;T&gt;</a>.</li>
+</ul>
+<p>The following code:</p>
+<pre><code class="lang-cs">using (var db = new Db(...))
+{
+    var query = db.SalesOrderHeader
+        .Where(x =&gt; x.SalesOrderID == _Int32.Const(71774) | x.SalesOrderID == _Int32.Const(71776))
+        .OrderBy(x =&gt; x.SalesOrderID);
+}
+</code></pre>
+<p>will be translated to the following TSQL which can be examined by <code>query.ToString()</code>:</p>
+<pre><code class="lang-sql">SELECT
+    [SalesOrderHeader].[SalesOrderID] AS [SalesOrderID],
+    [SalesOrderHeader].[RevisionNumber] AS [RevisionNumber],
+    [SalesOrderHeader].[OrderDate] AS [OrderDate],
+    [SalesOrderHeader].[DueDate] AS [DueDate],
+    [SalesOrderHeader].[ShipDate] AS [ShipDate],
+    [SalesOrderHeader].[Status] AS [Status],
+    [SalesOrderHeader].[OnlineOrderFlag] AS [OnlineOrderFlag],
+    [SalesOrderHeader].[SalesOrderNumber] AS [SalesOrderNumber],
+    [SalesOrderHeader].[PurchaseOrderNumber] AS [PurchaseOrderNumber],
+    [SalesOrderHeader].[AccountNumber] AS [AccountNumber],
+    [SalesOrderHeader].[CustomerID] AS [CustomerID],
+    [SalesOrderHeader].[ShipToAddressID] AS [ShipToAddressID],
+    [SalesOrderHeader].[BillToAddressID] AS [BillToAddressID],
+    [SalesOrderHeader].[ShipMethod] AS [ShipMethod],
+    [SalesOrderHeader].[CreditCardApprovalCode] AS [CreditCardApprovalCode],
+    [SalesOrderHeader].[SubTotal] AS [SubTotal],
+    [SalesOrderHeader].[TaxAmt] AS [TaxAmt],
+    [SalesOrderHeader].[Freight] AS [Freight],
+    [SalesOrderHeader].[TotalDue] AS [TotalDue],
+    [SalesOrderHeader].[Comment] AS [Comment],
+    [SalesOrderHeader].[RowGuid] AS [RowGuid],
+    [SalesOrderHeader].[ModifiedDate] AS [ModifiedDate]
+FROM [SalesLT].[SalesOrderHeader] [SalesOrderHeader]
+WHERE (([SalesOrderHeader].[SalesOrderID] = 71774) OR ([SalesOrderHeader].[SalesOrderID] = 71776))
+ORDER BY [SalesOrderHeader].[SalesOrderID];
+</code></pre>
+<h2 id="query-builder">Query Builder</h2>
+<p>You can build any query via query builder, by calling <a class="xref" href="../../api/DevZest.Data.Primitives.DbSession.CreateQuery.html">CreateQuery</a>/<a class="xref" href="../../api/DevZest.Data.Primitives.DbSession.CreateAggregateQuery.html">CreateAggregateQuery</a> of your <code>Db</code> class. You need to provide a delegate to call these methods, which takes a <a class="xref" href="../../api/DevZest.Data.DbQueryBuilder.html">DbQueryBuilder</a>/<a class="xref" href="../../api/DevZest.Data.DbAggregateQueryBuilder.html">DbAggregateQueryBuilder</a> parameter you can use to build the query. The following code is the equivalent to the preceding example:</p>
+<pre><code class="lang-cs">using (var db = new Db(...))
+{
+    var query = db.CreateQuery((DbQueryBuilder builder) =&gt;
+        builder.From(db.SalesOrderHeader, out var x)
+            .AutoSelect()
+            .Where(x =&gt; x.SalesOrderID == _Int32.Const(71774) | x.SalesOrderID == _Int32.Const(71776))
+            .OrderBy(x =&gt; x.SalesOrderID));
+}
+</code></pre>
+<p>To use <a class="xref" href="../../api/DevZest.Data.DbQueryBuilder.html">DbQueryBuilder</a>/<a class="xref" href="../../api/DevZest.Data.DbAggregateQueryBuilder.html">DbAggregateQueryBuilder</a>:</p>
+<ul>
+<li>Call <code>From</code> for the first <code>DbSet&lt;T&gt;</code>;</li>
+<li>Call <code>InnerJoin</code>/<code>LeftJoin</code>/<code>RightJoin</code>/<code>CrossJoin</code> to join other <code>DbSet&lt;T&gt;</code>;</li>
+<li>Call <code>AutoSelect</code>/<code>Select</code> to select columns. <code>AutoSelect</code> is based on the <a class="xref" href="../../api/DevZest.Data.Column.Id.html#DevZest_Data_Column_Id">Id</a> and then <a class="xref" href="../../api/DevZest.Data.Column.OriginalId.html#DevZest_Data_Column_OriginalId">OriginalId</a> property value of <a class="xref" href="../../api/DevZest.Data.Column.html">Column</a> class;</li>
+<li>Optionally call <code>Where</code>/<code>OrderBy</code>, or <code>GroupBy</code>/<code>Having</code> if it's an aggregate query.</li>
+</ul>
+<p>Query builder mimics standard SQL SELECT statement closely. It's straightforward if you're familiar with writing SQL. You can find more examples in <code>Db.Api.cs</code> (or <code>Db.Api.vb</code>) of the <code>AdventureWorksLT</code> sample.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Docs/articles/programming_rdo_data/database_query.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © Weifen Luo | DevZest</span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

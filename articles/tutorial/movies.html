@@ -1,0 +1,781 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Movies Project </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Movies Project ">
+    <meta name="generator" content="docfx 2.43.2.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="tutorial_movies">
+<h1 id="movies-project">Movies Project</h1>
+
+<p>In this section, a <code>Movie</code> model class and a <code>Db</code> database session class will be added into <em>Movies</em> project.</p>
+<h2 id="project-setup">Project Setup</h2>
+<p>Make the following changes to <em>Movies</em> project:</p>
+<ul>
+<li>Delete <em>Class1.cs</em> (or <em>Class1.vb</em> if you're using VB.Net) from the project.</li>
+<li>Add NuGet Package <a href="https://www.nuget.org/packages/DevZest.Data.SqlServer/">DevZest.Data.SqlServer</a> to this project.</li>
+</ul>
+<h2 id="add-movie-class">Add Movie Class</h2>
+<h3 id="step-1-add-new-class">Step 1. Add new class</h3>
+<p>Add new class <code>Movie</code> into project <em>Movies</em>, inherits from <a class="xref" href="../../api/DevZest.Data.Model.html">Model</a>:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-csharp">using DevZest.Data;
+
+namespace Movies
+{
+    public class Movie : Model
+    {
+    }
+}
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-vb">Imports DevZest.Data
+
+Public Class Movie
+    Inherits Model
+
+End Class
+</code></pre>
+</section>
+</div>
+
+<p>The class can be viewed in <em>Model Visualizer</em> tool window:</p>
+<p><img src="/images/tutorial_model_visualizer_empty_movie.jpg" alt="image"></p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can show <em>Model Visualizer</em> tool window by clicking menu &quot;<em>View</em>&quot; -&gt; &quot;<em>Other Windows</em>&quot; -&gt; &quot;<em>Model Visualizer</em>&quot; in Visual Studio.</p>
+</div>
+<h3 id="step-2-add-id-field">Step 2. Add ID field</h3>
+<p>In <em>Model Visualizer</em> tool window, click the left top <img src="/images/model_visualizer_add.jpg" alt="image"> button, the following code snippet will be inserted:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-1_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-1_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-1_cs" role="tabpanel" data-tab="cs">
+
+<p><img src="/images/model_visualizer_add_property_cs.jpg" alt="image"></p>
+</section>
+<section id="tabpanel_CeZOj-G++Q-1_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<p><img src="/images/model_visualizer_add_property_vb.jpg" alt="image"></p>
+</section>
+</div>
+
+<p>Tabbing through the code snippet to change the property name to <code>ID</code> and property type to <code>_Int32</code>. When done, press ESC to quit code snippet editing. You now have a readonly property <code>ID</code> as type <code>_Int32</code>, with a compile-time warning <code>Missing registration for property 'ID'</code>. You can fix this warning by moving the caret to the property name, and pressing <em>CTRL-.</em> in Visual Studio:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-2_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-2_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-2_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-2_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-2_cs" role="tabpanel" data-tab="cs">
+
+<p><img src="/images/tutorial_add_mounter_cs.jpg" alt="image"></p>
+</section>
+<section id="tabpanel_CeZOj-G++Q-2_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<p><img src="/images/tutorial_add_mounter_vb.jpg" alt="image"></p>
+</section>
+</div>
+
+<p>Select <em>Add Mounter _ID</em> in the dropdown menu, RDO.Tools will automatically insert following code to register the property:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-3">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-3_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-3_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-3_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-3_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-3_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-csharp">...
+public static readonly Mounter&lt;_Int32&gt; _ID = RegisterColumn((Movie _) =&gt; _.ID);
+...
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q-3_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-vb">...
+Public Shared ReadOnly _ID As Mounter(Of _Int32) = RegisterColumn(Function(x As Movie) x.ID)
+...
+</code></pre>
+</section>
+</div>
+<hr>
+<h3 id="step-3-annotate-id-field">Step 3. Annotate ID field</h3>
+<p>In <em>Model Visualizer</em> tool window, right click <em>ID</em> field, available annotations for current field will be displayed as context menu:</p>
+<p><img src="/images/tutorial_add_identity.jpg" alt="image"></p>
+<p>Click <em>Identity</em>, field <code>ID</code> will be annotated with <code>Identity</code> attribute:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-4">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-4_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-4_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-4_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-4_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-4_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-csharp">using DevZest.Data;
+using DevZest.Data.Annotations;
+
+namespace Movies
+{
+    public class Movie : Model
+    {
+        public static readonly Mounter&lt;_Int32&gt; _ID = RegisterColumn((Movie _) =&gt; _.ID);
+
+        [Identity]
+        public _Int32 ID { get; private set; }
+    }
+}
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q-4_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-vb">Imports DevZest.Data
+Imports DevZest.Data.Annotations
+
+Public Class Movie
+    Inherits Model
+
+    Public Shared ReadOnly _ID As Mounter(Of _Int32) = RegisterColumn(Function(x As Movie) x.ID)
+
+    Private m_ID As _Int32
+    &lt;Identity&gt;
+    Public Property ID As _Int32
+        Get
+            Return m_ID
+        End Get
+        Private Set
+            m_ID = Value
+        End Set
+    End Property
+End Class
+</code></pre>
+</section>
+</div>
+<h3 id="step-4-add-primary-key">Step 4. Add primary key</h3>
+<p>In <em>Model Visualizer</em> tool window, click the left top <img src="/images/model_visualizer_add.jpg" alt="image"> dropdown button, then click <em>Add Primary Key...</em> from the drop down menu:</p>
+<p><img src="/images/tutorial_add_primary_key_menu.jpg" alt="image"></p>
+<p>The following dialog will be displayed:</p>
+<p><img src="/images/tutorial_add_primary_key.jpg" alt="image"></p>
+<p>Field <code>ID</code> is detected automatically. Click <em>OK</em> button in the dialog, the following code will be generated automatically:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-5">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-5_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-5_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-5_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-5_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-5_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-csharp">...
+public class Movie : Model&lt;Movie.PK&gt;
+{
+    public sealed class PK : CandidateKey
+    {
+        public PK(_Int32 id) : base(id)
+        {
+        }
+    }
+
+    protected sealed override PK CreatePrimaryKey()
+    {
+        return new PK(ID);
+    }
+
+    public class Key : Key&lt;PK&gt;
+    {
+        static Key()
+        {
+            Register((Key _) =&gt; _.ID, _ID);
+        }
+
+        protected sealed override PK CreatePrimaryKey()
+        {
+            return new PK(ID);
+        }
+
+        public _Int32 ID { get; private set; }
+    }
+...
+}
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q-5_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-vb">Public Class Movie
+    Inherits Model(Of Movie.PK)
+
+    Public NotInheritable Class PK
+        Inherits CandidateKey
+
+        Public Sub New(id As _Int32)
+            MyBase.New(id)
+        End Sub
+    End Class
+
+    Protected NotOverridable Overrides Function CreatePrimaryKey() As PK
+        Return New PK(ID)
+    End Function
+
+    Public Class Key
+        Inherits Key(Of PK)
+
+        Shared Sub New()
+            Register(Function(x As Key) x.ID, _ID)
+        End Sub
+
+        Protected NotOverridable Overrides Function CreatePrimaryKey() As PK
+            Return New PK(ID)
+        End Function
+
+        Private m_ID As _Int32
+
+        Public Property ID As _Int32
+            Get
+                Return m_ID
+            End Get
+            Private Set
+                m_ID = Value
+            End Set
+        End Property
+    End Class
+    ...
+End Class
+</code></pre>
+</section>
+</div>
+<h3 id="step-5-add-other-fields">Step 5. Add other fields</h3>
+<p>Add following fields using steps described previously:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-6">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-6_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-6_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-6_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-6_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-6_cs" role="tabpanel" data-tab="cs">
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Annotation(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Title</td>
+<td>_String</td>
+<td><code>[StringLength(60, MinimumLength = 3)]</code>, <code>[Required]</code>, <code>[SqlNVarChar(60)]</code></td>
+</tr>
+<tr>
+<td>ReleaseDate</td>
+<td>_DateTime</td>
+<td><code>Display(Name = &quot;Release Date&quot;)]</code>, <code>[SqlDate]</code>, <code>[Required]</code></td>
+</tr>
+<tr>
+<td>Genre</td>
+<td>_String</td>
+<td><code>[RegularExpression(@&quot;^[A-Z]+[a-zA-Z&quot;&quot;'\s-]*$&quot;)]</code>, <code>[Required]</code>, <code>[StringLength(30)]</code>, <code>[SqlNVarChar(30)]</code></td>
+</tr>
+<tr>
+<td>Price</td>
+<td>_Decimal</td>
+<td><code>[SqlMoney]</code>, <code>[Required]</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tabpanel_CeZOj-G++Q-6_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Annotation(s)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Title</td>
+<td>_String</td>
+<td><code>&lt;StringLength(60, MinimumLength:=3)&gt;</code>, <code>&lt;Required&gt;</code>, <code>&lt;SqlNVarChar(60)&gt;</code></td>
+</tr>
+<tr>
+<td>ReleaseDate</td>
+<td>_DateTime</td>
+<td><code>&lt;Display(Name:=&quot;Release Date&quot;)&gt;</code>, <code>&lt;SqlDate&gt;</code>, <code>&lt;Required&gt;</code></td>
+</tr>
+<tr>
+<td>Genre</td>
+<td>_String</td>
+<td><code>&lt;RegularExpression(&quot;^[A-Z]+[a-zA-Z&quot;&quot;'\s-]*$&quot;)&gt;</code>, <code>&lt;Required&gt;</code>, <code>&lt;StringLength(30)&gt;</code>, <code>&lt;SqlNVarChar(30)&gt;</code></td>
+</tr>
+<tr>
+<td>Price</td>
+<td>_Decimal</td>
+<td><code>&lt;SqlMoney&gt;</code>, <code>&lt;Required&gt;</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+</div>
+
+<div class="NOTE">
+<h5>Note</h5>
+<p>Please keep in mind <em>Model Visualizer</em> is your best friend. It provides much more features which are not demonstrated in this tutorial for simplicity.</p>
+</div>
+<h3 id="the-final-movie-class">The final <em>Movie</em> class:</h3>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-7">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-7_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-7_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-7_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-7_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-7_cs" role="tabpanel" data-tab="cs">
+<pre><code class="lang-csharp" name="Movie">using DevZest.Data;
+using DevZest.Data.Annotations;
+using DevZest.Data.SqlServer;
+
+namespace Movies
+{
+    public class Movie : Model&lt;Movie.PK&gt;
+    {
+        public sealed class PK : CandidateKey
+        {
+            public PK(_Int32 id) : base(id)
+            {
+            }
+        }
+
+        protected sealed override PK CreatePrimaryKey()
+        {
+            return new PK(ID);
+        }
+
+        public class Key : Key&lt;PK&gt;
+        {
+            static Key()
+            {
+                Register((Key _) =&gt; _.ID, _ID);
+            }
+
+            protected sealed override PK CreatePrimaryKey()
+            {
+                return new PK(ID);
+            }
+
+            public _Int32 ID { get; private set; }
+        }
+
+        public static readonly Mounter&lt;_Int32&gt; _ID = RegisterColumn((Movie _) =&gt; _.ID);
+        public static readonly Mounter&lt;_String&gt; _Title = RegisterColumn((Movie _) =&gt; _.Title);
+        public static readonly Mounter&lt;_DateTime&gt; _ReleaseDate = RegisterColumn((Movie _) =&gt; _.ReleaseDate);
+        public static readonly Mounter&lt;_String&gt; _Genre = RegisterColumn((Movie _) =&gt; _.Genre);
+        public static readonly Mounter&lt;_Decimal&gt; _Price = RegisterColumn((Movie _) =&gt; _.Price);
+
+        [Identity]
+        public _Int32 ID { get; private set; }
+
+        [StringLength(60, MinimumLength = 3)]
+        [Required]
+        [SqlNVarChar(60)]
+        public _String Title { get; private set; }
+
+        [Display(Name = &quot;Release Date&quot;)]
+        [SqlDate]
+        [Required]
+        public _DateTime ReleaseDate { get; private set; }
+
+        [RegularExpression(@&quot;^[A-Z]+[a-zA-Z&quot;&quot;'\s-]*$&quot;)]
+        [Required]
+        [StringLength(30)]
+        [SqlNVarChar(30)]
+        public _String Genre { get; private set; }
+
+        [SqlMoney]
+        [Required]
+        public _Decimal Price { get; private set; }
+    }
+}
+</code></pre></section>
+<section id="tabpanel_CeZOj-G++Q-7_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-vb" name="Movie">Imports DevZest.Data
+Imports DevZest.Data.Annotations
+Imports DevZest.Data.SqlServer
+
+Public Class Movie
+    Inherits Model(Of Movie.PK)
+
+    Public NotInheritable Class PK
+        Inherits CandidateKey
+
+        Public Sub New(id As _Int32)
+            MyBase.New(id)
+        End Sub
+    End Class
+
+    Protected NotOverridable Overrides Function CreatePrimaryKey() As PK
+        Return New PK(ID)
+    End Function
+
+    Public Class Key
+        Inherits Key(Of PK)
+
+        Shared Sub New()
+            Register(Function(x As Key) x.ID, _ID)
+        End Sub
+
+        Protected NotOverridable Overrides Function CreatePrimaryKey() As PK
+            Return New PK(ID)
+        End Function
+
+        Private m_ID As _Int32
+
+        Public Property ID As _Int32
+            Get
+                Return m_ID
+            End Get
+            Private Set
+                m_ID = Value
+            End Set
+        End Property
+    End Class
+
+    Public Shared ReadOnly _ID As Mounter(Of _Int32) = RegisterColumn(Function(x As Movie) x.ID)
+    Public Shared ReadOnly _Title As Mounter(Of _String) = RegisterColumn(Function(x As Movie) x.Title)
+    Public Shared ReadOnly _ReleaseDate As Mounter(Of _DateTime) = RegisterColumn(Function(x As Movie) x.ReleaseDate)
+    Public Shared ReadOnly _Genre As Mounter(Of _String) = RegisterColumn(Function(x As Movie) x.Genre)
+    Public Shared ReadOnly _Price As Mounter(Of _Decimal) = RegisterColumn(Function(x As Movie) x.Price)
+
+    Private m_ID As _Int32
+    &lt;Identity&gt;
+    Public Property ID As _Int32
+        Get
+            Return m_ID
+        End Get
+        Private Set
+            m_ID = Value
+        End Set
+    End Property
+
+    Private m_Title As _String
+    &lt;StringLength(60, MinimumLength:=3)&gt;
+    &lt;Required&gt;
+    &lt;SqlNVarChar(60)&gt;
+    Public Property Title As _String
+        Get
+            Return m_Title
+        End Get
+        Private Set
+            m_Title = Value
+        End Set
+    End Property
+
+    Private m_ReleaseDate As _DateTime
+    &lt;Display(Name:=&quot;Release Date&quot;)&gt;
+    &lt;SqlDate&gt;
+    &lt;Required&gt;
+    Public Property ReleaseDate As _DateTime
+        Get
+            Return m_ReleaseDate
+        End Get
+        Private Set
+            m_ReleaseDate = Value
+        End Set
+    End Property
+
+    Private m_Genre As _String
+    &lt;RegularExpression(&quot;^[A-Z]+[a-zA-Z&quot;&quot;'\s-]*$&quot;)&gt;
+    &lt;Required&gt;
+    &lt;StringLength(30)&gt;
+    &lt;SqlNVarChar(30)&gt;
+    Public Property Genre As _String
+        Get
+            Return m_Genre
+        End Get
+        Private Set
+            m_Genre = Value
+        End Set
+    End Property
+
+    Private m_Price As _Decimal
+    &lt;SqlMoney&gt;
+    &lt;Required&gt;
+    Public Property Price As _Decimal
+        Get
+            Return m_Price
+        End Get
+        Private Set
+            m_Price = Value
+        End Set
+    End Property
+End Class
+</code></pre></section>
+</div>
+<h2 id="add-db-class">Add Db Class</h2>
+<h3 id="add-new-class">Add new class</h3>
+<p>Add new class <code>Db</code> into project <em>Movies</em>, inherits from <a class="xref" href="../../api/DevZest.Data.SqlServer.SqlSession.html">SqlSession</a>:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-8">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-8_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-8_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-8_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-8_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-8_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-csharp">using DevZest.Data.SqlServer;
+using System.Data.SqlClient;
+
+namespace Movies
+{
+    public partial class Db : SqlSession
+    {
+        public Db(string connectionString)
+            : this(new SqlConnection(connectionString))
+        {
+        }
+
+        public Db(SqlConnection sqlConnection)
+            : base(sqlConnection)
+        {
+        }
+    }
+}
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q-8_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-vb">Imports System.Data.SqlClient
+Imports DevZest.Data.SqlServer
+
+Partial Public Class Db
+    Inherits SqlSession
+    Public Sub New(connectionString As String)
+        Me.New(New SqlConnection(connectionString))
+    End Sub
+
+    Public Sub New(sqlConnection As SqlConnection)
+        MyBase.New(sqlConnection)
+    End Sub
+End Class
+</code></pre>
+</section>
+</div>
+
+<p>The class can be viewed in <em>Db Visualizer</em> tool window:</p>
+<p><img src="/images/tutorial_db_visualizer_empty_db.jpg" alt="image"></p>
+<div class="NOTE">
+<h5>Note</h5>
+<p>You can show <em>Db Visualizer</em> tool window by clicking menu &quot;<em>View</em>&quot; -&gt; &quot;<em>Other Windows</em>&quot; -&gt; &quot;<em>Db Visualizer</em>&quot; in Visual Studio.</p>
+</div>
+<h3 id="add-table-property">Add table property</h3>
+<p>In <em>Db Visualizer</em> tool window, click the left top <img src="/images/db_visualizer_add_table.jpg" alt="image"> button, the following dialog will be displayed:</p>
+<p><img src="/images/tutorial_add_table.jpg" alt="image"></p>
+<p>Select <em>Movie</em> from <em>Model:</em> combo box, then click button <em>OK</em>, a <code>Movie</code> property will be generated in class <code>Db</code>:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-9">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-9_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-9_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-9_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-9_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-9_cs" role="tabpanel" data-tab="cs">
+<pre><code class="lang-csharp" name="Db">using DevZest.Data;
+using DevZest.Data.SqlServer;
+using System.Data.SqlClient;
+
+namespace Movies
+{
+    public partial class Db : SqlSession
+    {
+        public Db(string connectionString)
+            : this(new SqlConnection(connectionString))
+        {
+        }
+
+        public Db(SqlConnection sqlConnection)
+            : base(sqlConnection)
+        {
+        }
+
+        private DbTable&lt;Movie&gt; _movie;
+        public DbTable&lt;Movie&gt; Movie
+        {
+            get
+            {
+                return GetTable(ref _movie);
+            }
+        }
+    }
+}
+</code></pre></section>
+<section id="tabpanel_CeZOj-G++Q-9_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+<pre><code class="lang-vb" name="Db">Imports DevZest.Data
+Imports System.Data.SqlClient
+Imports DevZest.Data.SqlServer
+
+Partial Public Class Db
+    Inherits SqlSession
+    Public Sub New(connectionString As String)
+        Me.New(New SqlConnection(connectionString))
+    End Sub
+
+    Public Sub New(sqlConnection As SqlConnection)
+        MyBase.New(sqlConnection)
+    End Sub
+
+    Private m_Movie As DbTable(Of Movie)
+    Public ReadOnly Property Movie As DbTable(Of Movie)
+        Get
+            Return GetTable(m_Movie)
+        End Get
+    End Property
+End Class
+</code></pre></section>
+</div>
+
+<div class="NOTE">
+<h5>Note</h5>
+<p>Please keep in mind <em>Db Visualizer</em> is your best friend. It provides additional features which are not demonstrated in this tutorial for simplicity.</p>
+</div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Docs/articles/tutorial/movies.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © Weifen Luo | DevZest</span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

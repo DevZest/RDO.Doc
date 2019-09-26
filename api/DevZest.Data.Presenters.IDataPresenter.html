@@ -1,0 +1,451 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Interface IDataPresenter
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Interface IDataPresenter
+   ">
+    <meta name="generator" content="docfx 2.43.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="DevZest.Data.Presenters.IDataPresenter">
+  
+  
+  <h1 id="DevZest_Data_Presenters_IDataPresenter" data-uid="DevZest.Data.Presenters.IDataPresenter" class="text-break">Interface IDataPresenter
+  </h1>
+  <div class="markdown level0 summary"><p>Contains presentation logic for scalar data and DataSet.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.IService.DataPresenter.html#DevZest_Data_Presenters_IService_DataPresenter">IService.DataPresenter</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Presenters.IService.Initialize.html#DevZest_Data_Presenters_IService_Initialize_DevZest_Data_Presenters_DataPresenter_">IService.Initialize(DataPresenter)</a>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="DevZest.Data.Presenters.html">DevZest.Data.Presenters</a></h6>
+  <h6><strong>Assembly</strong>: DevZest.Data.WPF.dll</h6>
+  <h5 id="DevZest_Data_Presenters_IDataPresenter_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public interface IDataPresenter : IService</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="DevZest_Data_Presenters_IDataPresenter_CanInsert" data-uid="DevZest.Data.Presenters.IDataPresenter.CanInsert">
+          <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.CanInsert.html#DevZest_Data_Presenters_IDataPresenter_CanInsert">CanInsert</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets a value inidicates whether new row can be inserted.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_IDataPresenter_CanSubmitInput" data-uid="DevZest.Data.Presenters.IDataPresenter.CanSubmitInput">
+          <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.CanSubmitInput.html#DevZest_Data_Presenters_IDataPresenter_CanSubmitInput">CanSubmitInput</a>
+        </td>
+        <td class="markdown level1 summary"><p>Determines whether data input can be submitted without any validation error.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_IDataPresenter_CurrentContainerView" data-uid="DevZest.Data.Presenters.IDataPresenter.CurrentContainerView">
+          <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.CurrentContainerView.html#DevZest_Data_Presenters_IDataPresenter_CurrentContainerView">CurrentContainerView</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the current <a class="xref" href="DevZest.Data.Views.Primitives.ContainerView.html">ContainerView</a>, which is either <a class="xref" href="DevZest.Data.Views.RowView.html">RowView</a> or <a class="xref" href="DevZest.Data.Views.BlockView.html">BlockView</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_IDataPresenter_CurrentRow" data-uid="DevZest.Data.Presenters.IDataPresenter.CurrentRow">
+          <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.CurrentRow.html#DevZest_Data_Presenters_IDataPresenter_CurrentRow">CurrentRow</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets or sets the current <a class="xref" href="DevZest.Data.Presenters.RowPresenter.html">RowPresenter</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_IDataPresenter_DataSet" data-uid="DevZest.Data.Presenters.IDataPresenter.DataSet">
+          <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.DataSet.html#DevZest_Data_Presenters_IDataPresenter_DataSet">DataSet</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the source DataSet.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_IDataPresenter_EditingRow" data-uid="DevZest.Data.Presenters.IDataPresenter.EditingRow">
+          <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.EditingRow.html#DevZest_Data_Presenters_IDataPresenter_EditingRow">EditingRow</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the current <a class="xref" href="DevZest.Data.Presenters.RowPresenter.html">RowPresenter</a> which is in edit mode.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_IDataPresenter_FlowRepeatCount" data-uid="DevZest.Data.Presenters.IDataPresenter.FlowRepeatCount">
+          <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.FlowRepeatCount.html#DevZest_Data_Presenters_IDataPresenter_FlowRepeatCount">FlowRepeatCount</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the value that specifies how many rows will flow in BlockView first, then expand afterwards.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_IDataPresenter_InsertingRow" data-uid="DevZest.Data.Presenters.IDataPresenter.InsertingRow">
+          <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.InsertingRow.html#DevZest_Data_Presenters_IDataPresenter_InsertingRow">InsertingRow</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the current <a class="xref" href="DevZest.Data.Presenters.RowPresenter.html">RowPresenter</a> which is in inserting mode.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_IDataPresenter_IsEditing" data-uid="DevZest.Data.Presenters.IDataPresenter.IsEditing">
+          <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.IsEditing.html#DevZest_Data_Presenters_IDataPresenter_IsEditing">IsEditing</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets a value indicates whether current row is in edit mode.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_IDataPresenter_IsInserting" data-uid="DevZest.Data.Presenters.IDataPresenter.IsInserting">
+          <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.IsInserting.html#DevZest_Data_Presenters_IDataPresenter_IsInserting">IsInserting</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets a value indicates whether current row is in inserting mode.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_IDataPresenter_IsRecursive" data-uid="DevZest.Data.Presenters.IDataPresenter.IsRecursive">
+          <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.IsRecursive.html#DevZest_Data_Presenters_IDataPresenter_IsRecursive">IsRecursive</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets a value indicates the underlying rows are recursive tree structure.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_IDataPresenter_LayoutOrientation" data-uid="DevZest.Data.Presenters.IDataPresenter.LayoutOrientation">
+          <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.LayoutOrientation.html#DevZest_Data_Presenters_IDataPresenter_LayoutOrientation">LayoutOrientation</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the layout orientation that rows will be presented repeatedly.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_IDataPresenter_OrderBy" data-uid="DevZest.Data.Presenters.IDataPresenter.OrderBy">
+          <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.OrderBy.html#DevZest_Data_Presenters_IDataPresenter_OrderBy">OrderBy</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets or sets the comparer to sort the rows.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_IDataPresenter_Rows" data-uid="DevZest.Data.Presenters.IDataPresenter.Rows">
+          <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.Rows.html#DevZest_Data_Presenters_IDataPresenter_Rows">Rows</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the collection <a class="xref" href="DevZest.Data.Presenters.RowPresenter.html">RowPresenter</a> objects.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_IDataPresenter_RowValidation" data-uid="DevZest.Data.Presenters.IDataPresenter.RowValidation">
+          <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.RowValidation.html#DevZest_Data_Presenters_IDataPresenter_RowValidation">RowValidation</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the object that contains row validation logic.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_IDataPresenter_ScalarContainer" data-uid="DevZest.Data.Presenters.IDataPresenter.ScalarContainer">
+          <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.ScalarContainer.html#DevZest_Data_Presenters_IDataPresenter_ScalarContainer">ScalarContainer</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the container for all scalar values.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_IDataPresenter_ScalarValidation" data-uid="DevZest.Data.Presenters.IDataPresenter.ScalarValidation">
+          <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.ScalarValidation.html#DevZest_Data_Presenters_IDataPresenter_ScalarValidation">ScalarValidation</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets an object which contains the scalar data validation logic.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_IDataPresenter_Scrollable" data-uid="DevZest.Data.Presenters.IDataPresenter.Scrollable">
+          <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.Scrollable.html#DevZest_Data_Presenters_IDataPresenter_Scrollable">Scrollable</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the object that contains layout scrolling logic.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_IDataPresenter_SelectedRows" data-uid="DevZest.Data.Presenters.IDataPresenter.SelectedRows">
+          <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.SelectedRows.html#DevZest_Data_Presenters_IDataPresenter_SelectedRows">SelectedRows</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the collection of selected rows.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_IDataPresenter_Template" data-uid="DevZest.Data.Presenters.IDataPresenter.Template">
+          <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.Template.html#DevZest_Data_Presenters_IDataPresenter_Template">Template</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.Template.html#DevZest_Data_Presenters_IDataPresenter_Template">Template</a> associated with this presenter.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_IDataPresenter_View" data-uid="DevZest.Data.Presenters.IDataPresenter.View">
+          <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.View.html#DevZest_Data_Presenters_IDataPresenter_View">View</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the <a class="xref" href="DevZest.Data.Views.DataView.html">DataView</a> that is attached to this <a class="xref" href="DevZest.Data.Presenters.DataPresenter.html">DataPresenter</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_IDataPresenter_VirtualRow" data-uid="DevZest.Data.Presenters.IDataPresenter.VirtualRow">
+          <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.VirtualRow.html#DevZest_Data_Presenters_IDataPresenter_VirtualRow">VirtualRow</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the virtual row for inserting indication.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_IDataPresenter_Where" data-uid="DevZest.Data.Presenters.IDataPresenter.Where">
+          <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.Where.html#DevZest_Data_Presenters_IDataPresenter_Where">Where</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets or sets the condition to filter the rows.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="DevZest_Data_Presenters_IDataPresenter_Apply_System_Predicate_DevZest_Data_DataRow__System_Collections_Generic_IComparer_DevZest_Data_DataRow__" data-uid="DevZest.Data.Presenters.IDataPresenter.Apply(System.Predicate{DevZest.Data.DataRow},System.Collections.Generic.IComparer{DevZest.Data.DataRow})">
+          <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.Apply.html#DevZest_Data_Presenters_IDataPresenter_Apply_System_Predicate_DevZest_Data_DataRow__System_Collections_Generic_IComparer_DevZest_Data_DataRow__">Apply(Predicate&lt;DataRow&gt;, IComparer&lt;DataRow&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Applies filtering condition and sorting comparer.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_IDataPresenter_BeginInsertAfter_DevZest_Data_Presenters_RowPresenter_" data-uid="DevZest.Data.Presenters.IDataPresenter.BeginInsertAfter(DevZest.Data.Presenters.RowPresenter)">
+          <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.BeginInsertAfter.html#DevZest_Data_Presenters_IDataPresenter_BeginInsertAfter_DevZest_Data_Presenters_RowPresenter_">BeginInsertAfter(RowPresenter)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Begins inserting new row after specified row.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_IDataPresenter_BeginInsertBefore_DevZest_Data_Presenters_RowPresenter_" data-uid="DevZest.Data.Presenters.IDataPresenter.BeginInsertBefore(DevZest.Data.Presenters.RowPresenter)">
+          <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.BeginInsertBefore.html#DevZest_Data_Presenters_IDataPresenter_BeginInsertBefore_DevZest_Data_Presenters_RowPresenter_">BeginInsertBefore(RowPresenter)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Begins inserting new row before specified row.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_IDataPresenter_DetachView" data-uid="DevZest.Data.Presenters.IDataPresenter.DetachView">
+          <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.DetachView.html#DevZest_Data_Presenters_IDataPresenter_DetachView">DetachView()</a>
+        </td>
+        <td class="markdown level1 summary"><p>Detaches this presenter from the view.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_IDataPresenter_GetService__1_System_Boolean_" data-uid="DevZest.Data.Presenters.IDataPresenter.GetService``1(System.Boolean)">
+          <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.GetService.html#DevZest_Data_Presenters_IDataPresenter_GetService__1_System_Boolean_">GetService&lt;T&gt;(Boolean)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the service.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_IDataPresenter_InvalidateMeasure" data-uid="DevZest.Data.Presenters.IDataPresenter.InvalidateMeasure">
+          <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.InvalidateMeasure.html#DevZest_Data_Presenters_IDataPresenter_InvalidateMeasure">InvalidateMeasure()</a>
+        </td>
+        <td class="markdown level1 summary"><p>Invalidates the measurement state (layout) for the view.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_IDataPresenter_InvalidateView" data-uid="DevZest.Data.Presenters.IDataPresenter.InvalidateView">
+          <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.InvalidateView.html#DevZest_Data_Presenters_IDataPresenter_InvalidateView">InvalidateView()</a>
+        </td>
+        <td class="markdown level1 summary"><p>Invalidates the rendering of the view.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_IDataPresenter_ResumeInvalidateView" data-uid="DevZest.Data.Presenters.IDataPresenter.ResumeInvalidateView">
+          <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.ResumeInvalidateView.html#DevZest_Data_Presenters_IDataPresenter_ResumeInvalidateView">ResumeInvalidateView()</a>
+        </td>
+        <td class="markdown level1 summary"><p>Resumes the usual view rendering.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_IDataPresenter_Select_DevZest_Data_Presenters_RowPresenter_System_Windows_Controls_SelectionMode_System_Boolean_System_Action_" data-uid="DevZest.Data.Presenters.IDataPresenter.Select(DevZest.Data.Presenters.RowPresenter,System.Windows.Controls.SelectionMode,System.Boolean,System.Action)">
+          <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.Select.html#DevZest_Data_Presenters_IDataPresenter_Select_DevZest_Data_Presenters_RowPresenter_System_Windows_Controls_SelectionMode_System_Boolean_System_Action_">Select(RowPresenter, SelectionMode, Boolean, Action)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Selects specified <a class="xref" href="DevZest.Data.Presenters.RowPresenter.html">RowPresenter</a>.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_IDataPresenter_Select_DevZest_Data_Presenters_RowPresenter___" data-uid="DevZest.Data.Presenters.IDataPresenter.Select(DevZest.Data.Presenters.RowPresenter[])">
+          <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.Select.html#DevZest_Data_Presenters_IDataPresenter_Select_DevZest_Data_Presenters_RowPresenter___">Select(RowPresenter[])</a>
+        </td>
+        <td class="markdown level1 summary"><p>Selects multiple rows.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_IDataPresenter_SubmitInput_System_Boolean_" data-uid="DevZest.Data.Presenters.IDataPresenter.SubmitInput(System.Boolean)">
+          <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.SubmitInput.html#DevZest_Data_Presenters_IDataPresenter_SubmitInput_System_Boolean_">SubmitInput(Boolean)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Tries to submit data input with validation.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_IDataPresenter_SuspendInvalidateView" data-uid="DevZest.Data.Presenters.IDataPresenter.SuspendInvalidateView">
+          <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.SuspendInvalidateView.html#DevZest_Data_Presenters_IDataPresenter_SuspendInvalidateView">SuspendInvalidateView()</a>
+        </td>
+        <td class="markdown level1 summary"><p>Temporarily suspends the view rendering.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="events">Events
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="DevZest_Data_Presenters_IDataPresenter_ViewChanged" data-uid="DevZest.Data.Presenters.IDataPresenter.ViewChanged">
+          <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.ViewChanged.html">ViewChanged</a>
+        </td>
+        <td class="markdown level1 summary"><p>Occurs when the view has been changed.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_IDataPresenter_ViewInvalidated" data-uid="DevZest.Data.Presenters.IDataPresenter.ViewInvalidated">
+          <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.ViewInvalidated.html">ViewInvalidated</a>
+        </td>
+        <td class="markdown level1 summary"><p>Occurs after view is invalidated.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_IDataPresenter_ViewInvalidating" data-uid="DevZest.Data.Presenters.IDataPresenter.ViewInvalidating">
+          <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.ViewInvalidating.html">ViewInvalidating</a>
+        </td>
+        <td class="markdown level1 summary"><p>Occurs before view is invalidating.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_IDataPresenter_ViewRefreshed" data-uid="DevZest.Data.Presenters.IDataPresenter.ViewRefreshed">
+          <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.ViewRefreshed.html">ViewRefreshed</a>
+        </td>
+        <td class="markdown level1 summary"><p>Occurs after view is refreshed.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Presenters_IDataPresenter_ViewRefreshing" data-uid="DevZest.Data.Presenters.IDataPresenter.ViewRefreshing">
+          <a class="xref" href="DevZest.Data.Presenters.IDataPresenter.ViewRefreshing.html">ViewRefreshing</a>
+        </td>
+        <td class="markdown level1 summary"><p>Occurs before view is refreshing.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/new/master/apiSpec/new?filename=DevZest_Data_Presenters_IDataPresenter.md&amp;value=---%0Auid%3A%20DevZest.Data.Presenters.IDataPresenter%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Data.WPF/Presenters/IDataPresenter.cs/#L13" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © Weifen Luo | DevZest</span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,198 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Model and Members </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Model and Members ">
+    <meta name="generator" content="docfx 2.43.2.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="model_and_members">
+<h1 id="model-and-members">Model and Members</h1>
+
+<h2 id="model">Model</h2>
+<p>Your business models are classes derived from <a class="xref" href="../../api/DevZest.Data.Model.html">Model</a> or <a class="xref" href="../../api/DevZest.Data.Model-1.html">Model&lt;T&gt;</a>. Your model class defines data schema and other data logic which can be shared across different data sources. A model will be created and associated with one of the following <a class="xref" href="../../api/DevZest.Data.DataSource.html">DataSource</a> automatically:</p>
+<ul>
+<li><a class="xref" href="../../api/DevZest.Data.DataSet-1.html">DataSet&lt;T&gt;</a>: In-memory collection of data;</li>
+<li><a class="xref" href="../../api/DevZest.Data.DbTable-1.html">DbTable&lt;T&gt;</a>: Database table, either permanent or temporary;</li>
+<li><a class="xref" href="../../api/DevZest.Data.DbQuery-1.html">DbQuery&lt;T&gt;</a>: Database query which can be executed on database server.</li>
+</ul>
+<p>Your model class must have a parameterless constructor.</p>
+<h2 id="model-members">Model Members</h2>
+<p>Your model can consist the following members, as read only properties:</p>
+<table>
+<thead>
+<tr>
+<th>Model Member</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Column</td>
+<td>Property of concrete type derived from <a class="xref" href="../../api/DevZest.Data.Column-1.html">Column&lt;T&gt;</a> to represents a column of data. See <a class="xref" href="model_column.html">Model Column</a> for more information.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data.ColumnList-1.html">ColumnList&lt;T&gt;</a></td>
+<td>Columns accessed via index, can be used for pivot table of data.</td>
+</tr>
+<tr>
+<td>Projection</td>
+<td>Property of type derived from <a class="xref" href="../../api/DevZest.Data.Projection.html">Projection</a> to represent lookup data from other model. See <a class="xref" href="model_projection.html">Model Projection</a> for more information.</td>
+</tr>
+<tr>
+<td>Child Model</td>
+<td>Represents hierarchical of data.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="member-registration">Member Registration</h2>
+<p>Model members should be registered so that the property can be properly mounted, otherwise the property will always return null value. The following registration methods should be invoked, either in static class constructor or as static field initializer:</p>
+<ul>
+<li><a class="xref" href="../../api/DevZest.Data.Model.RegisterColumn.html">RegisterColumn</a>/<a class="xref" href="../../api/DevZest.Data.Model.RegisterLocalColumn.html">RegisterLocalColumn</a></li>
+<li><a class="xref" href="../../api/DevZest.Data.Model.RegisterColumnList.html">RegisterColumnList</a></li>
+<li><a class="xref" href="../../api/DevZest.Data.Model.RegisterProjection.html">RegisterProjection</a></li>
+<li><a class="xref" href="../../api/DevZest.Data.Model.RegisterChildModel.html">RegisterChildModel</a></li>
+</ul>
+<p>Model member without registration will generate a compile time warning. With RDO.Tools installed, you can fix this warning by moving the caret to the property name, and pressing <em>CTRL-.</em> in Visual Studio:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q_cs" role="tabpanel" data-tab="cs">
+
+<p><img src="/images/tutorial_add_mounter_cs.jpg" alt="image"></p>
+</section>
+<section id="tabpanel_CeZOj-G++Q_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<p><img src="/images/tutorial_add_mounter_vb.jpg" alt="image"></p>
+</section>
+</div>
+<h2 id="model-visualizer">Model Visualizer</h2>
+<p>Model Visualizer is your best friend to manipulate model members. You can show Model Visualizer tool window by clicking menu &quot;View&quot; -&gt; &quot;Other Windows&quot; -&gt; &quot;Model Visualizer&quot; in Visual Studio:</p>
+<p><img src="/images/tutorial_model_visualizer_empty_movie.jpg" alt="image"></p>
+<p>To add model member, in Model Visualizer tool window, click the left top <img src="/images/model_visualizer_add.jpg" alt="image"> button, the following code snippet will be inserted:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-1_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-1_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-1_cs" role="tabpanel" data-tab="cs">
+
+<p><img src="/images/model_visualizer_add_property_cs.jpg" alt="image"></p>
+</section>
+<section id="tabpanel_CeZOj-G++Q-1_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<p><img src="/images/model_visualizer_add_property_vb.jpg" alt="image"></p>
+</section>
+</div>
+
+<p>Tabbing through the code snippet to change the property name and property type. When done, press ESC to quit code snippet editing. You now have a compile-time warning <code>Missing registration for property '&lt;Name&gt;'</code>. You can fix this warning by moving the caret to the property name, and pressing <em>CTRL-.</em> in Visual Studio as described previously.</p>
+<p>More features of Model Visualizer tool window will be discussed in later topics. Keep in mind Model Visualizer is a great place to start your model design, you can add EVERYTHING via Model Visualizer tool window, without remembering lots of APIs.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Docs/articles/programming_rdo_data/model_and_members.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © Weifen Luo | DevZest</span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

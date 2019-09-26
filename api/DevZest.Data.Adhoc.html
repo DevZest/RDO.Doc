@@ -1,0 +1,579 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class Adhoc
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class Adhoc
+   ">
+    <meta name="generator" content="docfx 2.43.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="DevZest.Data.Adhoc">
+  
+  
+  <h1 id="DevZest_Data_Adhoc" data-uid="DevZest.Data.Adhoc" class="text-break">Class Adhoc
+  </h1>
+  <div class="markdown level0 summary"><p>Model for adhoc queries.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="DevZest.Data.Primitives.AddonBag.html">AddonBag</a></div>
+    <div class="level2"><a class="xref" href="DevZest.Data.Primitives.ModelMember.html">ModelMember</a></div>
+    <div class="level3"><a class="xref" href="DevZest.Data.Model.html">Model</a></div>
+    <div class="level4"><span class="xref">Adhoc</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="DevZest.Data.IModels.html">IModels</a></div>
+    <div><span class="xref">System.Collections.Generic.IReadOnlyCollection</span>&lt;<a class="xref" href="DevZest.Data.Model.html">Model</a>&gt;</div>
+    <div><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="DevZest.Data.Model.html">Model</a>&gt;</div>
+    <div><span class="xref">System.Collections.IEnumerable</span></div>
+    <div><a class="xref" href="DevZest.Data.IEntity.html">IEntity</a></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.RegisterColumn.html#DevZest_Data_Model_RegisterColumn__2_System_Linq_Expressions_Expression_System_Func___0___1___">Model.RegisterColumn&lt;TModel, TColumn&gt;(Expression&lt;Func&lt;TModel, TColumn&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.RegisterColumn.html#DevZest_Data_Model_RegisterColumn__2_System_Linq_Expressions_Expression_System_Func___0___1___DevZest_Data_Mounter___1__">Model.RegisterColumn&lt;TModel, TColumn&gt;(Expression&lt;Func&lt;TModel, TColumn&gt;&gt;, Mounter&lt;TColumn&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.RegisterColumnList.html#DevZest_Data_Model_RegisterColumnList__2_System_Linq_Expressions_Expression_System_Func___0_DevZest_Data_ColumnList___1____">Model.RegisterColumnList&lt;TModel, T&gt;(Expression&lt;Func&lt;TModel, ColumnList&lt;T&gt;&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.RegisterChildModel.html#DevZest_Data_Model_RegisterChildModel__2_System_Linq_Expressions_Expression_System_Func___0___1___System_Func___0___1__">Model.RegisterChildModel&lt;TModel, TChildModel&gt;(Expression&lt;Func&lt;TModel, TChildModel&gt;&gt;, Func&lt;TModel, TChildModel&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.RegisterLocalColumn.html#DevZest_Data_Model_RegisterLocalColumn__2_System_Linq_Expressions_Expression_System_Func___0_DevZest_Data_LocalColumn___1____">Model.RegisterLocalColumn&lt;TModel, T&gt;(Expression&lt;Func&lt;TModel, LocalColumn&lt;T&gt;&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.LocalColumns.html#DevZest_Data_Model_LocalColumns">Model.LocalColumns</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.CreateLocalColumn.html#DevZest_Data_Model_CreateLocalColumn__1">Model.CreateLocalColumn&lt;T&gt;()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.RegisterProjection.html#DevZest_Data_Model_RegisterProjection__2_System_Linq_Expressions_Expression_System_Func___0___1___">Model.RegisterProjection&lt;TModel, TProjection&gt;(Expression&lt;Func&lt;TModel, TProjection&gt;&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.Projections.html#DevZest_Data_Model_Projections">Model.Projections</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.IsInitialized.html#DevZest_Data_Model_IsInitialized">Model.IsInitialized</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.EnsureInitialized.html#DevZest_Data_Model_EnsureInitialized">Model.EnsureInitialized()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.OnConstructing.html#DevZest_Data_Model_OnConstructing">Model.OnConstructing()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.OnInitializing.html#DevZest_Data_Model_OnInitializing">Model.OnInitializing()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.OnChildModelsMounted.html#DevZest_Data_Model_OnChildModelsMounted">Model.OnChildModelsMounted()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.OnChildDataSetsCreated.html#DevZest_Data_Model_OnChildDataSetsCreated">Model.OnChildDataSetsCreated()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.OnInitialized.html#DevZest_Data_Model_OnInitialized">Model.OnInitialized()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.ChildModels.html#DevZest_Data_Model_ChildModels">Model.ChildModels</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.Validators.html#DevZest_Data_Model_Validators">Model.Validators</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.Validate.html#DevZest_Data_Model_Validate_DevZest_Data_DataRow_">Model.Validate(DataRow)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.PrimaryKey.html#DevZest_Data_Model_PrimaryKey">Model.PrimaryKey</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.DataSource.html#DevZest_Data_Model_DataSource">Model.DataSource</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.DesignMode.html#DevZest_Data_Model_DesignMode">Model.DesignMode</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.DataSet.html#DevZest_Data_Model_DataSet">Model.DataSet</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.DevZest-Data-IModels-Contains.html#DevZest_Data_Model_DevZest_Data_IModels_Contains_DevZest_Data_Model_">Model.IModels.Contains(Model)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.System-Collections-Generic-IReadOnlyCollection-DevZest-Data-Model--Count.html#DevZest_Data_Model_System_Collections_Generic_IReadOnlyCollection_DevZest_Data_Model__Count">Model.IReadOnlyCollection&lt;Model&gt;.Count</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.System-Collections-Generic-IEnumerable-DevZest-Data-Model--GetEnumerator.html#DevZest_Data_Model_System_Collections_Generic_IEnumerable_DevZest_Data_Model__GetEnumerator">Model.IEnumerable&lt;Model&gt;.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.System-Collections-IEnumerable-GetEnumerator.html#DevZest_Data_Model_System_Collections_IEnumerable_GetEnumerator">Model.IEnumerable.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.DevZest-Data-IModels-IsSealed.html#DevZest_Data_Model_DevZest_Data_IModels_IsSealed">Model.IModels.IsSealed</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.DevZest-Data-IModels-Seal.html#DevZest_Data_Model_DevZest_Data_IModels_Seal">Model.IModels.Seal()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.DevZest-Data-IModels-Add.html#DevZest_Data_Model_DevZest_Data_IModels_Add_DevZest_Data_Model_">Model.IModels.Add(Model)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.DevZest-Data-IModels-Remove.html#DevZest_Data_Model_DevZest_Data_IModels_Remove_DevZest_Data_Model_">Model.IModels.Remove(Model)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.DevZest-Data-IModels-Clear.html#DevZest_Data_Model_DevZest_Data_IModels_Clear">Model.IModels.Clear()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.DbAlias.html#DevZest_Data_Model_DbAlias">Model.DbAlias</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.GetIdentity.html#DevZest_Data_Model_GetIdentity_System_Boolean_">Model.GetIdentity(Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.AddDbIndex.html#DevZest_Data_Model_AddDbIndex_System_String_System_String_System_Boolean_System_Boolean_System_Boolean_System_Boolean_DevZest_Data_ColumnSort___">Model.AddDbIndex(String, String, Boolean, Boolean, Boolean, Boolean, ColumnSort[])</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.AddDbUniqueConstraint.html#DevZest_Data_Model_AddDbUniqueConstraint_System_String_System_String_System_Boolean_DevZest_Data_ColumnSort___">Model.AddDbUniqueConstraint(String, String, Boolean, ColumnSort[])</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.AddDbCheckConstraint.html#DevZest_Data_Model_AddDbCheckConstraint_System_String_System_String_DevZest_Data__Boolean_">Model.AddDbCheckConstraint(String, String, _Boolean)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.ToString.html#DevZest_Data_Model_ToString">Model.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.CreateDataSet.html#DevZest_Data_Model_CreateDataSet__1_DevZest_Data__DataSet___0__System_Int32_">Model.CreateDataSet&lt;T&gt;(_DataSet&lt;T&gt;, Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.Constructing.html">Model.Constructing</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.Initializing.html">Model.Initializing</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.ChildModelsMounted.html">Model.ChildModelsMounted</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.ChildDataSetsCreated.html">Model.ChildDataSetsCreated</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.Initialized.html">Model.Initialized</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.DataRowInserting.html">Model.DataRowInserting</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.BeforeDataRowInserted.html">Model.BeforeDataRowInserted</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.AfterDataRowInserted.html">Model.AfterDataRowInserted</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.DataRowRemoving.html">Model.DataRowRemoving</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.DataRowRemoved.html">Model.DataRowRemoved</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.ValueChanged.html">Model.ValueChanged</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.OnDataRowInserting.html#DevZest_Data_Model_OnDataRowInserting_DevZest_Data_DataRowEventArgs_">Model.OnDataRowInserting(DataRowEventArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.OnBeforeDataRowInserted.html#DevZest_Data_Model_OnBeforeDataRowInserted_DevZest_Data_DataRowEventArgs_">Model.OnBeforeDataRowInserted(DataRowEventArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.OnAfterDataRowInserted.html#DevZest_Data_Model_OnAfterDataRowInserted_DevZest_Data_DataRowEventArgs_">Model.OnAfterDataRowInserted(DataRowEventArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.OnDataRowRemoving.html#DevZest_Data_Model_OnDataRowRemoving_DevZest_Data_DataRowEventArgs_">Model.OnDataRowRemoving(DataRowEventArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.OnDataRowRemoved.html#DevZest_Data_Model_OnDataRowRemoved_DevZest_Data_DataRowRemovedEventArgs_">Model.OnDataRowRemoved(DataRowRemovedEventArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.OnValueChanged.html#DevZest_Data_Model_OnValueChanged_DevZest_Data_ValueChangedEventArgs_">Model.OnValueChanged(ValueChangedEventArgs)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.DataSetContainer.html#DevZest_Data_Model_DataSetContainer">Model.DataSetContainer</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.DevZest-Data-IEntity-Model.html#DevZest_Data_Model_DevZest_Data_IEntity_Model">Model.IEntity.Model</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.GetName.html#DevZest_Data_Model_GetName">Model.GetName()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.GetColumns.html#DevZest_Data_Model_GetColumns">Model.GetColumns()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.GetLocalColumns.html#DevZest_Data_Model_GetLocalColumns">Model.GetLocalColumns()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.GetColumnLists.html#DevZest_Data_Model_GetColumnLists">Model.GetColumnLists()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.GetChildModels.html#DevZest_Data_Model_GetChildModels">Model.GetChildModels()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.GetOrdinal.html#DevZest_Data_Model_GetOrdinal">Model.GetOrdinal()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.GetDataSource.html#DevZest_Data_Model_GetDataSource">Model.GetDataSource()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.GetDataSet.html#DevZest_Data_Model_GetDataSet">Model.GetDataSet()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Model.GetDepth.html#DevZest_Data_Model_GetDepth">Model.GetDepth()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.ModelMember.GetParent.html#DevZest_Data_Primitives_ModelMember_GetParent">ModelMember.GetParent()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.Primitives.ModelMember.VerifyDesignMode.html#DevZest_Data_Primitives_ModelMember_VerifyDesignMode">ModelMember.VerifyDesignMode()</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="DevZest.Data.html">DevZest.Data</a></h6>
+  <h6><strong>Assembly</strong>: DevZest.Data.dll</h6>
+  <h5 id="DevZest_Data_Adhoc_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public class Adhoc : Model, IDesignable, IModels, IReadOnlyCollection&lt;Model&gt;, IEnumerable&lt;Model&gt;, IEnumerable, IEntity</code></pre>
+  </div>
+  <h3 id="properties">Properties
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="DevZest_Data_Adhoc_Columns" data-uid="DevZest.Data.Adhoc.Columns">
+          <a class="xref" href="DevZest.Data.Adhoc.Columns.html#DevZest_Data_Adhoc_Columns">Columns</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the column collection.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Adhoc_Item_System_Int32_" data-uid="DevZest.Data.Adhoc.Item(System.Int32)">
+          <a class="xref" href="DevZest.Data.Adhoc.Item.html#DevZest_Data_Adhoc_Item_System_Int32_">Item[Int32]</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the column at specified index.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="DevZest_Data_Adhoc_AddColumn__1___0_System_Boolean_System_Action___0__" data-uid="DevZest.Data.Adhoc.AddColumn``1(``0,System.Boolean,System.Action{``0})">
+          <a class="xref" href="DevZest.Data.Adhoc.AddColumn.html#DevZest_Data_Adhoc_AddColumn__1___0_System_Boolean_System_Action___0__">AddColumn&lt;T&gt;(T, Boolean, Action&lt;T&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Adds a new column to this adhoc model, from existing column.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Adhoc_AddColumn__1_DevZest_Data_Mounter___0__System_Boolean_System_Action___0__" data-uid="DevZest.Data.Adhoc.AddColumn``1(DevZest.Data.Mounter{``0},System.Boolean,System.Action{``0})">
+          <a class="xref" href="DevZest.Data.Adhoc.AddColumn.html#DevZest_Data_Adhoc_AddColumn__1_DevZest_Data_Mounter___0__System_Boolean_System_Action___0__">AddColumn&lt;T&gt;(Mounter&lt;T&gt;, Boolean, Action&lt;T&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Adds a new column to this adhoc model, from existing column property.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Adhoc_AddColumn__1_System_Action___0__" data-uid="DevZest.Data.Adhoc.AddColumn``1(System.Action{``0})">
+          <a class="xref" href="DevZest.Data.Adhoc.AddColumn.html#DevZest_Data_Adhoc_AddColumn__1_System_Action___0__">AddColumn&lt;T&gt;(Action&lt;T&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Adds a new column to this adhoc model, with optional column initializer.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Adhoc_GetColumn__1" data-uid="DevZest.Data.Adhoc.GetColumn``1">
+          <a class="xref" href="DevZest.Data.Adhoc.GetColumn.html#DevZest_Data_Adhoc_GetColumn__1">GetColumn&lt;T&gt;()</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the first column.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Adhoc_GetColumn__1_System_Int32_" data-uid="DevZest.Data.Adhoc.GetColumn``1(System.Int32)">
+          <a class="xref" href="DevZest.Data.Adhoc.GetColumn.html#DevZest_Data_Adhoc_GetColumn__1_System_Int32_">GetColumn&lt;T&gt;(Int32)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the column by index.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_Adhoc_GetColumn__1_System_String_" data-uid="DevZest.Data.Adhoc.GetColumn``1(System.String)">
+          <a class="xref" href="DevZest.Data.Adhoc.GetColumn.html#DevZest_Data_Adhoc_GetColumn__1_System_String_">GetColumn&lt;T&gt;(String)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the column by name.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="DevZest.Data.Extensions.GetChildDataSet.html#DevZest_Data_Extensions_GetChildDataSet__1___0_DevZest_Data_DataRow_">Extensions.GetChildDataSet&lt;T&gt;(T, DataRow)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Extensions.GetChildDataSet.html#DevZest_Data_Extensions_GetChildDataSet__1___0_System_Int32_">Extensions.GetChildDataSet&lt;T&gt;(T, Int32)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Models.Except.html#DevZest_Data_Models_Except_DevZest_Data_IModels_DevZest_Data_IModels_">Models.Except(IModels, IModels)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Models.Intersect.html#DevZest_Data_Models_Intersect_DevZest_Data_IModels_DevZest_Data_IModels_">Models.Intersect(IModels, IModels)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Models.ContainsAny.html#DevZest_Data_Models_ContainsAny_DevZest_Data_IModels_DevZest_Data_IModels_">Models.ContainsAny(IModels, IModels)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Models.IsProperSubsetOf.html#DevZest_Data_Models_IsProperSubsetOf_DevZest_Data_IModels_DevZest_Data_IModels_">Models.IsProperSubsetOf(IModels, IModels)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Models.IsProperSupersetOf.html#DevZest_Data_Models_IsProperSupersetOf_DevZest_Data_IModels_DevZest_Data_IModels_">Models.IsProperSupersetOf(IModels, IModels)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Models.IsSubsetOf.html#DevZest_Data_Models_IsSubsetOf_DevZest_Data_IModels_DevZest_Data_IModels_">Models.IsSubsetOf(IModels, IModels)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Models.IsSupersetOf.html#DevZest_Data_Models_IsSupersetOf_DevZest_Data_IModels_DevZest_Data_IModels_">Models.IsSupersetOf(IModels, IModels)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Models.Overlaps.html#DevZest_Data_Models_Overlaps_DevZest_Data_IModels_DevZest_Data_IModels_">Models.Overlaps(IModels, IModels)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Models.SetEquals.html#DevZest_Data_Models_SetEquals_DevZest_Data_IModels_DevZest_Data_IModels_">Models.SetEquals(IModels, IModels)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Models.SymmetricExcept.html#DevZest_Data_Models_SymmetricExcept_DevZest_Data_IModels_DevZest_Data_IModels_">Models.SymmetricExcept(IModels, IModels)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Models.Union.html#DevZest_Data_Models_Union_DevZest_Data_IModels_DevZest_Data_IModels_">Models.Union(IModels, IModels)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Addons.AddonBagExtensions.GetAddons.html#DevZest_Data_Addons_AddonBagExtensions_GetAddons__1_DevZest_Data_Primitives_AddonBag_">AddonBagExtensions.GetAddons&lt;T&gt;(AddonBag)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Addons.AddonBagExtensions.GetAddon.html#DevZest_Data_Addons_AddonBagExtensions_GetAddon__1_DevZest_Data_Primitives_AddonBag_">AddonBagExtensions.GetAddon&lt;T&gt;(AddonBag)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Addons.AddonBagExtensions.GetAddon.html#DevZest_Data_Addons_AddonBagExtensions_GetAddon_DevZest_Data_Primitives_AddonBag_System_Object_">AddonBagExtensions.GetAddon(AddonBag, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Addons.AddonBagExtensions.Add.html#DevZest_Data_Addons_AddonBagExtensions_Add_DevZest_Data_Primitives_AddonBag_DevZest_Data_Addons_IAddon_">AddonBagExtensions.Add(AddonBag, IAddon)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Addons.AddonBagExtensions.AddOrUpdate.html#DevZest_Data_Addons_AddonBagExtensions_AddOrUpdate_DevZest_Data_Primitives_AddonBag_DevZest_Data_Addons_IAddon_">AddonBagExtensions.AddOrUpdate(AddonBag, IAddon)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Addons.AddonBagExtensions.ContainsAddon.html#DevZest_Data_Addons_AddonBagExtensions_ContainsAddon_DevZest_Data_Primitives_AddonBag_System_Object_">AddonBagExtensions.ContainsAddon(AddonBag, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Addons.AddonBagExtensions.RemoveAddon.html#DevZest_Data_Addons_AddonBagExtensions_RemoveAddon_DevZest_Data_Primitives_AddonBag_System_Object_">AddonBagExtensions.RemoveAddon(AddonBag, Object)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Primitives.ColumnExtensions.WithDefaultValue.html#DevZest_Data_Primitives_ColumnExtensions_WithDefaultValue__2___0___1_System_String_System_String_">ColumnExtensions.WithDefaultValue&lt;TColumn, TValue&gt;(TColumn, TValue, String, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Primitives.ColumnExtensions.WithValueComparer.html#DevZest_Data_Primitives_ColumnExtensions_WithValueComparer__2___0_System_Collections_Generic_IComparer___1__">ColumnExtensions.WithValueComparer&lt;TColumn, TValue&gt;(TColumn, IComparer&lt;TValue&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Primitives.ModelExtensions.GetDbAlias.html#DevZest_Data_Primitives_ModelExtensions_GetDbAlias_DevZest_Data_Model_">ModelExtensions.GetDbAlias(Model)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Primitives.ModelExtensions.AddSystemColumn.html#DevZest_Data_Primitives_ModelExtensions_AddSystemColumn_DevZest_Data_Model_DevZest_Data_Column_System_String_System_Action_DevZest_Data_Column__">ModelExtensions.AddSystemColumn(Model, Column, String, Action&lt;Column&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Primitives.ModelExtensions.GetDbTableClause.html#DevZest_Data_Primitives_ModelExtensions_GetDbTableClause_DevZest_Data_Model_">ModelExtensions.GetDbTableClause(Model)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Primitives.ModelExtensions.GetTableRowIdColumn.html#DevZest_Data_Primitives_ModelExtensions_GetTableRowIdColumn_DevZest_Data_Model_">ModelExtensions.GetTableRowIdColumn(Model)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Primitives.ModelExtensions.CreateDbTable.html#DevZest_Data_Primitives_ModelExtensions_CreateDbTable__1___0_DevZest_Data_Primitives_DbSession_System_String_">ModelExtensions.CreateDbTable&lt;T&gt;(T, DbSession, String)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Primitives.ModelExtensions.GetInsertableColumns.html#DevZest_Data_Primitives_ModelExtensions_GetInsertableColumns_DevZest_Data_Model_">ModelExtensions.GetInsertableColumns(Model)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Primitives.ModelExtensions.GetUpdatableColumns.html#DevZest_Data_Primitives_ModelExtensions_GetUpdatableColumns_DevZest_Data_Model_">ModelExtensions.GetUpdatableColumns(Model)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Primitives.ModelExtensions.GetDbTableName.html#DevZest_Data_Primitives_ModelExtensions_GetDbTableName_DevZest_Data_Model_">ModelExtensions.GetDbTableName(Model)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Primitives.ModelExtensions.GetDbTableDescription.html#DevZest_Data_Primitives_ModelExtensions_GetDbTableDescription_DevZest_Data_Model_">ModelExtensions.GetDbTableDescription(Model)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Primitives.ModelExtensions.IsIdentitySuspended.html#DevZest_Data_Primitives_ModelExtensions_IsIdentitySuspended_DevZest_Data_Model_">ModelExtensions.IsIdentitySuspended(Model)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Primitives.ModelExtensions.SuspendIdentity.html#DevZest_Data_Primitives_ModelExtensions_SuspendIdentity_DevZest_Data_Model_">ModelExtensions.SuspendIdentity(Model)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Primitives.ModelExtensions.ResumeIdentity.html#DevZest_Data_Primitives_ModelExtensions_ResumeIdentity_DevZest_Data_Model_">ModelExtensions.ResumeIdentity(Model)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Primitives.ModelExtensions.GetParentRelationship.html#DevZest_Data_Primitives_ModelExtensions_GetParentRelationship_DevZest_Data_Model_">ModelExtensions.GetParentRelationship(Model)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Primitives.ModelExtensions.GetDataSource.html#DevZest_Data_Primitives_ModelExtensions_GetDataSource_DevZest_Data_Model_">ModelExtensions.GetDataSource(Model)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Presenters.BindingFactory.BindToCheckBox.html#DevZest_Data_Presenters_BindingFactory_BindToCheckBox_DevZest_Data_Model_">BindingFactory.BindToCheckBox(Model)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Presenters.BindingFactory.BindTo.html#DevZest_Data_Presenters_BindingFactory_BindTo__1_DevZest_Data_Model_">BindingFactory.BindTo&lt;T&gt;(Model)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Presenters.BindingFactory.BindToDataView.html#DevZest_Data_Presenters_BindingFactory_BindToDataView__1___0_System_Func_DevZest_Data_Presenters_DataPresenter___0___">BindingFactory.BindToDataView&lt;T&gt;(T, Func&lt;DataPresenter&lt;T&gt;&gt;)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Presenters.BindingFactory.BindToValidationErrorsControl.html#DevZest_Data_Presenters_BindingFactory_BindToValidationErrorsControl_DevZest_Data_Model_">BindingFactory.BindToValidationErrorsControl(Model)</a>
+  </div>
+  <div>
+      <a class="xref" href="DevZest.Data.Presenters.BindingFactory.BindToTextBlock.html#DevZest_Data_Presenters_BindingFactory_BindToTextBlock_DevZest_Data_Model_System_String_">BindingFactory.BindToTextBlock(Model, String)</a>
+  </div>
+  <h3 id="seealso">See Also</h3>
+  <div class="seealso">
+      <div><a class="xref" href="DevZest.Data.DbQueryBuilder.Select.html#DevZest_Data_DbQueryBuilder_Select__1___0_DevZest_Data_Adhoc_System_String_">Select&lt;T&gt;(T, Adhoc, String)</a></div>
+      <div><a class="xref" href="DevZest.Data.DbAggregateQueryBuilder.Select.html#DevZest_Data_DbAggregateQueryBuilder_Select__1___0_DevZest_Data_Adhoc_System_String_">Select&lt;T&gt;(T, Adhoc, String)</a></div>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/new/master/apiSpec/new?filename=DevZest_Data_Adhoc.md&amp;value=---%0Auid%3A%20DevZest.Data.Adhoc%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Data/Adhoc.cs/#L8" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © Weifen Luo | DevZest</span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>

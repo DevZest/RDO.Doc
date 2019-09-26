@@ -1,0 +1,161 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Model Index </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Model Index ">
+    <meta name="generator" content="docfx 2.43.2.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="model-index">Model Index</h1>
+
+<p>A database index is a data structure that improves the speed of data retrieval operations on a database table at the cost of additional writes and storage space to maintain the index data structure. Indexes are used to quickly locate data without having to search every row in a database table every time a database table is accessed. Indexes can be created using one or more columns of a database table, providing the basis for both rapid random lookups and efficient access of ordered records.</p>
+<p>An index is a copy of selected columns from a model, being a readonly property which returns a <a class="xref" href="../../api/DevZest.Data.ColumnSort.html">ColumnSort</a> array, specified by a pair of <a class="xref" href="../../api/DevZest.Data.Annotations.DbIndexAttribute.html">DbIndexAttribute</a> (at model class level) and <a class="xref" href="../../api/DevZest.Data.Annotations._DbIndexAttribute.html">_DbIndexAttribute</a> (at property level):</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-cs">[DbIndex(nameof(IX_Address_StateProvince), Description = &quot;Nonclustered index.&quot;)]
+public class Address : ...
+{
+    ...
+    [_DbIndex]
+    private ColumnSort[] IX_Address_StateProvince
+    {
+        get { return new ColumnSort[] { StateProvince }; }
+    }
+    ...
+}
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-vb">&lt;DbIndex(&quot;IX_Address_StateProvince&quot;, Description:=&quot;Nonclustered index.&quot;)&gt;
+Public Class Address
+    &lt;_DbIndex&gt;
+    Private ReadOnly Property IX_Address_AddressLine1_AddressLine2_City_StateProvince_PostalCode_CountryRegion As ColumnSort()
+        Get
+            Return New ColumnSort() {AddressLine1, AddressLine2, City, StateProvince, PostalCode, CountryRegion}
+        End Get
+    End Property
+    ...
+End Class
+</code></pre>
+</section>
+</div>
+
+<div class="NOTE">
+<h5>Note</h5>
+<p>As its name suggests, DbIndex affects database server only. Unlike unique constraint, setting <a class="xref" href="../../api/DevZest.Data.Annotations.DbIndexAttribute.IsUnique.html#DevZest_Data_Annotations_DbIndexAttribute_IsUnique">IsUnique</a> property of <a class="xref" href="../../api/DevZest.Data.Annotations.DbIndexAttribute.html">DbIndexAttribute</a> to true, will not enforce data row unique for dataset.</p>
+</div>
+<p>You can add index by clicking the left top drop down button of Model Visualizer tool window, then click 'Add Index...':</p>
+<p><img src="/images/model_visualizer_add_ix.jpg" alt="image"></p>
+<p>The following dialog will be displayed:</p>
+<p><img src="/images/model_visualizer_add_ix_dialog.jpg" alt="image"></p>
+<p>Fill the dialog form and click &quot;OK&quot;, code of a DbIndex will be generated automatically.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Docs/articles/programming_rdo_data/model_index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © Weifen Luo | DevZest</span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

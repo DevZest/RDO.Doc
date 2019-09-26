@@ -1,0 +1,432 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Model Column </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Model Column ">
+    <meta name="generator" content="docfx 2.43.2.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="model_column">
+<h1 id="model-column">Model Column</h1>
+
+<p>Concrete type derived from <a class="xref" href="../../api/DevZest.Data.Column-1.html">Column&lt;T&gt;</a> can be used to represent column of data in the model, which is strongly typed by its type argument. The following column types are provided by the framework:</p>
+<p><strong>Database Agnostic:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Data Column</th>
+<th>CLR Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data._Binary.html">_Binary</a></td>
+<td><a class="xref" href="../../api/DevZest.Data.Binary.html">Binary</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data._Boolean.html">_Boolean</a></td>
+<td>System.Boolean?</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data._Byte.html">_Byte</a></td>
+<td>System.Byte?</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data._ByteEnum-1.html">_ByteEnum&lt;T&gt;</a></td>
+<td>System.Enum? as Byte?</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data._Char.html">_Char</a></td>
+<td>System.Char?</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data._CharEnum-1.html">_CharEnum&lt;T&gt;</a></td>
+<td>System.Enum? as Char?</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data._DataSet-1.html">_DataSet&lt;T&gt;</a></td>
+<td><a class="xref" href="../../api/DevZest.Data.DataSet-1.html">DataSet&lt;T&gt;</a></td>
+</tr>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data._DateTime.html">_DateTime</a></td>
+<td>System.DateTime?</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data._Decimal.html">_Decimal</a></td>
+<td>System.Decimal?</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data._Double.html">_Double</a></td>
+<td>System.Double?</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data._Guid.html">_Guid</a></td>
+<td>System.Guid?</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data._Int16.html">_Int16</a></td>
+<td>System.Int16?</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data._Int16Enum-1.html">_Int16Enum&lt;T&gt;</a></td>
+<td>System.Enum? as Int16?</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data._Int32.html">_Int32</a></td>
+<td>System.Int32?</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data._Int32Enum-1.html">_Int32Enum&lt;T&gt;</a></td>
+<td>System.Enum? as Int32?</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data._Int64.html">_Int64</a></td>
+<td>System.Int64?</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data._Int64Enum-1.html">_Int64Enum&lt;T&gt;</a></td>
+<td>System.Enum? as Int64</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data._Single.html">_Single</a></td>
+<td>System.Single?</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data._String.html">_String</a></td>
+<td>System.String?</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data.LocalColumn-1.html">LocalColumn&lt;T&gt;</a></td>
+<td>Arbitrary CLR types for local use</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>SQL Server:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Data Column</th>
+<th>CLR Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data.SqlServer._DateTimeOffset.html">_DateTimeOffset</a></td>
+<td>System.DateTimeOffset?</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data.SqlServer._SqlXml.html">_SqlXml</a></td>
+<td>System.Data.SqlTypes.SqlXml</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data.SqlServer._TimeSpan.html">_TimeSpan</a></td>
+<td>System.TimeSpan?</td>
+</tr>
+</tbody>
+</table>
+<h2 id="localcolumn-vs-others">LocalColumn vs. Others</h2>
+<p>There are two kind of data columns: <a class="xref" href="../../api/DevZest.Data.LocalColumn-1.html">LocalColumn&lt;T&gt;</a> and others prefixed with '_'(underscore). As mentioned earlier in <a class="xref" href="../overview/orm_data_access_the_right_way.html">ORM/Data Access, the Right Way</a>, it's not feasible to map between relational data and arbitrary objects. <a class="xref" href="../../api/DevZest.Data.LocalColumn-1.html">LocalColumn&lt;T&gt;</a> is provided as a fallback mechanism for local used data only. The following table compares these two:</p>
+<table>
+<thead>
+<tr>
+<th>LocalColumn</th>
+<th>Others</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Can map to arbitrary type of data, by providing type argument.</td>
+<td>Can only map to specified type of data. For example, <a class="xref" href="../../api/DevZest.Data._String.html">_String</a> can only map to data of type System.String</td>
+</tr>
+<tr>
+<td>Not supported by database providers. Works locally only.</td>
+<td>Normally supported by database providers, works both locally and database server side.</td>
+</tr>
+<tr>
+<td>Serialization/deserialization not supported.</td>
+<td>Support JSON serialization/deserialization out-of-box.</td>
+</tr>
+<tr>
+<td>Computation/expression initialized by delegate.</td>
+<td>Computation/expression initialized by expression tree from operator overloading and custom functions.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="column-id-and-mounter">Column Id and Mounter</h2>
+<p>Column can be identified by its <a class="xref" href="../../api/DevZest.Data.Column.Id.html#DevZest_Data_Column_Id">Id</a> property, a <a class="xref" href="../../api/DevZest.Data.ColumnId.html">ColumnId</a> structure that contains the declaring type and name. This property is set during column mounting by calling <a class="xref" href="../../api/DevZest.Data.Model.RegisterColumn.html">RegisterColumn</a>. <a class="xref" href="../../api/DevZest.Data.Model.RegisterColumn.html">RegisterColumn</a> can return a <a class="xref" href="../../api/DevZest.Data.Mounter-1.html">Mounter&lt;T&gt;</a> object, which can be used for subsequent <a class="xref" href="../../api/DevZest.Data.Model.RegisterColumn.html">RegisterColumn</a> calls. Calling <a class="xref" href="../../api/DevZest.Data.Model.RegisterColumn.html">RegisterColumn</a> with exiting <a class="xref" href="../../api/DevZest.Data.Mounter-1.html">Mounter&lt;T&gt;</a> object will:</p>
+<ul>
+<li>The <a class="xref" href="../../api/DevZest.Data.Column.OriginalId.html#DevZest_Data_Column_OriginalId">OriginalId</a> property will be set to the value of existing mounter. This property will be used to auto-select columns between different models.</li>
+<li>The new mounter will inherit the initialization of the existing mounter, if any.</li>
+</ul>
+<p>You can think of calling <a class="xref" href="../../api/DevZest.Data.Model.RegisterColumn.html">RegisterColumn</a> with exiting <a class="xref" href="../../api/DevZest.Data.Mounter-1.html">Mounter&lt;T&gt;</a> object as column inheritance. Typically, columns that will be stored in database table, should have a corresponding static <a class="xref" href="../../api/DevZest.Data.Mounter-1.html">Mounter&lt;T&gt;</a> field, with name prefixed with underscore(_); key or projection class, by convention nested class of this model, use this <a class="xref" href="../../api/DevZest.Data.Mounter-1.html">Mounter&lt;T&gt;</a> field to reference these table columns.</p>
+<h2 id="computation-column">Computation Column</h2>
+<p>Computation column is a powerful feature of RDO.Data. You can define expression for data column so that its value will be calculated automatically, either locally or on the database server side. The framework tracks the calculation dependency and always synchronize the calculated result.</p>
+<p>To add a column computation into the model, after adding the column into the model, click the left top drop down button of Model Visualizer tool window, then click 'Add Computation...':</p>
+<p><img src="/images/model_visualizer_add_computation.jpg" alt="image"></p>
+<p>The following dialog will be displayed:</p>
+<p><img src="/images/model_visualizer_add_computation_dialog.jpg" alt="image"></p>
+<p>Click button 'OK', the following code will be generated automatically, with a pair of <a class="xref" href="../../api/DevZest.Data.Annotations.ComputationAttribute.html">ComputationAttribute</a> and <a class="xref" href="../../api/DevZest.Data.Annotations._ComputationAttribute.html">_ComputationAttribute</a>:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-cs">[Computation(nameof(ComputeXxx)]
+public class ...
+{
+    ...
+    [_Computation]
+    private void ComputeXxx()
+    {
+        throw new global::System.NotImplementedException();
+    }
+}
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-vb">&lt;Computation(&quot;ComputeXxx&quot;)&gt;
+Public Class ...
+    ...
+    &lt;_Computation&gt;
+    Private Sub ComputeXxx()
+        Throw New Global.System.NotImplementedException()
+    End Sub
+End Class
+</code></pre>
+</section>
+</div>
+
+<p>You should implement the generated <code>ComputeXxx</code> method. The following are two examples to compute a normal column and a <a class="xref" href="../../api/DevZest.Data.LocalColumn-1.html">LocalColumn&lt;T&gt;</a>:</p>
+<h3 id="normal-column-computation">Normal Column Computation</h3>
+<p>Normal column can participate the expression directly via <a class="xref" href="expression_column.html">Expression Column</a>:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-1">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-1_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-1_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-1_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-1_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-cs">[Computation(nameof(ComputeTotalDue))]
+public class SalesOrderHeader : ...
+{
+    ...
+    [_Computation]
+    private void ComputeTotalDue()
+    {
+        TotalDue.ComputedAs((SubTotal + TaxAmt + Freight).IfNull(_Decimal.Const(0)));
+    }
+}
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q-1_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-vb">&lt;Computation(&quot;ComputeTotalDue&quot;)&gt;
+Public Class SalesOrderHeader
+    ...
+    &lt;_Computation&gt;
+    Private Sub ComputeTotalDue()
+        TotalDue.ComputedAs((SubTotal + TaxAmt + Freight).IfNull(_Decimal.[Const](0)))
+    End Sub
+End Class
+</code></pre>
+</section>
+</div>
+<h3 id="localcolumn-computation">LocalColumn Computation</h3>
+<p>LocalColumn can be backed by delegate. The dependent columns must be explicitly specified, and the delegate must be static method:</p>
+<div class="tabGroup" id="tabgroup_CeZOj-G++Q-2">
+<ul role="tablist">
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-2_cs" role="tab" aria-controls="tabpanel_CeZOj-G++Q-2_cs" data-tab="cs" tabindex="0" aria-selected="true">C#</a>
+</li>
+<li role="presentation">
+<a href="#tabpanel_CeZOj-G++Q-2_vb" role="tab" aria-controls="tabpanel_CeZOj-G++Q-2_vb" data-tab="vb" tabindex="-1">VB.Net</a>
+</li>
+</ul>
+<section id="tabpanel_CeZOj-G++Q-2_cs" role="tabpanel" data-tab="cs">
+
+<pre><code class="lang-cs">[Computation(nameof(ComputeContactPerson))]
+public class Customer...
+{
+    ...
+    [_Computation]
+    private void ComputeContactPerson()
+    {
+        ContactPerson.ComputedAs(LastName, FirstName, Title, GetContactPerson, false);
+    }
+
+    private static string GetContactPerson(DataRow dataRow, _String lastName, _String firstName, _String title)
+    {
+        return GetContactPerson(lastName[dataRow], firstName[dataRow], title[dataRow]);
+    }
+}
+</code></pre>
+</section>
+<section id="tabpanel_CeZOj-G++Q-2_vb" role="tabpanel" data-tab="vb" aria-hidden="true" hidden="hidden">
+
+<pre><code class="lang-vb">&lt;Computation(&quot;ComputeContactPerson&quot;)&gt;
+Public Class Customer
+    ...
+    &lt;_Computation&gt;
+    Private Sub ComputeContactPerson()
+        ContactPerson.ComputedAs(LastName, FirstName, Title, AddressOf GetContactPerson, False)
+    End Sub
+
+    Private Shared Function GetContactPerson(ByVal dataRow As DataRow, ByVal lastName As _String, ByVal firstName As _String, ByVal title As _String) As String
+        Return GetContactPerson(lastName(dataRow), firstName(dataRow), title(dataRow))
+    End Function
+End Class
+</code></pre>
+</section>
+</div>
+<h2 id="column-annotations">Column Annotations</h2>
+<p>Model column can be decorated with annotations which are attributes derived from <a class="xref" href="../../api/DevZest.Data.Annotations.Primitives.ColumnAttribute.html">ColumnAttribute</a> and <a class="xref" href="../../api/DevZest.Data.Annotations.Primitives.ValidationColumnAttribute.html">ValidationColumnAttribute</a>:</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Annotations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Identity</td>
+<td><a class="xref" href="../../api/DevZest.Data.Annotations.IdentityAttribute.html">Identity</a>/<a class="xref" href="../../api/DevZest.Data.Annotations.Identity16Attribute.html">Identity16</a>/<a class="xref" href="../../api/DevZest.Data.Annotations.Identity64Attribute.html">Identity64</a>. Only one identity column allowed for each model.</td>
+</tr>
+<tr>
+<td>Default Value</td>
+<td><a class="xref" href="../../api/DevZest.Data.Annotations.DefaultValueAttribute.html">DefaultValue</a>, <a class="xref" href="../../api/DevZest.Data.Annotations.AutoDateTimeAttribute.html">AutoDateTime</a>, <a class="xref" href="../../api/DevZest.Data.Annotations.AutoGuidAttribute.html">AutoGuid</a>;</td>
+</tr>
+<tr>
+<td>Naming and descriptive</td>
+<td><a class="xref" href="../../api/DevZest.Data.Annotations.DbColumnAttribute.html">DbColumn</a>, <a class="xref" href="../../api/DevZest.Data.Annotations.DisplayAttribute.html">Display</a>.</td>
+</tr>
+<tr>
+<td>Validation</td>
+<td><a class="xref" href="../../api/DevZest.Data.Annotations.RequiredAttribute.html">Required</a>, <a class="xref" href="../../api/DevZest.Data.Annotations.StringLengthAttribute.html">StringLength</a>, <a class="xref" href="../../api/DevZest.Data.Annotations.RegularExpressionAttribute.html">RegularExpression</a>, <a class="xref" href="../../api/DevZest.Data.Annotations.MaxLengthAttribute.html">MaxLength</a>, <a class="xref" href="../../api/DevZest.Data.Annotations.EmailAddressAttribute.html">EmailAddress</a>, <a class="xref" href="../../api/DevZest.Data.Annotations.CreditCardAttribute.html">CreditCard</a>, <a class="xref" href="../../api/DevZest.Data.Annotations.UrlAttribute.html">Url</a>.</td>
+</tr>
+<tr>
+<td>SQL Server data types</td>
+<td><a class="xref" href="../../api/DevZest.Data.SqlServer.SqlBinaryAttribute.html">SqlBinary</a>, <a class="xref" href="../../api/DevZest.Data.SqlServer.SqlBinaryMaxAttribute.html">SqlBinaryMax</a>, <a class="xref" href="../../api/DevZest.Data.SqlServer.SqlCharAttribute.html">SqlChar</a>, <a class="xref" href="../../api/DevZest.Data.SqlServer.SqlCharMaxAttribute.html">SqlCharMax</a>, <a class="xref" href="../../api/DevZest.Data.SqlServer.SqlDateAttribute.html">SqlDate</a>, <a class="xref" href="../../api/DevZest.Data.SqlServer.SqlDateTimeAttribute.html">SqlDateTime</a>, <a class="xref" href="../../api/DevZest.Data.SqlServer.SqlDateTime2Attribute.html">SqlDateTime2</a>, <a class="xref" href="../../api/DevZest.Data.SqlServer.SqlDecimalAttribute.html">SqlDecimal</a>, <a class="xref" href="../../api/DevZest.Data.SqlServer.SqlMoneyAttribute.html">SqlMoney</a>, <a class="xref" href="../../api/DevZest.Data.SqlServer.SqlNCharAttribute.html">SqlNChar</a>, <a class="xref" href="../../api/DevZest.Data.SqlServer.SqlNCharMaxAttribute.html">SqlNCharMax</a>, <a class="xref" href="../../api/DevZest.Data.SqlServer.SqlNVarCharAttribute.html">SqlNVarChar</a>, <a class="xref" href="../../api/DevZest.Data.SqlServer.SqlNVarCharMaxAttribute.html">SqlNVarCharMax</a>, <a class="xref" href="../../api/DevZest.Data.SqlServer.SqlSmallDateTimeAttribute.html">SqlSmallDateTime</a>, <a class="xref" href="../../api/DevZest.Data.SqlServer.SqlSmallMoneyAttribute.html">SqlSmallMoney</a>, <a class="xref" href="../../api/DevZest.Data.SqlServer.SqlTimeAttribute.html">SqlTime</a>, <a class="xref" href="../../api/DevZest.Data.SqlServer.SqlTimeStampAttribute.html">SqlTimeStamp</a>, <a class="xref" href="../../api/DevZest.Data.SqlServer.SqlVarBinaryAttribute.html">SqlVarBinary</a>, <a class="xref" href="../../api/DevZest.Data.SqlServer.SqlVarBinaryMaxAttribute.html">SqlVarBinaryMax</a>, <a class="xref" href="../../api/DevZest.Data.SqlServer.SqlVarCharAttribute.html">SqlVarChar</a>, <a class="xref" href="../../api/DevZest.Data.SqlServer.SqlVarCharMaxAttribute.html">SqlVarCharMax</a>.</td>
+</tr>
+<tr>
+<td>MySQL data types</td>
+<td><a class="xref" href="../../api/DevZest.Data.MySql.MySqlBinaryAttribute.html">MySqlBinary</a>, <a class="xref" href="../../api/DevZest.Data.MySql.MySqlBlobAttribute.html">MySqlBlob</a> <a class="xref" href="../../api/DevZest.Data.MySql.MySqlCharAttribute.html">MySqlChar</a>, <a class="xref" href="../../api/DevZest.Data.MySql.MySqlDateAttribute.html">MySqlDate</a>, <a class="xref" href="../../api/DevZest.Data.MySql.MySqlDateTimeAttribute.html">MySqlDateTime</a>, <a class="xref" href="../../api/DevZest.Data.MySql.MySqlDecimalAttribute.html">MySqlDecimal</a>, <a class="xref" href="../../api/DevZest.Data.MySql.MySqlLongBlobAttribute.html">MySqlLongBlob</a>, <a class="xref" href="../../api/DevZest.Data.MySql.MySqlLongTextAttribute.html">MySqlLongText</a>, <a class="xref" href="../../api/DevZest.Data.MySql.MySqlMediumBlobAttribute.html">MySqlMediumBlob</a>, <a class="xref" href="../../api/DevZest.Data.MySql.MySqlMediumTextAttribute.html">MySqlMediumText</a>, <a class="xref" href="../../api/DevZest.Data.MySql.MySqlMoneyAttribute.html">MySqlMoney</a>, <a class="xref" href="../../api/DevZest.Data.MySql.MySqlTextAttribute.html">MySqlText</a>, <a class="xref" href="../../api/DevZest.Data.MySql.MySqlTimeAttribute.html">MySqlTime</a>, <a class="xref" href="../../api/DevZest.Data.MySql.MySqlTimeStampAttribute.html">MySqlTimeStamp</a>, <a class="xref" href="../../api/DevZest.Data.MySql.MySqlTinyBlobAttribute.html">MySqlTinyBlob</a>, <a class="xref" href="../../api/DevZest.Data.MySql.MySqlTinyTextAttribute.html">MySqlTinyText</a>, <a class="xref" href="../../api/DevZest.Data.MySql.MySqlVarBinaryAttribute.html">MySqlVarBinary</a>, <a class="xref" href="../../api/DevZest.Data.MySql.MySqlVarCharAttribute.html">MySqlVarChar</a>.</td>
+</tr>
+</tbody>
+</table>
+<p>You can add column annotations via Model Visualizer tool window by right clicking the column to display available annotations as context menu:</p>
+<p><img src="/images/tutorial_add_identity.jpg" alt="image"></p>
+<p>The above screenshot demonstrates adding a <a class="xref" href="../../api/DevZest.Data.Annotations.IdentityAttribute.html">Identity</a> annotation for the <code>ID</code> column.</p>
+<p>Annotations are decorated with <a class="xref" href="../../api/DevZest.Data.Annotations.Primitives.ModelDesignerSpecAttribute.html">ModelDesignerSpec</a> attribute to specify the relationship between annotations and column so that only available annotations will be displayed in Model Visualizer context menu. Annotations can also be contradictive, for example, only one SQL Sever data type annotation can be applied to a given column. Using Model Visualizer for adding annotations is more than just saving you couple of key strokes.</p>
+<p>You're encouraged to develop your own custom column annotation, make sure it's correctly decorated with <a class="xref" href="../../api/DevZest.Data.Annotations.Primitives.ModelDesignerSpecAttribute.html">ModelDesignerSpec</a> so that your it will be friendly to Model Visualizer.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Docs/articles/programming_rdo_data/model_column.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © Weifen Luo | DevZest</span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

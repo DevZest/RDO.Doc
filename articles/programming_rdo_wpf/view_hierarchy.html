@@ -1,0 +1,143 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>View Hierarchy </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="View Hierarchy ">
+    <meta name="generator" content="docfx 2.43.2.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="view-hierarchy">View Hierarchy</h1>
+
+<p>As shown in the architecture diagram:</p>
+<p><img src="/images/rdo_wpf_view_hierarchy.jpg" alt="image"></p>
+<p>The view elements are organized by the following container UI elements hierarchically:</p>
+<table>
+<thead>
+<tr>
+<th>Container</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data.Views.DataView.html">DataView</a></td>
+<td>The root of the view, contains scalar UI elements and other container elements.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data.Views.BlockView.html">BlockView</a></td>
+<td>Contains flowing <a class="xref" href="../../api/DevZest.Data.Views.RowView.html">RowView</a>. This level is optional.</td>
+</tr>
+<tr>
+<td><a class="xref" href="../../api/DevZest.Data.Views.RowView.html">RowView</a></td>
+<td>Contains UI elements for one row of data.</td>
+</tr>
+</tbody>
+</table>
+<p>Unlike other UI elements which are explicitly created via data binding, <a class="xref" href="../../api/DevZest.Data.Views.BlockView.html">BlockView</a> and <a class="xref" href="../../api/DevZest.Data.Views.RowView.html">RowView</a> elements are created implicitly. These container elements can be bridges between view and presenter. For example, <a class="xref" href="../../api/DevZest.Data.Views.RowView.html">RowView</a> exposes a <a class="xref" href="../../api/DevZest.Data.Views.RowView.RowPresenter.html#DevZest_Data_Views_RowView_RowPresenter">RowPresenter</a> property.</p>
+<p>Since presenting collection of data is extensively and exclusively supported by the presenter, all the complex controls (controls derived from <code>System.Windows.Controls.ItemsControl</code> such as <code>ListBox</code> or <code>DataGrid</code>) are not necessary any more. By using RDO.WPF, your application only need to deal with simple controls such as <code>TextBlock</code> or <code>TextBox</code>, via data binding, in an unified way.</p>
+<p>Here is an example of hierarchical view with BlockView:</p>
+<p><img src="/images/samples_file_explorer_hierarchical_view.jpg" alt="image"></p>
+<p>Here is another example of hierarchical view with scalar elements and without BlockView:</p>
+<p><img src="/images/samples_file_explorer_hierarchical_view2.jpg" alt="image"></p>
+<p>You can run your application in debug mode and investigate the view hierarchy in Visual Studio Live Visual Tree tool window:</p>
+<p><img src="/images/vs_live_visual_tree.jpg" alt="image"></p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Docs/articles/programming_rdo_wpf/view_hierarchy.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © Weifen Luo | DevZest</span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,421 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class DataSet&lt;T&gt;
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class DataSet&lt;T&gt;
+   ">
+    <meta name="generator" content="docfx 2.43.2.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="DevZest.Data.DataSet`1">
+  
+  
+  <h1 id="DevZest_Data_DataSet_1" data-uid="DevZest.Data.DataSet`1" class="text-break">Class DataSet&lt;T&gt;
+  </h1>
+  <div class="markdown level0 summary"><p>Represents an in-memory collection of data.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><a class="xref" href="DevZest.Data.DataSource.html">DataSource</a></div>
+    <div class="level2"><a class="xref" href="DevZest.Data.DataSet.html">DataSet</a></div>
+    <div class="level3"><span class="xref">DataSet&lt;T&gt;</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><span class="xref">System.Collections.Generic.IList</span>&lt;<a class="xref" href="DevZest.Data.DataRow.html">DataRow</a>&gt;</div>
+    <div><span class="xref">System.Collections.Generic.ICollection</span>&lt;<a class="xref" href="DevZest.Data.DataRow.html">DataRow</a>&gt;</div>
+    <div><span class="xref">System.Collections.Generic.IReadOnlyList</span>&lt;<a class="xref" href="DevZest.Data.DataRow.html">DataRow</a>&gt;</div>
+    <div><span class="xref">System.Collections.Generic.IReadOnlyCollection</span>&lt;<a class="xref" href="DevZest.Data.DataRow.html">DataRow</a>&gt;</div>
+    <div><span class="xref">System.Collections.Generic.IEnumerable</span>&lt;<a class="xref" href="DevZest.Data.DataRow.html">DataRow</a>&gt;</div>
+    <div><span class="xref">System.Collections.IEnumerable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="DevZest.Data.DataSet.Kind.html#DevZest_Data_DataSet_Kind">DataSet.Kind</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DataSet.AddRow.html#DevZest_Data_DataSet_AddRow_System_Action_DevZest_Data_DataRow__">DataSet.AddRow(Action&lt;DataRow&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DataSet.InsertRow.html#DevZest_Data_DataSet_InsertRow_System_Int32_System_Action_DevZest_Data_DataRow__">DataSet.InsertRow(Int32, Action&lt;DataRow&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DataSet.ParentDataRow.html#DevZest_Data_DataSet_ParentDataRow">DataSet.ParentDataRow</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DataSet.Count.html#DevZest_Data_DataSet_Count">DataSet.Count</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DataSet.IsReadOnly.html#DevZest_Data_DataSet_IsReadOnly">DataSet.IsReadOnly</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DataSet.Item.html#DevZest_Data_DataSet_Item_System_Int32_">DataSet.Item[Int32]</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DataSet.IndexOf.html#DevZest_Data_DataSet_IndexOf_DevZest_Data_DataRow_">DataSet.IndexOf(DataRow)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DataSet.Contains.html#DevZest_Data_DataSet_Contains_DevZest_Data_DataRow_">DataSet.Contains(DataRow)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DataSet.Insert.html#DevZest_Data_DataSet_Insert_System_Int32_DevZest_Data_DataRow_">DataSet.Insert(Int32, DataRow)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DataSet.Insert.html#DevZest_Data_DataSet_Insert_System_Int32_DevZest_Data_DataRow_System_Action_DevZest_Data_DataRow__">DataSet.Insert(Int32, DataRow, Action&lt;DataRow&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DataSet.Remove.html#DevZest_Data_DataSet_Remove_DevZest_Data_DataRow_">DataSet.Remove(DataRow)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DataSet.RemoveAt.html#DevZest_Data_DataSet_RemoveAt_System_Int32_">DataSet.RemoveAt(Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DataSet.Add.html#DevZest_Data_DataSet_Add_DevZest_Data_DataRow_">DataSet.Add(DataRow)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DataSet.Add.html#DevZest_Data_DataSet_Add_DevZest_Data_DataRow_System_Action_DevZest_Data_DataRow__">DataSet.Add(DataRow, Action&lt;DataRow&gt;)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DataSet.Clear.html#DevZest_Data_DataSet_Clear">DataSet.Clear()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DataSet.CopyTo.html#DevZest_Data_DataSet_CopyTo_DevZest_Data_DataRow___System_Int32_">DataSet.CopyTo(DataRow[], Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DataSet.GetEnumerator.html#DevZest_Data_DataSet_GetEnumerator">DataSet.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DataSet.System-Collections-IEnumerable-GetEnumerator.html#DevZest_Data_DataSet_System_Collections_IEnumerable_GetEnumerator">DataSet.IEnumerable.GetEnumerator()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DataSet.ToString.html#DevZest_Data_DataSet_ToString">DataSet.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DataSet.ToJsonString.html#DevZest_Data_DataSet_ToJsonString_System_Boolean_DevZest_Data_IJsonCustomizer_">DataSet.ToJsonString(Boolean, IJsonCustomizer)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DataSet.ToJsonString.html#DevZest_Data_DataSet_ToJsonString_System_Collections_Generic_IEnumerable_DevZest_Data_DataRow__System_Boolean_DevZest_Data_IJsonCustomizer_">DataSet.ToJsonString(IEnumerable&lt;DataRow&gt;, Boolean, IJsonCustomizer)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DataSet.Validate.html#DevZest_Data_DataSet_Validate_System_Boolean_System_Int32_">DataSet.Validate(Boolean, Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DataSet.EditingRow.html#DevZest_Data_DataSet_EditingRow">DataSet.EditingRow</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DataSet.AddingRow.html#DevZest_Data_DataSet_AddingRow">DataSet.AddingRow</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DataSet.ValidateAddingRow.html#DevZest_Data_DataSet_ValidateAddingRow">DataSet.ValidateAddingRow()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DataSet.BeginAdd.html#DevZest_Data_DataSet_BeginAdd">DataSet.BeginAdd()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DataSet.EndAdd.html#DevZest_Data_DataSet_EndAdd">DataSet.EndAdd()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DataSet.EndAdd.html#DevZest_Data_DataSet_EndAdd_System_Int32_">DataSet.EndAdd(Int32)</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DataSet.CancelAdd.html#DevZest_Data_DataSet_CancelAdd">DataSet.CancelAdd()</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DataSet.Container.html#DevZest_Data_DataSet_Container">DataSet.Container</a>
+    </div>
+    <div>
+      <a class="xref" href="DevZest.Data.DataSet.Deserialize.html#DevZest_Data_DataSet_Deserialize_System_String_DevZest_Data_IJsonCustomizer_">DataSet.Deserialize(String, IJsonCustomizer)</a>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="DevZest.Data.html">DevZest.Data</a></h6>
+  <h6><strong>Assembly</strong>: DevZest.Data.dll</h6>
+  <h5 id="DevZest_Data_DataSet_1_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public abstract class DataSet&lt;T&gt; : DataSet, IList&lt;DataRow&gt;, ICollection&lt;DataRow&gt;, IReadOnlyList&lt;DataRow&gt;, IReadOnlyCollection&lt;DataRow&gt;, IEnumerable&lt;DataRow&gt;, IEnumerable, IJsonView where T : class, IEntity, new()</code></pre>
+  </div>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">T</span></td>
+        <td><p>The type of the model.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="properties">Properties
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="DevZest_Data_DataSet_1__" data-uid="DevZest.Data.DataSet`1._">
+          <a class="xref" href="DevZest.Data.DataSet-1._.html#DevZest_Data_DataSet_1__">_</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the entity associated with this DataSet.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSet_1_Entity" data-uid="DevZest.Data.DataSet`1.Entity">
+          <a class="xref" href="DevZest.Data.DataSet-1.Entity.html#DevZest_Data_DataSet_1_Entity">Entity</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the entity of this DataSet.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSet_1_Model" data-uid="DevZest.Data.DataSet`1.Model">
+          <a class="xref" href="DevZest.Data.DataSet-1.Model.html#DevZest_Data_DataSet_1_Model">Model</a>
+        </td>
+        <td class="markdown level1 summary"></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td id="DevZest_Data_DataSet_1_AddRow_System_Action__0_DevZest_Data_DataRow__" data-uid="DevZest.Data.DataSet`1.AddRow(System.Action{`0,DevZest.Data.DataRow})">
+          <a class="xref" href="DevZest.Data.DataSet-1.AddRow.html#DevZest_Data_DataSet_1_AddRow_System_Action__0_DevZest_Data_DataRow__">AddRow(Action&lt;T, DataRow&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Adds DataRow into this DataSet.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSet_1_Clone" data-uid="DevZest.Data.DataSet`1.Clone">
+          <a class="xref" href="DevZest.Data.DataSet-1.Clone.html#DevZest_Data_DataSet_1_Clone">Clone()</a>
+        </td>
+        <td class="markdown level1 summary"><p>Clones this DataSet.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSet_1_Create_System_Action__0__" data-uid="DevZest.Data.DataSet`1.Create(System.Action{`0})">
+          <a class="xref" href="DevZest.Data.DataSet-1.Create.html#DevZest_Data_DataSet_1_Create_System_Action__0__">Create(Action&lt;T&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Create a new DataSet.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSet_1_EnsureInitialized" data-uid="DevZest.Data.DataSet`1.EnsureInitialized">
+          <a class="xref" href="DevZest.Data.DataSet-1.EnsureInitialized.html#DevZest_Data_DataSet_1_EnsureInitialized">EnsureInitialized()</a>
+        </td>
+        <td class="markdown level1 summary"><p>Ensures this DataSet is initialized.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSet_1_FillChildAsync__1_System_Int32_System_Func__0___0__DevZest_Data_DbSet___0__System_Action___0__" data-uid="DevZest.Data.DataSet`1.FillChildAsync``1(System.Int32,System.Func{`0,``0},DevZest.Data.DbSet{``0},System.Action{``0})">
+          <a class="xref" href="DevZest.Data.DataSet-1.FillChildAsync.html#DevZest_Data_DataSet_1_FillChildAsync__1_System_Int32_System_Func__0___0__DevZest_Data_DbSet___0__System_Action___0__">FillChildAsync&lt;TChild&gt;(Int32, Func&lt;T, TChild&gt;, DbSet&lt;TChild&gt;, Action&lt;TChild&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills child DataSet from source DbSet.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSet_1_FillChildAsync__1_System_Int32_System_Func__0___0__DevZest_Data_DbSet___0__System_Action___0__System_Threading_CancellationToken_" data-uid="DevZest.Data.DataSet`1.FillChildAsync``1(System.Int32,System.Func{`0,``0},DevZest.Data.DbSet{``0},System.Action{``0},System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.DataSet-1.FillChildAsync.html#DevZest_Data_DataSet_1_FillChildAsync__1_System_Int32_System_Func__0___0__DevZest_Data_DbSet___0__System_Action___0__System_Threading_CancellationToken_">FillChildAsync&lt;TChild&gt;(Int32, Func&lt;T, TChild&gt;, DbSet&lt;TChild&gt;, Action&lt;TChild&gt;, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills child DataSet from source DbSet.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSet_1_FillChildAsync__1_System_Int32_System_Func__0___0__DevZest_Data_DbSet___0__System_Threading_CancellationToken_" data-uid="DevZest.Data.DataSet`1.FillChildAsync``1(System.Int32,System.Func{`0,``0},DevZest.Data.DbSet{``0},System.Threading.CancellationToken)">
+          <a class="xref" href="DevZest.Data.DataSet-1.FillChildAsync.html#DevZest_Data_DataSet_1_FillChildAsync__1_System_Int32_System_Func__0___0__DevZest_Data_DbSet___0__System_Threading_CancellationToken_">FillChildAsync&lt;TChild&gt;(Int32, Func&lt;T, TChild&gt;, DbSet&lt;TChild&gt;, CancellationToken)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Fills child DataSet from source DbSet.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSet_1_Filter_DevZest_Data_JsonFilter_" data-uid="DevZest.Data.DataSet`1.Filter(DevZest.Data.JsonFilter)">
+          <a class="xref" href="DevZest.Data.DataSet-1.Filter.html#DevZest_Data_DataSet_1_Filter_DevZest_Data_JsonFilter_">Filter(JsonFilter)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Filters this DataSet for JSON serialization.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSet_1_Filter_DevZest_Data_JsonFilter___" data-uid="DevZest.Data.DataSet`1.Filter(DevZest.Data.JsonFilter[])">
+          <a class="xref" href="DevZest.Data.DataSet-1.Filter.html#DevZest_Data_DataSet_1_Filter_DevZest_Data_JsonFilter___">Filter(JsonFilter[])</a>
+        </td>
+        <td class="markdown level1 summary"><p>Filters this DataSet for JSON serialization.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSet_1_GetChild__1_System_Func__0___0__DevZest_Data_DataRow_" data-uid="DevZest.Data.DataSet`1.GetChild``1(System.Func{`0,``0},DevZest.Data.DataRow)">
+          <a class="xref" href="DevZest.Data.DataSet-1.GetChild.html#DevZest_Data_DataSet_1_GetChild__1_System_Func__0___0__DevZest_Data_DataRow_">GetChild&lt;TChild&gt;(Func&lt;T, TChild&gt;, DataRow)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the child DataSet.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSet_1_GetChild__1_System_Func__0___0__System_Int32_" data-uid="DevZest.Data.DataSet`1.GetChild``1(System.Func{`0,``0},System.Int32)">
+          <a class="xref" href="DevZest.Data.DataSet-1.GetChild.html#DevZest_Data_DataSet_1_GetChild__1_System_Func__0___0__System_Int32_">GetChild&lt;TChild&gt;(Func&lt;T, TChild&gt;, Int32)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Gets the child DataSet.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSet_1_Insert_System_Int32_System_Action__0_DevZest_Data_DataRow__" data-uid="DevZest.Data.DataSet`1.Insert(System.Int32,System.Action{`0,DevZest.Data.DataRow})">
+          <a class="xref" href="DevZest.Data.DataSet-1.Insert.html#DevZest_Data_DataSet_1_Insert_System_Int32_System_Action__0_DevZest_Data_DataRow__">Insert(Int32, Action&lt;T, DataRow&gt;)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Inserts DataRow at specified index.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSet_1_ParseJson_System_Action__0__System_String_DevZest_Data_IJsonCustomizer_" data-uid="DevZest.Data.DataSet`1.ParseJson(System.Action{`0},System.String,DevZest.Data.IJsonCustomizer)">
+          <a class="xref" href="DevZest.Data.DataSet-1.ParseJson.html#DevZest_Data_DataSet_1_ParseJson_System_Action__0__System_String_DevZest_Data_IJsonCustomizer_">ParseJson(Action&lt;T&gt;, String, IJsonCustomizer)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Deserializes from JSON string.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="DevZest_Data_DataSet_1_ParseJson_System_String_" data-uid="DevZest.Data.DataSet`1.ParseJson(System.String)">
+          <a class="xref" href="DevZest.Data.DataSet-1.ParseJson.html#DevZest_Data_DataSet_1_ParseJson_System_String_">ParseJson(String)</a>
+        </td>
+        <td class="markdown level1 summary"><p>Deserializes from JSON string.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="extensionmethods">Extension Methods</h3>
+  <div>
+      <a class="xref" href="DevZest.Data.Primitives.DataSourceExtensions.UpdateOriginalDataSource.html#DevZest_Data_Primitives_DataSourceExtensions_UpdateOriginalDataSource_DevZest_Data_DataSource_DevZest_Data_DataSource_System_Boolean_">DataSourceExtensions.UpdateOriginalDataSource(DataSource, DataSource, Boolean)</a>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/new/master/apiSpec/new?filename=DevZest_Data_DataSet_1.md&amp;value=---%0Auid%3A%20DevZest.Data.DataSet%601%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Data/DataSet_T.cs/#L13" class="contribution-link">View Source</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            <span>Copyright © Weifen Luo | DevZest</span>
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
