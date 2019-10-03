@@ -90,6 +90,7 @@
 <h5 class="decalaration">Declaration</h5>
 <div class="codewrapper">
   <pre><code class="lang-csharp hljs">public DbQuery&lt;T&gt; CreateAggregateQuery&lt;T&gt;(Action&lt;DbAggregateQueryBuilder, T&gt; buildQuery)
+
     where T : class, IEntity, new()</code></pre>
 </div>
 <h5 class="parameters">Parameters</h5>
@@ -157,6 +158,7 @@
 <h5 class="decalaration">Declaration</h5>
 <div class="codewrapper">
   <pre><code class="lang-csharp hljs">public DbQuery&lt;T&gt; CreateAggregateQuery&lt;T&gt;(T _, Action&lt;DbAggregateQueryBuilder, T&gt; buildQuery)
+
     where T : class, IEntity, new()</code></pre>
 </div>
 <h5 class="parameters">Parameters</h5>
@@ -230,6 +232,7 @@
 <h5 class="decalaration">Declaration</h5>
 <div class="codewrapper">
   <pre><code class="lang-csharp hljs">public DbQuery&lt;T&gt; CreateAggregateQuery&lt;T&gt;(Action&lt;T&gt; initializer, Action&lt;DbAggregateQueryBuilder, T&gt; buildQuery)
+
     where T : class, IEntity, new()</code></pre>
 </div>
 <h5 class="parameters">Parameters</h5>
@@ -303,6 +306,7 @@
 <h5 class="decalaration">Declaration</h5>
 <div class="codewrapper">
   <pre><code class="lang-csharp hljs">public DbQuery&lt;T&gt; CreateAggregateQuery&lt;T&gt;(T _, Action&lt;T&gt; initializer, Action&lt;DbAggregateQueryBuilder, T&gt; buildQuery)
+
     where T : class, IEntity, new()</code></pre>
 </div>
 <h5 class="parameters">Parameters</h5>

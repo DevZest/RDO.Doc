@@ -158,7 +158,9 @@
 <h5 class="decalaration">Declaration</h5>
 <div class="codewrapper">
   <pre><code class="lang-csharp hljs">public static DbSelectStatement BuildUpdateStatement&lt;TSource, TTarget&gt;(this DbTable&lt;TTarget&gt; target, DbSet&lt;TSource&gt; source, IReadOnlyList&lt;ColumnMapping&gt; columnMappings, IReadOnlyList&lt;ColumnMapping&gt; keyMappings)
+
     where TSource : class, IEntity, new()
+
     where TTarget : class, IEntity, new()</code></pre>
 </div>
 <h5 class="parameters">Parameters</h5>
@@ -247,7 +249,9 @@
 <h5 class="decalaration">Declaration</h5>
 <div class="codewrapper">
   <pre><code class="lang-csharp hljs">public static DbSelectStatement BuildUpdateStatement&lt;TSource, TTarget&gt;(this DbTable&lt;TTarget&gt; target, DbSet&lt;TSource&gt; source, Action&lt;ColumnMapper, TSource, TTarget&gt; columnMapper, IReadOnlyList&lt;ColumnMapping&gt; keyMappings)
+
     where TSource : class, IEntity, new()
+
     where TTarget : class, IEntity, new()</code></pre>
 </div>
 <h5 class="parameters">Parameters</h5>

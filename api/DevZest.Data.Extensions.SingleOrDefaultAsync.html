@@ -91,7 +91,9 @@ this method throws an exception if more than one records exist.</p>
 <h5 class="decalaration">Declaration</h5>
 <div class="codewrapper">
   <pre><code class="lang-csharp hljs">public static Task&lt;T&gt; SingleOrDefaultAsync&lt;TEntity, T&gt;(this DbSet&lt;TEntity&gt; dbSet, Func&lt;TEntity, T&gt; getColumn, CancellationToken ct = default(CancellationToken))
+
     where TEntity : class, IEntity, new()
+
     where T : Column, IColumn&lt;DbReader&gt;, new()</code></pre>
 </div>
 <h5 class="parameters">Parameters</h5>

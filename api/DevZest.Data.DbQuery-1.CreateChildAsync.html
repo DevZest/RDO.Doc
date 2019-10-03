@@ -90,6 +90,7 @@
 <h5 class="decalaration">Declaration</h5>
 <div class="codewrapper">
   <pre><code class="lang-csharp hljs">public Task&lt;DbQuery&lt;TChild&gt;&gt; CreateChildAsync&lt;TChild&gt;(Func&lt;T, TChild&gt; getChildModel, DbSet&lt;TChild&gt; sourceData, CancellationToken ct = default(CancellationToken))
+
     where TChild : Model, new()</code></pre>
 </div>
 <h5 class="parameters">Parameters</h5>
@@ -169,6 +170,7 @@
 <h5 class="decalaration">Declaration</h5>
 <div class="codewrapper">
   <pre><code class="lang-csharp hljs">public Task&lt;DbQuery&lt;TChild&gt;&gt; CreateChildAsync&lt;TChild&gt;(Func&lt;T, TChild&gt; getChildModel, Action&lt;DbQueryBuilder, TChild&gt; buildQuery, CancellationToken ct = default(CancellationToken))
+
     where TChild : Model, new()</code></pre>
 </div>
 <h5 class="parameters">Parameters</h5>
@@ -248,6 +250,7 @@
 <h5 class="decalaration">Declaration</h5>
 <div class="codewrapper">
   <pre><code class="lang-csharp hljs">public Task&lt;DbQuery&lt;TChild&gt;&gt; CreateChildAsync&lt;TChild&gt;(Action&lt;TChild&gt; initializer, Func&lt;T, TChild&gt; getChildModel, DbSet&lt;TChild&gt; sourceData, CancellationToken ct = default(CancellationToken))
+
     where TChild : Model, new()</code></pre>
 </div>
 <h5 class="parameters">Parameters</h5>
@@ -333,6 +336,7 @@
 <h5 class="decalaration">Declaration</h5>
 <div class="codewrapper">
   <pre><code class="lang-csharp hljs">public Task&lt;DbQuery&lt;TChild&gt;&gt; CreateChildAsync&lt;TChild&gt;(Action&lt;TChild&gt; initializer, Func&lt;T, TChild&gt; getChildModel, Action&lt;DbQueryBuilder, TChild&gt; buildQuery, CancellationToken ct = default(CancellationToken))
+
     where TChild : Model, new()</code></pre>
 </div>
 <h5 class="parameters">Parameters</h5>
@@ -418,6 +422,7 @@
 <h5 class="decalaration">Declaration</h5>
 <div class="codewrapper">
   <pre><code class="lang-csharp hljs">public Task&lt;DbQuery&lt;TChild&gt;&gt; CreateChildAsync&lt;TChild&gt;(Func&lt;T, TChild&gt; getChildModel, Action&lt;DbAggregateQueryBuilder, TChild&gt; buildQuery, CancellationToken ct = default(CancellationToken))
+
     where TChild : Model, new()</code></pre>
 </div>
 <h5 class="parameters">Parameters</h5>
@@ -497,6 +502,7 @@
 <h5 class="decalaration">Declaration</h5>
 <div class="codewrapper">
   <pre><code class="lang-csharp hljs">public Task&lt;DbQuery&lt;TChild&gt;&gt; CreateChildAsync&lt;TChild&gt;(Action&lt;TChild&gt; initializer, Func&lt;T, TChild&gt; getChildModel, Action&lt;DbAggregateQueryBuilder, TChild&gt; buildQuery, CancellationToken ct = default(CancellationToken))
+
     where TChild : Model, new()</code></pre>
 </div>
 <h5 class="parameters">Parameters</h5>

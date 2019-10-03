@@ -208,6 +208,7 @@
 <h5 class="decalaration">Declaration</h5>
 <div class="codewrapper">
   <pre><code class="lang-csharp hljs">public Task&lt;int&gt; UpdateAsync&lt;TSource&gt;(DbSet&lt;TSource&gt; source, CancellationToken ct = default(CancellationToken))
+
     where TSource : class, T, new()</code></pre>
 </div>
 <h5 class="parameters">Parameters</h5>
@@ -281,6 +282,7 @@
 <h5 class="decalaration">Declaration</h5>
 <div class="codewrapper">
   <pre><code class="lang-csharp hljs">public Task&lt;int&gt; UpdateAsync&lt;TSource&gt;(DbSet&lt;TSource&gt; source, Action&lt;ColumnMapper, T&gt; columnMapper, Func&lt;TSource, T, KeyMapping&gt; keyMapper, CancellationToken ct = default(CancellationToken))
+
     where TSource : class, IEntity, new()</code></pre>
 </div>
 <h5 class="parameters">Parameters</h5>
@@ -366,6 +368,7 @@
 <h5 class="decalaration">Declaration</h5>
 <div class="codewrapper">
   <pre><code class="lang-csharp hljs">public Task&lt;int&gt; UpdateAsync&lt;TSource&gt;(DbSet&lt;TSource&gt; source, Action&lt;ColumnMapper, TSource, T&gt; columnMapper, Func&lt;TSource, T, KeyMapping&gt; keyMapper, CancellationToken ct = default(CancellationToken))
+
     where TSource : class, IEntity, new()</code></pre>
 </div>
 <h5 class="parameters">Parameters</h5>
@@ -451,6 +454,7 @@
 <h5 class="decalaration">Declaration</h5>
 <div class="codewrapper">
   <pre><code class="lang-csharp hljs">public Task&lt;int&gt; UpdateAsync&lt;TSource&gt;(DataSet&lt;TSource&gt; source, int rowIndex, CancellationToken ct = default(CancellationToken))
+
     where TSource : class, T, new()</code></pre>
 </div>
 <h5 class="parameters">Parameters</h5>
@@ -530,6 +534,7 @@
 <h5 class="decalaration">Declaration</h5>
 <div class="codewrapper">
   <pre><code class="lang-csharp hljs">public Task&lt;int&gt; UpdateAsync&lt;TSource&gt;(DataSet&lt;TSource&gt; source, int rowIndex, Action&lt;ColumnMapper, TSource, T&gt; columnMapper, Func&lt;TSource, T, KeyMapping&gt; keyMapper, CancellationToken ct = default(CancellationToken))
+
     where TSource : class, IEntity, new()</code></pre>
 </div>
 <h5 class="parameters">Parameters</h5>
@@ -621,6 +626,7 @@
 <h5 class="decalaration">Declaration</h5>
 <div class="codewrapper">
   <pre><code class="lang-csharp hljs">public Task&lt;int&gt; UpdateAsync&lt;TSource&gt;(DataSet&lt;TSource&gt; source, CancellationToken ct = default(CancellationToken))
+
     where TSource : class, T, new()</code></pre>
 </div>
 <h5 class="parameters">Parameters</h5>
@@ -694,6 +700,7 @@
 <h5 class="decalaration">Declaration</h5>
 <div class="codewrapper">
   <pre><code class="lang-csharp hljs">public Task&lt;int&gt; UpdateAsync&lt;TSource&gt;(DataSet&lt;TSource&gt; source, Action&lt;ColumnMapper, TSource, T&gt; columnMapper, CancellationToken ct = default(CancellationToken))
+
     where TSource : class, T, new()</code></pre>
 </div>
 <h5 class="parameters">Parameters</h5>
@@ -773,6 +780,7 @@
 <h5 class="decalaration">Declaration</h5>
 <div class="codewrapper">
   <pre><code class="lang-csharp hljs">public Task&lt;int&gt; UpdateAsync&lt;TSource&gt;(DataSet&lt;TSource&gt; source, Action&lt;ColumnMapper, TSource, T&gt; columnMapper, Func&lt;TSource, T, KeyMapping&gt; keyMapper, CancellationToken ct = default(CancellationToken))
+
     where TSource : class, IEntity, new()</code></pre>
 </div>
 <h5 class="parameters">Parameters</h5>

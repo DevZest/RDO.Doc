@@ -86,18 +86,17 @@
 <p>We have more and more requirements to build custom applications to support our business. We need to move our enterprise applications from heavyweight to lightweight and agile, with greatly reduced cost and time to deployment. Enterprise applications should be:</p>
 <ul>
 <li>Rapid development - direct cost and time to deployment</li>
-<li>Fully testable - quality and</li>
-<li>Confident to massive changes - business flexibility (suitability)</li>
+<li>Easy refactoring and changing - suitability of software to customer needs</li>
 </ul>
 <p>These are the design goals of RDO.Net.</p>
 <h2 id="the-challenges">The Challenges</h2>
 <p>For decades, the following challenges exist in enterprise application development, or more broadly speaking, in computer science:</p>
 <ul>
-<li><a href="https://en.wikipedia.org/wiki/Object-relational_mapping">Object-Relational Mapping (ORM, O/RM, and O/R mapping tool)</a>, is still <a href="http://blogs.tedneward.com/post/the-vietnam-of-computer-science/">The Vietnam of Computer Science</a>. Particularly, these difficulties are referred to as the <a href="https://en.wikipedia.org/wiki/Object-relational_impedance_mismatch">object-relational impedance mismatch</a>.</li>
-<li>Database testing, still stays on principles and guidelines. No widely practical use yet. Refactoring an enterprise
-application is error prone due to lack of database testing.</li>
-<li>Separation of the graphical user interface from the business logic or back-end logic (the data model), is still a challenge task. Frameworks such as <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel">MVVM</a> exists, but it's far from ideal: it will hit the wall when dealing with complex layout or complex interactivity; refactoring UI logic is still error prone, etc.</li>
+<li><a href="https://en.wikipedia.org/wiki/Object-relational_mapping">Object-Relational Mapping (ORM, O/RM, and O/R mapping tool)</a>, as the core of enterprise applications, is still <a href="http://blogs.tedneward.com/post/the-vietnam-of-computer-science/">The Vietnam of Computer Science</a>. Particularly, these difficulties are referred to as the <a href="https://en.wikipedia.org/wiki/Object-relational_impedance_mismatch">object-relational impedance mismatch</a>.</li>
+<li>Database testing, still stays on principles and guidelines. No widely practical use yet. Refactoring or changing an enterprise application is time consuming and error prone.</li>
+<li>Existing data presentation solutions are far from ideal. Taking <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel">MVVM</a> for example: it can be overkill for simple UI; in bigger cases, it can be hard to design the ViewModel up front in order to get the right amount of generality. Refactoring or changing data presentation code is time consuming and error prone.</li>
 </ul>
+
 <p>These are the problems that RDO.Net gonna to solve.</p>
 </article>
           </div>
