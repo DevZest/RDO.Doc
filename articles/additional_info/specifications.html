@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Manage Your Registration/Subscription </title>
+    <title>Specifications </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Manage Your Registration/Subscription ">
+    <meta name="title" content="Specifications ">
     <meta name="generator" content="docfx 2.43.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
@@ -66,32 +66,34 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="manage_registration_subscription">
-<h1 id="manage-your-registrationsubscription">Manage Your Registration/Subscription</h1>
+            <article class="content wrap" id="_content" data-uid="specifications">
+<h1 id="specifications">Specifications</h1>
 
-<p>RDO.Tools must be activated/licensed after installation. If you're using Visual Studio Community Edition, you can use RDO.Tools for free (only registration required); if you're using other editions of Visual Studio, you need a subscription license or a trial license for one month. Please refer to <a class="xref" href="rdo_tools_license.html">RDO.Tools License</a> for details.</p>
-<p>You manage your registration/subscription at <a href="https://my.devzest.com">https://my.devzest.com</a>.</p>
-<h2 id="registration">Registration</h2>
-<p>Registration is required for using RDO.Tools. Please register via web page <a href="https://my.devzest.com/Account/Register">https://my.devzest.com/Account/Register</a>:</p>
-<p><img src="/images/MyDevZestRegister.jpg" alt="image"></p>
-<p>An email will be sent to verify your email address. Email address must be verified before accessing the account.</p>
-<p>If you're using Visual Studio Community Edition, you're all set here.</p>
-<h2 id="subscription">Subscription</h2>
-<p>If you're using Visual Studio Professional or Enterprise edition, you must have any valid subscription of the following:</p>
+<h2 id="nuget-packages">NuGet Packages</h2>
+<p>The following NuGet packages are delivered:</p>
 <ul>
-<li>Trial: Free for experiment within one month. Valid for current user only.</li>
-<li>Individual: Subscription purchased individually. Valid for current user only.</li>
-<li>Team Member: You can join a team to consume a Team Subscription which is purchased/renewed for a group of developers, to reduce number of purchases.</li>
+<li><a href="https://www.nuget.org/packages/DevZest.Data/">DevZest.Data</a></li>
+<li><a href="https://www.nuget.org/packages/DevZest.Data.SqlServer/">DevZest.Data.SqlServer</a></li>
+<li><a href="https://www.nuget.org/packages/DevZest.Data.MySql/">DevZest.Data.MySql</a></li>
+<li><a href="https://www.nuget.org/packages/DevZest.Data.DbInit/">DevZest.Data.DbInit</a></li>
+<li><a href="https://www.nuget.org/packages/DevZest.Data.WPF/">DevZest.Data.WPF</a></li>
+<li><a href="https://www.nuget.org/packages/DevZest.Data.AspNetCore/">DevZest.Data.AspNetCore</a></li>
 </ul>
-<p>You can find pricing of the individual and team subscription <a href="https://my.devzest.com/Pricing">here</a>.</p>
-<p>Subscriptions of any user can be consumed concurrently by up to 3 machines (instances). Instance can be deleted if unwanted.</p>
-<p>Team Subscription:</p>
+<p>These NuGet packages are targeting .Net Standard 2.0.</p>
+<h2 id="supported-databases">Supported Databases</h2>
 <ul>
-<li>Team subscription allows shared subscriptions for a group of developers. Use team subscription to reduce number of purchases and unify the expiration dates for the whole team.</li>
-<li>After purchased, a <em>Member Key</em> (GUID) will be generated for each team subscription. You, as the owner or administrator, can distribute this Member Key to your team members to consume this team subscription. Team subscription is priced and controlled by the <em>Team Size</em>; joined team members can resign from this team subscription so that other members can consume it.</li>
-<li>An <em>Admin Key</em> will also be generated for each team subscription. You can invite other people to be administrator of this team subscription by using this Admin Key. Administrators can perform management tasks such as renewing or resizing the team, monitoring team members, regenerating the Member or Admin Key, etc.</li>
-<li>The team can <em>upsize</em> or <em>downsize</em> at any time, with proportional price. The downsize amount will result in an increase to your <em>team redeemable balance</em>, which will be deducted for your next payment of this team automatically.</li>
-<li>Team subscription owner can be transferred to another administrator.</li>
+<li><a href="https://www.nuget.org/packages/DevZest.Data.SqlServer/">DevZest.Data.SqlServer</a>: SQL Server Version 2016 (13) or later</li>
+<li><a href="https://www.nuget.org/packages/DevZest.Data.MySql/">DevZest.Data.MySql</a>: MySQL (InnoDB) Version 8.0.4 or later</li>
+</ul>
+<h2 id="visual-studio-extension">Visual Studio Extension</h2>
+<p>The following Visual Studio extension is delivered as design time tool:</p>
+<ul>
+<li><a href="https://marketplace.visualstudio.com/items?itemName=DevZest.rdotools">DevZest.Data.Tools.vsix</a> (aka RDO.Tools)</li>
+</ul>
+<p>Supported Visual Studio:</p>
+<ul>
+<li>Visual Studio 2017, All Editions, Versions 15.3 or higher</li>
+<li>Visual Studio 2019, All Editions and Versions</li>
 </ul>
 </article>
           </div>
@@ -101,7 +103,7 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Docs/articles/getting_started/manage_registration_subscription.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Docs/articles/additional_info/specifications.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

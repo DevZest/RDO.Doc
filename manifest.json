@@ -43749,7 +43749,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/_about_rdo_net.html",
-          "hash": "5qUNQ6NNjrIlf2PFpdoarw=="
+          "hash": "pOd1grrV60lMVMuB91xdyg=="
         }
       },
       "is_incremental": false,
@@ -43797,7 +43797,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/_rdo_net_license.html",
-          "hash": "r/HK5PUD+ulaeJONqJ/YDw=="
+          "hash": "EJwBhR+MrbO2a5kh2p+yUQ=="
         }
       },
       "is_incremental": true,
@@ -43841,11 +43841,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "articles/getting_started/get_started.md",
+      "source_relative_path": "articles/additional_info/manage_registration_subscription.md",
       "output": {
         ".html": {
-          "relative_path": "articles/getting_started/get_started.html",
-          "hash": "TJ3FXCC+3g6ll5tBAJ4GcQ=="
+          "relative_path": "articles/additional_info/manage_registration_subscription.html",
+          "hash": "tPyGfdyxBR8Ec6qWf4CIiw=="
         }
       },
       "is_incremental": true,
@@ -43853,11 +43853,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "articles/getting_started/manage_registration_subscription.md",
+      "source_relative_path": "articles/additional_info/rdo_net_runtime_license.md",
       "output": {
         ".html": {
-          "relative_path": "articles/getting_started/manage_registration_subscription.html",
-          "hash": "Xbe3Nmlyf4kamIAA1toTmQ=="
+          "relative_path": "articles/additional_info/rdo_net_runtime_license.html",
+          "hash": "DmUoZkpiIyspcSY8M0adUA=="
         }
       },
       "is_incremental": true,
@@ -43865,11 +43865,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "articles/getting_started/rdo_net_runtime_license.md",
+      "source_relative_path": "articles/additional_info/rdo_tools_activation.md",
       "output": {
         ".html": {
-          "relative_path": "articles/getting_started/rdo_net_runtime_license.html",
-          "hash": "py1KikSAYUo4052nUGWIxQ=="
+          "relative_path": "articles/additional_info/rdo_tools_activation.html",
+          "hash": "hwiPfyC2iMyhdD9erMGDPw=="
         }
       },
       "is_incremental": true,
@@ -43877,11 +43877,23 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "articles/getting_started/rdo_tools_license.md",
+      "source_relative_path": "articles/additional_info/rdo_tools_license.md",
       "output": {
         ".html": {
-          "relative_path": "articles/getting_started/rdo_tools_license.html",
-          "hash": "tZL9t4SZcL9SiP+2HAJt+A=="
+          "relative_path": "articles/additional_info/rdo_tools_license.html",
+          "hash": "ccbERGyZiFe/qrVoajFVIw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/additional_info/specifications.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/additional_info/specifications.html",
+          "hash": "KW4m74HXN0JkdzRX6NW6ZQ=="
         }
       },
       "is_incremental": true,
@@ -43893,7 +43905,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/overview/about_rdo_net.html",
-          "hash": "GJSkmG4yQCPhvoysYlcJcA=="
+          "hash": "wtPvvockK85gIjJ5P7Xdvg=="
         }
       },
       "is_incremental": false,
@@ -44493,7 +44505,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/toc.html",
-          "hash": "GPorJO/s7JQc/iswjFnTDg=="
+          "hash": "vENgS20lRsW/sdX0oQcyiA=="
         }
       },
       "is_incremental": false,
@@ -44505,7 +44517,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/tutorial/get_started.html",
-          "hash": "/2JRUy3U71ISl8MX+gU2Dw=="
+          "hash": "K49HgC+odsF09Jq5SroMfQ=="
         }
       },
       "is_incremental": true,
@@ -45633,7 +45645,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "9e7LIX+7ZUopnKhnWmxzgQ=="
+          "hash": "Xhi7wNVWjmNtPSfpzL9nhA=="
         }
       },
       "is_incremental": false,
@@ -45661,13 +45673,6 @@
         "skipped_file_count": 0
       },
       "processors": {
-        "TocDocumentProcessor": {
-          "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
-          "incrementalPhase": "build",
-          "total_file_count": 0,
-          "skipped_file_count": 0
-        },
         "ResourceDocumentProcessor": {
           "can_incremental": false,
           "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
@@ -45678,14 +45683,21 @@
         "ConceptualDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
-          "total_file_count": 69,
-          "skipped_file_count": 66
+          "total_file_count": 70,
+          "skipped_file_count": 67
         },
         "ManagedReferenceDocumentProcessor": {
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 498,
           "skipped_file_count": 498
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
         }
       }
     },
