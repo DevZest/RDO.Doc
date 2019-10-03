@@ -90,9 +90,7 @@
 <h5 class="decalaration">Declaration</h5>
 <div class="codewrapper">
   <pre><code class="lang-csharp hljs">public DbAggregateQueryBuilder LeftJoin&lt;T, TKey&gt;(DbSet&lt;T&gt; dbSet, TKey left, out T _)
-
     where T : class, IEntity&lt;TKey&gt;, new()
-
     where TKey : CandidateKey</code></pre>
 </div>
 <h5 class="parameters">Parameters</h5>
@@ -177,9 +175,7 @@
 <h5 class="decalaration">Declaration</h5>
 <div class="codewrapper">
   <pre><code class="lang-csharp hljs">public DbAggregateQueryBuilder LeftJoin&lt;T, TKey&gt;(DbSet&lt;T&gt; dbSet, TKey left, Func&lt;T, TKey&gt; right, out T _)
-
     where T : class, IEntity, new()
-
     where TKey : CandidateKey</code></pre>
 </div>
 <h5 class="parameters">Parameters</h5>

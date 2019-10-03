@@ -74,9 +74,8 @@
 <p>Enterprise application, typically backed by a relational database, has decades of history. Today's enterprise applications are unnecessarily complex and heavyweight, due to the following technical constraints:</p>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Object-relational_mapping">Object-Relational Mapping (ORM, O/RM, and O/R mapping tool)</a>, as the core of enterprise applications, is still <a href="http://blogs.tedneward.com/post/the-vietnam-of-computer-science/">The Vietnam of Computer Science</a>. Particularly, these difficulties are referred to as the <a href="https://en.wikipedia.org/wiki/Object-relational_impedance_mismatch">object-relational impedance mismatch</a>.</li>
-<li>Database testing, still stays on principles and guidelines. No widely practical use yet. Refactoring an enterprise
-application is time consuming and error prone.</li>
-<li>Separation of the graphical user interface from the business logic or back-end logic (the data model), is still a challenge task. Frameworks such as <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel">MVVM</a> exists, but it's far from ideal: it will hit the wall when dealing with complex layout or complex interactivity; refactoring UI logic is still error prone, etc.</li>
+<li>Database testing, still stays on principles and guidelines. No widely practical use yet. Refactoring or changing an enterprise application is time consuming and error prone.</li>
+<li>Existing data presentation solutions are far from ideal. Taking <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel">MVVM</a> for example: it can be overkill for simple UI; in bigger cases, it can be hard to design the ViewModel up front in order to get the right amount of generality. Refactoring or changing data presentation code is time consuming and error prone.</li>
 </ul>
 <p>The above challenges impose great burdens for developing and further changing an enterprise application. Many frameworks are trying to solve these problems however they are all far from ideal. RDO.Net is the only solution to these problems in an integral, not an after-thought way (strongly recommended reading through):</p>
 <ul>
@@ -86,12 +85,11 @@ application is time consuming and error prone.</li>
 </ul>
 <p>In the end, your application follows your business in a no-more-no-less basis - it adapts to your business, not vice versa:</p>
 <ul>
-<li>Your application is 100% strongly typed from database to GUI, with clean code in C#/VB.Net. No fancy HQL, XAML or any other DSL - traditional problems are solved in a traditional way.</li>
-<li>Your data access is best balanced for both performance and maintainability because you're writing native SQL using C#/VB.Net.</li>
-<li>A one-for-all, fully customizable data presenter is provided to handle view states including layout, data binding and data validation, all in clean C#/VB.Net code. Most complex controls such as ListBox, TreeView, DataGrid are eliminated. You have the greatest control over your UI because you're dealing with basic control such as label and text box directly.</li>
-<li>JSON serialization/deserialization is a first class citizen - better performance because no reflection required.</li>
-<li>Database testing and deployment is a first class citizen. You can easily mock part of database with testing data, perform two way conversion between DataSet C#/VB.Net code and the database, right in Visual Studio. C#/VB.Net code is everything you need to commit in your source control repo.</li>
-<li>And much more with a lightweight runtime - you only need to add several dlls into your application, only hundreds or even tens of KBs in size!</li>
+<li>Your application is 100% strongly typed from database to GUI, all in clean C#/VB.Net code. Refactoring or changing your code is much easier than ever before.</li>
+<li>Your data access is best balanced for both programmability and performance. Rich set of data objects such as <code>Model</code>, <code>Db</code>, <code>DbTable</code>, <code>DbQuery</code> and <code>DataSet</code> are provided, no more <a href="https://en.wikipedia.org/wiki/Object-relational_impedance_mismatch">object-relational impedance mismatch</a>.</li>
+<li>Data access testing is a first class citizen which can be performed easily. Data is the core of your application, now you can build much more robust data access layer.</li>
+<li>A one-for-all, fully customizable data presenter is provided to handle presentation logic including layout, data binding and data validation, all consumed in clean C#/VB.Net code (no XAML needed). You don't need complex controls such as <code>ListBox</code>, <code>TreeView</code>, <code>DataGrid</code> any more. You UI code is greatly simplified because you can reuse all the presentation logic.</li>
+<li>And much more with a lightweight runtime - you only need to add several dlls into your application, size ranged from tens to several hundereds KBs.</li>
 </ul>
 <h2 id="a-taste-of-rdonet">A Taste of RDO.Net</h2>
 <p>A fully featured sample application, <a href="https://github.com/DevZest/AdventureWorksLT">AdventureWorksLT</a>, together with others, is provided to demonstrate the use of RDO.Net:</p>

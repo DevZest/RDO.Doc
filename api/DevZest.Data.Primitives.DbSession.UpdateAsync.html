@@ -90,9 +90,7 @@
 <h5 class="decalaration">Declaration</h5>
 <div class="codewrapper">
   <pre><code class="lang-csharp hljs">protected abstract Task&lt;int&gt; UpdateAsync&lt;TSource, TTarget&gt;(DataSet&lt;TSource&gt; source, DbTable&lt;TTarget&gt; target, Action&lt;ColumnMapper, TSource, TTarget&gt; columnMapper, CandidateKey targetKey, CancellationToken ct)
-
     where TSource : class, IEntity, new()
-
     where TTarget : class, IEntity, new()</code></pre>
 </div>
 <h5 class="parameters">Parameters</h5>
