@@ -1,3 +1,3 @@
 # RDO.Doc
 
-Documentation of RDO.Net
+Documentation (github pages) of [RDO.Net](https://github.com/DevZest/RDO.Net)
