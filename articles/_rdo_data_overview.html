@@ -5,17 +5,17 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>RDO.Data Overview </title>
+    <title>RDO.Data Features, Pros and Cons </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="RDO.Data Overview ">
+    <meta name="title" content="RDO.Data Features, Pros and Cons ">
     <meta name="generator" content="docfx 2.43.2.0">
     
-    <link rel="shortcut icon" href="../../favicon.ico">
-    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
-    <link rel="stylesheet" href="../../styles/docfx.css">
-    <link rel="stylesheet" href="../../styles/main.css">
-    <meta property="docfx:navrel" content="../../toc.html">
-    <meta property="docfx:tocrel" content="../toc.html">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
     
     
     
@@ -34,8 +34,8 @@
                 <span class="icon-bar"></span>
               </button>
               
-              <a class="navbar-brand" href="../../index.html">
-                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
               </a>
             </div>
             <div class="collapse navbar-collapse" id="navbar">
@@ -66,31 +66,26 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="rdo_data_overview">
-<h1 id="rdodata-overview">RDO.Data Overview</h1>
+            <article class="content wrap" id="_content" data-uid="">
 
-<p>RDO.Data is the core of RDO.Net. It helps developers to build data and business layer of the your applications:</p>
-<p><img src="/images/RdoDataOverview.jpg" alt="image"></p>
-<h2 id="rdodata-architecture">RDO.Data Architecture</h2>
-<p>Building on top of <a href="https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/">ADO.Net</a>, RDO.Data implements relational schema and data into a comprehensive yet simple object model:</p>
 <p><img src="/images/RdoDataArchitecture2.jpg" alt="image"></p>
 <p>The following data objects are provided with rich set of properties, methods and events:</p>
 <ul>
-<li><a class="xref" href="../../api/DevZest.Data.Model.html">Model</a>/<a class="xref" href="../../api/DevZest.Data.Model-1.html">Model&lt;T&gt;</a>: Defines the meta data of model, and declarative business logic such as data constraints, automatic calculated field and validation, which can be consumed for both database and local in-memory code.</li>
-<li><a class="xref" href="../../api/DevZest.Data.DataSet-1.html">DataSet&lt;T&gt;</a>: Stores hierarchical data locally and acts as domain model of your business logic. It can be conveniently exchanged with relational database in set-based operations (CRUD), or external system via JSON.</li>
+<li><a class="xref" href="../api/DevZest.Data.Model.html">Model</a>/<a class="xref" href="../api/DevZest.Data.Model-1.html">Model&lt;T&gt;</a>: Defines the meta data of model, and declarative business logic such as data constraints, automatic calculated field and validation, which can be consumed for both database and local in-memory code.</li>
+<li><a class="xref" href="../api/DevZest.Data.DataSet-1.html">DataSet&lt;T&gt;</a>: Stores hierarchical data locally and acts as domain model of your business logic. It can be conveniently exchanged with relational database in set-based operations (CRUD), or external system via JSON.</li>
 <li><code>Db</code>: Defines the database session, which contains:
 <ul>
-<li><a class="xref" href="../../api/DevZest.Data.DbTable-1.html">DbTable&lt;T&gt;</a>: Permanent database tables for data storage;</li>
-<li>Instance methods of <code>Db</code> class to implement procedural business logic, using <a class="xref" href="../../api/DevZest.Data.DataSet-1.html">DataSet&lt;T&gt;</a> objects as input/output. The business logic can be simple CRUD operations, or complex operation such as MRP calculation:
+<li><a class="xref" href="../api/DevZest.Data.DbTable-1.html">DbTable&lt;T&gt;</a>: Permanent database tables for data storage;</li>
+<li>Instance methods of <code>Db</code> class to implement procedural business logic, using <a class="xref" href="../api/DevZest.Data.DataSet-1.html">DataSet&lt;T&gt;</a> objects as input/output. The business logic can be simple CRUD operations, or complex operation such as MRP calculation:
 <ul>
-<li>You can use <a class="xref" href="../../api/DevZest.Data.DbQuery-1.html">DbQuery&lt;T&gt;</a> objects to encapsulate data as reusable view, and/or temporary <a class="xref" href="../../api/DevZest.Data.DbTable-1.html">DbTable&lt;T&gt;</a> objects to store intermediate result, to write stored procedure alike, set-based operations (CRUD) business logic.</li>
-<li>On the other hand, <a class="xref" href="../../api/DevZest.Data.DataSet-1.html">DataSet&lt;T&gt;</a> objects, in addition to be used as input/output of your procedural business logic, can also be used to write in-memory code to implement your business logic locally.</li>
+<li>You can use <a class="xref" href="../api/DevZest.Data.DbQuery-1.html">DbQuery&lt;T&gt;</a> objects to encapsulate data as reusable view, and/or temporary <a class="xref" href="../api/DevZest.Data.DbTable-1.html">DbTable&lt;T&gt;</a> objects to store intermediate result, to write stored procedure alike, set-based operations (CRUD) business logic.</li>
+<li>On the other hand, <a class="xref" href="../api/DevZest.Data.DataSet-1.html">DataSet&lt;T&gt;</a> objects, in addition to be used as input/output of your procedural business logic, can also be used to write in-memory code to implement your business logic locally.</li>
 <li>Since these objects are database agnostic, you can easily port your business logic into different relational databases.</li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a class="xref" href="../../api/DevZest.Data.DbMock-1.html">DbMock&lt;T&gt;</a>: Easily mock the database in an isolated, known state for testing.</li>
+<li><a class="xref" href="../api/DevZest.Data.DbMock-1.html">DbMock&lt;T&gt;</a>: Easily mock the database in an isolated, known state for testing.</li>
 </ul>
 <p>The following is an example of business layer implementation, to deal with sales orders in <code>AdventureWorksLT</code> sample. Please note the example is just CRUD operations for simplicity, RDO.Data is capable of doing much more than it.</p>
 <div class="tabGroup" id="tabgroup_CeZOj-G++Q">
@@ -251,8 +246,8 @@ End Class
 <li>Comprehensive hierarchical data support.</li>
 <li>Rich declarative business logic support: constraints, automatic calculated filed, validations, etc, for both server side and client side.</li>
 <li>Comprehensive inter-table join/lookup support.</li>
-<li>Reusable view via <a class="xref" href="../../api/DevZest.Data.DbQuery-1.html">DbQuery&lt;T&gt;</a> objects.</li>
-<li>Intermediate result store via temporary <a class="xref" href="../../api/DevZest.Data.DbTable-1.html">DbTable&lt;T&gt;</a> objects.</li>
+<li>Reusable view via <a class="xref" href="../api/DevZest.Data.DbQuery-1.html">DbQuery&lt;T&gt;</a> objects.</li>
+<li>Intermediate result store via temporary <a class="xref" href="../api/DevZest.Data.DbTable-1.html">DbTable&lt;T&gt;</a> objects.</li>
 <li>Comprehensive JSON support, better performance because no reflection required.</li>
 <li>Fully customizable data types and user-defined functions.</li>
 <li>Built-in logging for database operations.</li>
@@ -271,7 +266,7 @@ End Class
 </ul>
 <h4 id="cons">Cons</h4>
 <ul>
-<li>It's new. Although APIs are designed clean and intuitive, you or your team still need some time to get familiar with the framework. Particularly, your domain model objects are split into two parts: the <a class="xref" href="../../api/DevZest.Data.Model.html">Model</a>/<a class="xref" href="../../api/DevZest.Data.Model-1.html">Model&lt;T&gt;</a> objects and <a class="xref" href="../../api/DevZest.Data.DataSet-1.html">DataSet&lt;T&gt;</a> objects. It's not complex, but you or your team may need some time to get used to it.</li>
+<li>It's new. Although APIs are designed clean and intuitive, you or your team still need some time to get familiar with the framework. Particularly, your domain model objects are split into two parts: the <a class="xref" href="../api/DevZest.Data.Model.html">Model</a>/<a class="xref" href="../api/DevZest.Data.Model-1.html">Model&lt;T&gt;</a> objects and <a class="xref" href="../api/DevZest.Data.DataSet-1.html">DataSet&lt;T&gt;</a> objects. It's not complex, but you or your team may need some time to get used to it.</li>
 <li>To best utilize RDO.Data, your team should be comfortable with SQL, at least to an intermediate level. This is one of those situations where you have to take into account the make up of your team - people do affect architectural decisions.</li>
 <li>Although data objects are lightweight, there are some overhead compares to POCO objects, especially for the simplest scenarios. In terms of performance, It may get close to, but cannot beat native stored procedure.</li>
 </ul>
@@ -283,7 +278,7 @@ End Class
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Docs/articles/programming_rdo_data/rdo_data_overview.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Docs/articles/_rdo_data_overview.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
@@ -309,8 +304,8 @@ End Class
       </footer>
     </div>
     
-    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
-    <script type="text/javascript" src="../../styles/docfx.js"></script>
-    <script type="text/javascript" src="../../styles/main.js"></script>
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
   </body>
 </html>

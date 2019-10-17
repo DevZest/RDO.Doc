@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Data Presentation, the Right Way </title>
+    <title>Presentation Layer, the New Way </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="Data Presentation, the Right Way ">
+    <meta name="title" content="Presentation Layer, the New Way ">
     <meta name="generator" content="docfx 2.43.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
@@ -66,8 +66,8 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="data_presentation_the_right_way">
-<h1 id="data-presentation-the-right-way">Data Presentation, the Right Way</h1>
+            <article class="content wrap" id="_content" data-uid="presentation_layer_the_new_way">
+<h1 id="presentation-layer-the-new-way">Presentation Layer, the New Way</h1>
 
 <p>Separation of the graphical user interface from the business logic or back-end logic (the data model), is still a challenge task. Frameworks such as <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel">MVVM</a> introduces a new layer (the view model), trying to handle most if not all of the view's display logic.</p>
 <p>Presentation logic is complex - it's responsible for overcoming the gap between computer and human being, which is a big (maybe biggest) challenge in computer science. To encapsulate presentation logic into a separate layer, we need to plan carefully at the very beginning. Unfortunately, existing MVVM implementations, among other similar frameworks, are built as an afterthought.</p>
@@ -77,11 +77,11 @@
 <p>On the other hand, data model cannot be 100% POCO. For example, <code>INotifyPropertyChanged</code> interface is mandatory for most data models, and <code>IDataErrorInfo</code> interface is required if you want to bind to custom validation error. Since these interfaces must be implemented by all data models, they must be dead simple.</p>
 <p>In the end, your presentation layer can do little with the data model.</p>
 <h3 id="complex-control">Complex Control</h3>
-<p>Complex control, such as <code>DataGrid</code>, has very complex presentation logics. Since these controls are built without existing presentation layer, these logics are naturally encapsulated into the control itself - the view. This puts the presentation layer into an embarrassed situation: for simple control without complex view state such as <code>TextBox</code>, it has little job to do; for complex control such as <code>DataGrid</code>, the control has done the job.</p>
+<p>Complex control, such as <code>DataGrid</code>, has very complex presentation logics. Since these controls are built without existing presentation layer, these logics are naturally encapsulated into the control itself - the view. This puts the presentation layer into an embarrassed situation: for simple control without complex view state such as <code>TextBlock</code>, it has little job to do; for complex control such as <code>DataGrid</code>, the control has done the job.</p>
 <p>In the end, your presentation layer can do little with the view too.</p>
 <p>Put it together, if the presentation layer is an afterthought, there is little room left for implementation, especially at abstraction level.</p>
-<h2 id="the-right-way">The Right Way</h2>
-<p>Thanks to <a class="xref" href="orm_data_access_the_right_way.html#rich-metadata---relational-data-objects">Rich Metadata</a>, we now have foundations to implement a comprehensive Model-View-Presenter (MVP) to improve the separation of concerns in presentation logic. The following is the architecture of RDO.WPF MVP:</p>
+<h2 id="the-new-old-way">The New Old Way</h2>
+<p>Thanks to RDO.Data, which provides a rich set of data objects and the separation of model of data, we now have the foundation to implement a comprehensive Model-View-Presenter (MVP) pattern. The following is the architecture of RDO.WPF MVP:</p>
 <p><img src="/images/RdoWpfMvpArchitecture.jpg" alt="image"></p>
 <ul>
 <li>The model contains the data values and data logic such as computation and validation in a <a class="xref" href="../../api/DevZest.Data.DataSet-1.html">DataSet&lt;T&gt;</a> object. The <a class="xref" href="../../api/DevZest.Data.DataSet-1.html">DataSet&lt;T&gt;</a> object contains collection of <a class="xref" href="../../api/DevZest.Data.DataRow.html">DataRow</a> objects and <a class="xref" href="../../api/DevZest.Data.Column.html">Column</a> objects, similar as two dimensional array. The model provides events to notify data changes, it does not aware the existence of the presenter at all.</li>
@@ -97,7 +97,7 @@
 </ul>
 <p>Since presenting collection of data is extensively and exclusively supported by the presenter, all the complex controls (controls derived from <code>System.Windows.Controls.ItemsControl</code> such as <code>ListBox</code> and <code>DataGrid</code>) are not necessary any more. By using RDO.WPF, your application only need to deal with simple controls such as <code>TextBlock</code> and <code>TextBox</code>, via data binding, in an unified way.</p>
 
-<p>Simply derive you data presenter from <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter-1.html">DataPresenter&lt;T&gt;</a> class, and put a <a class="xref" href="../../api/DevZest.Data.Views.DataView.html">DataView</a> into your view, you got all the above features immediately, without any complex control. The following code:</p>
+<p>Simply derive you data presenter from <a class="xref" href="../../api/DevZest.Data.Presenters.DataPresenter-1.html">DataPresenter&lt;T&gt;</a> class, which contains the presentation logic implementation, and put a <a class="xref" href="../../api/DevZest.Data.Views.DataView.html">DataView</a> into your view, you got all the presentation logic such as filtering, sorting, grouping, selection, data binding, editing and layout immediately, without using any complex control. For example, the following code:</p>
 <div class="tabGroup" id="tabgroup_CeZOj-G++Q">
 <ul role="tablist">
 <li role="presentation">
@@ -315,9 +315,9 @@ End Class
 </code></pre></section>
 </div>
 
-<p>Will produce the following data grid UI, with foreign key lookup and paste append from clipboard implemented:
-<img src="/images/SalesOrderDetailUI.jpg" alt="image"></p>
-<p>In the end, you have ALL of your presentation logic in 100% strongly typed, extremely clean code!</p>
+<p>Will produce the following editable data grid UI, with implementation of foreign key lookup and clipboard support:</p>
+<p><img src="/images/SalesOrderDetailUI.jpg" alt="image"></p>
+<p>In the end, you have ALL of your presentation logic in 100% strongly typed, highly reusable clean code.</p>
 <p>The data presentation described previously has been implemented in Windows Presentation Foundation (WPF) desktop development. Unfortunately, the whole thing cannot be ported to the world of web development, at this moment.</p>
 <h2 id="web-development-now-and-future">Web Development, Now and Future</h2>
 <p>Web development is further divided into <a href="https://en.wikipedia.org/wiki/Server-side_scripting">server-side</a> and <a href="https://en.wikipedia.org/wiki/Dynamic_web_page#Client-side_scripting">client-side</a> development. ASP.Net Core is the answer from Microsoft to web development:</p>
@@ -365,7 +365,7 @@ End Class
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Docs/articles/overview/data_presentation_the_right_way.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Docs/articles/overview/presentation_layer_the_new_way.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

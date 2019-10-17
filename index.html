@@ -78,17 +78,17 @@
 <li>Existing data presentation solutions are far from ideal. Taking <a href="https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93viewmodel">MVVM</a> for example: it can be overkill for simple UI; in bigger cases, it can be hard to design the ViewModel up front in order to get the right amount of generality. Refactoring or changing data presentation code is time consuming and error prone.</li>
 </ul>
 
-<p>The above challenges impose great burdens for developing and further changing an enterprise application. Many frameworks are trying to solve these problems however they are all far from ideal. RDO.Net is the only solution to these problems in an integral, not an after-thought way (strongly recommended reading through):</p>
+<p>The above challenges impose great burdens for developing and further changing an enterprise application. Many frameworks are trying to solve these problems however they are all far from ideal. RDO.Net is the first solution to these problems in an integral, not an after-thought way (strongly recommended reading through):</p>
 <ul>
-<li><a class="xref" href="articles/overview/enterprise_application_the_right_way.html">Enterprise Application, the Right Way</a></li>
-<li><a class="xref" href="articles/overview/orm_data_access_the_right_way.html">ORM/Data Access, the Right Way</a></li>
-<li><a class="xref" href="articles/overview/data_presentation_the_right_way.html">Data Presentation, the Right Way</a></li>
+<li><a class="xref" href="articles/overview/enterprise_application_the_direction.html">Enterprise Application, the Direction</a></li>
+<li><a class="xref" href="articles/overview/data_and_business_layer_the_new_way.html">Data and Business Layer, the New Way</a></li>
+<li><a class="xref" href="articles/overview/presentation_layer_the_new_way.html">Presentation Layer, the New Way</a></li>
 </ul>
 <p>In the end, your application follows your business in a no-more-no-less basis - it adapts to your business, not vice versa:</p>
 <ul>
 <li>Your application is 100% strongly typed from database to GUI, all in clean C#/VB.Net code. Refactoring or changing your code is much easier than ever before.</li>
-<li>Your data access is best balanced for both programmability and performance. Rich set of data objects such as <code>Model</code>, <code>Db</code>, <code>DbTable</code>, <code>DbQuery</code> and <code>DataSet</code> are provided, no more <a href="https://en.wikipedia.org/wiki/Object-relational_impedance_mismatch">object-relational impedance mismatch</a>.</li>
-<li>Data access testing is a first class citizen which can be performed easily. Data is the core of your application, now you can build much more robust data access layer.</li>
+<li>Your data and business layer is best balanced for both programmability and performance. Rich set of data objects such as <code>Model</code>, <code>Db</code>, <code>DbTable</code>, <code>DbQuery</code> and <code>DataSet</code> are provided, no more <a href="https://en.wikipedia.org/wiki/Object-relational_impedance_mismatch">object-relational impedance mismatch</a>.</li>
+<li>Data and business layer testing is a first class citizen which can be performed easily - your application can be much more robust and adaptive to change.</li>
 <li>A one-for-all, fully customizable data presenter is provided to handle presentation logic including layout, data binding and data validation, all consumed in clean C#/VB.Net code (no XAML needed). You don't need complex controls such as <code>ListBox</code>, <code>TreeView</code>, <code>DataGrid</code> any more. You UI code is greatly simplified because you can reuse all the presentation logic.</li>
 <li>And much more with a lightweight runtime - you only need to add several dlls into your application, size ranged from tens to several hundereds KBs.</li>
 </ul>
@@ -828,7 +828,7 @@ End Class
 
 <p>The code of database can be manipulated via Db Visualizer tool window in Visual Studio:</p>
 <p><img src="/images/AdventureWorksLTDbVisualizer.jpg" alt="image"></p>
-<h3 id="data-access-crud">Data Access (CRUD)</h3>
+<h3 id="data-and-business-layer">Data and Business Layer</h3>
 <div class="tabGroup" id="tabgroup_CeZOj-G++Q-2">
 <ul role="tablist">
 <li role="presentation">

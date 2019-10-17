@@ -4,12 +4,12 @@ references:
 - uid: about_rdo_net
   name: Introduction to RDO.Net
   href: articles/overview/about_rdo_net.html
+- uid: data_and_business_layer_the_new_way
+  name: Data and Business Layer, the New Way
+  href: articles/overview/data_and_business_layer_the_new_way.html
 - uid: data_binding
   name: Data Binding
   href: articles/programming_rdo_wpf/data_binding.html
-- uid: data_presentation_the_right_way
-  name: Data Presentation, the Right Way
-  href: articles/overview/data_presentation_the_right_way.html
 - uid: DevZest.Data
   name: DevZest.Data
   href: api/DevZest.Data.html
@@ -49132,9 +49132,9 @@ references:
   commentId: F:DevZest.Data.Views.ValidationPlaceholder.IsActiveProperty
   fullName: DevZest.Data.Views.ValidationPlaceholder.IsActiveProperty
   nameWithType: ValidationPlaceholder.IsActiveProperty
-- uid: enterprise_application_the_right_way
-  name: Enterprise Application, the Right Way
-  href: articles/overview/enterprise_application_the_right_way.html
+- uid: enterprise_application_the_direction
+  name: Enterprise Application, the Direction
+  href: articles/overview/enterprise_application_the_direction.html
 - uid: expression_column
   name: Expression Column
   href: articles/programming_rdo_data/expression_column.html
@@ -49153,9 +49153,9 @@ references:
 - uid: model_validation
   name: Model Validation
   href: articles/programming_rdo_data/model_validation.html
-- uid: orm_data_access_the_right_way
-  name: ORM/Data Access, the Right Way
-  href: articles/overview/orm_data_access_the_right_way.html
+- uid: presentation_layer_the_new_way
+  name: Presentation Layer, the New Way
+  href: articles/overview/presentation_layer_the_new_way.html
 - uid: rdo_data_overview
   name: RDO.Data Overview
   href: articles/programming_rdo_data/rdo_data_overview.html

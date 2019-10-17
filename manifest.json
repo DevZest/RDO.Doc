@@ -43749,10 +43749,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/_about_rdo_net.html",
-          "hash": "EE8IEh7H6u6e70TaIx5IwA=="
+          "hash": "2XmI3XV/4ZYR8fSXJ3FX/g=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -43762,18 +43762,6 @@
         ".html": {
           "relative_path": "articles/_enterprise_application_problems.html",
           "hash": "4aSLpMYtodGepzs4Em22Tg=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "articles/_rdo_data_benefits.md",
-      "output": {
-        ".html": {
-          "relative_path": "articles/_rdo_data_benefits.html",
-          "hash": "4I+1SOROTD5hoBOmGftWVQ=="
         }
       },
       "is_incremental": true,
@@ -43801,6 +43789,18 @@
         }
       },
       "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/_rdo_data_overview.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/_rdo_data_overview.html",
+          "hash": "tZyh+nwcOINv7s4MDajXtQ=="
+        }
+      },
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -43917,7 +43917,19 @@
       "output": {
         ".html": {
           "relative_path": "articles/overview/about_rdo_net.html",
-          "hash": "dTuPfbro4GVxofmpwuqJEg=="
+          "hash": "v2plmWZ4nqytcls7reaPKg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/overview/data_and_business_layer_the_new_way.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/overview/data_and_business_layer_the_new_way.html",
+          "hash": "rwNvipI9mA0aqVdy2NL/Qw=="
         }
       },
       "is_incremental": false,
@@ -43925,11 +43937,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "articles/overview/data_presentation_the_right_way.md",
+      "source_relative_path": "articles/overview/enterprise_application_the_direction.md",
       "output": {
         ".html": {
-          "relative_path": "articles/overview/data_presentation_the_right_way.html",
-          "hash": "MMHRYHz4vNhyAMzslv1R+Q=="
+          "relative_path": "articles/overview/enterprise_application_the_direction.html",
+          "hash": "Z+pfvCtQX9CRynjvBiIdIg=="
         }
       },
       "is_incremental": true,
@@ -43937,23 +43949,11 @@
     },
     {
       "type": "Conceptual",
-      "source_relative_path": "articles/overview/enterprise_application_the_right_way.md",
+      "source_relative_path": "articles/overview/presentation_layer_the_new_way.md",
       "output": {
         ".html": {
-          "relative_path": "articles/overview/enterprise_application_the_right_way.html",
-          "hash": "RRw0+9G+R+LrPFPeb7i3ig=="
-        }
-      },
-      "is_incremental": true,
-      "version": ""
-    },
-    {
-      "type": "Conceptual",
-      "source_relative_path": "articles/overview/orm_data_access_the_right_way.md",
-      "output": {
-        ".html": {
-          "relative_path": "articles/overview/orm_data_access_the_right_way.html",
-          "hash": "QP0DNnXSxl/+r5Rt345aCQ=="
+          "relative_path": "articles/overview/presentation_layer_the_new_way.html",
+          "hash": "q/FJU1mwKJLoDSwyap3G4A=="
         }
       },
       "is_incremental": true,
@@ -44181,7 +44181,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/programming_rdo_data/model_column.html",
-          "hash": "JrAwkqaEdbxd29U4dSGSVQ=="
+          "hash": "PRm5La9sxzG90ITJqeXJIQ=="
         }
       },
       "is_incremental": true,
@@ -44253,10 +44253,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/programming_rdo_data/rdo_data_overview.html",
-          "hash": "bZghlxjGVuAOTuGRBZOClg=="
+          "hash": "k3HRoBO/VEsYyGZ0Qm/Kxw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -44517,7 +44517,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/toc.html",
-          "hash": "vENgS20lRsW/sdX0oQcyiA=="
+          "hash": "1fYhYZgFaZyEjkoLmQipWQ=="
         }
       },
       "is_incremental": false,
@@ -44529,10 +44529,10 @@
       "output": {
         ".html": {
           "relative_path": "articles/tutorial/get_started.html",
-          "hash": "tVzyV8LvcpiyG8rWs1twPA=="
+          "hash": "zFyBRu/F+lTYm22W9vVEBg=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -44589,7 +44589,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/tutorial/movies_wpf.html",
-          "hash": "ApQNEksHcBqrLekFW+AZPw=="
+          "hash": "+flPVcyQCChFfCLEQRTi/A=="
         }
       },
       "is_incremental": true,
@@ -44722,6 +44722,17 @@
       "output": {
         "resource": {
           "relative_path": "images/RdoDataArchitecture.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/RdoDataArchitecture2.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "images/RdoDataArchitecture2.jpg"
         }
       },
       "is_incremental": false,
@@ -45657,10 +45668,10 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "N1QC6NzAXaaHUw2NSOcAIQ=="
+          "hash": "mkouo3nWXf7ANFA/C6QiZA=="
         }
       },
-      "is_incremental": false,
+      "is_incremental": true,
       "version": ""
     },
     {
@@ -45685,9 +45696,9 @@
         "skipped_file_count": 0
       },
       "processors": {
-        "TocDocumentProcessor": {
+        "ResourceDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
           "total_file_count": 0,
           "skipped_file_count": 0
@@ -45704,9 +45715,9 @@
           "total_file_count": 71,
           "skipped_file_count": 68
         },
-        "ResourceDocumentProcessor": {
+        "TocDocumentProcessor": {
           "can_incremental": false,
-          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build",
           "total_file_count": 0,
           "skipped_file_count": 0

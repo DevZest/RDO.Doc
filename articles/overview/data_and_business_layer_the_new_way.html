@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>RDO.Data Overview </title>
+    <title>Data and Business Layer, the New Way </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="RDO.Data Overview ">
+    <meta name="title" content="Data and Business Layer, the New Way ">
     <meta name="generator" content="docfx 2.43.2.0">
     
     <link rel="shortcut icon" href="../../favicon.ico">
@@ -66,13 +66,39 @@
         </div>
         <div class="article row grid-right">
           <div class="col-md-10">
-            <article class="content wrap" id="_content" data-uid="rdo_data_overview">
-<h1 id="rdodata-overview">RDO.Data Overview</h1>
+            <article class="content wrap" id="_content" data-uid="data_and_business_layer_the_new_way">
+<h1 id="data-and-business-layer-the-new-way">Data and Business Layer, the New Way</h1>
 
-<p>RDO.Data is the core of RDO.Net. It helps developers to build data and business layer of the your applications:</p>
-<p><img src="/images/RdoDataOverview.jpg" alt="image"></p>
-<h2 id="rdodata-architecture">RDO.Data Architecture</h2>
-<p>Building on top of <a href="https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/">ADO.Net</a>, RDO.Data implements relational schema and data into a comprehensive yet simple object model:</p>
+<p>Every enterprise application is backed by a persistent data store, typically a relational database. Object-oriented programming (OOP), on the other hand, is the mainstream for enterprise application development. According to <a href="https://www.martinfowler.com/articles/dblogic.html">Martin Fowler's post</a>, currently there are 3 patterns to develop business logic:</p>
+<ul>
+<li><a href="https://www.martinfowler.com/articles/dblogic.html#TransactionScript">Transaction Script</a> and <a href="https://www.martinfowler.com/articles/dblogic.html#DomainModel">Domain Model</a>: The business logic is placed in-memory code and the database is used pretty much as a storage mechanism.</li>
+<li><a href="https://www.martinfowler.com/articles/dblogic.html#LogicInSql">Logic in SQL</a>: Business logic is placed in SQL queries such as stored procedure.</li>
+</ul>
+<p>Each pattern has its own pros and cons, basically it's a tradeoff between programmability and performance. Most people go with the in-memory code way for better programmability, which requires an <a href="https://en.wikipedia.org/wiki/Object-relational_mapping">Object-Relational Mapping (ORM, O/RM, and O/R mapping tool)</a>, such as Entity Framework. Great efforts have been made to reconcile these two, however it's still <a href="http://blogs.tedneward.com/post/the-vietnam-of-computer-science/">The Vietnam of Computer Science</a>, due to the misconceptions of SQL and OOP.</p>
+<h2 id="the-misconceptions">The Misconceptions</h2>
+<h3 id="sql-is-obsolete">SQL is Obsolete</h3>
+<p>The origins of the SQL take us back to the 1970s. Since then, IT world changed, projects are much more complicated, but SQL stays - more or less - the same. It works, but it's not elegant for nowadays modern application development. Most ORM implementations, like Entity Framework, tries to encapsulate the code needed to manipulate the data, so you don't use SQL anymore. Unfortunately, this is wrongheaded and will end up with <a href="https://en.wikipedia.org/wiki/Leaky_abstraction">Leaky Abstraction</a>.</p>
+<p>As coined by Joel Spolsky, the <a href="https://www.joelonsoftware.com/2002/11/11/the-law-of-leaky-abstractions/">Law of Leaky Abstractions</a> states:</p>
+<blockquote>
+<p>All non-trivial abstractions, to some degree, are leaky.</p>
+</blockquote>
+<p>Apparently, RDBMS and SQL, being a fundamental of your application, is far from trivial. You can't expect to abstract it away - you have to live with it. Most ORM implementations provide native SQL execution because of this.</p>
+<h3 id="ooppoco-obsession">OOP/POCO Obsession</h3>
+<p>OOP, on the other hand, is modern and the mainstream of application development. It's so widely adopted by developers that many developers subconsciously believe OOP can solve all the problems. Moreover, many framework authors has the religion that any framework, if not support POCO, is not a good framework.</p>
+<p>In fact, like any technology, OOP has its limitations too. The biggest one, IMO, is: <strong>OOP is limited to local process, it's not serialization/deserialization friendly.</strong> Each and every object is accessed via its reference (the address pointer), and the reference, together with the type metadata and compiled byte code (further reference to type descriptors, vtable, etc.), is private to local process. It's just too obvious to realize this.</p>
+<p>By nature, any serialized data is value type, which means:</p>
+<ol>
+<li><p>To serialize/deserialize an object, a converter for the reference is needed, either implicitly or explicitly. ORM can be considered as the converter between objects and relational data.</p>
+</li>
+<li><p>As the object complexity grows, the complexity of the converter grows respectively. Particularly, the type metadata and compiled byte code (the behavior of the object, or the logic), are difficult or maybe impossible for the conversion - in the end, you need virtually the whole type runtime. That's why so many applications start with <a href="https://martinfowler.com/tags/domain%20driven%20design.html">Domain Drive Design</a>, but end up with <a href="https://martinfowler.com/bliki/AnemicDomainModel.html">Anemic Domain Model</a>.</p>
+</li>
+<li><p>On the other hand, relational data model is very complex by nature, compares to other data format such as JSON. This adds another complexity to the converter. ORM, which is considered as the converter between objects and relational data, will sooner of later hit the wall.</p>
+</li>
+</ol>
+<p>That's the real problem of object-relational impedance mismatch, if you want to map between arbitrary objects (POCO) and relational data. Unfortunately, almost all ORM implementations are following this path, none of them can survive from this.</p>
+<h2 id="the-new-way">The New Way</h2>
+<p>When you're using relational database, implementing your business logic using SQL/stored procedure is the shortest path, therefore can have best performance. The cons lies in the code maintainability of SQL. On the other hand, implementing your business logic as in-memory code, has many advantages in terms of code maintainability, but may have performance issue in some cases, and most importantly, it will end up with object-relational impedance mismatch as described above. How can we get the best of both?</p>
+<p>RDO.Data is the answer to this question. You can write your business logic in both ways, as stored procedures alike or in-memory code, using C#/VB.Net, independent of your physical database. To achieve this, we're implementing relational schema and data into a comprehensive yet simple object model:</p>
 <p><img src="/images/RdoDataArchitecture2.jpg" alt="image"></p>
 <p>The following data objects are provided with rich set of properties, methods and events:</p>
 <ul>
@@ -283,7 +309,7 @@ End Class
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Docs/articles/programming_rdo_data/rdo_data_overview.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Docs/articles/overview/data_and_business_layer_the_new_way.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>
