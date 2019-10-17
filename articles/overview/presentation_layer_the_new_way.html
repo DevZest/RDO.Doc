@@ -80,7 +80,7 @@
 <p>Complex control, such as <code>DataGrid</code>, has very complex presentation logics. Since these controls are built without existing presentation layer, these logics are naturally encapsulated into the control itself - the view. This puts the presentation layer into an embarrassed situation: for simple control without complex view state such as <code>TextBlock</code>, it has little job to do; for complex control such as <code>DataGrid</code>, the control has done the job.</p>
 <p>In the end, your presentation layer can do little with the view too.</p>
 <p>Put it together, if the presentation layer is an afterthought, there is little room left for implementation, especially at abstraction level.</p>
-<h2 id="the-new-old-way">The New Old Way</h2>
+<h2 id="the-new-way">The New Way</h2>
 <p>Thanks to RDO.Data, which provides a rich set of data objects and the separation of model of data, we now have the foundation to implement a comprehensive Model-View-Presenter (MVP) pattern. The following is the architecture of RDO.WPF MVP:</p>
 <p><img src="/images/RdoWpfMvpArchitecture.jpg" alt="image"></p>
 <ul>
