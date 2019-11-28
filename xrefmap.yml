@@ -49070,9 +49070,6 @@ references:
 - uid: expression_column
   name: Expression Column
   href: articles/programming_rdo_data/expression_column.html
-- uid: manage_registration_subscription
-  name: Manage Your Registration/Subscription
-  href: articles/additional_info/manage_registration_subscription.html
 - uid: model_and_members
   name: Model and Members
   href: articles/programming_rdo_data/model_and_members.html
@@ -49091,21 +49088,12 @@ references:
 - uid: rdo_data_overview
   name: RDO.Data Overview
   href: articles/programming_rdo_data/rdo_data_overview.html
-- uid: rdo_net_runtime_license
-  name: RDO.Net Runtime License
-  href: articles/additional_info/rdo_net_runtime_license.html
-- uid: rdo_tools_activation
-  name: RDO.Tools Activation
-  href: articles/additional_info/rdo_tools_activation.html
-- uid: rdo_tools_license
-  name: RDO.Tools License
-  href: articles/additional_info/rdo_tools_license.html
 - uid: rdo_wpf_validation
   name: Validation
   href: articles/programming_rdo_wpf/validation.html
 - uid: specifications
   name: Specifications
-  href: articles/additional_info/specifications.html
+  href: articles/overview/specifications.html
 - uid: tutorial_get_started
   name: 'Tutorial: Get Started'
   href: articles/tutorial/get_started.html
