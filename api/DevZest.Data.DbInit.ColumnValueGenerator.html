@@ -80,13 +80,37 @@
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
     <div class="level1"><span class="xref">ColumnValueGenerator</span></div>
-      <div class="level2"><a class="xref" href="DevZest.Data.DbInit.ColumnValueGenerator-1.html">ColumnValueGenerator&lt;T&gt;</a></div>
+      <div class="level2"><a class="xref" href="DevZest.Data.DbInit.ColumnValueGenerator-1.html">ColumnValueGenerator</a>&lt;T&gt;</div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
   </div>
   <h6><strong>Namespace</strong>: <a class="xref" href="DevZest.Data.DbInit.html">DevZest.Data.DbInit</a></h6>
   <h6><strong>Assembly</strong>: DevZest.Data.DbInit.dll</h6>
   <h5 id="DevZest_Data_DbInit_ColumnValueGenerator_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public abstract class ColumnValueGenerator : Object</code></pre>
+    <pre><code class="lang-csharp hljs">public abstract class ColumnValueGenerator</code></pre>
   </div>
   <h5 id="DevZest_Data_DbInit_ColumnValueGenerator_remarks"><strong>Remarks</strong></h5>
   <div class="markdown level0 remarks"><p><a class="xref" href="DevZest.Data.DbInit.ColumnValueGenerator.html">ColumnValueGenerator</a> objects are registered by column data type via <a class="xref" href="DevZest.Data.DbInit.ColumnValueGenerator.Register.html#DevZest_Data_DbInit_ColumnValueGenerator_Register__1">Register&lt;T&gt;()</a> method.
@@ -95,24 +119,6 @@ found for given data type, a fallback generator is used, which use the column's 
 You can provide your own implementation by deriving your class from <a class="xref" href="DevZest.Data.DbInit.ColumnValueGenerator-1.html">ColumnValueGenerator&lt;T&gt;</a>,
 override <a class="xref" href="DevZest.Data.DbInit.ColumnValueGenerator-1.GenerateValue.html#DevZest_Data_DbInit_ColumnValueGenerator_1_GenerateValue__0_">GenerateValue(T)</a>, and call <a class="xref" href="DevZest.Data.DbInit.ColumnValueGenerator.Register.html#DevZest_Data_DbInit_ColumnValueGenerator_Register__1">Register&lt;T&gt;()</a>.</p>
 </div>
-  <h3 id="constructors">Constructors
-  </h3>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Name</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td id="DevZest_Data_DbInit_ColumnValueGenerator__ctor" data-uid="DevZest.Data.DbInit.ColumnValueGenerator.#ctor">
-          <a class="xref" href="DevZest.Data.DbInit.ColumnValueGenerator.-ctor.html#DevZest_Data_DbInit_ColumnValueGenerator__ctor">ColumnValueGenerator()</a>
-        </td>
-        <td class="markdown level1 summary"></td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="properties">Properties
   </h3>
   <table class="table table-bordered table-striped table-condensed">
@@ -193,6 +199,12 @@ override <a class="xref" href="DevZest.Data.DbInit.ColumnValueGenerator-1.Genera
             <div class="sideaffix">
               <div class="contribution">
                 <ul class="nav">
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/new/master/apiSpec/new?filename=DevZest_Data_DbInit_ColumnValueGenerator.md&amp;value=---%0Auid%3A%20DevZest.Data.DbInit.ColumnValueGenerator%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                  </li>
+                  <li>
+                    <a href="https://github.com/DevZest/RDO.Net/blob/master/src/Data.DbInit/ColumnValueGenerator.cs/#L17" class="contribution-link">View Source</a>
+                  </li>
                 </ul>
               </div>
               <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">

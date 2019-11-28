@@ -16884,18 +16884,6 @@ references:
   commentId: T:DevZest.Data.DbInit.ColumnValueGenerator
   fullName: DevZest.Data.DbInit.ColumnValueGenerator
   nameWithType: ColumnValueGenerator
-- uid: DevZest.Data.DbInit.ColumnValueGenerator.#ctor
-  name: ColumnValueGenerator()
-  href: api/DevZest.Data.DbInit.ColumnValueGenerator.-ctor.html#DevZest_Data_DbInit_ColumnValueGenerator__ctor
-  commentId: M:DevZest.Data.DbInit.ColumnValueGenerator.#ctor
-  fullName: DevZest.Data.DbInit.ColumnValueGenerator.ColumnValueGenerator()
-  nameWithType: ColumnValueGenerator.ColumnValueGenerator()
-- uid: DevZest.Data.DbInit.ColumnValueGenerator.#ctor*
-  name: ColumnValueGenerator
-  href: api/DevZest.Data.DbInit.ColumnValueGenerator.-ctor.html
-  commentId: Overload:DevZest.Data.DbInit.ColumnValueGenerator.#ctor
-  fullName: DevZest.Data.DbInit.ColumnValueGenerator.ColumnValueGenerator
-  nameWithType: ColumnValueGenerator.ColumnValueGenerator
 - uid: DevZest.Data.DbInit.ColumnValueGenerator.AddReferencedType(System.Type)
   name: AddReferencedType(Type)
   href: api/DevZest.Data.DbInit.ColumnValueGenerator.AddReferencedType.html#DevZest_Data_DbInit_ColumnValueGenerator_AddReferencedType_System_Type_
@@ -16986,22 +16974,6 @@ references:
   fullName.vb: DevZest.Data.DbInit.ColumnValueGenerator(Of T)
   nameWithType: ColumnValueGenerator<T>
   nameWithType.vb: ColumnValueGenerator(Of T)
-- uid: DevZest.Data.DbInit.ColumnValueGenerator`1.#ctor
-  name: ColumnValueGenerator()
-  href: api/DevZest.Data.DbInit.ColumnValueGenerator-1.-ctor.html#DevZest_Data_DbInit_ColumnValueGenerator_1__ctor
-  commentId: M:DevZest.Data.DbInit.ColumnValueGenerator`1.#ctor
-  fullName: DevZest.Data.DbInit.ColumnValueGenerator<T>.ColumnValueGenerator()
-  fullName.vb: DevZest.Data.DbInit.ColumnValueGenerator(Of T).ColumnValueGenerator()
-  nameWithType: ColumnValueGenerator<T>.ColumnValueGenerator()
-  nameWithType.vb: ColumnValueGenerator(Of T).ColumnValueGenerator()
-- uid: DevZest.Data.DbInit.ColumnValueGenerator`1.#ctor*
-  name: ColumnValueGenerator
-  href: api/DevZest.Data.DbInit.ColumnValueGenerator-1.-ctor.html
-  commentId: Overload:DevZest.Data.DbInit.ColumnValueGenerator`1.#ctor
-  fullName: DevZest.Data.DbInit.ColumnValueGenerator<T>.ColumnValueGenerator
-  fullName.vb: DevZest.Data.DbInit.ColumnValueGenerator(Of T).ColumnValueGenerator
-  nameWithType: ColumnValueGenerator<T>.ColumnValueGenerator
-  nameWithType.vb: ColumnValueGenerator(Of T).ColumnValueGenerator
 - uid: DevZest.Data.DbInit.ColumnValueGenerator`1.Column
   name: Column
   href: api/DevZest.Data.DbInit.ColumnValueGenerator-1.Column.html#DevZest_Data_DbInit_ColumnValueGenerator_1_Column
@@ -17111,22 +17083,6 @@ references:
   fullName.vb: DevZest.Data.DbInit.DbSessionProvider(Of T)
   nameWithType: DbSessionProvider<T>
   nameWithType.vb: DbSessionProvider(Of T)
-- uid: DevZest.Data.DbInit.DbSessionProvider`1.#ctor
-  name: DbSessionProvider()
-  href: api/DevZest.Data.DbInit.DbSessionProvider-1.-ctor.html#DevZest_Data_DbInit_DbSessionProvider_1__ctor
-  commentId: M:DevZest.Data.DbInit.DbSessionProvider`1.#ctor
-  fullName: DevZest.Data.DbInit.DbSessionProvider<T>.DbSessionProvider()
-  fullName.vb: DevZest.Data.DbInit.DbSessionProvider(Of T).DbSessionProvider()
-  nameWithType: DbSessionProvider<T>.DbSessionProvider()
-  nameWithType.vb: DbSessionProvider(Of T).DbSessionProvider()
-- uid: DevZest.Data.DbInit.DbSessionProvider`1.#ctor*
-  name: DbSessionProvider
-  href: api/DevZest.Data.DbInit.DbSessionProvider-1.-ctor.html
-  commentId: Overload:DevZest.Data.DbInit.DbSessionProvider`1.#ctor
-  fullName: DevZest.Data.DbInit.DbSessionProvider<T>.DbSessionProvider
-  fullName.vb: DevZest.Data.DbInit.DbSessionProvider(Of T).DbSessionProvider
-  nameWithType: DbSessionProvider<T>.DbSessionProvider
-  nameWithType.vb: DbSessionProvider(Of T).DbSessionProvider
 - uid: DevZest.Data.DbInit.DbSessionProvider`1.Create(System.String)
   name: Create(String)
   href: api/DevZest.Data.DbInit.DbSessionProvider-1.Create.html#DevZest_Data_DbInit_DbSessionProvider_1_Create_System_String_
@@ -17215,36 +17171,12 @@ references:
   commentId: T:DevZest.Data.DbInit.EmptyDbAttribute
   fullName: DevZest.Data.DbInit.EmptyDbAttribute
   nameWithType: EmptyDbAttribute
-- uid: DevZest.Data.DbInit.EmptyDbAttribute.#ctor
-  name: EmptyDbAttribute()
-  href: api/DevZest.Data.DbInit.EmptyDbAttribute.-ctor.html#DevZest_Data_DbInit_EmptyDbAttribute__ctor
-  commentId: M:DevZest.Data.DbInit.EmptyDbAttribute.#ctor
-  fullName: DevZest.Data.DbInit.EmptyDbAttribute.EmptyDbAttribute()
-  nameWithType: EmptyDbAttribute.EmptyDbAttribute()
-- uid: DevZest.Data.DbInit.EmptyDbAttribute.#ctor*
-  name: EmptyDbAttribute
-  href: api/DevZest.Data.DbInit.EmptyDbAttribute.-ctor.html
-  commentId: Overload:DevZest.Data.DbInit.EmptyDbAttribute.#ctor
-  fullName: DevZest.Data.DbInit.EmptyDbAttribute.EmptyDbAttribute
-  nameWithType: EmptyDbAttribute.EmptyDbAttribute
 - uid: DevZest.Data.DbInit.InputAttribute
   name: InputAttribute
   href: api/DevZest.Data.DbInit.InputAttribute.html
   commentId: T:DevZest.Data.DbInit.InputAttribute
   fullName: DevZest.Data.DbInit.InputAttribute
   nameWithType: InputAttribute
-- uid: DevZest.Data.DbInit.InputAttribute.#ctor
-  name: InputAttribute()
-  href: api/DevZest.Data.DbInit.InputAttribute.-ctor.html#DevZest_Data_DbInit_InputAttribute__ctor
-  commentId: M:DevZest.Data.DbInit.InputAttribute.#ctor
-  fullName: DevZest.Data.DbInit.InputAttribute.InputAttribute()
-  nameWithType: InputAttribute.InputAttribute()
-- uid: DevZest.Data.DbInit.InputAttribute.#ctor*
-  name: InputAttribute
-  href: api/DevZest.Data.DbInit.InputAttribute.-ctor.html
-  commentId: Overload:DevZest.Data.DbInit.InputAttribute.#ctor
-  fullName: DevZest.Data.DbInit.InputAttribute.InputAttribute
-  nameWithType: InputAttribute.InputAttribute
 - uid: DevZest.Data.DbInit.InputAttribute.EnvironmentVariableName
   name: EnvironmentVariableName
   href: api/DevZest.Data.DbInit.InputAttribute.EnvironmentVariableName.html#DevZest_Data_DbInit_InputAttribute_EnvironmentVariableName

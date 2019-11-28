@@ -90,6 +90,7 @@
 <h5 class="decalaration">Declaration</h5>
 <div class="codewrapper">
   <pre><code class="lang-csharp hljs">public static RowBinding&lt;ForeignKeyBox&gt; BindToForeignKeyBox&lt;TKey, TLookup&gt;(this TKey key, TLookup lookup, Func&lt;ColumnValueBag, TKey, string&gt; titleGetter)
+
     where TKey : CandidateKey where TLookup : Projection</code></pre>
 </div>
 <h5 class="parameters">Parameters</h5>
@@ -174,6 +175,7 @@
 <h5 class="decalaration">Declaration</h5>
 <div class="codewrapper">
   <pre><code class="lang-csharp hljs">public static RowBinding&lt;ForeignKeyBox&gt; BindToForeignKeyBox&lt;TKey, TLookup&gt;(this TKey key, TLookup lookup, Func&lt;ColumnValueBag, TKey, TLookup, string&gt; titleGetter)
+
     where TKey : CandidateKey where TLookup : Projection</code></pre>
 </div>
 <h5 class="parameters">Parameters</h5>
@@ -258,6 +260,7 @@
 <h5 class="decalaration">Declaration</h5>
 <div class="codewrapper">
   <pre><code class="lang-csharp hljs">public static RowBinding&lt;ForeignKeyBox&gt; BindToForeignKeyBox&lt;TKey, TLookup, TView&gt;(this TKey key, TLookup lookup, Action&lt;TView, ColumnValueBag, TLookup&gt; refreshAction)
+
     where TKey : CandidateKey where TLookup : Projection where TView : UIElement, new()</code></pre>
 </div>
 <h5 class="parameters">Parameters</h5>
@@ -347,6 +350,7 @@
 <h5 class="decalaration">Declaration</h5>
 <div class="codewrapper">
   <pre><code class="lang-csharp hljs">public static RowBinding&lt;ForeignKeyBox&gt; BindToForeignKeyBox&lt;TKey, TLookup, TView&gt;(this TKey key, TLookup lookup, Action&lt;TView, ColumnValueBag, TKey, TLookup&gt; refreshAction)
+
     where TKey : CandidateKey where TLookup : Projection where TView : UIElement, new()</code></pre>
 </div>
 <h5 class="parameters">Parameters</h5>

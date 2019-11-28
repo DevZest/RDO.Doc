@@ -90,6 +90,7 @@
 <h5 class="decalaration">Declaration</h5>
 <div class="codewrapper">
   <pre><code class="lang-csharp hljs">public static RowBinding&lt;InPlaceEditor&gt; MergeIntoInPlaceEditor&lt;T&gt;(this RowBinding&lt;T&gt; editorRowBinding, string format = null, IFormatProvider formatProvider = null)
+
     where T : UIElement, new()</code></pre>
 </div>
 <h5 class="parameters">Parameters</h5>
@@ -169,6 +170,7 @@
 <h5 class="decalaration">Declaration</h5>
 <div class="codewrapper">
   <pre><code class="lang-csharp hljs">public static RowBinding&lt;InPlaceEditor&gt; MergeIntoInPlaceEditor&lt;T&gt;(this RowBinding&lt;T&gt; editorRowBinding, Func&lt;RowPresenter, string&gt; format, IFormatProvider formatProvider = null)
+
     where T : UIElement, new()</code></pre>
 </div>
 <h5 class="parameters">Parameters</h5>
@@ -248,7 +250,9 @@
 <h5 class="decalaration">Declaration</h5>
 <div class="codewrapper">
   <pre><code class="lang-csharp hljs">public static RowBinding&lt;InPlaceEditor&gt; MergeIntoInPlaceEditor&lt;TEditor, TInert&gt;(this RowBinding&lt;TEditor&gt; editorRowBinding, RowBinding&lt;TInert&gt; inertRowBinding)
+
     where TEditor : UIElement, new()
+
     where TInert : UIElement, new()</code></pre>
 </div>
 <h5 class="parameters">Parameters</h5>
@@ -327,6 +331,7 @@
 <h5 class="decalaration">Declaration</h5>
 <div class="codewrapper">
   <pre><code class="lang-csharp hljs">public static ScalarBinding&lt;InPlaceEditor&gt; MergeIntoInPlaceEditor&lt;T&gt;(this ScalarBinding&lt;T&gt; editorScalarBinding, string format = null, IFormatProvider formatProvider = null)
+
     where T : UIElement, new()</code></pre>
 </div>
 <h5 class="parameters">Parameters</h5>
@@ -406,7 +411,9 @@
 <h5 class="decalaration">Declaration</h5>
 <div class="codewrapper">
   <pre><code class="lang-csharp hljs">public static ScalarBinding&lt;InPlaceEditor&gt; MergeIntoInPlaceEditor&lt;TEditor, TInert&gt;(this ScalarBinding&lt;TEditor&gt; editorScalarBinding, ScalarBinding&lt;TInert&gt; inertScalarBinding)
+
     where TEditor : UIElement, new()
+
     where TInert : UIElement, new()</code></pre>
 </div>
 <h5 class="parameters">Parameters</h5>

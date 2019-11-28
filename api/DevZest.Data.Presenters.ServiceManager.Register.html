@@ -90,6 +90,7 @@
 <h5 class="decalaration">Declaration</h5>
 <div class="codewrapper">
   <pre><code class="lang-csharp hljs">public static void Register&lt;TService, TServiceImpl&gt;()
+
     where TService : class, IService where TServiceImpl : TService, new()</code></pre>
 </div>
 <h5 class="typeParameters">Type Parameters</h5>
@@ -128,6 +129,7 @@
 <h5 class="decalaration">Declaration</h5>
 <div class="codewrapper">
   <pre><code class="lang-csharp hljs">public static void Register&lt;TService, TServiceImpl&gt;(Func&lt;TServiceImpl&gt; createService)
+
     where TService : class, IService where TServiceImpl : TService</code></pre>
 </div>
 <h5 class="parameters">Parameters</h5>
