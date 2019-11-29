@@ -69,7 +69,7 @@
             <article class="content wrap" id="_content" data-uid="">
 <h1 id="adventureworkslt-sample">AdventureWorksLT Sample</h1>
 
-<p>The best way to learn RDO.Data is to learn by example. In the source code repo, under <code>Samples</code> (or <code>Samples.vb</code> for Visual Basic), open <code>AdventureWorksLT.sln</code> in Visual Studio, there are 3 projects out there:</p>
+<p>The best way to learn RDO.Data is to learn by example. The <a href="https://github.com/DevZest/AdventureWorksLT">AdventureWorkLT sample</a>, is provided to demonstrate most of RDO.Net:</p>
 <table>
 <thead>
 <tr>
@@ -83,12 +83,16 @@
 <td>Data and Business Layer of the application.</td>
 </tr>
 <tr>
-<td><code>AdventureWorksLT.DbDesign</code></td>
+<td><code>AdventureWorksLT.DbInit</code></td>
 <td>Database mocking and deployment.</td>
 </tr>
 <tr>
 <td><code>AdventureWorksLT.WpfApp</code></td>
 <td>UI Layer of the application in WPF.</td>
+</tr>
+<tr>
+<td><code>AdventureWorksLT.Test</code></td>
+<td>Data logic tests.</td>
 </tr>
 </tbody>
 </table>
@@ -185,6 +189,7 @@ End Class
 <li><a class="xref" href="../../api/DevZest.Data.DbTable-1.html">DbTable&lt;T&gt;</a> has <a class="xref" href="../../api/DevZest.Data.DbTable-1.InsertAsync.html">InsertAsync</a>, <a class="xref" href="../../api/DevZest.Data.DbTable-1.DeleteAsync.html">DeleteAsync</a> and <a class="xref" href="../../api/DevZest.Data.DbTable-1.UpdateAsync.html">UpdateAsync</a> methods to update data from database server. All operations are truly set based.</li>
 </ul>
 <p>The above query and update operations will generate SQL Abstract Syntax Tree (AST) and further be translated into native SQL by database provider, with very little overhead. It has best balance of code maintainability and performance.</p>
+<p>You can find tests for query and update operations in <code>AdventureWorksLT.Test</code> project.</p>
 </article>
           </div>
           
